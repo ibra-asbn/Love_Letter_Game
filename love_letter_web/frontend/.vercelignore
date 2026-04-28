@@ -1,0 +1,5 @@
+node_modules/
+dist/
+build/
+debug-storybook.log
+public/palace_ost.mp3
