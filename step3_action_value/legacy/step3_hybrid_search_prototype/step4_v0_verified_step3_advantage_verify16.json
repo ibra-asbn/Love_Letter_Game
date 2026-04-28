@@ -1,0 +1,37 @@
+{
+  "name": "step4_v0_verified_step3_advantage_verify16",
+  "date": "2026-04-25",
+  "status": "validated_hybrid_reference",
+  "description": "Premier joueur hybride valide: Step2 + tete advantage Step3 v2 + verification CRN locale a 16 rollouts. A conserver comme reference Step4 v0, pas comme objectif Step3 rapide.",
+  "checkpoint": "step4_hybrid_champion/checkpoints/step4_v0_step3_advantage_verify16.pth",
+  "source_checkpoint": "step3_action_value/checkpoints/step3_advantage_v2_attempt2_strict.pth",
+  "base_checkpoint": "step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+  "inference": {
+    "override_margin": 0.10,
+    "verify_rollouts": 16,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "verify_player0_continuation": "heuristic",
+    "verify_reward_score_weight": 0.05
+  },
+  "validation": {
+    "games_per_config": 1000,
+    "seeds": [134000, 135000, 136000],
+    "average_composite": 0.28003,
+    "average_step2_composite": 0.26543,
+    "average_delta": 0.01460,
+    "composition_averages": {
+      "vs_0H_3R": {"hybrid": 0.5330, "step2": 0.5157, "delta": 0.0173},
+      "vs_1H_2R": {"hybrid": 0.3887, "step2": 0.3750, "delta": 0.0137},
+      "vs_2H_1R": {"hybrid": 0.2647, "step2": 0.2473, "delta": 0.0173},
+      "vs_3H": {"hybrid": 0.1740, "step2": 0.1617, "delta": 0.0123}
+    }
+  },
+  "reports": [
+    "step3_action_value/reports/step3_advantage_v2_attempt2_strict_eval_1000_m010_verify16_seed134000.json",
+    "step3_action_value/reports/step3_advantage_v2_attempt2_strict_eval_1000_m010_verify16_seed135000.json",
+    "step3_action_value/reports/step3_advantage_v2_attempt2_strict_eval_1000_m010_verify16_seed136000.json"
+  ],
+  "diagnostic": "diagnostics/2026-04-25_step3_v2_advantage_verified.md"
+}

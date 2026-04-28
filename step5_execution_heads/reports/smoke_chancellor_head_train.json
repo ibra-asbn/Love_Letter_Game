@@ -1,0 +1,686 @@
+{
+  "created_at": "2026-04-26 13:13:39 CEST",
+  "dataset": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step5_execution_heads/datasets/smoke_chancellor_teacher.json",
+  "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step5_execution_heads/checkpoints/smoke_chancellor_head.pth",
+  "dataset_summary": {
+    "states": 4,
+    "rows": 24,
+    "clear_regret_states": 1,
+    "positive_override_states": 1,
+    "mean_best_advantage": 0.14375001192092896,
+    "sample_groups": [
+      {
+        "group": 0,
+        "model_action": 902,
+        "best_action": 903,
+        "best_advantage": 0.550000011920929,
+        "clear_regret": true,
+        "phase": "late",
+        "pool": [
+          9,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 1,
+        "model_action": 900,
+        "best_action": 900,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "pool": [
+          6,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 2,
+        "model_action": 904,
+        "best_action": 904,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          1,
+          1,
+          6
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 4,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.025000035762786865,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          0,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      }
+    ],
+    "sample_rows": [
+      {
+        "group": 0,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            9
+          ]
+        },
+        "target": 0.550000011920929,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            9
+          ]
+        },
+        "target": 0.550000011920929,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            9,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 0,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            9,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.2
+      },
+      {
+        "group": 0,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 9,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": -0.550000011920929,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            9,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 9,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": -0.550000011920929,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 6,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 1,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 6,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.2
+      },
+      {
+        "group": 1,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            6,
+            1
+          ]
+        },
+        "target": -0.5249999761581421,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            6
+          ]
+        },
+        "target": -0.5249999761581421,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            6,
+            1
+          ]
+        },
+        "target": -0.5249999761581421,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            6,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            6
+          ]
+        },
+        "target": -0.5249999761581421,
+        "weight": 4.0
+      },
+      {
+        "group": 2,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 6,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 2,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 6,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.2
+      },
+      {
+        "group": 2,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            6,
+            1
+          ]
+        },
+        "target": -0.5299999713897705,
+        "weight": 4.0
+      },
+      {
+        "group": 2,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            6,
+            1
+          ]
+        },
+        "target": -0.5299999713897705,
+        "weight": 4.0
+      },
+      {
+        "group": 2,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            6
+          ]
+        },
+        "target": -1.04999994719401,
+        "weight": 4.0
+      },
+      {
+        "group": 2,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            1,
+            1,
+            6
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            6
+          ]
+        },
+        "target": -1.04999994719401,
+        "weight": 4.0
+      },
+      {
+        "group": 4,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 0,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.025000035762786865,
+        "weight": 0.2
+      },
+      {
+        "group": 4,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 0,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.025000035762786865,
+        "weight": 0.2
+      },
+      {
+        "group": 4,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            0,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 4,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            0,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.2
+      },
+      {
+        "group": 4,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            0
+          ]
+        },
+        "target": -0.5299999662674963,
+        "weight": 4.0
+      },
+      {
+        "group": 4,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            0,
+            1,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            0
+          ]
+        },
+        "target": -0.5299999662674963,
+        "weight": 4.0
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.07049484737217426,
+      "train": {
+        "rows": 18,
+        "groups": 3,
+        "mae": 0.28061240911483765,
+        "top1_acc": 0.3333333333333333,
+        "override_agreement": 0.6666666666666666,
+        "pred_override_rate": 0.3333333333333333,
+        "target_override_rate": 0.0
+      },
+      "val": {
+        "rows": 6,
+        "groups": 1,
+        "mae": 0.5054790377616882,
+        "top1_acc": 0.0,
+        "override_agreement": 1.0,
+        "pred_override_rate": 1.0,
+        "target_override_rate": 1.0
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 0.07102592848241329,
+      "train": {
+        "rows": 18,
+        "groups": 3,
+        "mae": 0.28917577862739563,
+        "top1_acc": 0.3333333333333333,
+        "override_agreement": 0.6666666666666666,
+        "pred_override_rate": 0.3333333333333333,
+        "target_override_rate": 0.0
+      },
+      "val": {
+        "rows": 6,
+        "groups": 1,
+        "mae": 0.5372639298439026,
+        "top1_acc": 0.0,
+        "override_agreement": 1.0,
+        "pred_override_rate": 1.0,
+        "target_override_rate": 1.0
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 0.030660412274301052,
+      "train": {
+        "rows": 18,
+        "groups": 3,
+        "mae": 0.3041151463985443,
+        "top1_acc": 0.3333333333333333,
+        "override_agreement": 0.6666666666666666,
+        "pred_override_rate": 0.3333333333333333,
+        "target_override_rate": 0.0
+      },
+      "val": {
+        "rows": 6,
+        "groups": 1,
+        "mae": 0.5679197311401367,
+        "top1_acc": 0.0,
+        "override_agreement": 0.0,
+        "pred_override_rate": 0.0,
+        "target_override_rate": 1.0
+      }
+    }
+  ],
+  "final_train": {
+    "rows": 18,
+    "groups": 3,
+    "mae": 0.3041151463985443,
+    "top1_acc": 0.3333333333333333,
+    "override_agreement": 0.6666666666666666,
+    "pred_override_rate": 0.3333333333333333,
+    "target_override_rate": 0.0
+  },
+  "final_val": {
+    "rows": 6,
+    "groups": 1,
+    "mae": 0.5679197311401367,
+    "top1_acc": 0.0,
+    "override_agreement": 0.0,
+    "pred_override_rate": 0.0,
+    "target_override_rate": 1.0
+  }
+}

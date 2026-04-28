@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-04-26 backfilled",
+  "candidate_id": "sp_iter_0001",
+  "parent_id": "champion_cbp",
+  "latest_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_final_candidate.pth",
+  "checkpoints": [
+    {
+      "iteration": 1,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0001_candidate.pth",
+      "collect_mean_reward": 0.49416342412451364,
+      "collect_score_ge_1": 0.31906614785992216,
+      "kl_loss": 0.00010993868937956078,
+      "entropy": 0.27718987222760916
+    },
+    {
+      "iteration": 2,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0002_candidate.pth",
+      "collect_mean_reward": 0.445424013434089,
+      "collect_score_ge_1": 0.28883291351805207,
+      "kl_loss": 0.0003870971298359412,
+      "entropy": 0.2770901083325346
+    },
+    {
+      "iteration": 3,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0003_candidate.pth",
+      "collect_mean_reward": 0.4365582191780822,
+      "collect_score_ge_1": 0.2906678082191781,
+      "kl_loss": 0.0005673584485824298,
+      "entropy": 0.27102893746147555
+    },
+    {
+      "iteration": 4,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0004_candidate.pth",
+      "collect_mean_reward": 0.4759267149552621,
+      "collect_score_ge_1": 0.31103536429484446,
+      "kl_loss": 0.0008160148063325323,
+      "entropy": 0.26878566046555835
+    },
+    {
+      "iteration": 5,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0005_candidate.pth",
+      "collect_mean_reward": 0.48360655737704916,
+      "collect_score_ge_1": 0.3127696289905091,
+      "kl_loss": 0.0010719570806638028,
+      "entropy": 0.2773619191721082
+    },
+    {
+      "iteration": 6,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0006_candidate.pth",
+      "collect_mean_reward": 0.4546229228802727,
+      "collect_score_ge_1": 0.30123561994034936,
+      "kl_loss": 0.0011359569665122156,
+      "entropy": 0.27370452259977657
+    },
+    {
+      "iteration": 7,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0007_candidate.pth",
+      "collect_mean_reward": 0.45045751633986925,
+      "collect_score_ge_1": 0.2932461873638344,
+      "kl_loss": 0.0013281560435037438,
+      "entropy": 0.2763572620848815
+    },
+    {
+      "iteration": 8,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0008_candidate.pth",
+      "collect_mean_reward": 0.4665228645383952,
+      "collect_score_ge_1": 0.30241587575496115,
+      "kl_loss": 0.0015941900249648218,
+      "entropy": 0.27498961705714464
+    },
+    {
+      "iteration": 9,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0009_candidate.pth",
+      "collect_mean_reward": 0.45425170068027204,
+      "collect_score_ge_1": 0.3031462585034014,
+      "kl_loss": 0.001953754540105971,
+      "entropy": 0.28316275402903557
+    },
+    {
+      "iteration": 10,
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0010_candidate.pth",
+      "collect_mean_reward": 0.44234196011879506,
+      "collect_score_ge_1": 0.28722952906236743,
+      "kl_loss": 0.002383427602277758,
+      "entropy": 0.2788019186506669
+    }
+  ]
+}

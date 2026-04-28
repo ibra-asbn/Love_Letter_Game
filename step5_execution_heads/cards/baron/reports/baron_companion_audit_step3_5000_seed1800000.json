@@ -1,0 +1,1403 @@
+{
+  "created_at": "2026-04-26 14:54:05 CEST",
+  "policy_name": "step3_fast_dagger",
+  "games": 5000,
+  "args": {
+    "policy_name": "step3_fast_dagger",
+    "games": 5000,
+    "seed_start": 1800000,
+    "seed_stride": 10000,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output_json": "step5_execution_heads/cards/baron/reports/baron_companion_audit_step3_5000_seed1800000.json",
+    "output_md": "step5_execution_heads/cards/baron/reports/baron_companion_audit_step3_5000_seed1800000.md"
+  },
+  "global_rows": [
+    [
+      0,
+      {
+        "opportunities": 1394,
+        "played": 5,
+        "play_rate": 0.003586800573888092,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.0,
+        "played_mean_reward": -0.08,
+        "opportunity_winrate": 0.5078909612625538,
+        "duel_win_rate": 0.0,
+        "duel_loss_rate": 0.6,
+        "duel_tie_rate": 0.4,
+        "duel_no_target_rate": 0.0
+      }
+    ],
+    [
+      1,
+      {
+        "opportunities": 3689,
+        "played": 4,
+        "play_rate": 0.0010843046896177825,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.5,
+        "played_mean_reward": 0.6499999999999999,
+        "opportunity_winrate": 0.4619137977771754,
+        "duel_win_rate": 0.0,
+        "duel_loss_rate": 0.5,
+        "duel_tie_rate": 0.5,
+        "duel_no_target_rate": 0.0
+      }
+    ],
+    [
+      2,
+      {
+        "opportunities": 1186,
+        "played": 28,
+        "play_rate": 0.023608768971332208,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.25,
+        "played_mean_reward": 0.2785714285714285,
+        "opportunity_winrate": 0.42158516020236086,
+        "duel_win_rate": 0.32142857142857145,
+        "duel_loss_rate": 0.6785714285714286,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.0
+      }
+    ],
+    [
+      3,
+      {
+        "opportunities": 422,
+        "played": 422,
+        "play_rate": 1.0,
+        "forced": 422,
+        "forced_rate": 1.0,
+        "played_winrate": 0.1895734597156398,
+        "played_mean_reward": 0.23127962085308004,
+        "opportunity_winrate": 0.1895734597156398,
+        "duel_win_rate": 0.32701421800947866,
+        "duel_loss_rate": 0.6563981042654028,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.016587677725118485
+      }
+    ],
+    [
+      4,
+      {
+        "opportunities": 1178,
+        "played": 18,
+        "play_rate": 0.015280135823429542,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.6666666666666666,
+        "played_mean_reward": 1.1888888888888887,
+        "opportunity_winrate": 0.466893039049236,
+        "duel_win_rate": 0.9444444444444444,
+        "duel_loss_rate": 0.05555555555555555,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.0
+      }
+    ],
+    [
+      5,
+      {
+        "opportunities": 1521,
+        "played": 1436,
+        "play_rate": 0.9441157133464826,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.3593314763231198,
+        "played_mean_reward": 0.5413649025069608,
+        "opportunity_winrate": 0.3767258382642998,
+        "duel_win_rate": 0.5501392757660167,
+        "duel_loss_rate": 0.3983286908077994,
+        "duel_tie_rate": 0.04874651810584958,
+        "duel_no_target_rate": 0.002785515320334262
+      }
+    ],
+    [
+      6,
+      {
+        "opportunities": 1518,
+        "played": 1456,
+        "play_rate": 0.9591567852437418,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.41208791208791207,
+        "played_mean_reward": 0.6541208791208792,
+        "opportunity_winrate": 0.4137022397891963,
+        "duel_win_rate": 0.6586538461538461,
+        "duel_loss_rate": 0.29120879120879123,
+        "duel_tie_rate": 0.05013736263736264,
+        "duel_no_target_rate": 0.0
+      }
+    ],
+    [
+      7,
+      {
+        "opportunities": 1038,
+        "played": 1031,
+        "play_rate": 0.9932562620423893,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.5208535402521823,
+        "played_mean_reward": 0.8626576139670249,
+        "opportunity_winrate": 0.5202312138728323,
+        "duel_win_rate": 0.7827352085354026,
+        "duel_loss_rate": 0.17943743937924345,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.037827352085354024
+      }
+    ],
+    [
+      8,
+      {
+        "opportunities": 960,
+        "played": 960,
+        "play_rate": 1.0,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.6270833333333333,
+        "played_mean_reward": 1.0245833333333352,
+        "opportunity_winrate": 0.6270833333333333,
+        "duel_win_rate": 0.8447916666666667,
+        "duel_loss_rate": 0.11875,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.036458333333333336
+      }
+    ],
+    [
+      9,
+      {
+        "opportunities": 1176,
+        "played": 1176,
+        "play_rate": 1.0,
+        "forced": 0,
+        "forced_rate": 0.0,
+        "played_winrate": 0.7210884353741497,
+        "played_mean_reward": 1.2382653061224715,
+        "opportunity_winrate": 0.7210884353741497,
+        "duel_win_rate": 0.9778911564625851,
+        "duel_loss_rate": 0.0,
+        "duel_tie_rate": 0.0,
+        "duel_no_target_rate": 0.022108843537414966
+      }
+    ]
+  ],
+  "config_rows": {
+    "vs_0H_3R": [
+      [
+        0,
+        {
+          "opportunities": 387,
+          "played": 2,
+          "play_rate": 0.00516795865633075,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.6175710594315246,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.5,
+          "duel_tie_rate": 0.5,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 960,
+          "played": 0,
+          "play_rate": 0.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.58125,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 332,
+          "played": 6,
+          "play_rate": 0.018072289156626505,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5,
+          "played_mean_reward": 0.7333333333333334,
+          "opportunity_winrate": 0.5572289156626506,
+          "duel_win_rate": 0.5,
+          "duel_loss_rate": 0.5,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 129,
+          "played": 129,
+          "play_rate": 1.0,
+          "forced": 129,
+          "forced_rate": 1.0,
+          "played_winrate": 0.24031007751937986,
+          "played_mean_reward": 0.34108527131782945,
+          "opportunity_winrate": 0.24031007751937986,
+          "duel_win_rate": 0.32558139534883723,
+          "duel_loss_rate": 0.6511627906976745,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.023255813953488372
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 316,
+          "played": 5,
+          "play_rate": 0.015822784810126583,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6,
+          "played_mean_reward": 1.2,
+          "opportunity_winrate": 0.5063291139240507,
+          "duel_win_rate": 0.8,
+          "duel_loss_rate": 0.2,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 392,
+          "played": 370,
+          "play_rate": 0.9438775510204082,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.4756756756756757,
+          "played_mean_reward": 0.7205405405405402,
+          "opportunity_winrate": 0.4872448979591837,
+          "duel_win_rate": 0.5972972972972973,
+          "duel_loss_rate": 0.34864864864864864,
+          "duel_tie_rate": 0.051351351351351354,
+          "duel_no_target_rate": 0.002702702702702703
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 417,
+          "played": 402,
+          "play_rate": 0.9640287769784173,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5497512437810945,
+          "played_mean_reward": 0.8547263681592022,
+          "opportunity_winrate": 0.5563549160671463,
+          "duel_win_rate": 0.6940298507462687,
+          "duel_loss_rate": 0.22139303482587064,
+          "duel_tie_rate": 0.0845771144278607,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 292,
+          "played": 291,
+          "play_rate": 0.9965753424657534,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6804123711340206,
+          "played_mean_reward": 1.0831615120274884,
+          "opportunity_winrate": 0.678082191780822,
+          "duel_win_rate": 0.8144329896907216,
+          "duel_loss_rate": 0.15807560137457044,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.027491408934707903
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 255,
+          "played": 255,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7058823529411765,
+          "played_mean_reward": 1.1482352941176441,
+          "opportunity_winrate": 0.7058823529411765,
+          "duel_win_rate": 0.8745098039215686,
+          "duel_loss_rate": 0.08627450980392157,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0392156862745098
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 279,
+          "played": 279,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7849462365591398,
+          "played_mean_reward": 1.333333333333328,
+          "opportunity_winrate": 0.7849462365591398,
+          "duel_win_rate": 0.978494623655914,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.021505376344086023
+        }
+      ]
+    ],
+    "vs_1H_2R": [
+      [
+        0,
+        {
+          "opportunities": 374,
+          "played": 1,
+          "play_rate": 0.00267379679144385,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.2,
+          "opportunity_winrate": 0.49732620320855614,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 1.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 917,
+          "played": 3,
+          "play_rate": 0.003271537622682661,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6666666666666666,
+          "played_mean_reward": 0.9333333333333332,
+          "opportunity_winrate": 0.47110141766630315,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.3333333333333333,
+          "duel_tie_rate": 0.6666666666666666,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 296,
+          "played": 10,
+          "play_rate": 0.033783783783783786,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.3,
+          "played_mean_reward": 0.36,
+          "opportunity_winrate": 0.4189189189189189,
+          "duel_win_rate": 0.4,
+          "duel_loss_rate": 0.6,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 112,
+          "played": 112,
+          "play_rate": 1.0,
+          "forced": 112,
+          "forced_rate": 1.0,
+          "played_winrate": 0.17857142857142858,
+          "played_mean_reward": 0.19107142857142864,
+          "opportunity_winrate": 0.17857142857142858,
+          "duel_win_rate": 0.3392857142857143,
+          "duel_loss_rate": 0.625,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.03571428571428571
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 331,
+          "played": 9,
+          "play_rate": 0.027190332326283987,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7777777777777778,
+          "played_mean_reward": 1.3555555555555558,
+          "opportunity_winrate": 0.48942598187311176,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 405,
+          "played": 388,
+          "play_rate": 0.9580246913580247,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.36855670103092786,
+          "played_mean_reward": 0.5510309278350519,
+          "opportunity_winrate": 0.37777777777777777,
+          "duel_win_rate": 0.5567010309278351,
+          "duel_loss_rate": 0.38402061855670105,
+          "duel_tie_rate": 0.05670103092783505,
+          "duel_no_target_rate": 0.002577319587628866
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 360,
+          "played": 346,
+          "play_rate": 0.9611111111111111,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.43641618497109824,
+          "played_mean_reward": 0.6959537572254335,
+          "opportunity_winrate": 0.4444444444444444,
+          "duel_win_rate": 0.6676300578034682,
+          "duel_loss_rate": 0.28901734104046245,
+          "duel_tie_rate": 0.04335260115606936,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 276,
+          "played": 275,
+          "play_rate": 0.9963768115942029,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5054545454545455,
+          "played_mean_reward": 0.8414545454545443,
+          "opportunity_winrate": 0.5036231884057971,
+          "duel_win_rate": 0.8072727272727273,
+          "duel_loss_rate": 0.14181818181818182,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.05090909090909091
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 266,
+          "played": 266,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6654135338345865,
+          "played_mean_reward": 1.0781954887218024,
+          "opportunity_winrate": 0.6654135338345865,
+          "duel_win_rate": 0.8533834586466166,
+          "duel_loss_rate": 0.09774436090225563,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.04887218045112782
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 287,
+          "played": 287,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7177700348432056,
+          "played_mean_reward": 1.2313588850174166,
+          "opportunity_winrate": 0.7177700348432056,
+          "duel_win_rate": 0.9860627177700348,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.013937282229965157
+        }
+      ]
+    ],
+    "vs_2H_1R": [
+      [
+        0,
+        {
+          "opportunities": 329,
+          "played": 2,
+          "play_rate": 0.0060790273556231,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.1,
+          "opportunity_winrate": 0.46808510638297873,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.5,
+          "duel_tie_rate": 0.5,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 922,
+          "played": 0,
+          "play_rate": 0.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.41865509761388287,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 264,
+          "played": 4,
+          "play_rate": 0.015151515151515152,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.1,
+          "opportunity_winrate": 0.32575757575757575,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 1.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 87,
+          "played": 87,
+          "play_rate": 1.0,
+          "forced": 87,
+          "forced_rate": 1.0,
+          "played_winrate": 0.1839080459770115,
+          "played_mean_reward": 0.1931034482758623,
+          "opportunity_winrate": 0.1839080459770115,
+          "duel_win_rate": 0.3103448275862069,
+          "duel_loss_rate": 0.6896551724137931,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 278,
+          "played": 3,
+          "play_rate": 0.01079136690647482,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.3333333333333333,
+          "played_mean_reward": 0.6,
+          "opportunity_winrate": 0.46402877697841727,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 392,
+          "played": 362,
+          "play_rate": 0.923469387755102,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.30386740331491713,
+          "played_mean_reward": 0.47458563535911646,
+          "opportunity_winrate": 0.33418367346938777,
+          "duel_win_rate": 0.5331491712707183,
+          "duel_loss_rate": 0.425414364640884,
+          "duel_tie_rate": 0.03591160220994475,
+          "duel_no_target_rate": 0.0055248618784530384
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 399,
+          "played": 378,
+          "play_rate": 0.9473684210526315,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.3783068783068783,
+          "played_mean_reward": 0.6116402116402114,
+          "opportunity_winrate": 0.37343358395989973,
+          "duel_win_rate": 0.656084656084656,
+          "duel_loss_rate": 0.29894179894179895,
+          "duel_tie_rate": 0.04497354497354497,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 251,
+          "played": 249,
+          "play_rate": 0.9920318725099602,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.46586345381526106,
+          "played_mean_reward": 0.7855421686746983,
+          "opportunity_winrate": 0.46613545816733065,
+          "duel_win_rate": 0.7630522088353414,
+          "duel_loss_rate": 0.20481927710843373,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0321285140562249
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 230,
+          "played": 230,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5782608695652174,
+          "played_mean_reward": 0.9426086956521734,
+          "opportunity_winrate": 0.5782608695652174,
+          "duel_win_rate": 0.8478260869565217,
+          "duel_loss_rate": 0.12173913043478261,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.030434782608695653
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 287,
+          "played": 287,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7317073170731707,
+          "played_mean_reward": 1.2383275261323987,
+          "opportunity_winrate": 0.7317073170731707,
+          "duel_win_rate": 0.9790940766550522,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.020905923344947737
+        }
+      ]
+    ],
+    "vs_3H": [
+      [
+        0,
+        {
+          "opportunities": 304,
+          "played": 0,
+          "play_rate": 0.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.4243421052631579,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 890,
+          "played": 1,
+          "play_rate": 0.0011235955056179776,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.2,
+          "opportunity_winrate": 0.3685393258426966,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 1.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 294,
+          "played": 8,
+          "play_rate": 0.027210884353741496,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.125,
+          "played_mean_reward": 0.02499999999999998,
+          "opportunity_winrate": 0.35714285714285715,
+          "duel_win_rate": 0.25,
+          "duel_loss_rate": 0.75,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 94,
+          "played": 94,
+          "play_rate": 1.0,
+          "forced": 94,
+          "forced_rate": 1.0,
+          "played_winrate": 0.13829787234042554,
+          "played_mean_reward": 0.16382978723404273,
+          "opportunity_winrate": 0.13829787234042554,
+          "duel_win_rate": 0.32978723404255317,
+          "duel_loss_rate": 0.6702127659574468,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 253,
+          "played": 1,
+          "play_rate": 0.003952569169960474,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 1.0,
+          "played_mean_reward": 1.4,
+          "opportunity_winrate": 0.391304347826087,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 332,
+          "played": 316,
+          "play_rate": 0.9518072289156626,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.27531645569620256,
+          "played_mean_reward": 0.3962025316455697,
+          "opportunity_winrate": 0.29518072289156627,
+          "duel_win_rate": 0.5063291139240507,
+          "duel_loss_rate": 0.4430379746835443,
+          "duel_tie_rate": 0.05063291139240506,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 342,
+          "played": 330,
+          "play_rate": 0.9649122807017544,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.25757575757575757,
+          "played_mean_reward": 0.4145454545454551,
+          "opportunity_winrate": 0.2543859649122807,
+          "duel_win_rate": 0.6090909090909091,
+          "duel_loss_rate": 0.3696969696969697,
+          "duel_tie_rate": 0.021212121212121213,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 219,
+          "played": 216,
+          "play_rate": 0.9863013698630136,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.3888888888888889,
+          "played_mean_reward": 0.6814814814814819,
+          "opportunity_winrate": 0.3926940639269406,
+          "duel_win_rate": 0.7314814814814815,
+          "duel_loss_rate": 0.22685185185185186,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.041666666666666664
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 209,
+          "played": 209,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5358851674641149,
+          "played_mean_reward": 0.8956937799043069,
+          "opportunity_winrate": 0.5358851674641149,
+          "duel_win_rate": 0.7942583732057417,
+          "duel_loss_rate": 0.18181818181818182,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.023923444976076555
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 323,
+          "played": 323,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6594427244582043,
+          "played_mean_reward": 1.1622291021671776,
+          "opportunity_winrate": 0.6594427244582043,
+          "duel_win_rate": 0.9690402476780186,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.030959752321981424
+        }
+      ]
+    ]
+  },
+  "phase_rows": {
+    "mid": [
+      [
+        0,
+        {
+          "opportunities": 472,
+          "played": 2,
+          "play_rate": 0.00423728813559322,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.2,
+          "opportunity_winrate": 0.527542372881356,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 1.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 1286,
+          "played": 0,
+          "play_rate": 0.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.463452566096423,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 378,
+          "played": 9,
+          "play_rate": 0.023809523809523808,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.2222222222222222,
+          "played_mean_reward": 0.17777777777777778,
+          "opportunity_winrate": 0.41534391534391535,
+          "duel_win_rate": 0.2222222222222222,
+          "duel_loss_rate": 0.7777777777777778,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 150,
+          "played": 150,
+          "play_rate": 1.0,
+          "forced": 150,
+          "forced_rate": 1.0,
+          "played_winrate": 0.18666666666666668,
+          "played_mean_reward": 0.23199999999999973,
+          "opportunity_winrate": 0.18666666666666668,
+          "duel_win_rate": 0.32666666666666666,
+          "duel_loss_rate": 0.6666666666666666,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.006666666666666667
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 423,
+          "played": 1,
+          "play_rate": 0.002364066193853428,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 1.0,
+          "played_mean_reward": 1.4,
+          "opportunity_winrate": 0.4562647754137116,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 556,
+          "played": 523,
+          "play_rate": 0.9406474820143885,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.33078393881453155,
+          "played_mean_reward": 0.48565965583174076,
+          "opportunity_winrate": 0.3471223021582734,
+          "duel_win_rate": 0.5411089866156787,
+          "duel_loss_rate": 0.4091778202676864,
+          "duel_tie_rate": 0.04780114722753346,
+          "duel_no_target_rate": 0.0019120458891013384
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 529,
+          "played": 510,
+          "play_rate": 0.9640831758034026,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.4019607843137255,
+          "played_mean_reward": 0.6168627450980382,
+          "opportunity_winrate": 0.4045368620037807,
+          "duel_win_rate": 0.6254901960784314,
+          "duel_loss_rate": 0.32745098039215687,
+          "duel_tie_rate": 0.047058823529411764,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 390,
+          "played": 390,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.517948717948718,
+          "played_mean_reward": 0.8615384615384586,
+          "opportunity_winrate": 0.517948717948718,
+          "duel_win_rate": 0.7923076923076923,
+          "duel_loss_rate": 0.16666666666666666,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.041025641025641026
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 372,
+          "played": 372,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6397849462365591,
+          "played_mean_reward": 1.0274193548387054,
+          "opportunity_winrate": 0.6397849462365591,
+          "duel_win_rate": 0.8629032258064516,
+          "duel_loss_rate": 0.10752688172043011,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.02956989247311828
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 380,
+          "played": 380,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6657894736842105,
+          "played_mean_reward": 1.1515789473684144,
+          "opportunity_winrate": 0.6657894736842105,
+          "duel_win_rate": 0.9894736842105263,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.010526315789473684
+        }
+      ]
+    ],
+    "late": [
+      [
+        0,
+        {
+          "opportunities": 489,
+          "played": 3,
+          "play_rate": 0.006134969325153374,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.5848670756646217,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.3333333333333333,
+          "duel_tie_rate": 0.6666666666666666,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 1134,
+          "played": 3,
+          "play_rate": 0.0026455026455026454,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.6666666666666666,
+          "played_mean_reward": 0.9333333333333332,
+          "opportunity_winrate": 0.5687830687830688,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.3333333333333333,
+          "duel_tie_rate": 0.6666666666666666,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 398,
+          "played": 18,
+          "play_rate": 0.04522613065326633,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.2222222222222222,
+          "played_mean_reward": 0.2666666666666666,
+          "opportunity_winrate": 0.4623115577889447,
+          "duel_win_rate": 0.3333333333333333,
+          "duel_loss_rate": 0.6666666666666666,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 156,
+          "played": 156,
+          "play_rate": 1.0,
+          "forced": 156,
+          "forced_rate": 1.0,
+          "played_winrate": 0.16666666666666666,
+          "played_mean_reward": 0.19615384615384632,
+          "opportunity_winrate": 0.16666666666666666,
+          "duel_win_rate": 0.2692307692307692,
+          "duel_loss_rate": 0.6923076923076923,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.038461538461538464
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 357,
+          "played": 14,
+          "play_rate": 0.0392156862745098,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.7142857142857143,
+          "played_mean_reward": 1.2428571428571427,
+          "opportunity_winrate": 0.5098039215686274,
+          "duel_win_rate": 0.9285714285714286,
+          "duel_loss_rate": 0.07142857142857142,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 471,
+          "played": 424,
+          "play_rate": 0.9002123142250531,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.38207547169811323,
+          "played_mean_reward": 0.5924528301886802,
+          "opportunity_winrate": 0.4118895966029724,
+          "duel_win_rate": 0.4834905660377358,
+          "duel_loss_rate": 0.46226415094339623,
+          "duel_tie_rate": 0.04716981132075472,
+          "duel_no_target_rate": 0.007075471698113208
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 550,
+          "played": 510,
+          "play_rate": 0.9272727272727272,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.4411764705882353,
+          "played_mean_reward": 0.696078431372547,
+          "opportunity_winrate": 0.44,
+          "duel_win_rate": 0.6196078431372549,
+          "duel_loss_rate": 0.33137254901960783,
+          "duel_tie_rate": 0.049019607843137254,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 411,
+          "played": 404,
+          "play_rate": 0.9829683698296837,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5396039603960396,
+          "played_mean_reward": 0.8732673267326696,
+          "opportunity_winrate": 0.537712895377129,
+          "duel_win_rate": 0.7227722772277227,
+          "duel_loss_rate": 0.2202970297029703,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.05693069306930693
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 345,
+          "played": 345,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.672463768115942,
+          "played_mean_reward": 1.0985507246376771,
+          "opportunity_winrate": 0.672463768115942,
+          "duel_win_rate": 0.7768115942028986,
+          "duel_loss_rate": 0.1536231884057971,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.06956521739130435
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 546,
+          "played": 546,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.86996336996337,
+          "played_mean_reward": 1.4465201465201483,
+          "opportunity_winrate": 0.86996336996337,
+          "duel_win_rate": 0.9597069597069597,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.040293040293040296
+        }
+      ]
+    ],
+    "early": [
+      [
+        0,
+        {
+          "opportunities": 433,
+          "played": 0,
+          "play_rate": 0.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": 0.0,
+          "opportunity_winrate": 0.3995381062355658,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        1,
+        {
+          "opportunities": 1269,
+          "played": 1,
+          "play_rate": 0.0007880220646178094,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.0,
+          "played_mean_reward": -0.2,
+          "opportunity_winrate": 0.36485421591804573,
+          "duel_win_rate": 0.0,
+          "duel_loss_rate": 1.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        2,
+        {
+          "opportunities": 410,
+          "played": 1,
+          "play_rate": 0.0024390243902439024,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 1.0,
+          "played_mean_reward": 1.4,
+          "opportunity_winrate": 0.3878048780487805,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        3,
+        {
+          "opportunities": 116,
+          "played": 116,
+          "play_rate": 1.0,
+          "forced": 116,
+          "forced_rate": 1.0,
+          "played_winrate": 0.22413793103448276,
+          "played_mean_reward": 0.27758620689655183,
+          "opportunity_winrate": 0.22413793103448276,
+          "duel_win_rate": 0.4051724137931034,
+          "duel_loss_rate": 0.5948275862068966,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        4,
+        {
+          "opportunities": 398,
+          "played": 3,
+          "play_rate": 0.007537688442211055,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.3333333333333333,
+          "played_mean_reward": 0.8666666666666668,
+          "opportunity_winrate": 0.4396984924623116,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        5,
+        {
+          "opportunities": 494,
+          "played": 489,
+          "play_rate": 0.9898785425101214,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.37014314928425357,
+          "played_mean_reward": 0.5566462167689167,
+          "opportunity_winrate": 0.3765182186234818,
+          "duel_win_rate": 0.6175869120654397,
+          "duel_loss_rate": 0.3312883435582822,
+          "duel_tie_rate": 0.05112474437627812,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        6,
+        {
+          "opportunities": 439,
+          "played": 436,
+          "play_rate": 0.9931662870159453,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.38990825688073394,
+          "played_mean_reward": 0.6486238532110072,
+          "opportunity_winrate": 0.3917995444191344,
+          "duel_win_rate": 0.7431192660550459,
+          "duel_loss_rate": 0.2018348623853211,
+          "duel_tie_rate": 0.05504587155963303,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        7,
+        {
+          "opportunities": 237,
+          "played": 237,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.4936708860759494,
+          "played_mean_reward": 0.8464135021097042,
+          "opportunity_winrate": 0.4936708860759494,
+          "duel_win_rate": 0.869198312236287,
+          "duel_loss_rate": 0.1308016877637131,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        8,
+        {
+          "opportunities": 243,
+          "played": 243,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.5432098765432098,
+          "played_mean_reward": 0.915226337448559,
+          "opportunity_winrate": 0.5432098765432098,
+          "duel_win_rate": 0.9135802469135802,
+          "duel_loss_rate": 0.08641975308641975,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ],
+      [
+        9,
+        {
+          "opportunities": 250,
+          "played": 250,
+          "play_rate": 1.0,
+          "forced": 0,
+          "forced_rate": 0.0,
+          "played_winrate": 0.48,
+          "played_mean_reward": 0.9151999999999986,
+          "opportunity_winrate": 0.48,
+          "duel_win_rate": 1.0,
+          "duel_loss_rate": 0.0,
+          "duel_tie_rate": 0.0,
+          "duel_no_target_rate": 0.0
+        }
+      ]
+    ]
+  }
+}

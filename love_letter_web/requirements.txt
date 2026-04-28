@@ -1,0 +1,7 @@
+fastapi
+gymnasium
+numpy
+pettingzoo
+torch
+streamlit
+uvicorn

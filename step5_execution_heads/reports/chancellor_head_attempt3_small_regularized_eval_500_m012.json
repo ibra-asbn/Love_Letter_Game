@@ -1,0 +1,2024 @@
+{
+  "created_at": "2026-04-26 13:20:29 CEST",
+  "args": {
+    "head": "chancellor_head_attempt3_small_regularized.pth",
+    "games": 500,
+    "seed_start": 850000,
+    "seed_stride": 10000,
+    "chancellor_margin": 0.12,
+    "example_limit": 12,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "chancellor_head_attempt3_small_regularized_eval_500_m012.json",
+    "markdown": "chancellor_head_attempt3_small_regularized_eval_500_m012.md",
+    "run_log": "step5_execution_heads/logs/2026-04-26_chancellor_head_attempt3_small_regularized_eval_500_m012.md"
+  },
+  "head_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step5_execution_heads/checkpoints/chancellor_head_attempt3_small_regularized.pth",
+  "policies": {
+    "baseline": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 500,
+          "wins": 284,
+          "winrate": 0.568,
+          "winrate_ci95": 0.04341972919307535,
+          "mean_reward": 0.8351999521255493,
+          "reward_std": 0.7891520857810974,
+          "reward_ci95": 0.06917223283457809,
+          "outcomes": {
+            "winner": {
+              "count": 284,
+              "rate": 0.568
+            },
+            "first_out": {
+              "count": 74,
+              "rate": 0.148
+            },
+            "second_out": {
+              "count": 53,
+              "rate": 0.106
+            },
+            "third_out": {
+              "count": 36,
+              "rate": 0.072
+            },
+            "final_loser": {
+              "count": 53,
+              "rate": 0.106
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 76,
+              "winrate": 0.608,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.8672000169754028,
+              "reward_std": 0.7585013508796692,
+              "reward_ci95": 0.13297114767760848
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 76,
+              "winrate": 0.608,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.9167999625205994,
+              "reward_std": 0.8206081986427307,
+              "reward_ci95": 0.1438589645388189
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 62,
+              "winrate": 0.496,
+              "winrate_ci95": 0.08765105974944057,
+              "mean_reward": 0.6992000341415405,
+              "reward_std": 0.7460291385650635,
+              "reward_ci95": 0.1307846726689395
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 70,
+              "winrate": 0.56,
+              "winrate_ci95": 0.0870204683968088,
+              "mean_reward": 0.8575999140739441,
+              "reward_std": 0.8118388652801514,
+              "reward_ci95": 0.1423216272871564
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 169,
+              "baron_losing_comparisons": 26,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 139,
+              "chancellor_bottomed_king_plus": 46,
+              "chancellor_choices": 176,
+              "chancellor_kept_highest": 133,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 18,
+              "chancellor_known_draws": 26,
+              "chancellor_plays": 176,
+              "chancellor_used_win_games": 98,
+              "forced_countess_discards": 37,
+              "guard_attempts": 540,
+              "guard_hits": 165,
+              "guard_misses": 375,
+              "known_guard_attempts": 73,
+              "known_guard_correct_guess": 64,
+              "known_guard_hits": 63,
+              "main_round_wins": 259,
+              "priest_on_unknown": 222,
+              "priest_plays": 235,
+              "priest_to_guard_attempts": 26,
+              "priest_to_guard_hits": 26,
+              "spy_bonus_win_games": 103,
+              "spy_bonus_wins": 103,
+              "spy_played_win_games": 98,
+              "spy_plays": 159,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 13
+            },
+            "guard_hit_rate": 0.3055555555555556,
+            "known_guard_hit_rate": 0.863013698630137,
+            "known_guard_correct_guess_rate": 0.8767123287671232,
+            "priest_to_guard_hit_rate": 1.0,
+            "priest_on_unknown_rate": 0.9446808510638298,
+            "baron_win_rate": 0.8224852071005917,
+            "baron_loss_rate": 0.15384615384615385,
+            "baron_tie_rate": 0.023668639053254437,
+            "chancellor_keep_highest_rate": 0.7556818181818182,
+            "chancellor_known_draw_win_rate": 0.6923076923076923,
+            "spy_bonus_per_spy_play": 0.6477987421383647,
+            "voluntary_countess_win_rate": 0.6190476190476191
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 500,
+          "wins": 232,
+          "winrate": 0.464,
+          "winrate_ci95": 0.04371318534264004,
+          "mean_reward": 0.7039999961853027,
+          "reward_std": 0.795628011226654,
+          "reward_ci95": 0.06973987251425864,
+          "outcomes": {
+            "winner": {
+              "count": 232,
+              "rate": 0.464
+            },
+            "first_out": {
+              "count": 85,
+              "rate": 0.17
+            },
+            "second_out": {
+              "count": 73,
+              "rate": 0.146
+            },
+            "third_out": {
+              "count": 57,
+              "rate": 0.114
+            },
+            "final_loser": {
+              "count": 53,
+              "rate": 0.106
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 60,
+              "winrate": 0.48,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.6975999474525452,
+              "reward_std": 0.7537070512771606,
+              "reward_ci95": 0.1321306730987778
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 63,
+              "winrate": 0.504,
+              "winrate_ci95": 0.08765105974944057,
+              "mean_reward": 0.7471999526023865,
+              "reward_std": 0.8155072927474976,
+              "reward_ci95": 0.14296473012406521
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 60,
+              "winrate": 0.48,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.7487999796867371,
+              "reward_std": 0.8416759967803955,
+              "reward_ci95": 0.1475523143137811
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.6223999261856079,
+              "reward_std": 0.7615630626678467,
+              "reward_ci95": 0.13350789304459829
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 150,
+              "baron_losing_comparisons": 40,
+              "baron_tie_comparisons": 7,
+              "baron_winning_comparisons": 103,
+              "chancellor_bottomed_king_plus": 48,
+              "chancellor_choices": 165,
+              "chancellor_kept_highest": 120,
+              "chancellor_kept_princess": 6,
+              "chancellor_known_draw_win_games": 23,
+              "chancellor_known_draws": 38,
+              "chancellor_plays": 165,
+              "chancellor_used_win_games": 81,
+              "forced_countess_discards": 40,
+              "guard_attempts": 546,
+              "guard_hits": 182,
+              "guard_misses": 364,
+              "known_guard_attempts": 82,
+              "known_guard_correct_guess": 72,
+              "known_guard_hits": 71,
+              "main_round_wins": 209,
+              "priest_on_unknown": 184,
+              "priest_plays": 190,
+              "priest_to_guard_attempts": 31,
+              "priest_to_guard_hits": 30,
+              "spy_bonus_win_games": 94,
+              "spy_bonus_wins": 94,
+              "spy_played_win_games": 95,
+              "spy_plays": 153,
+              "voluntary_countess_discards": 23,
+              "voluntary_countess_win_games": 16
+            },
+            "guard_hit_rate": 0.3333333333333333,
+            "known_guard_hit_rate": 0.8658536585365854,
+            "known_guard_correct_guess_rate": 0.8780487804878049,
+            "priest_to_guard_hit_rate": 0.967741935483871,
+            "priest_on_unknown_rate": 0.968421052631579,
+            "baron_win_rate": 0.6866666666666666,
+            "baron_loss_rate": 0.26666666666666666,
+            "baron_tie_rate": 0.04666666666666667,
+            "chancellor_keep_highest_rate": 0.7272727272727273,
+            "chancellor_known_draw_win_rate": 0.6052631578947368,
+            "spy_bonus_per_spy_play": 0.6143790849673203,
+            "voluntary_countess_win_rate": 0.6956521739130435
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 500,
+          "wins": 196,
+          "winrate": 0.392,
+          "winrate_ci95": 0.042792325891449275,
+          "mean_reward": 0.5956000089645386,
+          "reward_std": 0.7654936909675598,
+          "reward_ci95": 0.06709848075041876,
+          "outcomes": {
+            "winner": {
+              "count": 196,
+              "rate": 0.392
+            },
+            "first_out": {
+              "count": 98,
+              "rate": 0.196
+            },
+            "second_out": {
+              "count": 82,
+              "rate": 0.164
+            },
+            "third_out": {
+              "count": 70,
+              "rate": 0.14
+            },
+            "final_loser": {
+              "count": 54,
+              "rate": 0.108
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5615999698638916,
+              "reward_std": 0.7308934926986694,
+              "reward_ci95": 0.1281312803705238
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 53,
+              "winrate": 0.424,
+              "winrate_ci95": 0.08663537007019709,
+              "mean_reward": 0.6639999151229858,
+              "reward_std": 0.805024266242981,
+              "reward_ci95": 0.14112697966789461
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.6384000182151794,
+              "reward_std": 0.8074436783790588,
+              "reward_ci95": 0.14155111939680776
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5183998942375183,
+              "reward_std": 0.7043163180351257,
+              "reward_ci95": 0.12347209814466695
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 167,
+              "baron_losing_comparisons": 43,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 120,
+              "chancellor_bottomed_king_plus": 42,
+              "chancellor_choices": 152,
+              "chancellor_kept_highest": 113,
+              "chancellor_kept_princess": 6,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 21,
+              "chancellor_plays": 152,
+              "chancellor_used_win_games": 68,
+              "forced_countess_discards": 29,
+              "guard_attempts": 545,
+              "guard_hits": 177,
+              "guard_misses": 368,
+              "known_guard_attempts": 81,
+              "known_guard_correct_guess": 72,
+              "known_guard_hits": 67,
+              "main_round_wins": 167,
+              "priest_on_unknown": 182,
+              "priest_plays": 188,
+              "priest_to_guard_attempts": 32,
+              "priest_to_guard_hits": 28,
+              "spy_bonus_win_games": 80,
+              "spy_bonus_wins": 80,
+              "spy_played_win_games": 72,
+              "spy_plays": 158,
+              "voluntary_countess_discards": 19,
+              "voluntary_countess_win_games": 13
+            },
+            "guard_hit_rate": 0.3247706422018349,
+            "known_guard_hit_rate": 0.8271604938271605,
+            "known_guard_correct_guess_rate": 0.8888888888888888,
+            "priest_to_guard_hit_rate": 0.875,
+            "priest_on_unknown_rate": 0.9680851063829787,
+            "baron_win_rate": 0.718562874251497,
+            "baron_loss_rate": 0.25748502994011974,
+            "baron_tie_rate": 0.023952095808383235,
+            "chancellor_keep_highest_rate": 0.743421052631579,
+            "chancellor_known_draw_win_rate": 0.6666666666666666,
+            "spy_bonus_per_spy_play": 0.5063291139240507,
+            "voluntary_countess_win_rate": 0.6842105263157895
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 500,
+          "wins": 165,
+          "winrate": 0.33,
+          "winrate_ci95": 0.04121596195650418,
+          "mean_reward": 0.524399995803833,
+          "reward_std": 0.7536343336105347,
+          "reward_ci95": 0.06605896576359675,
+          "outcomes": {
+            "winner": {
+              "count": 165,
+              "rate": 0.33
+            },
+            "first_out": {
+              "count": 115,
+              "rate": 0.23
+            },
+            "second_out": {
+              "count": 109,
+              "rate": 0.218
+            },
+            "third_out": {
+              "count": 61,
+              "rate": 0.122
+            },
+            "final_loser": {
+              "count": 50,
+              "rate": 0.1
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5871999859809875,
+              "reward_std": 0.7906429171562195,
+              "reward_ci95": 0.13860582249147746
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 40,
+              "winrate": 0.32,
+              "winrate_ci95": 0.08177687497086202,
+              "mean_reward": 0.4848000109195709,
+              "reward_std": 0.7102739214897156,
+              "reward_ci95": 0.12451651250566718
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 40,
+              "winrate": 0.32,
+              "winrate_ci95": 0.08177687497086202,
+              "mean_reward": 0.5215998888015747,
+              "reward_std": 0.7482870221138,
+              "reward_ci95": 0.13118050371788925
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 38,
+              "winrate": 0.304,
+              "winrate_ci95": 0.08063850665283924,
+              "mean_reward": 0.5040000081062317,
+              "reward_std": 0.7591995000839233,
+              "reward_ci95": 0.13309354140163862
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 144,
+              "baron_losing_comparisons": 44,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 99,
+              "chancellor_bottomed_king_plus": 42,
+              "chancellor_choices": 145,
+              "chancellor_kept_highest": 107,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 15,
+              "chancellor_known_draws": 24,
+              "chancellor_plays": 145,
+              "chancellor_used_win_games": 61,
+              "forced_countess_discards": 29,
+              "guard_attempts": 551,
+              "guard_hits": 191,
+              "guard_misses": 360,
+              "known_guard_attempts": 71,
+              "known_guard_correct_guess": 68,
+              "known_guard_hits": 64,
+              "main_round_wins": 142,
+              "priest_on_unknown": 168,
+              "priest_plays": 176,
+              "priest_to_guard_attempts": 30,
+              "priest_to_guard_hits": 27,
+              "spy_bonus_win_games": 71,
+              "spy_bonus_wins": 71,
+              "spy_played_win_games": 79,
+              "spy_plays": 138,
+              "voluntary_countess_discards": 25,
+              "voluntary_countess_win_games": 21
+            },
+            "guard_hit_rate": 0.3466424682395644,
+            "known_guard_hit_rate": 0.9014084507042254,
+            "known_guard_correct_guess_rate": 0.9577464788732394,
+            "priest_to_guard_hit_rate": 0.9,
+            "priest_on_unknown_rate": 0.9545454545454546,
+            "baron_win_rate": 0.6875,
+            "baron_loss_rate": 0.3055555555555556,
+            "baron_tie_rate": 0.006944444444444444,
+            "chancellor_keep_highest_rate": 0.7379310344827587,
+            "chancellor_known_draw_win_rate": 0.625,
+            "spy_bonus_per_spy_play": 0.5144927536231884,
+            "voluntary_countess_win_rate": 0.84
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.3992
+    },
+    "step5_chancellor": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 500,
+          "wins": 287,
+          "winrate": 0.574,
+          "winrate_ci95": 0.043344282169624174,
+          "mean_reward": 0.8420000076293945,
+          "reward_std": 0.7883629202842712,
+          "reward_ci95": 0.06910306049511948,
+          "outcomes": {
+            "winner": {
+              "count": 287,
+              "rate": 0.574
+            },
+            "first_out": {
+              "count": 74,
+              "rate": 0.148
+            },
+            "second_out": {
+              "count": 57,
+              "rate": 0.114
+            },
+            "third_out": {
+              "count": 38,
+              "rate": 0.076
+            },
+            "final_loser": {
+              "count": 44,
+              "rate": 0.088
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 75,
+              "winrate": 0.6,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.8528000116348267,
+              "reward_std": 0.7556269764900208,
+              "reward_ci95": 0.13246725317425984
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 76,
+              "winrate": 0.608,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.9167999029159546,
+              "reward_std": 0.8206081986427307,
+              "reward_ci95": 0.1438589645388189
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 63,
+              "winrate": 0.504,
+              "winrate_ci95": 0.08765105974944057,
+              "mean_reward": 0.7087999582290649,
+              "reward_std": 0.747263491153717,
+              "reward_ci95": 0.13100106613781234
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 73,
+              "winrate": 0.584,
+              "winrate_ci95": 0.0864080399222202,
+              "mean_reward": 0.8895999193191528,
+              "reward_std": 0.8109080195426941,
+              "reward_ci95": 0.14215844987165357
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 171,
+              "baron_losing_comparisons": 26,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 141,
+              "chancellor_bottomed_king_plus": 23,
+              "chancellor_choices": 172,
+              "chancellor_kept_highest": 153,
+              "chancellor_kept_princess": 32,
+              "chancellor_known_draw_win_games": 20,
+              "chancellor_known_draws": 27,
+              "chancellor_plays": 172,
+              "chancellor_used_win_games": 101,
+              "forced_countess_discards": 36,
+              "guard_attempts": 529,
+              "guard_hits": 160,
+              "guard_misses": 369,
+              "known_guard_attempts": 71,
+              "known_guard_correct_guess": 62,
+              "known_guard_hits": 61,
+              "main_round_wins": 263,
+              "priest_on_unknown": 221,
+              "priest_plays": 234,
+              "priest_to_guard_attempts": 26,
+              "priest_to_guard_hits": 26,
+              "spy_bonus_win_games": 103,
+              "spy_bonus_wins": 103,
+              "spy_played_win_games": 101,
+              "spy_plays": 160,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 14
+            },
+            "guard_hit_rate": 0.30245746691871456,
+            "known_guard_hit_rate": 0.8591549295774648,
+            "known_guard_correct_guess_rate": 0.8732394366197183,
+            "priest_to_guard_hit_rate": 1.0,
+            "priest_on_unknown_rate": 0.9444444444444444,
+            "baron_win_rate": 0.8245614035087719,
+            "baron_loss_rate": 0.15204678362573099,
+            "baron_tie_rate": 0.023391812865497075,
+            "chancellor_keep_highest_rate": 0.8895348837209303,
+            "chancellor_known_draw_win_rate": 0.7407407407407407,
+            "spy_bonus_per_spy_play": 0.64375,
+            "voluntary_countess_win_rate": 0.6666666666666666
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 165,
+              "forced": 7,
+              "override_900_to_903": 1,
+              "override_900_to_904": 1,
+              "override_900_to_905": 4,
+              "override_901_to_900": 1,
+              "override_902_to_900": 7,
+              "override_902_to_901": 6,
+              "override_902_to_904": 1,
+              "override_902_to_905": 2,
+              "override_904_to_900": 6,
+              "override_904_to_901": 2,
+              "override_904_to_902": 3,
+              "override_904_to_905": 1,
+              "overrides": 35,
+              "sum_best_margin": 11
+            },
+            "override_rate": 0.21212121212121213,
+            "mean_best_margin": 0.07154041553537051,
+            "examples": [
+              {
+                "pool": [
+                  6,
+                  1,
+                  5
+                ],
+                "deck_remaining": 2,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.2069002091884613,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.08322229981422424,
+                  "902": -0.008112654089927673,
+                  "903": 0.008076518774032593,
+                  "904": 0.2069002091884613,
+                  "905": 0.1846504807472229
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  2,
+                  5
+                ],
+                "deck_remaining": 0,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.1444208323955536,
+                "scores": {
+                  "900": 0.1444208323955536,
+                  "901": 0.09779495000839233,
+                  "902": -0.07251119613647461,
+                  "903": -0.11740094423294067,
+                  "904": 0.0,
+                  "905": -0.054829806089401245
+                }
+              },
+              {
+                "pool": [
+                  6,
+                  3,
+                  5
+                ],
+                "deck_remaining": 7,
+                "model_action": 900,
+                "best_action": 905,
+                "margin": 0.1630277782678604,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.0016797855496406555,
+                  "902": 0.032205939292907715,
+                  "903": 0.07904583215713501,
+                  "904": 0.08471156656742096,
+                  "905": 0.1630277782678604
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  7,
+                  5
+                ],
+                "deck_remaining": 0,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.21635094285011292,
+                "scores": {
+                  "900": 0.21635094285011292,
+                  "901": 0.2095121145248413,
+                  "902": 0.0,
+                  "903": -0.001984633505344391,
+                  "904": 0.17122706770896912,
+                  "905": 0.15984845161437988
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  2,
+                  0
+                ],
+                "deck_remaining": 5,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.1547485888004303,
+                "scores": {
+                  "900": 0.14222821593284607,
+                  "901": 0.1547485888004303,
+                  "902": 0.0,
+                  "903": -0.16806504130363464,
+                  "904": 0.027900949120521545,
+                  "905": 0.013509050011634827
+                }
+              },
+              {
+                "pool": [
+                  1,
+                  1,
+                  0
+                ],
+                "deck_remaining": 2,
+                "model_action": 900,
+                "best_action": 905,
+                "margin": 0.1307402402162552,
+                "scores": {
+                  "900": 0.0,
+                  "901": -0.02541690319776535,
+                  "902": -0.015082724392414093,
+                  "903": -0.04730946570634842,
+                  "904": 0.03398168832063675,
+                  "905": 0.1307402402162552
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  1
+                ],
+                "deck_remaining": 10,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.2791835367679596,
+                "scores": {
+                  "900": 0.2791835367679596,
+                  "901": 0.23807477951049805,
+                  "902": 0.0,
+                  "903": -0.0044745877385139465,
+                  "904": 0.10405100882053375,
+                  "905": 0.08033402264118195
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  6,
+                  1
+                ],
+                "deck_remaining": 5,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.3495849370956421,
+                "scores": {
+                  "900": 0.3197033405303955,
+                  "901": 0.3495849370956421,
+                  "902": 0.0,
+                  "903": 0.042256854474544525,
+                  "904": 0.16120214760303497,
+                  "905": 0.10155182331800461
+                }
+              },
+              {
+                "pool": [
+                  3,
+                  1,
+                  9
+                ],
+                "deck_remaining": 8,
+                "model_action": 900,
+                "best_action": 905,
+                "margin": 0.20756542682647705,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.006924182176589966,
+                  "902": -0.08400383591651917,
+                  "903": -0.08374935388565063,
+                  "904": 0.16017568111419678,
+                  "905": 0.20756542682647705
+                }
+              },
+              {
+                "pool": [
+                  0,
+                  7,
+                  9
+                ],
+                "deck_remaining": 12,
+                "model_action": 902,
+                "best_action": 904,
+                "margin": 0.22327867150306702,
+                "scores": {
+                  "900": 0.1252633035182953,
+                  "901": 0.050291210412979126,
+                  "902": 0.0,
+                  "903": 0.0210379958152771,
+                  "904": 0.22327867150306702,
+                  "905": 0.2131635546684265
+                }
+              },
+              {
+                "pool": [
+                  2,
+                  1,
+                  6
+                ],
+                "deck_remaining": 2,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.17100189626216888,
+                "scores": {
+                  "900": 0.17100189626216888,
+                  "901": 0.12240929901599884,
+                  "902": 0.07225817441940308,
+                  "903": 0.01221783459186554,
+                  "904": 0.0,
+                  "905": 0.13727673888206482
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  3
+                ],
+                "deck_remaining": 0,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.22238612174987793,
+                "scores": {
+                  "900": 0.22238612174987793,
+                  "901": 0.1771930456161499,
+                  "902": -0.13228967785835266,
+                  "903": -0.07991264760494232,
+                  "904": 0.0,
+                  "905": -0.01404455304145813
+                }
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 500,
+          "wins": 241,
+          "winrate": 0.482,
+          "winrate_ci95": 0.04379852329930771,
+          "mean_reward": 0.7324000000953674,
+          "reward_std": 0.8054751753807068,
+          "reward_ci95": 0.07060301536186608,
+          "outcomes": {
+            "winner": {
+              "count": 241,
+              "rate": 0.482
+            },
+            "first_out": {
+              "count": 81,
+              "rate": 0.162
+            },
+            "second_out": {
+              "count": 77,
+              "rate": 0.154
+            },
+            "third_out": {
+              "count": 51,
+              "rate": 0.102
+            },
+            "final_loser": {
+              "count": 50,
+              "rate": 0.1
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 60,
+              "winrate": 0.48,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.7183999419212341,
+              "reward_std": 0.7777283787727356,
+              "reward_ci95": 0.13634179982579384
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 63,
+              "winrate": 0.504,
+              "winrate_ci95": 0.08765105974944057,
+              "mean_reward": 0.753600001335144,
+              "reward_std": 0.822147786617279,
+              "reward_ci95": 0.1441288619459427
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 62,
+              "winrate": 0.496,
+              "winrate_ci95": 0.08765105974944057,
+              "mean_reward": 0.7711999416351318,
+              "reward_std": 0.8434990048408508,
+              "reward_ci95": 0.1478718985188821
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 56,
+              "winrate": 0.448,
+              "winrate_ci95": 0.08717854385569881,
+              "mean_reward": 0.6863998770713806,
+              "reward_std": 0.7737021446228027,
+              "reward_ci95": 0.13563597007203956
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 152,
+              "baron_losing_comparisons": 40,
+              "baron_tie_comparisons": 7,
+              "baron_winning_comparisons": 105,
+              "chancellor_bottomed_king_plus": 22,
+              "chancellor_choices": 165,
+              "chancellor_kept_highest": 145,
+              "chancellor_kept_princess": 42,
+              "chancellor_known_draw_win_games": 18,
+              "chancellor_known_draws": 30,
+              "chancellor_plays": 165,
+              "chancellor_used_win_games": 90,
+              "forced_countess_discards": 39,
+              "guard_attempts": 546,
+              "guard_hits": 186,
+              "guard_misses": 360,
+              "known_guard_attempts": 83,
+              "known_guard_correct_guess": 75,
+              "known_guard_hits": 74,
+              "main_round_wins": 216,
+              "priest_on_unknown": 182,
+              "priest_plays": 185,
+              "priest_to_guard_attempts": 30,
+              "priest_to_guard_hits": 29,
+              "spy_bonus_win_games": 100,
+              "spy_bonus_wins": 100,
+              "spy_played_win_games": 104,
+              "spy_plays": 162,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 14
+            },
+            "guard_hit_rate": 0.34065934065934067,
+            "known_guard_hit_rate": 0.891566265060241,
+            "known_guard_correct_guess_rate": 0.9036144578313253,
+            "priest_to_guard_hit_rate": 0.9666666666666667,
+            "priest_on_unknown_rate": 0.9837837837837838,
+            "baron_win_rate": 0.6907894736842105,
+            "baron_loss_rate": 0.2631578947368421,
+            "baron_tie_rate": 0.046052631578947366,
+            "chancellor_keep_highest_rate": 0.8787878787878788,
+            "chancellor_known_draw_win_rate": 0.6,
+            "spy_bonus_per_spy_play": 0.6172839506172839,
+            "voluntary_countess_win_rate": 0.6666666666666666
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 157,
+              "forced": 8,
+              "override_900_to_901": 2,
+              "override_900_to_902": 1,
+              "override_900_to_903": 4,
+              "override_900_to_904": 4,
+              "override_900_to_905": 1,
+              "override_902_to_900": 15,
+              "override_902_to_901": 4,
+              "override_902_to_904": 4,
+              "override_902_to_905": 1,
+              "override_904_to_900": 9,
+              "override_904_to_901": 3,
+              "override_904_to_902": 1,
+              "override_904_to_905": 1,
+              "overrides": 50,
+              "sum_best_margin": 13
+            },
+            "override_rate": 0.3184713375796178,
+            "mean_best_margin": 0.08777695189520812,
+            "examples": [
+              {
+                "pool": [
+                  9,
+                  1,
+                  1
+                ],
+                "deck_remaining": 2,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.3223645091056824,
+                "scores": {
+                  "900": 0.3223645091056824,
+                  "901": 0.2893747091293335,
+                  "902": 0.0,
+                  "903": 0.06709155440330505,
+                  "904": 0.039870262145996094,
+                  "905": 0.08839505165815353
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  4
+                ],
+                "deck_remaining": 12,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.22242286801338196,
+                "scores": {
+                  "900": 0.22242286801338196,
+                  "901": 0.19494175910949707,
+                  "902": -0.013224616646766663,
+                  "903": -0.07063379138708115,
+                  "904": 0.0,
+                  "905": -0.059032879769802094
+                }
+              },
+              {
+                "pool": [
+                  6,
+                  1,
+                  5
+                ],
+                "deck_remaining": 2,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.13456836342811584,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.02297121286392212,
+                  "902": -0.057086072862148285,
+                  "903": -0.035780273377895355,
+                  "904": 0.13456836342811584,
+                  "905": 0.11312106251716614
+                }
+              },
+              {
+                "pool": [
+                  7,
+                  6,
+                  0
+                ],
+                "deck_remaining": 0,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.18086832761764526,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.04965110123157501,
+                  "902": 0.06195855140686035,
+                  "903": 0.0021871626377105713,
+                  "904": 0.18086832761764526,
+                  "905": 0.13219314813613892
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  5,
+                  4
+                ],
+                "deck_remaining": 5,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.16914182901382446,
+                "scores": {
+                  "900": 0.14984846115112305,
+                  "901": 0.16914182901382446,
+                  "902": 0.0,
+                  "903": 0.010602414608001709,
+                  "904": -0.028446674346923828,
+                  "905": -0.09872890263795853
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  5,
+                  1
+                ],
+                "deck_remaining": 3,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.19746363162994385,
+                "scores": {
+                  "900": 0.19746363162994385,
+                  "901": 0.12826672196388245,
+                  "902": 0.0,
+                  "903": 0.04704004526138306,
+                  "904": -0.0200691819190979,
+                  "905": -0.0011549890041351318
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  6
+                ],
+                "deck_remaining": 2,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.27149340510368347,
+                "scores": {
+                  "900": 0.27149340510368347,
+                  "901": 0.14459919929504395,
+                  "902": 0.0006002411246299744,
+                  "903": -0.11009763926267624,
+                  "904": 0.0,
+                  "905": -0.027701176702976227
+                }
+              },
+              {
+                "pool": [
+                  0,
+                  6,
+                  2
+                ],
+                "deck_remaining": 9,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.24260182678699493,
+                "scores": {
+                  "900": 0.12249072641134262,
+                  "901": 0.24260182678699493,
+                  "902": 0.0,
+                  "903": -0.01752787083387375,
+                  "904": 0.12322025746107101,
+                  "905": 0.06211399286985397
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  1
+                ],
+                "deck_remaining": 4,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.37228238582611084,
+                "scores": {
+                  "900": 0.37228238582611084,
+                  "901": 0.2830973267555237,
+                  "902": 0.0,
+                  "903": 0.05125909298658371,
+                  "904": 0.04660210758447647,
+                  "905": 0.1809450387954712
+                }
+              },
+              {
+                "pool": [
+                  6,
+                  7,
+                  1
+                ],
+                "deck_remaining": 5,
+                "model_action": 900,
+                "best_action": 903,
+                "margin": 0.14145836234092712,
+                "scores": {
+                  "900": 0.0,
+                  "901": -0.08928176760673523,
+                  "902": 0.08734913915395737,
+                  "903": 0.14145836234092712,
+                  "904": -0.04453442990779877,
+                  "905": 0.09738170355558395
+                }
+              },
+              {
+                "pool": [
+                  1,
+                  9,
+                  0
+                ],
+                "deck_remaining": 5,
+                "model_action": 900,
+                "best_action": 903,
+                "margin": 0.2641632854938507,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.0218505859375,
+                  "902": 0.1956280767917633,
+                  "903": 0.2641632854938507,
+                  "904": 0.03606903553009033,
+                  "905": 0.1146518811583519
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  1,
+                  9
+                ],
+                "deck_remaining": 12,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.2431311309337616,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.06475178897380829,
+                  "902": -0.00929558277130127,
+                  "903": -0.02009008824825287,
+                  "904": 0.2431311309337616,
+                  "905": 0.1543695032596588
+                }
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 500,
+          "wins": 202,
+          "winrate": 0.404,
+          "winrate_ci95": 0.0430115290218797,
+          "mean_reward": 0.61680006980896,
+          "reward_std": 0.7770956754684448,
+          "reward_ci95": 0.06811543942369555,
+          "outcomes": {
+            "winner": {
+              "count": 202,
+              "rate": 0.404
+            },
+            "first_out": {
+              "count": 98,
+              "rate": 0.196
+            },
+            "second_out": {
+              "count": 85,
+              "rate": 0.17
+            },
+            "third_out": {
+              "count": 67,
+              "rate": 0.134
+            },
+            "final_loser": {
+              "count": 48,
+              "rate": 0.096
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.5871999263763428,
+              "reward_std": 0.747366189956665,
+              "reward_ci95": 0.13101907493647832
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 55,
+              "winrate": 0.44,
+              "winrate_ci95": 0.08702046839680881,
+              "mean_reward": 0.6815999150276184,
+              "reward_std": 0.8048239350318909,
+              "reward_ci95": 0.1410918577124146
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.6527999639511108,
+              "reward_std": 0.8248710036277771,
+              "reward_ci95": 0.14460626037783786
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.5455999374389648,
+              "reward_std": 0.7192777991294861,
+              "reward_ci95": 0.12609496398329537
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 167,
+              "baron_losing_comparisons": 43,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 120,
+              "chancellor_bottomed_king_plus": 21,
+              "chancellor_choices": 145,
+              "chancellor_kept_highest": 130,
+              "chancellor_kept_princess": 32,
+              "chancellor_known_draw_win_games": 12,
+              "chancellor_known_draws": 17,
+              "chancellor_plays": 145,
+              "chancellor_used_win_games": 74,
+              "forced_countess_discards": 28,
+              "guard_attempts": 542,
+              "guard_hits": 180,
+              "guard_misses": 362,
+              "known_guard_attempts": 85,
+              "known_guard_correct_guess": 76,
+              "known_guard_hits": 71,
+              "main_round_wins": 176,
+              "priest_on_unknown": 182,
+              "priest_plays": 188,
+              "priest_to_guard_attempts": 33,
+              "priest_to_guard_hits": 29,
+              "spy_bonus_win_games": 81,
+              "spy_bonus_wins": 81,
+              "spy_played_win_games": 77,
+              "spy_plays": 161,
+              "voluntary_countess_discards": 20,
+              "voluntary_countess_win_games": 14
+            },
+            "guard_hit_rate": 0.33210332103321033,
+            "known_guard_hit_rate": 0.8352941176470589,
+            "known_guard_correct_guess_rate": 0.8941176470588236,
+            "priest_to_guard_hit_rate": 0.8787878787878788,
+            "priest_on_unknown_rate": 0.9680851063829787,
+            "baron_win_rate": 0.718562874251497,
+            "baron_loss_rate": 0.25748502994011974,
+            "baron_tie_rate": 0.023952095808383235,
+            "chancellor_keep_highest_rate": 0.896551724137931,
+            "chancellor_known_draw_win_rate": 0.7058823529411765,
+            "spy_bonus_per_spy_play": 0.5031055900621118,
+            "voluntary_countess_win_rate": 0.7
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 137,
+              "forced": 8,
+              "override_900_to_901": 2,
+              "override_900_to_902": 4,
+              "override_900_to_903": 1,
+              "override_900_to_904": 4,
+              "override_900_to_905": 2,
+              "override_901_to_900": 3,
+              "override_902_to_900": 5,
+              "override_902_to_901": 1,
+              "override_902_to_905": 3,
+              "override_904_to_900": 3,
+              "override_904_to_901": 3,
+              "override_904_to_902": 2,
+              "override_904_to_905": 2,
+              "overrides": 35,
+              "sum_best_margin": 10
+            },
+            "override_rate": 0.25547445255474455,
+            "mean_best_margin": 0.0774582381883677,
+            "examples": [
+              {
+                "pool": [
+                  9,
+                  4,
+                  1
+                ],
+                "deck_remaining": 4,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.38137850165367126,
+                "scores": {
+                  "900": 0.38137850165367126,
+                  "901": 0.17701303958892822,
+                  "902": 0.0,
+                  "903": 0.06976168602705002,
+                  "904": -0.01827600598335266,
+                  "905": 0.07708211988210678
+                }
+              },
+              {
+                "pool": [
+                  2,
+                  1,
+                  8
+                ],
+                "deck_remaining": 6,
+                "model_action": 904,
+                "best_action": 905,
+                "margin": 0.13878288865089417,
+                "scores": {
+                  "900": -0.1265593022108078,
+                  "901": -0.04486159235239029,
+                  "902": -0.16639430820941925,
+                  "903": -0.10165143013000488,
+                  "904": 0.0,
+                  "905": 0.13878288865089417
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  2,
+                  1
+                ],
+                "deck_remaining": 8,
+                "model_action": 900,
+                "best_action": 901,
+                "margin": 0.17346914112567902,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.17346914112567902,
+                  "902": -0.10010340064764023,
+                  "903": -0.08546405285596848,
+                  "904": -0.003389015793800354,
+                  "905": -0.071482352912426
+                }
+              },
+              {
+                "pool": [
+                  1,
+                  9,
+                  7
+                ],
+                "deck_remaining": 0,
+                "model_action": 904,
+                "best_action": 902,
+                "margin": 0.2021607756614685,
+                "scores": {
+                  "900": -0.08278006315231323,
+                  "901": -0.0641242265701294,
+                  "902": 0.2021607756614685,
+                  "903": 0.1916564702987671,
+                  "904": 0.0,
+                  "905": 0.03838026523590088
+                }
+              },
+              {
+                "pool": [
+                  0,
+                  9,
+                  5
+                ],
+                "deck_remaining": 4,
+                "model_action": 904,
+                "best_action": 902,
+                "margin": 0.28164905309677124,
+                "scores": {
+                  "900": 0.07193431258201599,
+                  "901": -0.09575463831424713,
+                  "902": 0.28164905309677124,
+                  "903": 0.19626039266586304,
+                  "904": 0.0,
+                  "905": 0.19543492794036865
+                }
+              },
+              {
+                "pool": [
+                  6,
+                  3,
+                  2
+                ],
+                "deck_remaining": 7,
+                "model_action": 900,
+                "best_action": 903,
+                "margin": 0.12730692327022552,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.032495565712451935,
+                  "902": 0.07117284834384918,
+                  "903": 0.12730692327022552,
+                  "904": -0.039803117513656616,
+                  "905": 0.04015631228685379
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  5,
+                  3
+                ],
+                "deck_remaining": 7,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.13097193837165833,
+                "scores": {
+                  "900": 0.13097193837165833,
+                  "901": 0.09094208478927612,
+                  "902": 0.0,
+                  "903": -0.032293662428855896,
+                  "904": 0.02034848928451538,
+                  "905": -0.017005205154418945
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  4,
+                  2
+                ],
+                "deck_remaining": 2,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.3613924980163574,
+                "scores": {
+                  "900": 0.3613924980163574,
+                  "901": 0.21380794048309326,
+                  "902": 0.0,
+                  "903": 0.05266660451889038,
+                  "904": 0.11754042655229568,
+                  "905": 0.14049524068832397
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  6,
+                  4
+                ],
+                "deck_remaining": 7,
+                "model_action": 900,
+                "best_action": 901,
+                "margin": 0.1894340217113495,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.1894340217113495,
+                  "902": -0.17582851648330688,
+                  "903": -0.09137962013483047,
+                  "904": 0.008655518293380737,
+                  "905": -0.09037592262029648
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  1,
+                  1
+                ],
+                "deck_remaining": 12,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.23496869206428528,
+                "scores": {
+                  "900": 0.20446939766407013,
+                  "901": 0.23496869206428528,
+                  "902": 0.0,
+                  "903": 0.07903112471103668,
+                  "904": 0.048654936254024506,
+                  "905": 0.187971293926239
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  0,
+                  1
+                ],
+                "deck_remaining": 11,
+                "model_action": 904,
+                "best_action": 900,
+                "margin": 0.16406649351119995,
+                "scores": {
+                  "900": 0.16406649351119995,
+                  "901": 0.09624577313661575,
+                  "902": 0.062121763825416565,
+                  "903": 0.12573671340942383,
+                  "904": 0.0,
+                  "905": 0.14267948269844055
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  3,
+                  3
+                ],
+                "deck_remaining": 7,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.191400408744812,
+                "scores": {
+                  "900": 0.191400408744812,
+                  "901": 0.15113037824630737,
+                  "902": 0.0,
+                  "903": 0.01541145145893097,
+                  "904": 0.11495692282915115,
+                  "905": 0.11520702391862869
+                }
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 500,
+          "wins": 165,
+          "winrate": 0.33,
+          "winrate_ci95": 0.04121596195650418,
+          "mean_reward": 0.5284000039100647,
+          "reward_std": 0.760574460029602,
+          "reward_ci95": 0.06666729317312302,
+          "outcomes": {
+            "winner": {
+              "count": 165,
+              "rate": 0.33
+            },
+            "first_out": {
+              "count": 116,
+              "rate": 0.232
+            },
+            "second_out": {
+              "count": 115,
+              "rate": 0.23
+            },
+            "third_out": {
+              "count": 63,
+              "rate": 0.126
+            },
+            "final_loser": {
+              "count": 41,
+              "rate": 0.082
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 46,
+              "winrate": 0.368,
+              "winrate_ci95": 0.08454414049950476,
+              "mean_reward": 0.564799964427948,
+              "reward_std": 0.7773036360740662,
+              "reward_ci95": 0.13626733360324603
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 40,
+              "winrate": 0.32,
+              "winrate_ci95": 0.08177687497086202,
+              "mean_reward": 0.4816000163555145,
+              "reward_std": 0.7101980447769165,
+              "reward_ci95": 0.12450320582672393
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 40,
+              "winrate": 0.32,
+              "winrate_ci95": 0.08177687497086202,
+              "mean_reward": 0.5343999862670898,
+              "reward_std": 0.7693222761154175,
+              "reward_ci95": 0.13486814910724676
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 39,
+              "winrate": 0.312,
+              "winrate_ci95": 0.08122179459233833,
+              "mean_reward": 0.5327998995780945,
+              "reward_std": 0.7809507846832275,
+              "reward_ci95": 0.13690671526150805
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 149,
+              "baron_losing_comparisons": 45,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 103,
+              "chancellor_bottomed_king_plus": 20,
+              "chancellor_choices": 144,
+              "chancellor_kept_highest": 129,
+              "chancellor_kept_princess": 30,
+              "chancellor_known_draw_win_games": 13,
+              "chancellor_known_draws": 19,
+              "chancellor_plays": 144,
+              "chancellor_used_win_games": 61,
+              "forced_countess_discards": 28,
+              "guard_attempts": 545,
+              "guard_hits": 188,
+              "guard_misses": 357,
+              "known_guard_attempts": 69,
+              "known_guard_correct_guess": 66,
+              "known_guard_hits": 62,
+              "main_round_wins": 147,
+              "priest_on_unknown": 167,
+              "priest_plays": 172,
+              "priest_to_guard_attempts": 29,
+              "priest_to_guard_hits": 26,
+              "spy_bonus_win_games": 68,
+              "spy_bonus_wins": 68,
+              "spy_played_win_games": 79,
+              "spy_plays": 140,
+              "voluntary_countess_discards": 24,
+              "voluntary_countess_win_games": 19
+            },
+            "guard_hit_rate": 0.344954128440367,
+            "known_guard_hit_rate": 0.8985507246376812,
+            "known_guard_correct_guess_rate": 0.9565217391304348,
+            "priest_to_guard_hit_rate": 0.896551724137931,
+            "priest_on_unknown_rate": 0.9709302325581395,
+            "baron_win_rate": 0.6912751677852349,
+            "baron_loss_rate": 0.30201342281879195,
+            "baron_tie_rate": 0.006711409395973154,
+            "chancellor_keep_highest_rate": 0.8958333333333334,
+            "chancellor_known_draw_win_rate": 0.6842105263157895,
+            "spy_bonus_per_spy_play": 0.4857142857142857,
+            "voluntary_countess_win_rate": 0.7916666666666666
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 141,
+              "forced": 3,
+              "override_900_to_901": 1,
+              "override_900_to_902": 1,
+              "override_900_to_904": 6,
+              "override_900_to_905": 3,
+              "override_901_to_900": 1,
+              "override_902_to_900": 11,
+              "override_902_to_901": 4,
+              "override_902_to_904": 3,
+              "override_902_to_905": 2,
+              "override_904_to_900": 2,
+              "override_904_to_902": 1,
+              "override_904_to_903": 1,
+              "override_904_to_905": 1,
+              "overrides": 37,
+              "sum_best_margin": 12
+            },
+            "override_rate": 0.2624113475177305,
+            "mean_best_margin": 0.08556756498754448,
+            "examples": [
+              {
+                "pool": [
+                  9,
+                  0,
+                  1
+                ],
+                "deck_remaining": 7,
+                "model_action": 904,
+                "best_action": 903,
+                "margin": 0.15237650275230408,
+                "scores": {
+                  "900": 0.1328936517238617,
+                  "901": 0.0908980593085289,
+                  "902": 0.09828676283359528,
+                  "903": 0.15237650275230408,
+                  "904": 0.0,
+                  "905": 0.09809821844100952
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  3,
+                  9
+                ],
+                "deck_remaining": 1,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.2368279993534088,
+                "scores": {
+                  "900": 0.0,
+                  "901": -0.006558597087860107,
+                  "902": -0.09028120338916779,
+                  "903": -0.10983911901712418,
+                  "904": 0.2368279993534088,
+                  "905": 0.13587920367717743
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  2,
+                  1
+                ],
+                "deck_remaining": 0,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.23682478070259094,
+                "scores": {
+                  "900": 0.23682478070259094,
+                  "901": 0.2040773332118988,
+                  "902": 0.0,
+                  "903": 0.04211804270744324,
+                  "904": 0.0046389102935791016,
+                  "905": 0.0565028190612793
+                }
+              },
+              {
+                "pool": [
+                  1,
+                  6,
+                  2
+                ],
+                "deck_remaining": 5,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.12758895754814148,
+                "scores": {
+                  "900": 0.01670496165752411,
+                  "901": 0.12758895754814148,
+                  "902": 0.0,
+                  "903": 0.011036723852157593,
+                  "904": 0.09830393642187119,
+                  "905": 0.008012980222702026
+                }
+              },
+              {
+                "pool": [
+                  1,
+                  6,
+                  9
+                ],
+                "deck_remaining": 3,
+                "model_action": 902,
+                "best_action": 904,
+                "margin": 0.34308528900146484,
+                "scores": {
+                  "900": 0.053875766694545746,
+                  "901": 0.064235158264637,
+                  "902": 0.0,
+                  "903": 0.0625273808836937,
+                  "904": 0.34308528900146484,
+                  "905": 0.29727208614349365
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  3,
+                  9
+                ],
+                "deck_remaining": 7,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.12312277406454086,
+                "scores": {
+                  "900": 0.0,
+                  "901": -0.01225367933511734,
+                  "902": -0.12159770727157593,
+                  "903": -0.0852392390370369,
+                  "904": 0.12312277406454086,
+                  "905": 0.060243912041187286
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  2,
+                  1
+                ],
+                "deck_remaining": 2,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.28632164001464844,
+                "scores": {
+                  "900": 0.28632164001464844,
+                  "901": 0.2786348760128021,
+                  "902": 0.0,
+                  "903": -0.002819150686264038,
+                  "904": 0.14879372715950012,
+                  "905": 0.14063698053359985
+                }
+              },
+              {
+                "pool": [
+                  8,
+                  1,
+                  9
+                ],
+                "deck_remaining": 13,
+                "model_action": 900,
+                "best_action": 904,
+                "margin": 0.24035429954528809,
+                "scores": {
+                  "900": 0.0,
+                  "901": 0.10181564092636108,
+                  "902": 0.03783908486366272,
+                  "903": -0.05189327895641327,
+                  "904": 0.24035429954528809,
+                  "905": 0.16515114903450012
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  5,
+                  3
+                ],
+                "deck_remaining": 2,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.2909616529941559,
+                "scores": {
+                  "900": 0.2909616529941559,
+                  "901": 0.23242434859275818,
+                  "902": 0.0,
+                  "903": 0.03180605173110962,
+                  "904": 0.08462303876876831,
+                  "905": 0.057409077882766724
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  8,
+                  0
+                ],
+                "deck_remaining": 7,
+                "model_action": 902,
+                "best_action": 900,
+                "margin": 0.13763278722763062,
+                "scores": {
+                  "900": 0.13763278722763062,
+                  "901": -0.0017911344766616821,
+                  "902": 0.0,
+                  "903": -0.028902962803840637,
+                  "904": 0.0068740397691726685,
+                  "905": 0.044173821806907654
+                }
+              },
+              {
+                "pool": [
+                  6,
+                  2,
+                  0
+                ],
+                "deck_remaining": 4,
+                "model_action": 900,
+                "best_action": 905,
+                "margin": 0.14719870686531067,
+                "scores": {
+                  "900": 0.0,
+                  "901": -0.02345794439315796,
+                  "902": 0.06449898332357407,
+                  "903": 0.024159647524356842,
+                  "904": 0.11184877902269363,
+                  "905": 0.14719870686531067
+                }
+              },
+              {
+                "pool": [
+                  9,
+                  4,
+                  2
+                ],
+                "deck_remaining": 6,
+                "model_action": 902,
+                "best_action": 901,
+                "margin": 0.2876843214035034,
+                "scores": {
+                  "900": 0.26144006848335266,
+                  "901": 0.2876843214035034,
+                  "902": 0.0,
+                  "903": 0.04531809687614441,
+                  "904": 0.08107662200927734,
+                  "905": 0.08243861794471741
+                }
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.40700000000000003
+    }
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "created_at": "2026-04-25 12:02:21 CEST",
+  "games": 1000,
+  "seed_start": 124000,
+  "args": {
+    "checkpoint": "step3_pairwise_ranker_attempt4_stage_weighted.pth",
+    "base_checkpoint": "step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+    "games": 1000,
+    "seed_start": 124000,
+    "override_margin": 0.16,
+    "max_actions": 12,
+    "categories": [
+      "guard",
+      "baron"
+    ],
+    "compare_baseline": true,
+    "example_limit": 0,
+    "device": "cpu",
+    "output": "step3_pairwise_ranker_attempt4_stage_weighted_eval_1000_seed124000_m016_guard_baron.json",
+    "run_log": "step3_action_value/logs/2026-04-25_step3_pairwise_ranker_attempt4_stage_weighted_eval_1000_seed124000_m016_guard_baron.md"
+  },
+  "ranker_configs": {
+    "vs_0H_3R": {
+      "games": 1000,
+      "wins": 504,
+      "winrate": 0.504,
+      "winrate_ci95": 0.030989329363508338,
+      "mean_reward": 0.7396000027656555,
+      "reward_std": 0.7875734567642212,
+      "reward_ci95": 0.0488143078281691,
+      "avg_actions_player0": 3.91,
+      "ranker": {
+        "decisions": 3910,
+        "ranker_checks": 1620,
+        "overrides": 478,
+        "check_rate": 0.4143222506393862,
+        "override_rate_per_decision": 0.12225063938618926,
+        "override_rate_per_check": 0.29506172839506173,
+        "mean_override_margin": 0.47250990185761926,
+        "by_category": {
+          "baron": {
+            "seen": 790,
+            "checked": 782,
+            "overrides": 206,
+            "mean_margin": 0.08514286982148048,
+            "mean_override_margin": 0.2603145617069405
+          },
+          "chancellor_card": {
+            "seen": 537,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 396,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "countess": {
+            "seen": 29,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 843,
+            "checked": 838,
+            "overrides": 272,
+            "mean_margin": 0.23948569534911035,
+            "mean_override_margin": 0.6332166668246774
+          },
+          "handmaid": {
+            "seen": 123,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "king": {
+            "seen": 452,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "priest": {
+            "seen": 166,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 436,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "spy": {
+            "seen": 138,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          }
+        }
+      },
+      "examples": []
+    },
+    "vs_1H_2R": {
+      "games": 1000,
+      "wins": 399,
+      "winrate": 0.399,
+      "winrate_ci95": 0.030351471766621136,
+      "mean_reward": 0.5799999833106995,
+      "reward_std": 0.7362065315246582,
+      "reward_ci95": 0.045630553269467,
+      "avg_actions_player0": 3.576,
+      "ranker": {
+        "decisions": 3576,
+        "ranker_checks": 1442,
+        "overrides": 462,
+        "check_rate": 0.40324384787472034,
+        "override_rate_per_decision": 0.12919463087248323,
+        "override_rate_per_check": 0.32038834951456313,
+        "mean_override_margin": 0.4686162028324617,
+        "by_category": {
+          "baron": {
+            "seen": 660,
+            "checked": 658,
+            "overrides": 192,
+            "mean_margin": 0.09161664093179363,
+            "mean_override_margin": 0.2594606422547561
+          },
+          "chancellor_card": {
+            "seen": 502,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 384,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "countess": {
+            "seen": 39,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 788,
+            "checked": 784,
+            "overrides": 270,
+            "mean_margin": 0.24548013540631047,
+            "mean_override_margin": 0.6173490459099412
+          },
+          "handmaid": {
+            "seen": 104,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "king": {
+            "seen": 384,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "priest": {
+            "seen": 167,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 409,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "spy": {
+            "seen": 139,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          }
+        }
+      },
+      "examples": []
+    },
+    "vs_2H_1R": {
+      "games": 1000,
+      "wins": 269,
+      "winrate": 0.269,
+      "winrate_ci95": 0.027484693602076046,
+      "mean_reward": 0.4113999605178833,
+      "reward_std": 0.6737284660339355,
+      "reward_ci95": 0.041758122047574155,
+      "avg_actions_player0": 3.25,
+      "ranker": {
+        "decisions": 3250,
+        "ranker_checks": 1277,
+        "overrides": 433,
+        "check_rate": 0.39292307692307693,
+        "override_rate_per_decision": 0.13323076923076924,
+        "override_rate_per_check": 0.33907595927956147,
+        "mean_override_margin": 0.456529002129068,
+        "by_category": {
+          "baron": {
+            "seen": 539,
+            "checked": 538,
+            "overrides": 177,
+            "mean_margin": 0.10464142732059091,
+            "mean_override_margin": 0.26229688555717806
+          },
+          "chancellor_card": {
+            "seen": 483,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 354,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "countess": {
+            "seen": 34,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 745,
+            "checked": 739,
+            "overrides": 256,
+            "mean_margin": 0.23797755504936907,
+            "mean_override_margin": 0.5908223014776013
+          },
+          "handmaid": {
+            "seen": 96,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "king": {
+            "seen": 370,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "priest": {
+            "seen": 165,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 345,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "spy": {
+            "seen": 119,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          }
+        }
+      },
+      "examples": []
+    },
+    "vs_3H": {
+      "games": 1000,
+      "wins": 157,
+      "winrate": 0.157,
+      "winrate_ci95": 0.022548605313854782,
+      "mean_reward": 0.26339998841285706,
+      "reward_std": 0.5657742023468018,
+      "reward_ci95": 0.03506704957361836,
+      "avg_actions_player0": 2.703,
+      "ranker": {
+        "decisions": 2703,
+        "ranker_checks": 1023,
+        "overrides": 374,
+        "check_rate": 0.37846836847946724,
+        "override_rate_per_decision": 0.13836477987421383,
+        "override_rate_per_check": 0.3655913978494624,
+        "mean_override_margin": 0.4255462097113623,
+        "by_category": {
+          "baron": {
+            "seen": 430,
+            "checked": 429,
+            "overrides": 161,
+            "mean_margin": 0.11893049656632758,
+            "mean_override_margin": 0.26441707619413823
+          },
+          "chancellor_card": {
+            "seen": 456,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 323,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "countess": {
+            "seen": 29,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 594,
+            "checked": 594,
+            "overrides": 213,
+            "mean_margin": 0.23018451624233213,
+            "mean_override_margin": 0.5473386533558369
+          },
+          "handmaid": {
+            "seen": 77,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "king": {
+            "seen": 283,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "priest": {
+            "seen": 139,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 277,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "spy": {
+            "seen": 95,
+            "checked": 0,
+            "overrides": 0,
+            "mean_margin": 0.0,
+            "mean_override_margin": 0.0
+          }
+        }
+      },
+      "examples": []
+    }
+  },
+  "ranker_composite": 0.27370000000000005,
+  "baseline_configs": {
+    "vs_0H_3R": {
+      "games": 1000,
+      "wins": 511,
+      "winrate": 0.511,
+      "winrate_ci95": 0.030982820504273006,
+      "mean_reward": 0.7391999363899231,
+      "reward_std": 0.7703917026519775,
+      "reward_ci95": 0.04774937454020651,
+      "avg_actions_player0": 3.944
+    },
+    "vs_1H_2R": {
+      "games": 1000,
+      "wins": 368,
+      "winrate": 0.368,
+      "winrate_ci95": 0.029890867528394018,
+      "mean_reward": 0.5395999550819397,
+      "reward_std": 0.7076947689056396,
+      "reward_ci95": 0.04386337606460608,
+      "avg_actions_player0": 3.542
+    },
+    "vs_2H_1R": {
+      "games": 1000,
+      "wins": 260,
+      "winrate": 0.26,
+      "winrate_ci95": 0.027186832106738733,
+      "mean_reward": 0.41259998083114624,
+      "reward_std": 0.6680428385734558,
+      "reward_ci95": 0.0414057240359491,
+      "avg_actions_player0": 3.218
+    },
+    "vs_3H": {
+      "games": 1000,
+      "wins": 167,
+      "winrate": 0.167,
+      "winrate_ci95": 0.02311728395811238,
+      "mean_reward": 0.2856000065803528,
+      "reward_std": 0.5838772654533386,
+      "reward_ci95": 0.03618908671241797,
+      "avg_actions_player0": 2.749
+    }
+  },
+  "baseline_composite": 0.2695,
+  "ranker_minus_baseline_composite": 0.004200000000000037
+}

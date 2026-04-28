@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-04-26 18:04:25 CEST",
+  "candidate_id": "smoke_sp",
+  "parent_id": "champion_cbp",
+  "parent_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+  "final_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/smoke_sp_final_candidate.pth",
+  "registered": false,
+  "history": [
+    {
+      "iteration": 1,
+      "decisions": 256,
+      "collect": {
+        "games": 76,
+        "mean_reward": 0.3473684210526316,
+        "score_ge_1": 0.25,
+        "candidate_seats": {
+          "player_1": 18,
+          "player_0": 21,
+          "player_2": 22,
+          "player_3": 15
+        },
+        "opponents": {
+          "champion_cbp": 40,
+          "curriculum_phase1": 49,
+          "step2_retarget": 44,
+          "heuristic_fair": 47,
+          "step3_fast": 48
+        },
+        "module_stats": {
+          "decisions": 257,
+          "advantage_checks": 218,
+          "final_overrides": 75,
+          "baron_baron_hand_checks": 50,
+          "baron_overrides": 28,
+          "baron_base_baron_plays": 27,
+          "advantage_overrides": 51,
+          "prince_prince_hand_checks": 36,
+          "prince_base_prince_plays": 24,
+          "chancellor_checks": 19,
+          "chancellor_sum_best_margin": 1.0191650465130806,
+          "chancellor_overrides": 3,
+          "prince_overrides": 9
+        }
+      },
+      "update": {
+        "policy_loss": -0.005065918589631717,
+        "value_loss": 0.48608989516894024,
+        "bc_loss": 3.274550437927246,
+        "kl_loss": 1.0461863779805588e-05,
+        "entropy": 0.34817609190940857,
+        "mean_ratio": 0.9988756775856018
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/smoke_sp_iter_0001_candidate.pth"
+    }
+  ],
+  "candidate_entry": {
+    "policy_id": "smoke_sp",
+    "kind": "composite",
+    "active": false,
+    "elo": 1500.0,
+    "games": 0,
+    "created_at": "2026-04-26 18:04:25 CEST",
+    "parent_id": "champion_cbp",
+    "base_checkpoint": "step7_self_play_league/checkpoints/smoke_sp_final_candidate.pth",
+    "advantage_checkpoint": "step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+    "use_advantage": true,
+    "use_chancellor": true,
+    "use_baron": true,
+    "use_prince": true
+  }
+}

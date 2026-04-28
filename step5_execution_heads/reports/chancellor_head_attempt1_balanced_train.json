@@ -1,0 +1,1724 @@
+{
+  "created_at": "2026-04-26 13:15:42 CEST",
+  "dataset": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step5_execution_heads/datasets/chancellor_teacher_attempt1_balanced_240x12.json",
+  "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step5_execution_heads/checkpoints/chancellor_head_attempt1_balanced.pth",
+  "dataset_summary": {
+    "states": 234,
+    "rows": 1384,
+    "clear_regret_states": 102,
+    "positive_override_states": 151,
+    "mean_best_advantage": 0.1765064078454788,
+    "sample_groups": [
+      {
+        "group": 0,
+        "model_action": 902,
+        "best_action": 902,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "pool": [
+          1,
+          8,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 1,
+        "model_action": 904,
+        "best_action": 904,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          3,
+          0,
+          5
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 2,
+        "model_action": 900,
+        "best_action": 903,
+        "best_advantage": 0.08583325147628784,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          8,
+          4,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 3,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.3916667103767395,
+        "clear_regret": true,
+        "phase": "late",
+        "pool": [
+          0,
+          5,
+          3
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 4,
+        "model_action": 900,
+        "best_action": 900,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          1,
+          1,
+          0
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 5,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.5424999296665192,
+        "clear_regret": true,
+        "phase": "early",
+        "pool": [
+          1,
+          5,
+          2
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 6,
+        "model_action": 904,
+        "best_action": 904,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "pool": [
+          0,
+          3,
+          4
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 7,
+        "model_action": 902,
+        "best_action": 902,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          7,
+          8,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 8,
+        "model_action": 904,
+        "best_action": 905,
+        "best_advantage": 0.09333336353302002,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          9,
+          4,
+          8
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 9,
+        "model_action": 904,
+        "best_action": 904,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          1,
+          1,
+          2
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 10,
+        "model_action": 900,
+        "best_action": 903,
+        "best_advantage": 0.08583337068557739,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          8,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 11,
+        "model_action": 900,
+        "best_action": 904,
+        "best_advantage": 0.08583331108093262,
+        "clear_regret": false,
+        "phase": "early",
+        "pool": [
+          8,
+          4,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 12,
+        "model_action": 900,
+        "best_action": 900,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          8,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 13,
+        "model_action": 900,
+        "best_action": 901,
+        "best_advantage": 0.17416667938232422,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          8,
+          7,
+          9
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 14,
+        "model_action": 904,
+        "best_action": 904,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "pool": [
+          1,
+          1,
+          8
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 15,
+        "model_action": 904,
+        "best_action": 903,
+        "best_advantage": 0.09166663885116577,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          2,
+          1,
+          8
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 16,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.26250000298023224,
+        "clear_regret": true,
+        "phase": "late",
+        "pool": [
+          9,
+          7,
+          6
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 18,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.08750003576278687,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          9,
+          3,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 19,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.539166659116745,
+        "clear_regret": true,
+        "phase": "early",
+        "pool": [
+          9,
+          1,
+          1
+        ],
+        "candidate_count": 6
+      },
+      {
+        "group": 20,
+        "model_action": 902,
+        "best_action": 900,
+        "best_advantage": 0.0041664838790893555,
+        "clear_regret": false,
+        "phase": "late",
+        "pool": [
+          9,
+          7,
+          1
+        ],
+        "candidate_count": 6
+      }
+    ],
+    "sample_rows": [
+      {
+        "group": 0,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 8,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 0,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 8,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.18
+      },
+      {
+        "group": 0,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            8,
+            1
+          ]
+        },
+        "target": -0.18250006437301636,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            8,
+            1
+          ]
+        },
+        "target": -0.18250006437301636,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            8
+          ]
+        },
+        "target": -0.26999998092651367,
+        "weight": 4.0
+      },
+      {
+        "group": 0,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            1,
+            8,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            8
+          ]
+        },
+        "target": -0.26999998092651367,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 5,
+          "returned_cards": [
+            3,
+            0
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 1,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 0,
+          "returned_cards": [
+            5,
+            3
+          ]
+        },
+        "target": -0.16833335161209106,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 5,
+          "returned_cards": [
+            0,
+            3
+          ]
+        },
+        "target": -0.17916661500930786,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 3,
+          "returned_cards": [
+            0,
+            5
+          ]
+        },
+        "target": -0.2691667079925537,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 3,
+          "returned_cards": [
+            5,
+            0
+          ]
+        },
+        "target": -0.2733333706855774,
+        "weight": 4.0
+      },
+      {
+        "group": 1,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            3,
+            0,
+            5
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 0,
+          "returned_cards": [
+            3,
+            5
+          ]
+        },
+        "target": -0.34583336114883423,
+        "weight": 4.0
+      },
+      {
+        "group": 2,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 4,
+          "returned_cards": [
+            1,
+            8
+          ]
+        },
+        "target": 0.08583325147628784,
+        "weight": 3.145831286907196
+      },
+      {
+        "group": 2,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            8,
+            4
+          ]
+        },
+        "target": 0.08499985933303833,
+        "weight": 3.1249964833259583
+      },
+      {
+        "group": 2,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            4,
+            8
+          ]
+        },
+        "target": 0.08499985933303833,
+        "weight": 3.1249964833259583
+      },
+      {
+        "group": 2,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 8,
+          "returned_cards": [
+            4,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 2,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 4,
+          "returned_cards": [
+            8,
+            1
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.18
+      },
+      {
+        "group": 2,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            8,
+            4,
+            1
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 8,
+          "returned_cards": [
+            1,
+            4
+          ]
+        },
+        "target": -0.08749991655349731,
+        "weight": 3.187497913837433
+      },
+      {
+        "group": 3,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 0,
+          "returned_cards": [
+            5,
+            3
+          ]
+        },
+        "target": 0.3916667103767395,
+        "weight": 4.0
+      },
+      {
+        "group": 3,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 0,
+          "returned_cards": [
+            3,
+            5
+          ]
+        },
+        "target": 0.1066666841506958,
+        "weight": 3.666667103767395
+      },
+      {
+        "group": 3,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 3,
+          "returned_cards": [
+            5,
+            0
+          ]
+        },
+        "target": 0.09000003337860107,
+        "weight": 3.250000834465027
+      },
+      {
+        "group": 3,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 5,
+          "returned_cards": [
+            0,
+            3
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 3,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 5,
+          "returned_cards": [
+            3,
+            0
+          ]
+        },
+        "target": -0.0016666054725646973,
+        "weight": 0.18
+      },
+      {
+        "group": 3,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            0,
+            5,
+            3
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 3,
+          "returned_cards": [
+            0,
+            5
+          ]
+        },
+        "target": -0.08666670322418213,
+        "weight": 3.1666675806045532
+      },
+      {
+        "group": 4,
+        "action": 900,
+        "decoded": {
+          "action": 900,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            0
+          ]
+        },
+        "target": 0.0,
+        "weight": 1.0
+      },
+      {
+        "group": 4,
+        "action": 902,
+        "decoded": {
+          "action": 902,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 0,
+          "kept_card": 1,
+          "returned_cards": [
+            1,
+            0
+          ]
+        },
+        "target": 0.0,
+        "weight": 0.18
+      },
+      {
+        "group": 4,
+        "action": 904,
+        "decoded": {
+          "action": 904,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 0,
+          "kept_card": 0,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": -0.08583337068557739,
+        "weight": 3.145834267139435
+      },
+      {
+        "group": 4,
+        "action": 905,
+        "decoded": {
+          "action": 905,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 2,
+          "order_idx": 1,
+          "kept_card": 0,
+          "returned_cards": [
+            1,
+            1
+          ]
+        },
+        "target": -0.08583337068557739,
+        "weight": 3.145834267139435
+      },
+      {
+        "group": 4,
+        "action": 901,
+        "decoded": {
+          "action": 901,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 0,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            0,
+            1
+          ]
+        },
+        "target": -0.09166666865348816,
+        "weight": 3.291666716337204
+      },
+      {
+        "group": 4,
+        "action": 903,
+        "decoded": {
+          "action": 903,
+          "pool": [
+            1,
+            1,
+            0
+          ],
+          "pool_size": 3,
+          "keep_idx": 1,
+          "order_idx": 1,
+          "kept_card": 1,
+          "returned_cards": [
+            0,
+            1
+          ]
+        },
+        "target": -0.09166666865348816,
+        "weight": 3.291666716337204
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.04651100809375445,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.15001732110977173,
+        "top1_acc": 0.2127659574468085,
+        "override_agreement": 0.5797872340425532,
+        "pred_override_rate": 0.425531914893617,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.16520079970359802,
+        "top1_acc": 0.17391304347826086,
+        "override_agreement": 0.43478260869565216,
+        "pred_override_rate": 0.391304347826087,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 0.03466785823305448,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.1583651602268219,
+        "top1_acc": 0.19680851063829788,
+        "override_agreement": 0.6329787234042553,
+        "pred_override_rate": 0.4787234042553192,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1789485216140747,
+        "top1_acc": 0.17391304347826086,
+        "override_agreement": 0.4782608695652174,
+        "pred_override_rate": 0.391304347826087,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 0.026937711983919144,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.13541054725646973,
+        "top1_acc": 0.22340425531914893,
+        "override_agreement": 0.6382978723404256,
+        "pred_override_rate": 0.4946808510638298,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.17518456280231476,
+        "top1_acc": 0.2391304347826087,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.4782608695652174,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.020806766011648707,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.12866002321243286,
+        "top1_acc": 0.2765957446808511,
+        "override_agreement": 0.6808510638297872,
+        "pred_override_rate": 0.5372340425531915,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.18489214777946472,
+        "top1_acc": 0.2391304347826087,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.5869565217391305,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 0.017287021295891866,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.12187061458826065,
+        "top1_acc": 0.2872340425531915,
+        "override_agreement": 0.6808510638297872,
+        "pred_override_rate": 0.5159574468085106,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1945849061012268,
+        "top1_acc": 0.2391304347826087,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.5652173913043478,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.013082476953665415,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.11233153194189072,
+        "top1_acc": 0.3404255319148936,
+        "override_agreement": 0.6968085106382979,
+        "pred_override_rate": 0.5531914893617021,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1979939192533493,
+        "top1_acc": 0.2608695652173913,
+        "override_agreement": 0.6086956521739131,
+        "pred_override_rate": 0.6521739130434783,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 0.010908072503904501,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.10458511114120483,
+        "top1_acc": 0.3776595744680851,
+        "override_agreement": 0.7340425531914894,
+        "pred_override_rate": 0.5478723404255319,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19894233345985413,
+        "top1_acc": 0.21739130434782608,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.009268985647294257,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.10154915601015091,
+        "top1_acc": 0.39361702127659576,
+        "override_agreement": 0.7340425531914894,
+        "pred_override_rate": 0.5585106382978723,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.2008862942457199,
+        "top1_acc": 0.2391304347826087,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 0.007298443569905228,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.10124193131923676,
+        "top1_acc": 0.43617021276595747,
+        "override_agreement": 0.723404255319149,
+        "pred_override_rate": 0.5691489361702128,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.2014683336019516,
+        "top1_acc": 0.2391304347826087,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6086956521739131,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 0.006156353849089808,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.0864662453532219,
+        "top1_acc": 0.4574468085106383,
+        "override_agreement": 0.7606382978723404,
+        "pred_override_rate": 0.5851063829787234,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20123989880084991,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6739130434782609,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 0.0050470347826679545,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.08123081177473068,
+        "top1_acc": 0.4787234042553192,
+        "override_agreement": 0.7606382978723404,
+        "pred_override_rate": 0.5851063829787234,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20124228298664093,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6739130434782609,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 0.004082541628223326,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.0791511982679367,
+        "top1_acc": 0.5,
+        "override_agreement": 0.7606382978723404,
+        "pred_override_rate": 0.5851063829787234,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.201038658618927,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6521739130434783,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 13,
+      "loss": 0.0036638494218803113,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.07859782874584198,
+        "top1_acc": 0.526595744680851,
+        "override_agreement": 0.7978723404255319,
+        "pred_override_rate": 0.6117021276595744,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20059292018413544,
+        "top1_acc": 0.21739130434782608,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.5869565217391305,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 14,
+      "loss": 0.003115527538789643,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.06701301783323288,
+        "top1_acc": 0.5585106382978723,
+        "override_agreement": 0.8031914893617021,
+        "pred_override_rate": 0.6276595744680851,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1988997459411621,
+        "top1_acc": 0.21739130434782608,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 15,
+      "loss": 0.002438971953880456,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.06050311028957367,
+        "top1_acc": 0.5851063829787234,
+        "override_agreement": 0.8031914893617021,
+        "pred_override_rate": 0.6063829787234043,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20097769796848297,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 16,
+      "loss": 0.0019359637517482042,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.05634588748216629,
+        "top1_acc": 0.5904255319148937,
+        "override_agreement": 0.8191489361702128,
+        "pred_override_rate": 0.6223404255319149,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20126034319400787,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6086956521739131,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 17,
+      "loss": 0.0016659943179951774,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.053645696491003036,
+        "top1_acc": 0.6117021276595744,
+        "override_agreement": 0.8191489361702128,
+        "pred_override_rate": 0.6117021276595744,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.2018364667892456,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 18,
+      "loss": 0.0014089181010300915,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.04965170845389366,
+        "top1_acc": 0.5904255319148937,
+        "override_agreement": 0.824468085106383,
+        "pred_override_rate": 0.6276595744680851,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19998210668563843,
+        "top1_acc": 0.21739130434782608,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 19,
+      "loss": 0.0011976418964978722,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.04781801998615265,
+        "top1_acc": 0.5851063829787234,
+        "override_agreement": 0.851063829787234,
+        "pred_override_rate": 0.6329787234042553,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20076830685138702,
+        "top1_acc": 0.17391304347826086,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6086956521739131,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 20,
+      "loss": 0.0010410762560139927,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.04418732598423958,
+        "top1_acc": 0.6170212765957447,
+        "override_agreement": 0.851063829787234,
+        "pred_override_rate": 0.6117021276595744,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1998155564069748,
+        "top1_acc": 0.17391304347826086,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 21,
+      "loss": 0.0008542528699359132,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.041852917522192,
+        "top1_acc": 0.6276595744680851,
+        "override_agreement": 0.8723404255319149,
+        "pred_override_rate": 0.6436170212765957,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20011574029922485,
+        "top1_acc": 0.21739130434782608,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 22,
+      "loss": 0.0007314683623715407,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.039184410125017166,
+        "top1_acc": 0.6276595744680851,
+        "override_agreement": 0.851063829787234,
+        "pred_override_rate": 0.6329787234042553,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19960451126098633,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.6304347826086957,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 23,
+      "loss": 0.0006446726717210064,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.037032969295978546,
+        "top1_acc": 0.6595744680851063,
+        "override_agreement": 0.8617021276595744,
+        "pred_override_rate": 0.6329787234042553,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19999995827674866,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6521739130434783,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 24,
+      "loss": 0.0005889339307840499,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03542853891849518,
+        "top1_acc": 0.6382978723404256,
+        "override_agreement": 0.8723404255319149,
+        "pred_override_rate": 0.6329787234042553,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1998516321182251,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.6521739130434783,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 25,
+      "loss": 0.0004937826888635755,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03359519690275192,
+        "top1_acc": 0.6223404255319149,
+        "override_agreement": 0.8723404255319149,
+        "pred_override_rate": 0.6436170212765957,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20011094212532043,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5217391304347826,
+        "pred_override_rate": 0.6956521739130435,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 26,
+      "loss": 0.00046390942750602134,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03414144366979599,
+        "top1_acc": 0.6382978723404256,
+        "override_agreement": 0.8776595744680851,
+        "pred_override_rate": 0.6382978723404256,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19984665513038635,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.7391304347826086,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 27,
+      "loss": 0.0004379772613497658,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03131505474448204,
+        "top1_acc": 0.6276595744680851,
+        "override_agreement": 0.8723404255319149,
+        "pred_override_rate": 0.6436170212765957,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19943921267986298,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.717391304347826,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 28,
+      "loss": 0.00041746987295078323,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.032203059643507004,
+        "top1_acc": 0.6170212765957447,
+        "override_agreement": 0.8829787234042553,
+        "pred_override_rate": 0.6542553191489362,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.20034334063529968,
+        "top1_acc": 0.17391304347826086,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.717391304347826,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 29,
+      "loss": 0.0004409674050596853,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03425479680299759,
+        "top1_acc": 0.6276595744680851,
+        "override_agreement": 0.8829787234042553,
+        "pred_override_rate": 0.6542553191489362,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19999557733535767,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.717391304347826,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 30,
+      "loss": 0.00041732082738437585,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.03130784630775452,
+        "top1_acc": 0.601063829787234,
+        "override_agreement": 0.8723404255319149,
+        "pred_override_rate": 0.6542553191489362,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.19967971742153168,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.7391304347826086,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 31,
+      "loss": 0.000335026228438235,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.02924034744501114,
+        "top1_acc": 0.6117021276595744,
+        "override_agreement": 0.8882978723404256,
+        "pred_override_rate": 0.648936170212766,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1996770203113556,
+        "top1_acc": 0.15217391304347827,
+        "override_agreement": 0.6304347826086957,
+        "pred_override_rate": 0.6739130434782609,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 32,
+      "loss": 0.00029678789239066344,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.026731766760349274,
+        "top1_acc": 0.6382978723404256,
+        "override_agreement": 0.898936170212766,
+        "pred_override_rate": 0.648936170212766,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1989562064409256,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.717391304347826,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 33,
+      "loss": 0.00026814331229413964,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.025051604956388474,
+        "top1_acc": 0.6436170212765957,
+        "override_agreement": 0.8882978723404256,
+        "pred_override_rate": 0.648936170212766,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1998995691537857,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5652173913043478,
+        "pred_override_rate": 0.7391304347826086,
+        "target_override_rate": 0.6956521739130435
+      }
+    },
+    {
+      "epoch": 34,
+      "loss": 0.0002460583329795756,
+      "train": {
+        "rows": 1108,
+        "groups": 188,
+        "mae": 0.0246292632073164,
+        "top1_acc": 0.6436170212765957,
+        "override_agreement": 0.8882978723404256,
+        "pred_override_rate": 0.648936170212766,
+        "target_override_rate": 0.6329787234042553
+      },
+      "val": {
+        "rows": 276,
+        "groups": 46,
+        "mae": 0.1993245780467987,
+        "top1_acc": 0.1956521739130435,
+        "override_agreement": 0.5869565217391305,
+        "pred_override_rate": 0.717391304347826,
+        "target_override_rate": 0.6956521739130435
+      }
+    }
+  ],
+  "final_train": {
+    "rows": 1108,
+    "groups": 188,
+    "mae": 0.0246292632073164,
+    "top1_acc": 0.6436170212765957,
+    "override_agreement": 0.8882978723404256,
+    "pred_override_rate": 0.648936170212766,
+    "target_override_rate": 0.6329787234042553
+  },
+  "final_val": {
+    "rows": 276,
+    "groups": 46,
+    "mae": 0.1993245780467987,
+    "top1_acc": 0.1956521739130435,
+    "override_agreement": 0.5869565217391305,
+    "pred_override_rate": 0.717391304347826,
+    "target_override_rate": 0.6956521739130435
+  }
+}

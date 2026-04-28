@@ -1,0 +1,4434 @@
+{
+  "created_at": "2026-04-25 11:02:41 CEST",
+  "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+  "games": 5,
+  "seed_start": 800000,
+  "elapsed_seconds": 0.8482054169871844,
+  "args": {
+    "checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "games": 5,
+    "seed_start": 800000,
+    "categories": [
+      "guard",
+      "priest",
+      "spy",
+      "king",
+      "prince",
+      "chancellor_card",
+      "chancellor_choice",
+      "baron"
+    ],
+    "rollouts_per_action": 3,
+    "max_actions": 8,
+    "belief_candidate_pool": 18,
+    "override_margin": 0.12,
+    "min_reward_margin": -999.0,
+    "belief_power": 1.25,
+    "belief_floor": 0.02,
+    "player0_continuation": "heuristic",
+    "compare_step2": true,
+    "compare_uniform_step3": false,
+    "example_limit": 25,
+    "output": "step4_smoke_eval.json",
+    "run_log": "step4_hybrid_champion/logs/2026-04-25_step4_smoke_eval.md"
+  },
+  "hybrid_configs": {
+    "vs_0H_3R": {
+      "games": 5,
+      "wins": 2,
+      "winrate": 0.4,
+      "winrate_ci95": 0.4294144850840502,
+      "mean_reward": 0.5200000405311584,
+      "reward_std": 0.5600000023841858,
+      "reward_ci95": 0.4908616349144221,
+      "avg_actions_player0": 3.6,
+      "hybrid_search": {
+        "decisions": 18,
+        "search_checks": 15,
+        "overrides": 13,
+        "belief_available": 18,
+        "check_rate": 0.8333333333333334,
+        "override_rate_per_decision": 0.7222222222222222,
+        "override_rate_per_check": 0.8666666666666667,
+        "mean_candidate_count": 6.133333333333334,
+        "mean_override_margin": 0.5128205128205128,
+        "by_category": {
+          "baron": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_card": {
+            "seen": 3,
+            "checked": 2,
+            "overrides": 2,
+            "mean_check_margin": 0.5,
+            "mean_override_margin": 0.5
+          },
+          "chancellor_choice": {
+            "seen": 2,
+            "checked": 2,
+            "overrides": 2,
+            "mean_check_margin": 0.5,
+            "mean_override_margin": 0.5
+          },
+          "guard": {
+            "seen": 7,
+            "checked": 7,
+            "overrides": 6,
+            "mean_check_margin": 0.380952380952381,
+            "mean_override_margin": 0.4444444444444445
+          },
+          "handmaid": {
+            "seen": 1,
+            "checked": 0,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 3,
+            "checked": 2,
+            "overrides": 2,
+            "mean_check_margin": 0.6666666666666667,
+            "mean_override_margin": 0.6666666666666667
+          },
+          "spy": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 1,
+            "mean_check_margin": 0.6666666666666667,
+            "mean_override_margin": 0.6666666666666667
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "spy",
+          "model_action": 490,
+          "model_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "heuristic_action": 490,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "chosen_action": 90,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 90,
+            "card": 0,
+            "card_name": "Espionne",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Espionne"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.9333333333333332,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.2556288242340088
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.19204655289649963
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.169215127825737
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.22658184170722961
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.15778055787086487
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.12810002267360687
+              }
+            ],
+            "player_3": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.9605500102043152
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.02461564727127552
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.005143824499100447
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "490": "actor_default",
+            "90": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 90,
+              "decoded": {
+                "kind": "card",
+                "action": 90,
+                "card": 0,
+                "card_name": "Espionne",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Espionne"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 490,
+              "decoded": {
+                "kind": "card",
+                "action": 490,
+                "card": 4,
+                "card_name": "Servante",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Servante"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.8000000000000002,
+              "reward_std": 1.1313708498984762,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "chancellor_card",
+          "model_action": 490,
+          "model_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "heuristic_action": 490,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "chosen_action": 690,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 690,
+            "card": 6,
+            "card_name": "Chancelier",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Chancelier"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": -0.06666666666666676,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.33102402091026306
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.27474814653396606
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.1515994369983673
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.2455708533525467
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.1844148486852646
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.1761177033185959
+              }
+            ],
+            "player_3": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.3852110505104065
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.287273108959198
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.1509373039007187
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "490": "actor_default",
+            "690": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 690,
+              "decoded": {
+                "kind": "card",
+                "action": 690,
+                "card": 6,
+                "card_name": "Chancelier",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Chancelier"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 490,
+              "decoded": {
+                "kind": "card",
+                "action": 490,
+                "card": 4,
+                "card_name": "Servante",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Servante"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 1.0370899457402698,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "chancellor_choice",
+          "model_action": 902,
+          "model_decoded": {
+            "kind": "chancellor_choice",
+            "action": 902,
+            "label": "ChancellorChoice:902"
+          },
+          "heuristic_action": 902,
+          "heuristic_decoded": {
+            "kind": "chancellor_choice",
+            "action": 902,
+            "label": "ChancellorChoice:902"
+          },
+          "chosen_action": 901,
+          "chosen_decoded": {
+            "kind": "chancellor_choice",
+            "action": 901,
+            "label": "ChancellorChoice:901"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.6666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.4263885021209717
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.3471828103065491
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.08799959719181061
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.2621859312057495
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.23210427165031433
+              },
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.20537090301513672
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.3488672971725464
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.2382577359676361
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.1834123730659485
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "902": "actor_default",
+            "903": "belief_ranked",
+            "900": "belief_ranked",
+            "901": "belief_ranked",
+            "904": "belief_ranked",
+            "905": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 901,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 901,
+                "label": "ChancellorChoice:901"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.9428090415820634,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 903,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 903,
+                "label": "ChancellorChoice:903"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.0,
+              "reward_std": 0.816496580927726,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 900,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 900,
+                "label": "ChancellorChoice:900"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.0,
+              "reward_std": 0.816496580927726,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 905,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 905,
+                "label": "ChancellorChoice:905"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 1.0370899457402698,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 902,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 902,
+                "label": "ChancellorChoice:902"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.9428090415820634,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 133,
+          "model_decoded": {
+            "kind": "card",
+            "action": 133,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p3:Baron"
+          },
+          "heuristic_action": 123,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 123,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p2:Baron"
+          },
+          "chosen_action": 123,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 123,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p2:Baron"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.2666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.7781077027320862
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.19619280099868774
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.007345861289650202
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5107699632644653
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.3531046211719513
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.035997264087200165
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5372493863105774
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.32641729712486267
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.05649209022521973
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "133": "actor_default",
+            "123": "heuristic_reference",
+            "128": "belief_ranked",
+            "138": "belief_ranked",
+            "490": "belief_ranked",
+            "125": "belief_ranked",
+            "135": "belief_ranked",
+            "132": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 123,
+              "decoded": {
+                "kind": "card",
+                "action": 123,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p2:Baron"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.4320493798938573,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 125,
+              "decoded": {
+                "kind": "card",
+                "action": 125,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p2:Prince"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 135,
+              "decoded": {
+                "kind": "card",
+                "action": 135,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p3:Prince"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 138,
+              "decoded": {
+                "kind": "card",
+                "action": 138,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p3:Comtesse"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 1.0370899457402698,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 133,
+              "decoded": {
+                "kind": "card",
+                "action": 133,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p3:Baron"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 490,
+          "model_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "heuristic_action": 490,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.6666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.8535920977592468
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.13025149703025818
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.005975482054054737
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.516327977180481
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.332149475812912
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.06475803256034851
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5932950377464294
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.3271749019622803
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.03661385178565979
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "490": "actor_default",
+            "530": "belief_ranked",
+            "500": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 530,
+              "decoded": {
+                "kind": "card",
+                "action": 530,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p3"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 490,
+              "decoded": {
+                "kind": "card",
+                "action": 490,
+                "card": 4,
+                "card_name": "Servante",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Servante"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 125,
+          "model_decoded": {
+            "kind": "card",
+            "action": 125,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 5,
+            "guess_name": "Prince",
+            "label": "Garde->p2:Prince"
+          },
+          "heuristic_action": 133,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 133,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p3:Baron"
+          },
+          "chosen_action": 133,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 133,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p3:Baron"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.8666666666666667,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.45460742712020874
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.31318187713623047
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.060153525322675705
+              }
+            ],
+            "player_2": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.5225527286529541
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.419599711894989
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.031480371952056885
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.8581705093383789
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.038535282015800476
+              },
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.023204928264021873
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "125": "actor_default",
+            "133": "heuristic_reference",
+            "127": "belief_ranked",
+            "137": "belief_ranked",
+            "126": "belief_ranked",
+            "130": "belief_ranked",
+            "135": "belief_ranked",
+            "129": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 133,
+              "decoded": {
+                "kind": "card",
+                "action": 133,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p3:Baron"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 137,
+              "decoded": {
+                "kind": "card",
+                "action": 137,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p3:Roi"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 126,
+              "decoded": {
+                "kind": "card",
+                "action": 126,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p2:Chancelier"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 125,
+              "decoded": {
+                "kind": "card",
+                "action": 125,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p2:Prince"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.4666666666666666,
+              "reward_std": 0.3771236166328254,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 135,
+              "decoded": {
+                "kind": "card",
+                "action": 135,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p3:Prince"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.4666666666666666,
+              "reward_std": 0.5249338582674541,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "chancellor_card",
+          "model_action": 690,
+          "model_decoded": {
+            "kind": "card",
+            "action": 690,
+            "card": 6,
+            "card_name": "Chancelier",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Chancelier"
+          },
+          "heuristic_action": 690,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 690,
+            "card": 6,
+            "card_name": "Chancelier",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Chancelier"
+          },
+          "chosen_action": 127,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 127,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 7,
+            "guess_name": "Roi",
+            "label": "Garde->p2:Roi"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.46666666666666645,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.3845483362674713
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.2582055926322937
+              },
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.14675335586071014
+              }
+            ],
+            "player_2": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.4784605801105499
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.2195599377155304
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.12584713101387024
+              }
+            ],
+            "player_3": [
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.3067883849143982
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.25558164715766907
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.14049330353736877
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "690": "actor_default",
+            "127": "belief_ranked",
+            "126": "belief_ranked",
+            "129": "belief_ranked",
+            "120": "belief_ranked",
+            "122": "belief_ranked",
+            "125": "belief_ranked",
+            "124": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 127,
+              "decoded": {
+                "kind": "card",
+                "action": 127,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p2:Roi"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 126,
+              "decoded": {
+                "kind": "card",
+                "action": 126,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p2:Chancelier"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 122,
+              "decoded": {
+                "kind": "card",
+                "action": 122,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 2,
+                "guess_name": "Pretre",
+                "label": "Garde->p2:Pretre"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 124,
+              "decoded": {
+                "kind": "card",
+                "action": 124,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p2:Servante"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 129,
+              "decoded": {
+                "kind": "card",
+                "action": 129,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 9,
+                "guess_name": "Princesse",
+                "label": "Garde->p2:Princesse"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2666666666666666,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "chancellor_choice",
+          "model_action": 900,
+          "model_decoded": {
+            "kind": "chancellor_choice",
+            "action": 900,
+            "label": "ChancellorChoice:900"
+          },
+          "heuristic_action": 900,
+          "heuristic_decoded": {
+            "kind": "chancellor_choice",
+            "action": 900,
+            "label": "ChancellorChoice:900"
+          },
+          "chosen_action": 905,
+          "chosen_decoded": {
+            "kind": "chancellor_choice",
+            "action": 905,
+            "label": "ChancellorChoice:905"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.8000000000000003,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.6047630906105042
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.16801206767559052
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.06700748205184937
+              }
+            ],
+            "player_2": [
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.30067673325538635
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.29838913679122925
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.2136809229850769
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5446286797523499
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.18495526909828186
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.1175905391573906
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "900": "actor_default",
+            "901": "belief_ranked",
+            "904": "belief_ranked",
+            "905": "belief_ranked",
+            "902": "belief_ranked",
+            "903": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 905,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 905,
+                "label": "ChancellorChoice:905"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.1333333333333335,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 901,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 901,
+                "label": "ChancellorChoice:901"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 904,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 904,
+                "label": "ChancellorChoice:904"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 903,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 903,
+                "label": "ChancellorChoice:903"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 902,
+              "decoded": {
+                "kind": "chancellor_choice",
+                "action": 902,
+                "label": "ChancellorChoice:902"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 127,
+          "model_decoded": {
+            "kind": "card",
+            "action": 127,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 7,
+            "guess_name": "Roi",
+            "label": "Garde->p2:Roi"
+          },
+          "heuristic_action": 122,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 122,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p2:Pretre"
+          },
+          "chosen_action": 123,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 123,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p2:Baron"
+          },
+          "margin": 0.33333333333333337,
+          "reward_margin": 0.33333333333333337,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.4163881838321686
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.3333383798599243
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.18152859807014465
+              }
+            ],
+            "player_2": [
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.46097585558891296
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.2627914845943451
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.11465755105018616
+              }
+            ],
+            "player_3": [
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.38116082549095154
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.25338467955589294
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.15066634118556976
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "127": "actor_default",
+            "122": "heuristic_reference",
+            "126": "belief_ranked",
+            "123": "belief_ranked",
+            "124": "belief_ranked",
+            "125": "belief_ranked",
+            "120": "belief_ranked",
+            "128": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 123,
+              "decoded": {
+                "kind": "card",
+                "action": 123,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p2:Baron"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 124,
+              "decoded": {
+                "kind": "card",
+                "action": 124,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p2:Servante"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 120,
+              "decoded": {
+                "kind": "card",
+                "action": 120,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Garde->p2:Espionne"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 128,
+              "decoded": {
+                "kind": "card",
+                "action": 128,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p2:Comtesse"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 127,
+              "decoded": {
+                "kind": "card",
+                "action": 127,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p2:Roi"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "heuristic_action": 210,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 520,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 520,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 2,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p2"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 1.1333333333333335,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.2470022737979889
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.19259203970432281
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.1876508742570877
+              }
+            ],
+            "player_2": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.2461615353822708
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.2088402807712555
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.1677069067955017
+              }
+            ],
+            "player_3": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.2630040645599365
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.19374646246433258
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.1882031112909317
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "210": "actor_default",
+            "220": "belief_ranked",
+            "500": "belief_ranked",
+            "520": "belief_ranked",
+            "510": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 520,
+              "decoded": {
+                "kind": "card",
+                "action": 520,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p2"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.5333333333333334,
+              "reward_std": 0.4714045207910318,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 510,
+              "decoded": {
+                "kind": "card",
+                "action": 510,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p1"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.4666666666666668,
+              "reward_std": 0.5249338582674542,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 220,
+              "decoded": {
+                "kind": "card",
+                "action": 220,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p2"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.8000000000000002,
+              "reward_std": 0.993310961716756,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 210,
+              "decoded": {
+                "kind": "card",
+                "action": 210,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p1"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "heuristic_action": 210,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 114,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 114,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p1:Servante"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.9333333333333333,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.36518511176109314
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.31047460436820984
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.12829378247261047
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.3366667926311493
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.31737473607063293
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.14840474724769592
+              }
+            ],
+            "player_3": [
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.4028153121471405
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.2844340205192566
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.17459416389465332
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "210": "actor_default",
+            "114": "belief_ranked",
+            "123": "belief_ranked",
+            "220": "belief_ranked",
+            "124": "belief_ranked",
+            "113": "belief_ranked",
+            "110": "belief_ranked",
+            "120": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 114,
+              "decoded": {
+                "kind": "card",
+                "action": 114,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p1:Servante"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2666666666666666,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 123,
+              "decoded": {
+                "kind": "card",
+                "action": 123,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p2:Baron"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2666666666666666,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 110,
+              "decoded": {
+                "kind": "card",
+                "action": 110,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Garde->p1:Espionne"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 120,
+              "decoded": {
+                "kind": "card",
+                "action": 120,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Garde->p2:Espionne"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 210,
+              "decoded": {
+                "kind": "card",
+                "action": 210,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p1"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 220,
+          "model_decoded": {
+            "kind": "card",
+            "action": 220,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 2,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p2"
+          },
+          "heuristic_action": 220,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 220,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 2,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p2"
+          },
+          "chosen_action": 123,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 123,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p2:Baron"
+          },
+          "margin": 0.33333333333333337,
+          "reward_margin": 0.33333333333333326,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5596479773521423
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.23833009600639343
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.08749315142631531
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.6669818758964539
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.14156995713710785
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.12976863980293274
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5823497772216797
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.19751138985157013
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.14049240946769714
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "220": "actor_default",
+            "123": "belief_ranked",
+            "124": "belief_ranked",
+            "125": "belief_ranked",
+            "120": "belief_ranked",
+            "122": "belief_ranked",
+            "126": "belief_ranked",
+            "127": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 123,
+              "decoded": {
+                "kind": "card",
+                "action": 123,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p2:Baron"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.3333333333333333,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 220,
+              "decoded": {
+                "kind": "card",
+                "action": 220,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p2"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.0,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 126,
+              "decoded": {
+                "kind": "card",
+                "action": 126,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p2:Chancelier"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.9333333333333332,
+              "reward_std": 0.524933858267454,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 124,
+              "decoded": {
+                "kind": "card",
+                "action": 124,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p2:Servante"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.8666666666666667,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 125,
+              "decoded": {
+                "kind": "card",
+                "action": 125,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p2:Prince"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.6,
+              "reward_std": 0.5656854249492379,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 220,
+          "model_decoded": {
+            "kind": "card",
+            "action": 220,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 2,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p2"
+          },
+          "heuristic_action": 220,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 220,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 2,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p2"
+          },
+          "chosen_action": 123,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 123,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 2,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p2:Baron"
+          },
+          "margin": 0.33333333333333337,
+          "reward_margin": 0.4,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.5836859345436096
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.2949862480163574
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.0776016116142273
+              }
+            ],
+            "player_2": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.6203525066375732
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.2146269828081131
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.09007635712623596
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.7058055400848389
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.16812923550605774
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.05320679768919945
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "220": "actor_default",
+            "123": "belief_ranked",
+            "124": "belief_ranked",
+            "125": "belief_ranked",
+            "122": "belief_ranked",
+            "120": "belief_ranked",
+            "126": "belief_ranked",
+            "127": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 123,
+              "decoded": {
+                "kind": "card",
+                "action": 123,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p2:Baron"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 220,
+              "decoded": {
+                "kind": "card",
+                "action": 220,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 2,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p2"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 125,
+              "decoded": {
+                "kind": "card",
+                "action": 125,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p2:Prince"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 127,
+              "decoded": {
+                "kind": "card",
+                "action": 127,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p2:Roi"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 122,
+              "decoded": {
+                "kind": "card",
+                "action": 122,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 2,
+                "guess_name": "Pretre",
+                "label": "Garde->p2:Pretre"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        }
+      ]
+    },
+    "vs_1H_2R": {
+      "games": 5,
+      "wins": 1,
+      "winrate": 0.2,
+      "winrate_ci95": 0.3506154588719671,
+      "mean_reward": 0.24000000953674316,
+      "reward_std": 0.49638697504997253,
+      "reward_ci95": 0.43510238518099936,
+      "avg_actions_player0": 2.6,
+      "hybrid_search": {
+        "decisions": 13,
+        "search_checks": 11,
+        "overrides": 4,
+        "belief_available": 13,
+        "check_rate": 0.8461538461538461,
+        "override_rate_per_decision": 0.3076923076923077,
+        "override_rate_per_check": 0.36363636363636365,
+        "mean_candidate_count": 5.2727272727272725,
+        "mean_override_margin": 0.5,
+        "by_category": {
+          "baron": {
+            "seen": 4,
+            "checked": 4,
+            "overrides": 1,
+            "mean_check_margin": 0.16666666666666669,
+            "mean_override_margin": 0.6666666666666667
+          },
+          "chancellor_card": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 1,
+            "checked": 0,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 3,
+            "checked": 3,
+            "overrides": 1,
+            "mean_check_margin": 0.1111111111111111,
+            "mean_override_margin": 0.3333333333333333
+          },
+          "priest": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 3,
+            "checked": 2,
+            "overrides": 2,
+            "mean_check_margin": 0.5,
+            "mean_override_margin": 0.5
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "baron",
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "heuristic_action": 210,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 310,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 310,
+            "card": 3,
+            "card_name": "Baron",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Baron->p1"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 1.7333333333333338,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.22529637813568115
+              },
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.17607901990413666
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.1380077600479126
+              }
+            ],
+            "player_2": [
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.2640397846698761
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.14814932644367218
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.13855226337909698
+              }
+            ],
+            "player_3": [
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.5332079529762268
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.21028554439544678
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.1180163100361824
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "210": "actor_default",
+            "310": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 310,
+              "decoded": {
+                "kind": "card",
+                "action": 310,
+                "card": 3,
+                "card_name": "Baron",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Baron->p1"
+              },
+              "winrate": 1.0,
+              "mean_reward": 2.266666666666667,
+              "reward_std": 0.09428090415820643,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 210,
+              "decoded": {
+                "kind": "card",
+                "action": 210,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p1"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 1.0370899457402698,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 510,
+          "model_decoded": {
+            "kind": "card",
+            "action": 510,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p1"
+          },
+          "heuristic_action": 500,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 500,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.4000000000000001,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.20854517817497253
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.1524610072374344
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.12048423290252686
+              }
+            ],
+            "player_2": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.2594112753868103
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.17648576200008392
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.15844178199768066
+              }
+            ],
+            "player_3": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.16886162757873535
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.14299799501895905
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.13471238315105438
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "510": "actor_default",
+            "500": "heuristic_reference",
+            "113": "belief_ranked",
+            "137": "belief_ranked",
+            "530": "belief_ranked",
+            "117": "belief_ranked",
+            "132": "belief_ranked",
+            "136": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 530,
+              "decoded": {
+                "kind": "card",
+                "action": 530,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p3"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 136,
+              "decoded": {
+                "kind": "card",
+                "action": 136,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p3:Chancelier"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 510,
+              "decoded": {
+                "kind": "card",
+                "action": 510,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p1"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 113,
+              "decoded": {
+                "kind": "card",
+                "action": 113,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p1:Baron"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 117,
+          "model_decoded": {
+            "kind": "card",
+            "action": 117,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 7,
+            "guess_name": "Roi",
+            "label": "Garde->p1:Roi"
+          },
+          "heuristic_action": 112,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          },
+          "chosen_action": 137,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 137,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 7,
+            "guess_name": "Roi",
+            "label": "Garde->p3:Roi"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.4666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.199827641248703
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.17812933027744293
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.14024722576141357
+              }
+            ],
+            "player_2": [
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.20687654614448547
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.20356430113315582
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.16932618618011475
+              }
+            ],
+            "player_3": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.16556014120578766
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.15417921543121338
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.1511123925447464
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "117": "actor_default",
+            "112": "heuristic_reference",
+            "137": "belief_ranked",
+            "113": "belief_ranked",
+            "138": "belief_ranked",
+            "136": "belief_ranked",
+            "119": "belief_ranked",
+            "490": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 137,
+              "decoded": {
+                "kind": "card",
+                "action": 137,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p3:Roi"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.8666666666666666,
+              "reward_std": 0.6182412330330469,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 138,
+              "decoded": {
+                "kind": "card",
+                "action": 138,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p3:Comtesse"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 112,
+              "decoded": {
+                "kind": "card",
+                "action": 112,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 2,
+                "guess_name": "Pretre",
+                "label": "Garde->p1:Pretre"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.4714045207910317,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 136,
+              "decoded": {
+                "kind": "card",
+                "action": 136,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p3:Chancelier"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.4666666666666666,
+              "reward_std": 0.37712361663282534,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 117,
+              "decoded": {
+                "kind": "card",
+                "action": 117,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p1:Roi"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 530,
+          "model_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          },
+          "heuristic_action": 500,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 500,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "margin": 0.6666666666666667,
+          "reward_margin": 0.5333333333333333,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.4341716468334198
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.2967560291290283
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.09877991676330566
+              }
+            ],
+            "player_2": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.38695859909057617
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.16013121604919434
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.12925028800964355
+              }
+            ],
+            "player_3": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.29855090379714966
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.269761860370636
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.20075088739395142
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "530": "actor_default",
+            "500": "heuristic_reference",
+            "510": "belief_ranked",
+            "90": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.2,
+              "reward_std": 0.0,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 530,
+              "decoded": {
+                "kind": "card",
+                "action": 530,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p3"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.6666666666666666,
+              "reward_std": 0.524933858267454,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 510,
+              "decoded": {
+                "kind": "card",
+                "action": 510,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p1"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.20000000000000004,
+              "reward_std": 2.7755575615628914e-17,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 90,
+              "decoded": {
+                "kind": "card",
+                "action": 90,
+                "card": 0,
+                "card_name": "Espionne",
+                "target": 9,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Espionne"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.20000000000000004,
+              "reward_std": 2.7755575615628914e-17,
+              "wins": 0,
+              "rollouts": 3
+            }
+          ]
+        }
+      ]
+    },
+    "vs_2H_1R": {
+      "games": 5,
+      "wins": 1,
+      "winrate": 0.2,
+      "winrate_ci95": 0.3506154588719671,
+      "mean_reward": 0.20000000298023224,
+      "reward_std": 0.40000003576278687,
+      "reward_ci95": 0.35061550301431543,
+      "avg_actions_player0": 1.6,
+      "hybrid_search": {
+        "decisions": 8,
+        "search_checks": 6,
+        "overrides": 5,
+        "belief_available": 8,
+        "check_rate": 0.75,
+        "override_rate_per_decision": 0.625,
+        "override_rate_per_check": 0.8333333333333334,
+        "mean_candidate_count": 7.333333333333333,
+        "mean_override_margin": 0.5333333333333333,
+        "by_category": {
+          "baron": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 3,
+            "checked": 3,
+            "overrides": 3,
+            "mean_check_margin": 0.3333333333333333,
+            "mean_override_margin": 0.3333333333333333
+          },
+          "handmaid": {
+            "seen": 1,
+            "checked": 0,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "prince": {
+            "seen": 3,
+            "checked": 2,
+            "overrides": 2,
+            "mean_check_margin": 0.8333333333333333,
+            "mean_override_margin": 0.8333333333333333
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "guard",
+          "model_action": 134,
+          "model_decoded": {
+            "kind": "card",
+            "action": 134,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p3:Servante"
+          },
+          "heuristic_action": 112,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          },
+          "chosen_action": 115,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 115,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 5,
+            "guess_name": "Prince",
+            "label": "Garde->p1:Prince"
+          },
+          "margin": 0.33333333333333337,
+          "reward_margin": 0.2666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.20832975208759308
+              },
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.15218806266784668
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.1262899488210678
+              }
+            ],
+            "player_2": [
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.18965637683868408
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.15965770184993744
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.12592339515686035
+              }
+            ],
+            "player_3": [
+              {
+                "card": 4,
+                "card_name": "Servante",
+                "prob": 0.19320954382419586
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.13873837888240814
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.11986874788999557
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "134": "actor_default",
+            "112": "heuristic_reference",
+            "115": "belief_ranked",
+            "114": "belief_ranked",
+            "132": "belief_ranked",
+            "116": "belief_ranked",
+            "118": "belief_ranked",
+            "117": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 115,
+              "decoded": {
+                "kind": "card",
+                "action": 115,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p1:Prince"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.4666666666666668,
+              "reward_std": 0.37712361663282534,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 134,
+              "decoded": {
+                "kind": "card",
+                "action": 134,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p3:Servante"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.2000000000000002,
+              "reward_std": 0.9797958971132714,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 118,
+              "decoded": {
+                "kind": "card",
+                "action": 118,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p1:Comtesse"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 1.1333333333333335,
+              "reward_std": 0.8993825042154695,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 112,
+              "decoded": {
+                "kind": "card",
+                "action": 112,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 2,
+                "guess_name": "Pretre",
+                "label": "Garde->p1:Pretre"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.8666666666666666,
+              "reward_std": 0.6182412330330469,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 114,
+              "decoded": {
+                "kind": "card",
+                "action": 114,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 4,
+                "guess_name": "Servante",
+                "label": "Garde->p1:Servante"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.8000000000000002,
+              "reward_std": 1.1313708498984762,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 510,
+          "model_decoded": {
+            "kind": "card",
+            "action": 510,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p1"
+          },
+          "heuristic_action": 500,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          },
+          "margin": 1.0,
+          "reward_margin": 1.0666666666666667,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.18676716089248657
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.15909667313098907
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.14654046297073364
+              }
+            ],
+            "player_2": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.18011195957660675
+              },
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.1705392599105835
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.1608605980873108
+              }
+            ],
+            "player_3": [
+              {
+                "card": 2,
+                "card_name": "Pretre",
+                "prob": 0.2027503252029419
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.15915971994400024
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.11880289763212204
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "510": "actor_default",
+            "500": "heuristic_reference",
+            "117": "belief_ranked",
+            "113": "belief_ranked",
+            "118": "belief_ranked",
+            "112": "belief_ranked",
+            "119": "belief_ranked",
+            "114": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 112,
+              "decoded": {
+                "kind": "card",
+                "action": 112,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 2,
+                "guess_name": "Pretre",
+                "label": "Garde->p1:Pretre"
+              },
+              "winrate": 1.0,
+              "mean_reward": 1.0666666666666667,
+              "reward_std": 0.09428090415820632,
+              "wins": 3,
+              "rollouts": 3
+            },
+            {
+              "action": 118,
+              "decoded": {
+                "kind": "card",
+                "action": 118,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p1:Comtesse"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 113,
+              "decoded": {
+                "kind": "card",
+                "action": 113,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p1:Baron"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7333333333333334,
+              "reward_std": 0.5249338582674541,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 117,
+              "decoded": {
+                "kind": "card",
+                "action": 117,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p1:Roi"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "prince",
+          "model_action": 510,
+          "model_decoded": {
+            "kind": "card",
+            "action": 510,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p1"
+          },
+          "heuristic_action": 500,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 113,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 113,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 3,
+            "guess_name": "Baron",
+            "label": "Garde->p1:Baron"
+          },
+          "margin": 0.6666666666666666,
+          "reward_margin": 0.7999999999999999,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.23605015873908997
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.18312211334705353
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.17529024183750153
+              }
+            ],
+            "player_2": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.26176586747169495
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.22159862518310547
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.12355673313140869
+              }
+            ],
+            "player_3": [
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.155384823679924
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.14295780658721924
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.1331104338169098
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "510": "actor_default",
+            "500": "heuristic_reference",
+            "117": "belief_ranked",
+            "136": "belief_ranked",
+            "530": "belief_ranked",
+            "118": "belief_ranked",
+            "119": "belief_ranked",
+            "113": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 113,
+              "decoded": {
+                "kind": "card",
+                "action": 113,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p1:Baron"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.7999999999999999,
+              "reward_std": 0.565685424949238,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 530,
+              "decoded": {
+                "kind": "card",
+                "action": 530,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p3"
+              },
+              "winrate": 0.6666666666666666,
+              "mean_reward": 0.6,
+              "reward_std": 0.5656854249492381,
+              "wins": 2,
+              "rollouts": 3
+            },
+            {
+              "action": 119,
+              "decoded": {
+                "kind": "card",
+                "action": 119,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 9,
+                "guess_name": "Princesse",
+                "label": "Garde->p1:Princesse"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.4666666666666666,
+              "reward_std": 0.6599663291074443,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 500,
+              "decoded": {
+                "kind": "card",
+                "action": 500,
+                "card": 5,
+                "card_name": "Prince",
+                "target": 0,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Prince->p0"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 117,
+              "decoded": {
+                "kind": "card",
+                "action": 117,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 1,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p1:Roi"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4988876515698589,
+              "wins": 1,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 230,
+          "model_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          },
+          "heuristic_action": 230,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          },
+          "chosen_action": 130,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 130,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Garde->p3:Espionne"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.5333333333333333,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.234462171792984
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.18831005692481995
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.1540326178073883
+              }
+            ],
+            "player_2": [
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.1894715428352356
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.16015243530273438
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.15471938252449036
+              }
+            ],
+            "player_3": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.21691592037677765
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.16278548538684845
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.1538834571838379
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "230": "actor_default",
+            "133": "belief_ranked",
+            "138": "belief_ranked",
+            "130": "belief_ranked",
+            "135": "belief_ranked",
+            "136": "belief_ranked",
+            "139": "belief_ranked",
+            "137": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 130,
+              "decoded": {
+                "kind": "card",
+                "action": 130,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Garde->p3:Espionne"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 0.6182412330330469,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 138,
+              "decoded": {
+                "kind": "card",
+                "action": 138,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p3:Comtesse"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.39999999999999997,
+              "reward_std": 0.565685424949238,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 137,
+              "decoded": {
+                "kind": "card",
+                "action": 137,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p3:Roi"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.26666666666666666,
+              "reward_std": 0.5249338582674541,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 133,
+              "decoded": {
+                "kind": "card",
+                "action": 133,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p3:Baron"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 139,
+              "decoded": {
+                "kind": "card",
+                "action": 139,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 9,
+                "guess_name": "Princesse",
+                "label": "Garde->p3:Princesse"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            }
+          ]
+        },
+        {
+          "category": "guard",
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "heuristic_action": 210,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.26666666666666666,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.4193691611289978
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.14277513325214386
+              },
+              {
+                "card": 9,
+                "card_name": "Princesse",
+                "prob": 0.13269619643688202
+              }
+            ],
+            "player_2": [
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.6670910120010376
+              },
+              {
+                "card": 7,
+                "card_name": "Roi",
+                "prob": 0.2040778249502182
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.06343948841094971
+              }
+            ],
+            "player_3": [
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.24553750455379486
+              },
+              {
+                "card": 6,
+                "card_name": "Chancelier",
+                "prob": 0.17192696034908295
+              },
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.11994810402393341
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "210": "actor_default",
+            "125": "belief_ranked",
+            "113": "belief_ranked",
+            "133": "belief_ranked",
+            "230": "belief_ranked",
+            "220": "belief_ranked",
+            "127": "belief_ranked",
+            "136": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 230,
+              "decoded": {
+                "kind": "card",
+                "action": 230,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p3"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.3333333333333333,
+              "reward_std": 0.4714045207910317,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 125,
+              "decoded": {
+                "kind": "card",
+                "action": 125,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p2:Prince"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.20000000000000004,
+              "reward_std": 2.7755575615628914e-17,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 136,
+              "decoded": {
+                "kind": "card",
+                "action": 136,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 6,
+                "guess_name": "Chancelier",
+                "label": "Garde->p3:Chancelier"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.13333333333333333,
+              "reward_std": 0.09428090415820634,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 210,
+              "decoded": {
+                "kind": "card",
+                "action": 210,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 1,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p1"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 127,
+              "decoded": {
+                "kind": "card",
+                "action": 127,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 2,
+                "guess": 7,
+                "guess_name": "Roi",
+                "label": "Garde->p2:Roi"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            }
+          ]
+        }
+      ]
+    },
+    "vs_3H": {
+      "games": 5,
+      "wins": 0,
+      "winrate": 0.0,
+      "winrate_ci95": 0.0,
+      "mean_reward": 0.0,
+      "reward_std": 0.0,
+      "reward_ci95": 0.0,
+      "avg_actions_player0": 1.0,
+      "hybrid_search": {
+        "decisions": 5,
+        "search_checks": 4,
+        "overrides": 1,
+        "belief_available": 5,
+        "check_rate": 0.8,
+        "override_rate_per_decision": 0.2,
+        "override_rate_per_check": 0.25,
+        "mean_candidate_count": 7.0,
+        "mean_override_margin": 0.3333333333333333,
+        "by_category": {
+          "baron": {
+            "seen": 1,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          },
+          "guard": {
+            "seen": 2,
+            "checked": 2,
+            "overrides": 1,
+            "mean_check_margin": 0.16666666666666666,
+            "mean_override_margin": 0.3333333333333333
+          },
+          "prince": {
+            "seen": 2,
+            "checked": 1,
+            "overrides": 0,
+            "mean_check_margin": 0.0,
+            "mean_override_margin": 0.0
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "guard",
+          "model_action": 230,
+          "model_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          },
+          "heuristic_action": 230,
+          "heuristic_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          },
+          "chosen_action": 130,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 130,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Garde->p3:Espionne"
+          },
+          "margin": 0.3333333333333333,
+          "reward_margin": 0.5333333333333333,
+          "belief_top": {
+            "player_1": [
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.234462171792984
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.18831005692481995
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.1540326178073883
+              }
+            ],
+            "player_2": [
+              {
+                "card": 0,
+                "card_name": "Espionne",
+                "prob": 0.1894715428352356
+              },
+              {
+                "card": 5,
+                "card_name": "Prince",
+                "prob": 0.16015243530273438
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.15471938252449036
+              }
+            ],
+            "player_3": [
+              {
+                "card": 1,
+                "card_name": "Garde",
+                "prob": 0.21691592037677765
+              },
+              {
+                "card": 3,
+                "card_name": "Baron",
+                "prob": 0.16278548538684845
+              },
+              {
+                "card": 8,
+                "card_name": "Comtesse",
+                "prob": 0.1538834571838379
+              }
+            ]
+          },
+          "candidate_reasons": {
+            "230": "actor_default",
+            "133": "belief_ranked",
+            "138": "belief_ranked",
+            "130": "belief_ranked",
+            "135": "belief_ranked",
+            "136": "belief_ranked",
+            "139": "belief_ranked",
+            "137": "belief_ranked"
+          },
+          "top_actions": [
+            {
+              "action": 130,
+              "decoded": {
+                "kind": "card",
+                "action": 130,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Garde->p3:Espionne"
+              },
+              "winrate": 0.3333333333333333,
+              "mean_reward": 0.5333333333333333,
+              "reward_std": 0.6182412330330469,
+              "wins": 1,
+              "rollouts": 3
+            },
+            {
+              "action": 133,
+              "decoded": {
+                "kind": "card",
+                "action": 133,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 3,
+                "guess_name": "Baron",
+                "label": "Garde->p3:Baron"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 138,
+              "decoded": {
+                "kind": "card",
+                "action": 138,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 8,
+                "guess_name": "Comtesse",
+                "label": "Garde->p3:Comtesse"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.06666666666666667,
+              "reward_std": 0.09428090415820635,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 230,
+              "decoded": {
+                "kind": "card",
+                "action": 230,
+                "card": 2,
+                "card_name": "Pretre",
+                "target": 3,
+                "guess": 0,
+                "guess_name": "Espionne",
+                "label": "Pretre->p3"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.0,
+              "reward_std": 0.0,
+              "wins": 0,
+              "rollouts": 3
+            },
+            {
+              "action": 135,
+              "decoded": {
+                "kind": "card",
+                "action": 135,
+                "card": 1,
+                "card_name": "Garde",
+                "target": 3,
+                "guess": 5,
+                "guess_name": "Prince",
+                "label": "Garde->p3:Prince"
+              },
+              "winrate": 0.0,
+              "mean_reward": 0.0,
+              "reward_std": 0.0,
+              "wins": 0,
+              "rollouts": 3
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hybrid_composite": 0.14,
+  "step2_configs": {
+    "vs_0H_3R": {
+      "games": 5,
+      "wins": 2,
+      "winrate": 0.4,
+      "winrate_ci95": 0.4294144850840502,
+      "mean_reward": 0.6399999856948853,
+      "reward_std": 0.8236504197120667,
+      "reward_ci95": 0.7219614363722294,
+      "avg_actions_player0": 3.6
+    },
+    "vs_1H_2R": {
+      "games": 5,
+      "wins": 2,
+      "winrate": 0.4,
+      "winrate_ci95": 0.4294144850840502,
+      "mean_reward": 0.4399999976158142,
+      "reward_std": 0.5425863862037659,
+      "reward_ci95": 0.4755979252126459,
+      "avg_actions_player0": 3.0
+    },
+    "vs_2H_1R": {
+      "games": 5,
+      "wins": 1,
+      "winrate": 0.2,
+      "winrate_ci95": 0.3506154588719671,
+      "mean_reward": 0.3199999928474426,
+      "reward_std": 0.5455272197723389,
+      "reward_ci95": 0.47817572107379586,
+      "avg_actions_player0": 2.2
+    },
+    "vs_3H": {
+      "games": 5,
+      "wins": 0,
+      "winrate": 0.0,
+      "winrate_ci95": 0.0,
+      "mean_reward": 0.03999999910593033,
+      "reward_std": 0.07999999821186066,
+      "reward_ci95": 0.07012309260606084,
+      "avg_actions_player0": 1.2
+    }
+  },
+  "step2_composite": 0.18000000000000002,
+  "hybrid_minus_step2": -0.04000000000000001,
+  "uniform_step3_configs": null,
+  "uniform_step3_composite": null,
+  "hybrid_minus_uniform_step3": null
+}

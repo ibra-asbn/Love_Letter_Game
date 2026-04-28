@@ -1,0 +1,4703 @@
+{
+  "created_at": "2026-04-26 15:15:35 CEST",
+  "args": {
+    "games": 1000,
+    "seed_start": 2000000,
+    "seed_stride": 10000,
+    "example_limit": 24,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "baron_specialist_v1_eval_1000_seed2000000.json",
+    "markdown": "baron_specialist_v1_eval_1000_seed2000000.md",
+    "run_log": "step5_execution_heads/cards/baron/logs/2026-04-26_baron_specialist_v1_eval_1000_seed2000000.md"
+  },
+  "policies": {
+    "baseline": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 526,
+          "winrate": 0.526,
+          "mean_reward": 0.7601999640464783,
+          "outcomes": {
+            "final_loser": {
+              "count": 120,
+              "rate": 0.12
+            },
+            "first_out": {
+              "count": 140,
+              "rate": 0.14
+            },
+            "second_out": {
+              "count": 132,
+              "rate": 0.132
+            },
+            "third_out": {
+              "count": 82,
+              "rate": 0.082
+            },
+            "winner": {
+              "count": 526,
+              "rate": 0.526
+            }
+          },
+          "baron_hand": {
+            "games": 464,
+            "winrate": 0.5474137931034483
+          },
+          "baron_played": {
+            "games": 342,
+            "winrate": 0.564327485380117
+          },
+          "baron": {
+            "duel_win_rate": 0.7622950819672131,
+            "duel_loss_rate": 0.2185792349726776,
+            "duel_tie_rate": 0.01092896174863388,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 71,
+                "hand_winrate": 0.5211267605633803,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 224,
+                "hand_winrate": 0.5848214285714286,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 83,
+                "hand_winrate": 0.6024096385542169,
+                "played": 2,
+                "play_rate": 0.024096385542168676,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 21,
+                "hand_winrate": 0.23809523809523808,
+                "played": 21,
+                "play_rate": 1.0,
+                "played_winrate": 0.23809523809523808,
+                "played_mean_reward": 0.4571428571428572,
+                "duel_win_rate": 0.47619047619047616,
+                "duel_loss_rate": 0.47619047619047616,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.047619047619047616
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 88,
+                "hand_winrate": 0.5113636363636364,
+                "played": 2,
+                "play_rate": 0.022727272727272728,
+                "played_winrate": 0.5,
+                "played_mean_reward": 1.0,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 89,
+                "hand_winrate": 0.43820224719101125,
+                "played": 84,
+                "play_rate": 0.9438202247191011,
+                "played_winrate": 0.4166666666666667,
+                "played_mean_reward": 0.6309523809523809,
+                "duel_win_rate": 0.5714285714285714,
+                "duel_loss_rate": 0.4166666666666667,
+                "duel_tie_rate": 0.011904761904761904,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 85,
+                "hand_winrate": 0.5176470588235295,
+                "played": 81,
+                "play_rate": 0.9529411764705882,
+                "played_winrate": 0.5061728395061729,
+                "played_mean_reward": 0.7851851851851854,
+                "duel_win_rate": 0.7283950617283951,
+                "duel_loss_rate": 0.2345679012345679,
+                "duel_tie_rate": 0.037037037037037035,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 63,
+                "hand_winrate": 0.6825396825396826,
+                "played": 63,
+                "play_rate": 1.0,
+                "played_winrate": 0.6825396825396826,
+                "played_mean_reward": 1.0317460317460323,
+                "duel_win_rate": 0.8412698412698413,
+                "duel_loss_rate": 0.14285714285714285,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.015873015873015872
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 55,
+                "hand_winrate": 0.6363636363636364,
+                "played": 55,
+                "play_rate": 1.0,
+                "played_winrate": 0.6363636363636364,
+                "played_mean_reward": 1.0181818181818185,
+                "duel_win_rate": 0.8909090909090909,
+                "duel_loss_rate": 0.09090909090909091,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.01818181818181818
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 58,
+                "hand_winrate": 0.7758620689655172,
+                "played": 58,
+                "play_rate": 1.0,
+                "played_winrate": 0.7758620689655172,
+                "played_mean_reward": 1.2689655172413803,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 837,
+              "base_baron_plays": 366
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 470,
+          "winrate": 0.47,
+          "mean_reward": 0.7008000016212463,
+          "outcomes": {
+            "final_loser": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "first_out": {
+              "count": 163,
+              "rate": 0.163
+            },
+            "second_out": {
+              "count": 138,
+              "rate": 0.138
+            },
+            "third_out": {
+              "count": 113,
+              "rate": 0.113
+            },
+            "winner": {
+              "count": 470,
+              "rate": 0.47
+            }
+          },
+          "baron_hand": {
+            "games": 461,
+            "winrate": 0.5075921908893709
+          },
+          "baron_played": {
+            "games": 332,
+            "winrate": 0.5271084337349398
+          },
+          "baron": {
+            "duel_win_rate": 0.7225274725274725,
+            "duel_loss_rate": 0.23351648351648352,
+            "duel_tie_rate": 0.03296703296703297,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 76,
+                "hand_winrate": 0.5263157894736842,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 189,
+                "hand_winrate": 0.5396825396825397,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 72,
+                "hand_winrate": 0.4027777777777778,
+                "played": 2,
+                "play_rate": 0.027777777777777776,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 21,
+                "hand_winrate": 0.23809523809523808,
+                "played": 21,
+                "play_rate": 1.0,
+                "played_winrate": 0.23809523809523808,
+                "played_mean_reward": 0.2857142857142857,
+                "duel_win_rate": 0.3333333333333333,
+                "duel_loss_rate": 0.6666666666666666,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 64,
+                "hand_winrate": 0.484375,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 78,
+                "hand_winrate": 0.34615384615384615,
+                "played": 74,
+                "play_rate": 0.9487179487179487,
+                "played_winrate": 0.35135135135135137,
+                "played_mean_reward": 0.5027027027027023,
+                "duel_win_rate": 0.4864864864864865,
+                "duel_loss_rate": 0.44594594594594594,
+                "duel_tie_rate": 0.06756756756756757,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 92,
+                "hand_winrate": 0.40217391304347827,
+                "played": 88,
+                "play_rate": 0.9565217391304348,
+                "played_winrate": 0.3977272727272727,
+                "played_mean_reward": 0.5818181818181819,
+                "duel_win_rate": 0.625,
+                "duel_loss_rate": 0.29545454545454547,
+                "duel_tie_rate": 0.07954545454545454,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 59,
+                "hand_winrate": 0.6271186440677966,
+                "played": 59,
+                "play_rate": 1.0,
+                "played_winrate": 0.6271186440677966,
+                "played_mean_reward": 0.9694915254237295,
+                "duel_win_rate": 0.847457627118644,
+                "duel_loss_rate": 0.13559322033898305,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.01694915254237288
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 46,
+                "hand_winrate": 0.6739130434782609,
+                "played": 46,
+                "play_rate": 1.0,
+                "played_winrate": 0.6739130434782609,
+                "played_mean_reward": 1.1000000000000003,
+                "duel_win_rate": 0.9347826086956522,
+                "duel_loss_rate": 0.043478260869565216,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.021739130434782608
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 74,
+                "hand_winrate": 0.8243243243243243,
+                "played": 74,
+                "play_rate": 1.0,
+                "played_winrate": 0.8243243243243243,
+                "played_mean_reward": 1.3540540540540555,
+                "duel_win_rate": 0.972972972972973,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.02702702702702703
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 771,
+              "base_baron_plays": 364
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 368,
+          "winrate": 0.368,
+          "mean_reward": 0.5699999928474426,
+          "outcomes": {
+            "final_loser": {
+              "count": 126,
+              "rate": 0.126
+            },
+            "first_out": {
+              "count": 215,
+              "rate": 0.215
+            },
+            "second_out": {
+              "count": 174,
+              "rate": 0.174
+            },
+            "third_out": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "winner": {
+              "count": 368,
+              "rate": 0.368
+            }
+          },
+          "baron_hand": {
+            "games": 420,
+            "winrate": 0.40714285714285714
+          },
+          "baron_played": {
+            "games": 299,
+            "winrate": 0.43812709030100333
+          },
+          "baron": {
+            "duel_win_rate": 0.722397476340694,
+            "duel_loss_rate": 0.2555205047318612,
+            "duel_tie_rate": 0.015772870662460567,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 54,
+                "hand_winrate": 0.4074074074074074,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 178,
+                "hand_winrate": 0.4101123595505618,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 64,
+                "hand_winrate": 0.375,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 19,
+                "hand_winrate": 0.10526315789473684,
+                "played": 19,
+                "play_rate": 1.0,
+                "played_winrate": 0.10526315789473684,
+                "played_mean_reward": 0.12631578947368421,
+                "duel_win_rate": 0.2631578947368421,
+                "duel_loss_rate": 0.7368421052631579,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 51,
+                "hand_winrate": 0.45098039215686275,
+                "played": 1,
+                "play_rate": 0.0196078431372549,
+                "played_winrate": 1.0,
+                "played_mean_reward": 2.4000000000000004,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 76,
+                "hand_winrate": 0.25,
+                "played": 72,
+                "play_rate": 0.9473684210526315,
+                "played_winrate": 0.25,
+                "played_mean_reward": 0.3833333333333332,
+                "duel_win_rate": 0.5416666666666666,
+                "duel_loss_rate": 0.4027777777777778,
+                "duel_tie_rate": 0.05555555555555555,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 71,
+                "hand_winrate": 0.39436619718309857,
+                "played": 69,
+                "play_rate": 0.971830985915493,
+                "played_winrate": 0.391304347826087,
+                "played_mean_reward": 0.6115942028985507,
+                "duel_win_rate": 0.6811594202898551,
+                "duel_loss_rate": 0.30434782608695654,
+                "duel_tie_rate": 0.014492753623188406,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 55,
+                "hand_winrate": 0.41818181818181815,
+                "played": 55,
+                "play_rate": 1.0,
+                "played_winrate": 0.41818181818181815,
+                "played_mean_reward": 0.6436363636363636,
+                "duel_win_rate": 0.7090909090909091,
+                "duel_loss_rate": 0.2545454545454545,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.03636363636363636
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 43,
+                "hand_winrate": 0.5813953488372093,
+                "played": 43,
+                "play_rate": 1.0,
+                "played_winrate": 0.5813953488372093,
+                "played_mean_reward": 1.0093023255813955,
+                "duel_win_rate": 0.9302325581395349,
+                "duel_loss_rate": 0.06976744186046512,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 58,
+                "hand_winrate": 0.7758620689655172,
+                "played": 58,
+                "play_rate": 1.0,
+                "played_winrate": 0.7758620689655172,
+                "played_mean_reward": 1.3344827586206902,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 669,
+              "base_baron_plays": 317
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 326,
+          "winrate": 0.326,
+          "mean_reward": 0.5073999762535095,
+          "outcomes": {
+            "final_loser": {
+              "count": 103,
+              "rate": 0.103
+            },
+            "first_out": {
+              "count": 256,
+              "rate": 0.256
+            },
+            "second_out": {
+              "count": 184,
+              "rate": 0.184
+            },
+            "third_out": {
+              "count": 131,
+              "rate": 0.131
+            },
+            "winner": {
+              "count": 326,
+              "rate": 0.326
+            }
+          },
+          "baron_hand": {
+            "games": 402,
+            "winrate": 0.3805970149253731
+          },
+          "baron_played": {
+            "games": 286,
+            "winrate": 0.4090909090909091
+          },
+          "baron": {
+            "duel_win_rate": 0.6807817589576547,
+            "duel_loss_rate": 0.2899022801302932,
+            "duel_tie_rate": 0.019543973941368076,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 58,
+                "hand_winrate": 0.4827586206896552,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 171,
+                "hand_winrate": 0.38011695906432746,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 58,
+                "hand_winrate": 0.3793103448275862,
+                "played": 2,
+                "play_rate": 0.034482758620689655,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 13,
+                "hand_winrate": 0.07692307692307693,
+                "played": 13,
+                "play_rate": 1.0,
+                "played_winrate": 0.07692307692307693,
+                "played_mean_reward": 0.03076923076923077,
+                "duel_win_rate": 0.3076923076923077,
+                "duel_loss_rate": 0.6923076923076923,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 69,
+                "hand_winrate": 0.4927536231884058,
+                "played": 1,
+                "play_rate": 0.014492753623188406,
+                "played_winrate": 1.0,
+                "played_mean_reward": 2.4000000000000004,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 68,
+                "hand_winrate": 0.3235294117647059,
+                "played": 65,
+                "play_rate": 0.9558823529411765,
+                "played_winrate": 0.2923076923076923,
+                "played_mean_reward": 0.42769230769230787,
+                "duel_win_rate": 0.4461538461538462,
+                "duel_loss_rate": 0.5230769230769231,
+                "duel_tie_rate": 0.03076923076923077,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 66,
+                "hand_winrate": 0.24242424242424243,
+                "played": 62,
+                "play_rate": 0.9393939393939394,
+                "played_winrate": 0.24193548387096775,
+                "played_mean_reward": 0.41290322580645156,
+                "duel_win_rate": 0.5806451612903226,
+                "duel_loss_rate": 0.3548387096774194,
+                "duel_tie_rate": 0.06451612903225806,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 47,
+                "hand_winrate": 0.2978723404255319,
+                "played": 47,
+                "play_rate": 1.0,
+                "played_winrate": 0.2978723404255319,
+                "played_mean_reward": 0.5361702127659573,
+                "duel_win_rate": 0.6382978723404256,
+                "duel_loss_rate": 0.3191489361702128,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0425531914893617
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 53,
+                "hand_winrate": 0.6037735849056604,
+                "played": 53,
+                "play_rate": 1.0,
+                "played_winrate": 0.6037735849056604,
+                "played_mean_reward": 1.0830188679245285,
+                "duel_win_rate": 0.8490566037735849,
+                "duel_loss_rate": 0.1320754716981132,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.018867924528301886
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 64,
+                "hand_winrate": 0.703125,
+                "played": 64,
+                "play_rate": 1.0,
+                "played_winrate": 0.703125,
+                "played_mean_reward": 1.1500000000000004,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 667,
+              "base_baron_plays": 307
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.3874
+    },
+    "random_target": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 516,
+          "winrate": 0.516,
+          "mean_reward": 0.7449999451637268,
+          "outcomes": {
+            "final_loser": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "first_out": {
+              "count": 148,
+              "rate": 0.148
+            },
+            "second_out": {
+              "count": 134,
+              "rate": 0.134
+            },
+            "third_out": {
+              "count": 85,
+              "rate": 0.085
+            },
+            "winner": {
+              "count": 516,
+              "rate": 0.516
+            }
+          },
+          "baron_hand": {
+            "games": 464,
+            "winrate": 0.5258620689655172
+          },
+          "baron_played": {
+            "games": 342,
+            "winrate": 0.5350877192982456
+          },
+          "baron": {
+            "duel_win_rate": 0.7445652173913043,
+            "duel_loss_rate": 0.23369565217391305,
+            "duel_tie_rate": 0.01358695652173913,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 72,
+                "hand_winrate": 0.5694444444444444,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 221,
+                "hand_winrate": 0.5610859728506787,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 82,
+                "hand_winrate": 0.5609756097560976,
+                "played": 2,
+                "play_rate": 0.024390243902439025,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 21,
+                "hand_winrate": 0.23809523809523808,
+                "played": 21,
+                "play_rate": 1.0,
+                "played_winrate": 0.23809523809523808,
+                "played_mean_reward": 0.36190476190476195,
+                "duel_win_rate": 0.38095238095238093,
+                "duel_loss_rate": 0.5714285714285714,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.047619047619047616
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 84,
+                "hand_winrate": 0.5238095238095238,
+                "played": 2,
+                "play_rate": 0.023809523809523808,
+                "played_winrate": 0.5,
+                "played_mean_reward": 0.8,
+                "duel_win_rate": 0.5,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.5,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 86,
+                "hand_winrate": 0.43023255813953487,
+                "played": 82,
+                "play_rate": 0.9534883720930233,
+                "played_winrate": 0.4146341463414634,
+                "played_mean_reward": 0.5926829268292682,
+                "duel_win_rate": 0.5487804878048781,
+                "duel_loss_rate": 0.4268292682926829,
+                "duel_tie_rate": 0.024390243902439025,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 87,
+                "hand_winrate": 0.5172413793103449,
+                "played": 83,
+                "play_rate": 0.9540229885057471,
+                "played_winrate": 0.5060240963855421,
+                "played_mean_reward": 0.763855421686747,
+                "duel_win_rate": 0.7349397590361446,
+                "duel_loss_rate": 0.24096385542168675,
+                "duel_tie_rate": 0.024096385542168676,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 64,
+                "hand_winrate": 0.65625,
+                "played": 64,
+                "play_rate": 1.0,
+                "played_winrate": 0.65625,
+                "played_mean_reward": 1.0812500000000005,
+                "duel_win_rate": 0.84375,
+                "duel_loss_rate": 0.125,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.03125
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 55,
+                "hand_winrate": 0.5454545454545454,
+                "played": 55,
+                "play_rate": 1.0,
+                "played_winrate": 0.5454545454545454,
+                "played_mean_reward": 0.9345454545454546,
+                "duel_win_rate": 0.8363636363636363,
+                "duel_loss_rate": 0.16363636363636364,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 59,
+                "hand_winrate": 0.7288135593220338,
+                "played": 59,
+                "play_rate": 1.0,
+                "played_winrate": 0.7288135593220338,
+                "played_mean_reward": 1.159322033898306,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 831,
+              "base_baron_plays": 368,
+              "overrides": 149
+            },
+            "override_rate": 0.1793020457280385,
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 469,
+          "winrate": 0.469,
+          "mean_reward": 0.6995999813079834,
+          "outcomes": {
+            "final_loser": {
+              "count": 110,
+              "rate": 0.11
+            },
+            "first_out": {
+              "count": 164,
+              "rate": 0.164
+            },
+            "second_out": {
+              "count": 147,
+              "rate": 0.147
+            },
+            "third_out": {
+              "count": 110,
+              "rate": 0.11
+            },
+            "winner": {
+              "count": 469,
+              "rate": 0.469
+            }
+          },
+          "baron_hand": {
+            "games": 461,
+            "winrate": 0.5054229934924078
+          },
+          "baron_played": {
+            "games": 332,
+            "winrate": 0.5240963855421686
+          },
+          "baron": {
+            "duel_win_rate": 0.7099447513812155,
+            "duel_loss_rate": 0.2513812154696133,
+            "duel_tie_rate": 0.03038674033149171,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 77,
+                "hand_winrate": 0.5194805194805194,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 191,
+                "hand_winrate": 0.4869109947643979,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 72,
+                "hand_winrate": 0.375,
+                "played": 2,
+                "play_rate": 0.027777777777777776,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 21,
+                "hand_winrate": 0.3333333333333333,
+                "played": 21,
+                "play_rate": 1.0,
+                "played_winrate": 0.3333333333333333,
+                "played_mean_reward": 0.5142857142857143,
+                "duel_win_rate": 0.38095238095238093,
+                "duel_loss_rate": 0.6190476190476191,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 63,
+                "hand_winrate": 0.4603174603174603,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 76,
+                "hand_winrate": 0.3026315789473684,
+                "played": 72,
+                "play_rate": 0.9473684210526315,
+                "played_winrate": 0.3055555555555556,
+                "played_mean_reward": 0.4166666666666667,
+                "duel_win_rate": 0.4722222222222222,
+                "duel_loss_rate": 0.4166666666666667,
+                "duel_tie_rate": 0.1111111111111111,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 92,
+                "hand_winrate": 0.3695652173913043,
+                "played": 87,
+                "play_rate": 0.9456521739130435,
+                "played_winrate": 0.367816091954023,
+                "played_mean_reward": 0.5356321839080459,
+                "duel_win_rate": 0.6436781609195402,
+                "duel_loss_rate": 0.3218390804597701,
+                "duel_tie_rate": 0.034482758620689655,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 59,
+                "hand_winrate": 0.6101694915254238,
+                "played": 59,
+                "play_rate": 1.0,
+                "played_winrate": 0.6101694915254238,
+                "played_mean_reward": 0.9559322033898306,
+                "duel_win_rate": 0.7627118644067796,
+                "duel_loss_rate": 0.22033898305084745,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.01694915254237288
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 48,
+                "hand_winrate": 0.6666666666666666,
+                "played": 48,
+                "play_rate": 1.0,
+                "played_winrate": 0.6666666666666666,
+                "played_mean_reward": 1.1250000000000002,
+                "duel_win_rate": 0.875,
+                "duel_loss_rate": 0.10416666666666667,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.020833333333333332
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 73,
+                "hand_winrate": 0.9041095890410958,
+                "played": 73,
+                "play_rate": 1.0,
+                "played_winrate": 0.9041095890410958,
+                "played_mean_reward": 1.432876712328769,
+                "duel_win_rate": 0.9863013698630136,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0136986301369863
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 772,
+              "base_baron_plays": 362,
+              "overrides": 138
+            },
+            "override_rate": 0.17875647668393782,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 362,
+          "winrate": 0.362,
+          "mean_reward": 0.5479999780654907,
+          "outcomes": {
+            "final_loser": {
+              "count": 130,
+              "rate": 0.13
+            },
+            "first_out": {
+              "count": 221,
+              "rate": 0.221
+            },
+            "second_out": {
+              "count": 172,
+              "rate": 0.172
+            },
+            "third_out": {
+              "count": 115,
+              "rate": 0.115
+            },
+            "winner": {
+              "count": 362,
+              "rate": 0.362
+            }
+          },
+          "baron_hand": {
+            "games": 420,
+            "winrate": 0.39285714285714285
+          },
+          "baron_played": {
+            "games": 299,
+            "winrate": 0.4180602006688963
+          },
+          "baron": {
+            "duel_win_rate": 0.6881028938906752,
+            "duel_loss_rate": 0.2797427652733119,
+            "duel_tie_rate": 0.02572347266881029,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 56,
+                "hand_winrate": 0.39285714285714285,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 175,
+                "hand_winrate": 0.4057142857142857,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 63,
+                "hand_winrate": 0.36507936507936506,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 19,
+                "hand_winrate": 0.15789473684210525,
+                "played": 19,
+                "play_rate": 1.0,
+                "played_winrate": 0.15789473684210525,
+                "played_mean_reward": 0.15789473684210523,
+                "duel_win_rate": 0.3157894736842105,
+                "duel_loss_rate": 0.6842105263157895,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 51,
+                "hand_winrate": 0.4117647058823529,
+                "played": 1,
+                "play_rate": 0.0196078431372549,
+                "played_winrate": 1.0,
+                "played_mean_reward": 2.4000000000000004,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 73,
+                "hand_winrate": 0.1917808219178082,
+                "played": 69,
+                "play_rate": 0.9452054794520548,
+                "played_winrate": 0.18840579710144928,
+                "played_mean_reward": 0.2695652173913043,
+                "duel_win_rate": 0.463768115942029,
+                "duel_loss_rate": 0.4492753623188406,
+                "duel_tie_rate": 0.08695652173913043,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 70,
+                "hand_winrate": 0.37142857142857144,
+                "played": 67,
+                "play_rate": 0.9571428571428572,
+                "played_winrate": 0.373134328358209,
+                "played_mean_reward": 0.48955223880597,
+                "duel_win_rate": 0.6119402985074627,
+                "duel_loss_rate": 0.3582089552238806,
+                "duel_tie_rate": 0.029850746268656716,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 55,
+                "hand_winrate": 0.4,
+                "played": 55,
+                "play_rate": 1.0,
+                "played_winrate": 0.4,
+                "played_mean_reward": 0.6109090909090908,
+                "duel_win_rate": 0.6909090909090909,
+                "duel_loss_rate": 0.2727272727272727,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.03636363636363636
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 44,
+                "hand_winrate": 0.5681818181818182,
+                "played": 44,
+                "play_rate": 1.0,
+                "played_winrate": 0.5681818181818182,
+                "played_mean_reward": 1.0,
+                "duel_win_rate": 0.9090909090909091,
+                "duel_loss_rate": 0.09090909090909091,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 56,
+                "hand_winrate": 0.7321428571428571,
+                "played": 56,
+                "play_rate": 1.0,
+                "played_winrate": 0.7321428571428571,
+                "played_mean_reward": 1.1857142857142866,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 662,
+              "base_baron_plays": 311,
+              "overrides": 127
+            },
+            "override_rate": 0.19184290030211482,
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 324,
+          "winrate": 0.324,
+          "mean_reward": 0.5054000020027161,
+          "outcomes": {
+            "final_loser": {
+              "count": 108,
+              "rate": 0.108
+            },
+            "first_out": {
+              "count": 254,
+              "rate": 0.254
+            },
+            "second_out": {
+              "count": 179,
+              "rate": 0.179
+            },
+            "third_out": {
+              "count": 135,
+              "rate": 0.135
+            },
+            "winner": {
+              "count": 324,
+              "rate": 0.324
+            }
+          },
+          "baron_hand": {
+            "games": 402,
+            "winrate": 0.3756218905472637
+          },
+          "baron_played": {
+            "games": 286,
+            "winrate": 0.4020979020979021
+          },
+          "baron": {
+            "duel_win_rate": 0.6807817589576547,
+            "duel_loss_rate": 0.2964169381107492,
+            "duel_tie_rate": 0.016286644951140065,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 57,
+                "hand_winrate": 0.42105263157894735,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 174,
+                "hand_winrate": 0.3563218390804598,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 57,
+                "hand_winrate": 0.3157894736842105,
+                "played": 2,
+                "play_rate": 0.03508771929824561,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 13,
+                "hand_winrate": 0.07692307692307693,
+                "played": 13,
+                "play_rate": 1.0,
+                "played_winrate": 0.07692307692307693,
+                "played_mean_reward": 0.07692307692307693,
+                "duel_win_rate": 0.46153846153846156,
+                "duel_loss_rate": 0.5384615384615384,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 68,
+                "hand_winrate": 0.4852941176470588,
+                "played": 1,
+                "play_rate": 0.014705882352941176,
+                "played_winrate": 1.0,
+                "played_mean_reward": 2.4000000000000004,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 71,
+                "hand_winrate": 0.2535211267605634,
+                "played": 68,
+                "play_rate": 0.9577464788732394,
+                "played_winrate": 0.22058823529411764,
+                "played_mean_reward": 0.33823529411764713,
+                "duel_win_rate": 0.4117647058823529,
+                "duel_loss_rate": 0.5441176470588235,
+                "duel_tie_rate": 0.04411764705882353,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 66,
+                "hand_winrate": 0.3333333333333333,
+                "played": 62,
+                "play_rate": 0.9393939393939394,
+                "played_winrate": 0.3387096774193548,
+                "played_mean_reward": 0.593548387096774,
+                "duel_win_rate": 0.6612903225806451,
+                "duel_loss_rate": 0.3064516129032258,
+                "duel_tie_rate": 0.03225806451612903,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 43,
+                "hand_winrate": 0.3023255813953488,
+                "played": 43,
+                "play_rate": 1.0,
+                "played_winrate": 0.3023255813953488,
+                "played_mean_reward": 0.4976744186046511,
+                "duel_win_rate": 0.6511627906976745,
+                "duel_loss_rate": 0.32558139534883723,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.023255813953488372
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 52,
+                "hand_winrate": 0.5192307692307693,
+                "played": 52,
+                "play_rate": 1.0,
+                "played_winrate": 0.5192307692307693,
+                "played_mean_reward": 0.8192307692307692,
+                "duel_win_rate": 0.75,
+                "duel_loss_rate": 0.23076923076923078,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.019230769230769232
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 66,
+                "hand_winrate": 0.6666666666666666,
+                "played": 66,
+                "play_rate": 1.0,
+                "played_winrate": 0.6666666666666666,
+                "played_mean_reward": 1.1575757575757584,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 667,
+              "base_baron_plays": 307,
+              "overrides": 148
+            },
+            "override_rate": 0.22188905547226387,
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.3836
+    },
+    "specialist": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 543,
+          "winrate": 0.543,
+          "mean_reward": 0.7735999822616577,
+          "outcomes": {
+            "final_loser": {
+              "count": 132,
+              "rate": 0.132
+            },
+            "first_out": {
+              "count": 138,
+              "rate": 0.138
+            },
+            "second_out": {
+              "count": 113,
+              "rate": 0.113
+            },
+            "third_out": {
+              "count": 74,
+              "rate": 0.074
+            },
+            "winner": {
+              "count": 543,
+              "rate": 0.543
+            }
+          },
+          "baron_hand": {
+            "games": 464,
+            "winrate": 0.584051724137931
+          },
+          "baron_played": {
+            "games": 272,
+            "winrate": 0.6139705882352942
+          },
+          "baron": {
+            "duel_win_rate": 0.8299319727891157,
+            "duel_loss_rate": 0.12585034013605442,
+            "duel_tie_rate": 0.023809523809523808,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 72,
+                "hand_winrate": 0.5555555555555556,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 226,
+                "hand_winrate": 0.5929203539823009,
+                "played": 3,
+                "play_rate": 0.01327433628318584,
+                "played_winrate": 1.0,
+                "played_mean_reward": 2.0,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 80,
+                "hand_winrate": 0.5625,
+                "played": 1,
+                "play_rate": 0.0125,
+                "played_winrate": 1.0,
+                "played_mean_reward": 1.2,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 20,
+                "hand_winrate": 0.35,
+                "played": 20,
+                "play_rate": 1.0,
+                "played_winrate": 0.35,
+                "played_mean_reward": 0.5200000000000001,
+                "duel_win_rate": 0.35,
+                "duel_loss_rate": 0.55,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.1
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 83,
+                "hand_winrate": 0.5662650602409639,
+                "played": 2,
+                "play_rate": 0.024096385542168676,
+                "played_winrate": 0.5,
+                "played_mean_reward": 1.0,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 92,
+                "hand_winrate": 0.5652173913043478,
+                "played": 19,
+                "play_rate": 0.20652173913043478,
+                "played_winrate": 0.5789473684210527,
+                "played_mean_reward": 0.8526315789473682,
+                "duel_win_rate": 0.6842105263157895,
+                "duel_loss_rate": 0.10526315789473684,
+                "duel_tie_rate": 0.21052631578947367,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 78,
+                "hand_winrate": 0.48717948717948717,
+                "played": 65,
+                "play_rate": 0.8333333333333334,
+                "played_winrate": 0.47692307692307695,
+                "played_mean_reward": 0.7876923076923079,
+                "duel_win_rate": 0.7846153846153846,
+                "duel_loss_rate": 0.16923076923076924,
+                "duel_tie_rate": 0.046153846153846156,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 68,
+                "hand_winrate": 0.6911764705882353,
+                "played": 64,
+                "play_rate": 0.9411764705882353,
+                "played_winrate": 0.6875,
+                "played_mean_reward": 1.0656250000000005,
+                "duel_win_rate": 0.828125,
+                "duel_loss_rate": 0.109375,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0625
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 64,
+                "hand_winrate": 0.65625,
+                "played": 64,
+                "play_rate": 1.0,
+                "played_winrate": 0.65625,
+                "played_mean_reward": 1.0500000000000005,
+                "duel_win_rate": 0.90625,
+                "duel_loss_rate": 0.09375,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 56,
+                "hand_winrate": 0.7857142857142857,
+                "played": 56,
+                "play_rate": 1.0,
+                "played_winrate": 0.7857142857142857,
+                "played_mean_reward": 1.214285714285715,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 839,
+              "base_baron_plays": 374,
+              "overrides": 398,
+              "baron_retarget": 308,
+              "baron_to_other": 85,
+              "other_to_baron": 5
+            },
+            "override_rate": 0.47437425506555425,
+            "examples": [
+              {
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 230,
+                "best_baron": 300,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.6529412094503642,
+                  "p_lower": 0.3529411852359772,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.7647058963775635,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 129,
+                "chosen": 126,
+                "best_baron": 320,
+                "alt": 126,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.3,
+                  "p_lower": 0.0,
+                  "p_equal": 0.25,
+                  "p_higher": 0.75,
+                  "expected": 3.9166667461395264,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 320,
+                "best_baron": 320,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 2,
+                  "score": 1.015873016781277,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.5714287757873535,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 130,
+                "chosen": 136,
+                "best_baron": 330,
+                "alt": 136,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -0.9714286521077157,
+                  "p_lower": 0.1428571492433548,
+                  "p_equal": 0.2142857164144516,
+                  "p_higher": 0.6428571939468384,
+                  "expected": 3.7857141494750977,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 119,
+                "chosen": 116,
+                "best_baron": 310,
+                "alt": 116,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.0636363953351975,
+                  "p_lower": 0.1818181872367859,
+                  "p_equal": 0.09090909361839294,
+                  "p_higher": 0.7272727489471436,
+                  "expected": 3.909090995788574,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 520,
+                "best_baron": 310,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": -0.15000000000000002,
+                  "p_lower": 0.5,
+                  "p_equal": 0.125,
+                  "p_higher": 0.375,
+                  "expected": 3.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.48999998420476915,
+                  "p_lower": 0.800000011920929,
+                  "p_equal": 0.0,
+                  "p_higher": 0.20000001788139343,
+                  "expected": 3.133333444595337,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.0933334663510323,
+                  "p_lower": 0.06666667014360428,
+                  "p_equal": 0.2666666805744171,
+                  "p_higher": 0.6666667461395264,
+                  "expected": 4.066666603088379,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 116,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.4090910017490388,
+                  "p_lower": 0.0,
+                  "p_equal": 0.1818181872367859,
+                  "p_higher": 0.8181818723678589,
+                  "expected": 4.727272987365723,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 104,
+                "best_baron": 300,
+                "alt": 104,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.4333334013819694,
+                  "p_lower": 0.0,
+                  "p_equal": 0.1666666716337204,
+                  "p_higher": 0.8333333730697632,
+                  "expected": 5.166666507720947,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 100,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.1266667887568476,
+                  "p_lower": 0.13333334028720856,
+                  "p_equal": 0.13333334028720856,
+                  "p_higher": 0.73333340883255,
+                  "expected": 3.9333336353302,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 134,
+                "chosen": 124,
+                "best_baron": 320,
+                "alt": 124,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.000000138580799,
+                  "p_lower": 0.07692307978868484,
+                  "p_equal": 0.3076923191547394,
+                  "p_higher": 0.6153846979141235,
+                  "expected": 3.384615421295166,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 320,
+                "best_baron": 320,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 2,
+                  "score": 1.0059259261025322,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 1.3333333730697632,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.3125,
+                  "p_higher": 0.5625,
+                  "expected": 3.125,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  7,
+                  3
+                ],
+                "companion": 7,
+                "base_action": 330,
+                "chosen": 710,
+                "best_baron": 330,
+                "alt": 710,
+                "stats": {
+                  "kept": 7,
+                  "target": 3,
+                  "score": -0.275,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 6.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  7
+                ],
+                "companion": 7,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 700,
+                "stats": {
+                  "kept": 7,
+                  "target": 0,
+                  "score": 0.7166666720062494,
+                  "p_lower": 0.8888888955116272,
+                  "p_equal": 0.0,
+                  "p_higher": 0.1111111119389534,
+                  "expected": 3.277777910232544,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 520,
+                "best_baron": 330,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 3,
+                  "score": 0.10000000298023222,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 690,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.027777788788080193,
+                  "p_lower": 0.5555555820465088,
+                  "p_equal": 0.1111111119389534,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 4.888888835906982,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 510,
+                "chosen": 530,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": -2.15,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 8.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 139,
+                "chosen": 100,
+                "best_baron": 300,
+                "alt": 100,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.850000062584877,
+                  "p_lower": 0.1666666716337204,
+                  "p_equal": 0.25,
+                  "p_higher": 0.5833333730697632,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.3625,
+                  "p_lower": 0.75,
+                  "p_equal": 0.0,
+                  "p_higher": 0.25,
+                  "expected": 3.625,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.25,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0625,
+                  "p_higher": 0.4375,
+                  "expected": 3.0625,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.2315789438784122,
+                  "p_lower": 0.6842105388641357,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.2631579041481018,
+                  "expected": 3.263158082962036,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 120,
+                "chosen": 129,
+                "best_baron": 320,
+                "alt": 129,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 481,
+          "winrate": 0.481,
+          "mean_reward": 0.714199960231781,
+          "outcomes": {
+            "final_loser": {
+              "count": 133,
+              "rate": 0.133
+            },
+            "first_out": {
+              "count": 160,
+              "rate": 0.16
+            },
+            "second_out": {
+              "count": 133,
+              "rate": 0.133
+            },
+            "third_out": {
+              "count": 93,
+              "rate": 0.093
+            },
+            "winner": {
+              "count": 481,
+              "rate": 0.481
+            }
+          },
+          "baron_hand": {
+            "games": 461,
+            "winrate": 0.5314533622559653
+          },
+          "baron_played": {
+            "games": 277,
+            "winrate": 0.5884476534296029
+          },
+          "baron": {
+            "duel_win_rate": 0.8013245033112583,
+            "duel_loss_rate": 0.16887417218543047,
+            "duel_tie_rate": 0.019867549668874173,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 78,
+                "hand_winrate": 0.5897435897435898,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 181,
+                "hand_winrate": 0.5359116022099447,
+                "played": 1,
+                "play_rate": 0.0055248618784530384,
+                "played_winrate": 0.0,
+                "played_mean_reward": -0.2,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 1.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 73,
+                "hand_winrate": 0.4657534246575342,
+                "played": 2,
+                "play_rate": 0.0273972602739726,
+                "played_winrate": 1.0,
+                "played_mean_reward": 1.8,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 19,
+                "hand_winrate": 0.21052631578947367,
+                "played": 19,
+                "play_rate": 1.0,
+                "played_winrate": 0.21052631578947367,
+                "played_mean_reward": 0.18947368421052627,
+                "duel_win_rate": 0.3684210526315789,
+                "duel_loss_rate": 0.631578947368421,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 65,
+                "hand_winrate": 0.5076923076923077,
+                "played": 3,
+                "play_rate": 0.046153846153846156,
+                "played_winrate": 0.6666666666666666,
+                "played_mean_reward": 0.7999999999999999,
+                "duel_win_rate": 0.6666666666666666,
+                "duel_loss_rate": 0.3333333333333333,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 79,
+                "hand_winrate": 0.45569620253164556,
+                "played": 21,
+                "play_rate": 0.26582278481012656,
+                "played_winrate": 0.47619047619047616,
+                "played_mean_reward": 0.7714285714285714,
+                "duel_win_rate": 0.6666666666666666,
+                "duel_loss_rate": 0.23809523809523808,
+                "duel_tie_rate": 0.09523809523809523,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 94,
+                "hand_winrate": 0.4574468085106383,
+                "played": 71,
+                "play_rate": 0.7553191489361702,
+                "played_winrate": 0.4788732394366197,
+                "played_mean_reward": 0.7295774647887322,
+                "duel_win_rate": 0.6901408450704225,
+                "duel_loss_rate": 0.2535211267605634,
+                "duel_tie_rate": 0.056338028169014086,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 63,
+                "hand_winrate": 0.5714285714285714,
+                "played": 61,
+                "play_rate": 0.9682539682539683,
+                "played_winrate": 0.5901639344262295,
+                "played_mean_reward": 0.9213114754098362,
+                "duel_win_rate": 0.819672131147541,
+                "duel_loss_rate": 0.16393442622950818,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.01639344262295082
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 50,
+                "hand_winrate": 0.58,
+                "played": 50,
+                "play_rate": 1.0,
+                "played_winrate": 0.58,
+                "played_mean_reward": 0.9800000000000003,
+                "duel_win_rate": 0.9,
+                "duel_loss_rate": 0.08,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.02
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 74,
+                "hand_winrate": 0.8513513513513513,
+                "played": 74,
+                "play_rate": 1.0,
+                "played_winrate": 0.8513513513513513,
+                "played_mean_reward": 1.3945945945945966,
+                "duel_win_rate": 0.9864864864864865,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.013513513513513514
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 776,
+              "overrides": 360,
+              "baron_retarget": 277,
+              "base_baron_plays": 373,
+              "baron_to_other": 77,
+              "other_to_baron": 6
+            },
+            "override_rate": 0.4639175257731959,
+            "examples": [
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 115,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 5.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 320,
+                "best_baron": 320,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 2,
+                  "score": 1.0144444444444445,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 690,
+                "best_baron": 330,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 3,
+                  "score": 0.15000000447034834,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.8888888359069824,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 105,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.0750000312924386,
+                  "p_lower": 0.0833333358168602,
+                  "p_equal": 0.25,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 4.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 135,
+                "chosen": 115,
+                "best_baron": 310,
+                "alt": 115,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.1625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.125,
+                  "p_higher": 0.75,
+                  "expected": 4.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 109,
+                "best_baron": 300,
+                "alt": 109,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.6888888940215111,
+                  "p_lower": 0.1111111119389534,
+                  "p_equal": 0.4444444477558136,
+                  "p_higher": 0.4444444477558136,
+                  "expected": 2.444444417953491,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 104,
+                "best_baron": 300,
+                "alt": 104,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8571428954601289,
+                  "p_lower": 0.1428571492433548,
+                  "p_equal": 0.2857142984867096,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.2142858505249023,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 320,
+                "best_baron": 320,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 2,
+                  "score": 1.0,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 123,
+                "chosen": 128,
+                "best_baron": 320,
+                "alt": 128,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.4714286878705025,
+                  "p_lower": 0.0,
+                  "p_equal": 0.1428571492433548,
+                  "p_higher": 0.8571429252624512,
+                  "expected": 4.428571701049805,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 116,
+                "chosen": 115,
+                "best_baron": 330,
+                "alt": 115,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -0.9133333683013916,
+                  "p_lower": 0.13333334028720856,
+                  "p_equal": 0.2666666805744171,
+                  "p_higher": 0.6000000238418579,
+                  "expected": 3.6000003814697266,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 135,
+                "chosen": 115,
+                "best_baron": 310,
+                "alt": 115,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.044444477558136,
+                  "p_lower": 0.1111111119389534,
+                  "p_equal": 0.2222222238779068,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 3.777777671813965,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 0.8795906064162652,
+                  "p_lower": 0.9473683834075928,
+                  "p_equal": 0.0,
+                  "p_higher": 0.05263157933950424,
+                  "expected": 3.1052634716033936,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9714286521077157,
+                  "p_lower": 0.1428571492433548,
+                  "p_equal": 0.2142857164144516,
+                  "p_higher": 0.6428571939468384,
+                  "expected": 3.5714285373687744,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.344444467127323,
+                  "p_lower": 0.0,
+                  "p_equal": 0.2222222238779068,
+                  "p_higher": 0.7777777910232544,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.4333334013819694,
+                  "p_lower": 0.0,
+                  "p_equal": 0.1666666716337204,
+                  "p_higher": 0.8333333730697632,
+                  "expected": 3.6666667461395264,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 123,
+                "chosen": 128,
+                "best_baron": 320,
+                "alt": 128,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.1666667014360428,
+                  "p_lower": 0.0,
+                  "p_equal": 0.3333333432674408,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.45714286267757415,
+                  "p_lower": 0.7142857313156128,
+                  "p_equal": 0.1428571492433548,
+                  "p_higher": 0.1428571492433548,
+                  "expected": 3.142857313156128,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  9,
+                  3
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0123078118430244,
+                  "p_lower": 1.0000001192092896,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.769230842590332,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 135,
+                "chosen": 109,
+                "best_baron": 300,
+                "alt": 109,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 6.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 1.0,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 230,
+                "best_baron": 330,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 3,
+                  "score": -0.4416666470468045,
+                  "p_lower": 0.4166666865348816,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.5,
+                  "expected": 3.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.3222222222222222,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 5.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 310,
+                "stats": {
+                  "kept": 3,
+                  "target": 1,
+                  "score": -0.11176469027996065,
+                  "p_lower": 0.5882353186607361,
+                  "p_equal": 0.0,
+                  "p_higher": 0.4117647111415863,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 100,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.955555646121502,
+                  "p_lower": 0.1111111119389534,
+                  "p_equal": 0.2777777910232544,
+                  "p_higher": 0.6111111640930176,
+                  "expected": 3.555555582046509,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 373,
+          "winrate": 0.373,
+          "mean_reward": 0.5672000050544739,
+          "outcomes": {
+            "final_loser": {
+              "count": 142,
+              "rate": 0.142
+            },
+            "first_out": {
+              "count": 213,
+              "rate": 0.213
+            },
+            "second_out": {
+              "count": 166,
+              "rate": 0.166
+            },
+            "third_out": {
+              "count": 106,
+              "rate": 0.106
+            },
+            "winner": {
+              "count": 373,
+              "rate": 0.373
+            }
+          },
+          "baron_hand": {
+            "games": 420,
+            "winrate": 0.41904761904761906
+          },
+          "baron_played": {
+            "games": 237,
+            "winrate": 0.459915611814346
+          },
+          "baron": {
+            "duel_win_rate": 0.7611336032388664,
+            "duel_loss_rate": 0.20242914979757085,
+            "duel_tie_rate": 0.02834008097165992,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 59,
+                "hand_winrate": 0.4406779661016949,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 186,
+                "hand_winrate": 0.3978494623655914,
+                "played": 2,
+                "play_rate": 0.010752688172043012,
+                "played_winrate": 0.5,
+                "played_mean_reward": 1.1,
+                "duel_win_rate": 0.5,
+                "duel_loss_rate": 0.5,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 69,
+                "hand_winrate": 0.3333333333333333,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 19,
+                "hand_winrate": 0.15789473684210525,
+                "played": 19,
+                "play_rate": 1.0,
+                "played_winrate": 0.15789473684210525,
+                "played_mean_reward": 0.15789473684210523,
+                "duel_win_rate": 0.2631578947368421,
+                "duel_loss_rate": 0.7368421052631579,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 51,
+                "hand_winrate": 0.5294117647058824,
+                "played": 3,
+                "play_rate": 0.058823529411764705,
+                "played_winrate": 0.6666666666666666,
+                "played_mean_reward": 1.2666666666666668,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 76,
+                "hand_winrate": 0.4605263157894737,
+                "played": 12,
+                "play_rate": 0.15789473684210525,
+                "played_winrate": 0.3333333333333333,
+                "played_mean_reward": 0.6,
+                "duel_win_rate": 0.6666666666666666,
+                "duel_loss_rate": 0.08333333333333333,
+                "duel_tie_rate": 0.25,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 68,
+                "hand_winrate": 0.3088235294117647,
+                "played": 54,
+                "play_rate": 0.7941176470588235,
+                "played_winrate": 0.3148148148148148,
+                "played_mean_reward": 0.4740740740740739,
+                "duel_win_rate": 0.6296296296296297,
+                "duel_loss_rate": 0.2962962962962963,
+                "duel_tie_rate": 0.07407407407407407,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 62,
+                "hand_winrate": 0.43548387096774194,
+                "played": 60,
+                "play_rate": 0.967741935483871,
+                "played_winrate": 0.43333333333333335,
+                "played_mean_reward": 0.6866666666666666,
+                "duel_win_rate": 0.7333333333333333,
+                "duel_loss_rate": 0.23333333333333334,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.03333333333333333
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 42,
+                "hand_winrate": 0.47619047619047616,
+                "played": 42,
+                "play_rate": 1.0,
+                "played_winrate": 0.47619047619047616,
+                "played_mean_reward": 0.8428571428571429,
+                "duel_win_rate": 0.9047619047619048,
+                "duel_loss_rate": 0.09523809523809523,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 55,
+                "hand_winrate": 0.7636363636363637,
+                "played": 55,
+                "play_rate": 1.0,
+                "played_winrate": 0.7636363636363637,
+                "played_mean_reward": 1.298181818181819,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 687,
+              "base_baron_plays": 317,
+              "overrides": 335,
+              "baron_to_other": 75,
+              "baron_retarget": 255,
+              "other_to_baron": 5
+            },
+            "override_rate": 0.487627365356623,
+            "examples": [
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.2315789438784122,
+                  "p_lower": 0.6842105388641357,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.2631579041481018,
+                  "expected": 3.263158082962036,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 220,
+                "best_baron": 310,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -0.45999999418854715,
+                  "p_lower": 0.4000000059604645,
+                  "p_equal": 0.10000000149011612,
+                  "p_higher": 0.5,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  4,
+                  3
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 490,
+                "stats": {
+                  "kept": 4,
+                  "target": 1,
+                  "score": 1.3,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.044444477558136,
+                  "p_lower": 0.1111111119389534,
+                  "p_equal": 0.2222222238779068,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 3.6111111640930176,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 230,
+                "best_baron": 300,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.621428606659174,
+                  "p_lower": 0.3571428656578064,
+                  "p_equal": 0.0714285746216774,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.48333326578140257,
+                  "p_lower": 0.7499999403953552,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.1666666716337204,
+                  "expected": 3.0833332538604736,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.18888888619840144,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0555555559694767,
+                  "p_higher": 0.2777777910232544,
+                  "expected": 3.444444417953491,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 530,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": -0.800000023841858,
+                  "p_lower": 0.3333333432674408,
+                  "p_equal": 0.0,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 5.6666669845581055,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.008333355933427794,
+                  "p_lower": 0.5833333730697632,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 4.1666669845581055,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 134,
+                "chosen": 116,
+                "best_baron": 310,
+                "alt": 116,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 500,
+                "best_baron": 320,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 2,
+                  "score": 0.20666666254401206,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.2666666805744171,
+                  "expected": 3.5333335399627686,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -0.22727273404598236,
+                  "p_lower": 0.5454545617103577,
+                  "p_equal": 0.0,
+                  "p_higher": 0.4545454680919647,
+                  "expected": 3.8181819915771484,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  7,
+                  3
+                ],
+                "companion": 7,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 700,
+                "stats": {
+                  "kept": 7,
+                  "target": 0,
+                  "score": 0.6599999971687793,
+                  "p_lower": 0.8666666746139526,
+                  "p_equal": 0.0,
+                  "p_higher": 0.13333334028720856,
+                  "expected": 3.8000001907348633,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 220,
+                "best_baron": 310,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -1.007142970710993,
+                  "p_lower": 0.2142857313156128,
+                  "p_equal": 0.0714285746216774,
+                  "p_higher": 0.7142857909202576,
+                  "expected": 4.357142925262451,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.1636363983154299,
+                  "p_lower": 0.09090909361839294,
+                  "p_equal": 0.1818181872367859,
+                  "p_higher": 0.7272727489471436,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 690,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.15000000447034834,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 530,
+                "best_baron": 300,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.22857142388820645,
+                  "p_lower": 0.7142857313156128,
+                  "p_equal": 0.0,
+                  "p_higher": 0.2857142984867096,
+                  "expected": 3.4285717010498047,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 122,
+                "chosen": 126,
+                "best_baron": 320,
+                "alt": 126,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -0.955555646121502,
+                  "p_lower": 0.1111111119389534,
+                  "p_equal": 0.2777777910232544,
+                  "p_higher": 0.6111111640930176,
+                  "expected": 3.444444417953491,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.5230769276618958,
+                  "p_lower": 0.7692307829856873,
+                  "p_equal": 0.07692307978868484,
+                  "p_higher": 0.1538461595773697,
+                  "expected": 3.153846263885498,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 115,
+                "best_baron": 310,
+                "alt": 115,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.9625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.25,
+                  "p_higher": 0.625,
+                  "expected": 3.5625,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 3.8333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 690,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.22499999999999998,
+                  "p_lower": 0.625,
+                  "p_equal": 0.125,
+                  "p_higher": 0.25,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.0250000000000001,
+                  "p_lower": 0.25,
+                  "p_equal": 0.0,
+                  "p_higher": 0.75,
+                  "expected": 3.75,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 338,
+          "winrate": 0.338,
+          "mean_reward": 0.508400022983551,
+          "outcomes": {
+            "final_loser": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "first_out": {
+              "count": 243,
+              "rate": 0.243
+            },
+            "second_out": {
+              "count": 178,
+              "rate": 0.178
+            },
+            "third_out": {
+              "count": 125,
+              "rate": 0.125
+            },
+            "winner": {
+              "count": 338,
+              "rate": 0.338
+            }
+          },
+          "baron_hand": {
+            "games": 402,
+            "winrate": 0.41044776119402987
+          },
+          "baron_played": {
+            "games": 229,
+            "winrate": 0.44541484716157204
+          },
+          "baron": {
+            "duel_win_rate": 0.75,
+            "duel_loss_rate": 0.21370967741935484,
+            "duel_tie_rate": 0.024193548387096774,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_games": 58,
+                "hand_winrate": 0.4482758620689655,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "1": {
+                "name": "Garde",
+                "hand_games": 176,
+                "hand_winrate": 0.38636363636363635,
+                "played": 1,
+                "play_rate": 0.005681818181818182,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.2,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_games": 56,
+                "hand_winrate": 0.48214285714285715,
+                "played": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "played_mean_reward": 0.0,
+                "duel_win_rate": 0.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_games": 15,
+                "hand_winrate": 0.06666666666666667,
+                "played": 15,
+                "play_rate": 1.0,
+                "played_winrate": 0.06666666666666667,
+                "played_mean_reward": 0.026666666666666672,
+                "duel_win_rate": 0.3333333333333333,
+                "duel_loss_rate": 0.6666666666666666,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_games": 72,
+                "hand_winrate": 0.4722222222222222,
+                "played": 3,
+                "play_rate": 0.041666666666666664,
+                "played_winrate": 0.3333333333333333,
+                "played_mean_reward": 0.9333333333333336,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_games": 71,
+                "hand_winrate": 0.4084507042253521,
+                "played": 18,
+                "play_rate": 0.2535211267605634,
+                "played_winrate": 0.3333333333333333,
+                "played_mean_reward": 0.43333333333333335,
+                "duel_win_rate": 0.4444444444444444,
+                "duel_loss_rate": 0.5,
+                "duel_tie_rate": 0.05555555555555555,
+                "duel_no_target_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_games": 67,
+                "hand_winrate": 0.31343283582089554,
+                "played": 54,
+                "play_rate": 0.8059701492537313,
+                "played_winrate": 0.2962962962962963,
+                "played_mean_reward": 0.48518518518518505,
+                "duel_win_rate": 0.6296296296296297,
+                "duel_loss_rate": 0.2777777777777778,
+                "duel_tie_rate": 0.09259259259259259,
+                "duel_no_target_rate": 0.0
+              },
+              "7": {
+                "name": "Roi",
+                "hand_games": 44,
+                "hand_winrate": 0.3181818181818182,
+                "played": 39,
+                "play_rate": 0.8863636363636364,
+                "played_winrate": 0.3076923076923077,
+                "played_mean_reward": 0.5692307692307692,
+                "duel_win_rate": 0.6666666666666666,
+                "duel_loss_rate": 0.28205128205128205,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.05128205128205128
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_games": 51,
+                "hand_winrate": 0.5490196078431373,
+                "played": 51,
+                "play_rate": 1.0,
+                "played_winrate": 0.5490196078431373,
+                "played_mean_reward": 0.8745098039215687,
+                "duel_win_rate": 0.8235294117647058,
+                "duel_loss_rate": 0.1568627450980392,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0196078431372549
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_games": 67,
+                "hand_winrate": 0.7014925373134329,
+                "played": 67,
+                "play_rate": 1.0,
+                "played_winrate": 0.7014925373134329,
+                "played_mean_reward": 1.1611940298507468,
+                "duel_win_rate": 1.0,
+                "duel_loss_rate": 0.0,
+                "duel_tie_rate": 0.0,
+                "duel_no_target_rate": 0.0
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "baron_hand_checks": 677,
+              "overrides": 338,
+              "baron_retarget": 268,
+              "base_baron_plays": 312,
+              "baron_to_other": 67,
+              "other_to_baron": 3
+            },
+            "override_rate": 0.49926144756277696,
+            "examples": [
+              {
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.9,
+                  "p_lower": 0.0,
+                  "p_equal": 0.5,
+                  "p_higher": 0.5,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.1312499999999999,
+                  "p_lower": 0.0625,
+                  "p_equal": 0.25,
+                  "p_higher": 0.6875,
+                  "expected": 3.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  7
+                ],
+                "companion": 7,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 700,
+                "stats": {
+                  "kept": 7,
+                  "target": 0,
+                  "score": 0.536363622546196,
+                  "p_lower": 0.8181818127632141,
+                  "p_equal": 0.0,
+                  "p_higher": 0.1818181872367859,
+                  "expected": 3.8181819915771484,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  8
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 1.017777779897054,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 4.000000476837158,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 230,
+                "best_baron": 300,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.621428606659174,
+                  "p_lower": 0.3571428656578064,
+                  "p_equal": 0.0714285746216774,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.7142858505249023,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 137,
+                "chosen": 139,
+                "best_baron": 330,
+                "alt": 139,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 7.000000476837158,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 130,
+                "chosen": 129,
+                "best_baron": 320,
+                "alt": 129,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -0.9833333626389504,
+                  "p_lower": 0.1666666716337204,
+                  "p_equal": 0.1666666716337204,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 4.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  7
+                ],
+                "companion": 7,
+                "base_action": 320,
+                "chosen": 720,
+                "best_baron": 320,
+                "alt": 720,
+                "stats": {
+                  "kept": 7,
+                  "target": 2,
+                  "score": 0.15000000447034834,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 520,
+                "best_baron": 330,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 3,
+                  "score": -0.15000000000000002,
+                  "p_lower": 0.5,
+                  "p_equal": 0.125,
+                  "p_higher": 0.375,
+                  "expected": 3.875,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 690,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.027777788788080193,
+                  "p_lower": 0.5555555820465088,
+                  "p_equal": 0.1111111119389534,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 4.333333492279053,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  8
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 0.8185470682134232,
+                  "p_lower": 0.9230769872665405,
+                  "p_equal": 0.0,
+                  "p_higher": 0.07692307978868484,
+                  "expected": 3.307692289352417,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 530,
+                "best_baron": 300,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.23333329334855077,
+                  "p_lower": 0.6666666269302368,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.25,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.7610000340888897,
+                  "p_lower": 0.9000000357627869,
+                  "p_equal": 0.0,
+                  "p_higher": 0.10000000149011612,
+                  "expected": 3.6000001430511475,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 530,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.026666673272848107,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.8666670322418213,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.0130555555555556,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.9375,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.5394737221300603,
+                  "p_lower": 0.7894737124443054,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.15789473056793213,
+                  "expected": 3.210526466369629,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 230,
+                "best_baron": 320,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 2,
+                  "score": -0.6529412094503642,
+                  "p_lower": 0.3529411852359772,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.7647058963775635,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 139,
+                "chosen": 134,
+                "best_baron": 330,
+                "alt": 134,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 8.0,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 137,
+                "chosen": 139,
+                "best_baron": 330,
+                "alt": 139,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.3,
+                  "p_lower": 0.0,
+                  "p_equal": 0.25,
+                  "p_higher": 0.75,
+                  "expected": 4.375,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.40000001043081285,
+                  "p_lower": 0.7777777910232544,
+                  "p_equal": 0.0,
+                  "p_higher": 0.2222222238779068,
+                  "expected": 2.8888888359069824,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.6692308187484742,
+                  "p_lower": 0.1538461595773697,
+                  "p_equal": 0.38461539149284363,
+                  "p_higher": 0.46153849363327026,
+                  "expected": 2.846153974533081,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 129,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.20000000447034838,
+                  "p_lower": 0.20000000298023224,
+                  "p_equal": 0.6000000238418579,
+                  "p_higher": 0.20000000298023224,
+                  "expected": 2.4000000953674316,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.0058823883533479,
+                  "p_lower": 0.11764705926179886,
+                  "p_equal": 0.23529411852359772,
+                  "p_higher": 0.6470588445663452,
+                  "expected": 3.470588207244873,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.3976
+    }
+  },
+  "summary": {
+    "baseline": {
+      "composite": 0.3874,
+      "baron_hand": {
+        "games": 1747,
+        "winrate": 0.4647967945048655
+      },
+      "baron_played": {
+        "games": 1259,
+        "winrate": 0.4892772041302621
+      },
+      "baron": {
+        "duel_win_rate": 0.7238160980140306,
+        "duel_loss_rate": 0.2474934502940577,
+        "duel_tie_rate": 0.01984783537600851,
+        "companion_rows": {
+          "0": {
+            "name": "Espionne",
+            "hand_games": 259,
+            "hand_winrate": 0.49034749034749037,
+            "played": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 0.0
+          },
+          "1": {
+            "name": "Garde",
+            "hand_games": 762,
+            "hand_winrate": 0.4868766404199475,
+            "played": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 0.0
+          },
+          "2": {
+            "name": "Pretre",
+            "hand_games": 277,
+            "hand_winrate": 0.45126353790613716,
+            "played": 6,
+            "play_rate": 0.021660649819494584,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 1.0
+          },
+          "3": {
+            "name": "Baron",
+            "hand_games": 74,
+            "hand_winrate": 0.17567567567567569,
+            "played": 74,
+            "play_rate": 1.0,
+            "played_winrate": 0.17567567567567569,
+            "duel_win_rate": 0.35135135135135137,
+            "duel_loss_rate": 0.6351351351351351
+          },
+          "4": {
+            "name": "Servante",
+            "hand_games": 272,
+            "hand_winrate": 0.4889705882352941,
+            "played": 4,
+            "play_rate": 0.014705882352941176,
+            "played_winrate": 0.75,
+            "duel_win_rate": 1.0,
+            "duel_loss_rate": 0.0
+          },
+          "5": {
+            "name": "Prince",
+            "hand_games": 311,
+            "hand_winrate": 0.3440514469453376,
+            "played": 295,
+            "play_rate": 0.9485530546623794,
+            "played_winrate": 0.33220338983050846,
+            "duel_win_rate": 0.5152542372881356,
+            "duel_loss_rate": 0.4440677966101695
+          },
+          "6": {
+            "name": "Chancelier",
+            "hand_games": 314,
+            "hand_winrate": 0.3980891719745223,
+            "played": 300,
+            "play_rate": 0.9554140127388535,
+            "played_winrate": 0.3933333333333333,
+            "duel_win_rate": 0.6566666666666666,
+            "duel_loss_rate": 0.29333333333333333
+          },
+          "7": {
+            "name": "Roi",
+            "hand_games": 224,
+            "hand_winrate": 0.5223214285714286,
+            "played": 224,
+            "play_rate": 1.0,
+            "played_winrate": 0.5223214285714286,
+            "duel_win_rate": 0.7678571428571429,
+            "duel_loss_rate": 0.20535714285714285
+          },
+          "8": {
+            "name": "Comtesse",
+            "hand_games": 197,
+            "hand_winrate": 0.6243654822335025,
+            "played": 197,
+            "play_rate": 1.0,
+            "played_winrate": 0.6243654822335025,
+            "duel_win_rate": 0.8984771573604061,
+            "duel_loss_rate": 0.08629441624365482
+          },
+          "9": {
+            "name": "Princesse",
+            "hand_games": 254,
+            "hand_winrate": 0.7716535433070866,
+            "played": 254,
+            "play_rate": 1.0,
+            "played_winrate": 0.7716535433070866,
+            "duel_win_rate": 0.9921259842519685,
+            "duel_loss_rate": 0.0
+          }
+        }
+      }
+    },
+    "random_target": {
+      "composite": 0.3836,
+      "baron_hand": {
+        "games": 1747,
+        "winrate": 0.453921007441328
+      },
+      "baron_played": {
+        "games": 1259,
+        "winrate": 0.47418586179507544
+      },
+      "baron": {
+        "duel_win_rate": 0.7075371804142898,
+        "duel_loss_rate": 0.2635431355804483,
+        "duel_tie_rate": 0.021512657430095606,
+        "companion_rows": {
+          "0": {
+            "name": "Espionne",
+            "hand_games": 262,
+            "hand_winrate": 0.4847328244274809,
+            "played": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 0.0
+          },
+          "1": {
+            "name": "Garde",
+            "hand_games": 761,
+            "hand_winrate": 0.45992115637319314,
+            "played": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 0.0
+          },
+          "2": {
+            "name": "Pretre",
+            "hand_games": 274,
+            "hand_winrate": 0.41605839416058393,
+            "played": 6,
+            "play_rate": 0.021897810218978103,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 1.0
+          },
+          "3": {
+            "name": "Baron",
+            "hand_games": 74,
+            "hand_winrate": 0.21621621621621623,
+            "played": 74,
+            "play_rate": 1.0,
+            "played_winrate": 0.21621621621621623,
+            "duel_win_rate": 0.3783783783783784,
+            "duel_loss_rate": 0.6081081081081081
+          },
+          "4": {
+            "name": "Servante",
+            "hand_games": 266,
+            "hand_winrate": 0.4774436090225564,
+            "played": 4,
+            "play_rate": 0.015037593984962405,
+            "played_winrate": 0.75,
+            "duel_win_rate": 0.75,
+            "duel_loss_rate": 0.0
+          },
+          "5": {
+            "name": "Prince",
+            "hand_games": 306,
+            "hand_winrate": 0.3006535947712418,
+            "played": 291,
+            "play_rate": 0.9509803921568627,
+            "played_winrate": 0.28865979381443296,
+            "duel_win_rate": 0.47766323024054985,
+            "duel_loss_rate": 0.4570446735395189
+          },
+          "6": {
+            "name": "Chancelier",
+            "hand_games": 315,
+            "hand_winrate": 0.4031746031746032,
+            "played": 299,
+            "play_rate": 0.9492063492063492,
+            "played_winrate": 0.4013377926421405,
+            "duel_win_rate": 0.6655518394648829,
+            "duel_loss_rate": 0.30434782608695654
+          },
+          "7": {
+            "name": "Roi",
+            "hand_games": 221,
+            "hand_winrate": 0.5113122171945701,
+            "played": 221,
+            "play_rate": 1.0,
+            "played_winrate": 0.5113122171945701,
+            "duel_win_rate": 0.746606334841629,
+            "duel_loss_rate": 0.22624434389140272
+          },
+          "8": {
+            "name": "Comtesse",
+            "hand_games": 199,
+            "hand_winrate": 0.5728643216080402,
+            "played": 199,
+            "play_rate": 1.0,
+            "played_winrate": 0.5728643216080402,
+            "duel_win_rate": 0.8391959798994975,
+            "duel_loss_rate": 0.1507537688442211
+          },
+          "9": {
+            "name": "Princesse",
+            "hand_games": 254,
+            "hand_winrate": 0.7637795275590551,
+            "played": 254,
+            "play_rate": 1.0,
+            "played_winrate": 0.7637795275590551,
+            "duel_win_rate": 0.9960629921259843,
+            "duel_loss_rate": 0.0
+          }
+        }
+      }
+    },
+    "specialist": {
+      "composite": 0.3976,
+      "baron_hand": {
+        "games": 1747,
+        "winrate": 0.49055523755008584
+      },
+      "baron_played": {
+        "games": 1015,
+        "winrate": 0.5330049261083744
+      },
+      "baron": {
+        "duel_win_rate": 0.7880266482595757,
+        "duel_loss_rate": 0.17529523432850008,
+        "duel_tie_rate": 0.023878249759012003,
+        "companion_rows": {
+          "0": {
+            "name": "Espionne",
+            "hand_games": 267,
+            "hand_winrate": 0.5168539325842697,
+            "played": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "duel_win_rate": 0.0,
+            "duel_loss_rate": 0.0
+          },
+          "1": {
+            "name": "Garde",
+            "hand_games": 769,
+            "hand_winrate": 0.4850455136540962,
+            "played": 7,
+            "play_rate": 0.009102730819245773,
+            "played_winrate": 0.5714285714285714,
+            "duel_win_rate": 0.7142857142857143,
+            "duel_loss_rate": 0.2857142857142857
+          },
+          "2": {
+            "name": "Pretre",
+            "hand_games": 278,
+            "hand_winrate": 0.46402877697841727,
+            "played": 3,
+            "play_rate": 0.01079136690647482,
+            "played_winrate": 1.0,
+            "duel_win_rate": 1.0,
+            "duel_loss_rate": 0.0
+          },
+          "3": {
+            "name": "Baron",
+            "hand_games": 73,
+            "hand_winrate": 0.2054794520547945,
+            "played": 73,
+            "play_rate": 1.0,
+            "played_winrate": 0.2054794520547945,
+            "duel_win_rate": 0.3287671232876712,
+            "duel_loss_rate": 0.6438356164383562
+          },
+          "4": {
+            "name": "Servante",
+            "hand_games": 271,
+            "hand_winrate": 0.5202952029520295,
+            "played": 11,
+            "play_rate": 0.04059040590405904,
+            "played_winrate": 0.5454545454545454,
+            "duel_win_rate": 0.9090909090909091,
+            "duel_loss_rate": 0.09090909090909091
+          },
+          "5": {
+            "name": "Prince",
+            "hand_games": 318,
+            "hand_winrate": 0.4779874213836478,
+            "played": 70,
+            "play_rate": 0.22012578616352202,
+            "played_winrate": 0.44285714285714284,
+            "duel_win_rate": 0.6142857142857143,
+            "duel_loss_rate": 0.24285714285714285
+          },
+          "6": {
+            "name": "Chancelier",
+            "hand_games": 307,
+            "hand_winrate": 0.4006514657980456,
+            "played": 244,
+            "play_rate": 0.7947882736156352,
+            "played_winrate": 0.4016393442622951,
+            "duel_win_rate": 0.6885245901639344,
+            "duel_loss_rate": 0.2459016393442623
+          },
+          "7": {
+            "name": "Roi",
+            "hand_games": 237,
+            "hand_winrate": 0.5232067510548524,
+            "played": 224,
+            "play_rate": 0.9451476793248945,
+            "played_winrate": 0.5267857142857143,
+            "duel_win_rate": 0.7723214285714286,
+            "duel_loss_rate": 0.1875
+          },
+          "8": {
+            "name": "Comtesse",
+            "hand_games": 207,
+            "hand_winrate": 0.5748792270531401,
+            "played": 207,
+            "play_rate": 1.0,
+            "played_winrate": 0.5748792270531401,
+            "duel_win_rate": 0.8840579710144928,
+            "duel_loss_rate": 0.10628019323671498
+          },
+          "9": {
+            "name": "Princesse",
+            "hand_games": 252,
+            "hand_winrate": 0.7777777777777778,
+            "played": 252,
+            "play_rate": 1.0,
+            "played_winrate": 0.7777777777777778,
+            "duel_win_rate": 0.996031746031746,
+            "duel_loss_rate": 0.0
+          }
+        }
+      }
+    }
+  }
+}

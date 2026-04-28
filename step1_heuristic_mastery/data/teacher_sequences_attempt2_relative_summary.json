@@ -1,0 +1,16 @@
+{
+  "games": 20000,
+  "sequences": 76092,
+  "transitions": 281716,
+  "teacher_seat_mix_seen": {
+    "2": 4036,
+    "0": 3974,
+    "3": 3991,
+    "1": 4001,
+    "4": 3998
+  },
+  "behavior_counts": {
+    "random": 139993,
+    "teacher": 141723
+  }
+}

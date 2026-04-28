@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-04-25 00:07:54 CEST",
+  "checkpoint": "step3_action_value/checkpoints/step3_rollout_distilled_attempt2_tactical.pth",
+  "games": 1000,
+  "seed_start": 780000,
+  "model_configs": {
+    "vs_0H_3R": {
+      "games": 1000,
+      "wins": 500,
+      "winrate": 0.5,
+      "winrate_ci95": 0.030990321069650113,
+      "mean_reward": 0.7217999696731567,
+      "reward_std": 0.772065281867981,
+      "reward_ci95": 0.047853102396004744,
+      "avg_actions_player0": 4.011
+    },
+    "vs_1H_2R": {
+      "games": 1000,
+      "wins": 374,
+      "winrate": 0.374,
+      "winrate_ci95": 0.029990177698706624,
+      "mean_reward": 0.5671999454498291,
+      "reward_std": 0.757023274898529,
+      "reward_ci95": 0.046920788164844816,
+      "avg_actions_player0": 3.503
+    },
+    "vs_2H_1R": {
+      "games": 1000,
+      "wins": 244,
+      "winrate": 0.244,
+      "winrate_ci95": 0.026620234829918387,
+      "mean_reward": 0.38179999589920044,
+      "reward_std": 0.6522182822227478,
+      "reward_ci95": 0.04042490847491928,
+      "avg_actions_player0": 3.07
+    },
+    "vs_3H": {
+      "games": 1000,
+      "wins": 151,
+      "winrate": 0.151,
+      "winrate_ci95": 0.022192099459041725,
+      "mean_reward": 0.2525999844074249,
+      "reward_std": 0.5465466380119324,
+      "reward_ci95": 0.03387531392028706,
+      "avg_actions_player0": 2.652
+    }
+  },
+  "heuristic_configs": {
+    "vs_0H_3R": {
+      "games": 1000,
+      "wins": 442,
+      "winrate": 0.442,
+      "winrate_ci95": 0.030781112026695853,
+      "mean_reward": 0.6501999497413635,
+      "reward_std": 0.7773802280426025,
+      "reward_ci95": 0.048182527680735096
+    },
+    "vs_1H_2R": {
+      "games": 1000,
+      "wins": 325,
+      "winrate": 0.325,
+      "winrate_ci95": 0.029030173957453304,
+      "mean_reward": 0.4909999966621399,
+      "reward_std": 0.7322834730148315,
+      "reward_ci95": 0.04538740199650428
+    },
+    "vs_2H_1R": {
+      "games": 1000,
+      "wins": 210,
+      "winrate": 0.21,
+      "winrate_ci95": 0.02524522608336079,
+      "mean_reward": 0.32100000977516174,
+      "reward_std": 0.6129592061042786,
+      "reward_ci95": 0.03799160512414429
+    },
+    "vs_3H": {
+      "games": 1000,
+      "wins": 114,
+      "winrate": 0.114,
+      "winrate_ci95": 0.01969814626811366,
+      "mean_reward": 0.1889999955892563,
+      "reward_std": 0.46182137727737427,
+      "reward_ci95": 0.028623985668096846
+    }
+  },
+  "model_composite": 0.2584,
+  "heuristic_composite": 0.2178,
+  "model_minus_heuristic_composite": 0.040600000000000025,
+  "role_results": {
+    "student_vs_3_students": {
+      "student": {
+        "games": 2000,
+        "wins": 530,
+        "winrate": 0.265,
+        "winrate_ci95": 0.01934228063078395,
+        "mean_reward": 0.4342000186443329,
+        "reward_std": 0.6908186078071594,
+        "reward_ci95": 0.030276461089756273
+      }
+    },
+    "student_student_vs_heuristic_heuristic": {
+      "heuristic": {
+        "games": 1000,
+        "wins": 314,
+        "winrate": 0.314,
+        "winrate_ci95": 0.02876623031264263,
+        "mean_reward": 0.47919997572898865,
+        "reward_std": 0.7231371402740479,
+        "reward_ci95": 0.04482050642001081
+      },
+      "student": {
+        "games": 1000,
+        "wins": 257,
+        "winrate": 0.257,
+        "winrate_ci95": 0.027084264095596177,
+        "mean_reward": 0.41419997811317444,
+        "reward_std": 0.6677712202072144,
+        "reward_ci95": 0.04138888842743061
+      }
+    },
+    "heuristic_vs_3_students": {
+      "heuristic": {
+        "games": 500,
+        "wins": 125,
+        "winrate": 0.25,
+        "winrate_ci95": 0.037955236792832685,
+        "mean_reward": 0.3832000195980072,
+        "reward_std": 0.6566869616508484,
+        "reward_ci95": 0.05756115319070937
+      },
+      "student": {
+        "games": 1500,
+        "wins": 429,
+        "winrate": 0.286,
+        "winrate_ci95": 0.022868757237768735,
+        "mean_reward": 0.4620000123977661,
+        "reward_std": 0.7022791504859924,
+        "reward_ci95": 0.03554022792466676
+      }
+    },
+    "student_vs_3_heuristics": {
+      "heuristic": {
+        "games": 1500,
+        "wins": 514,
+        "winrate": 0.3426666666666667,
+        "winrate_ci95": 0.024018130475245692,
+        "mean_reward": 0.5161333084106445,
+        "reward_std": 0.7270257472991943,
+        "reward_ci95": 0.036792580299038834
+      },
+      "student": {
+        "games": 500,
+        "wins": 72,
+        "winrate": 0.144,
+        "winrate_ci95": 0.030774371883110788,
+        "mean_reward": 0.243599995970726,
+        "reward_std": 0.5401657819747925,
+        "reward_ci95": 0.04734762136397953
+      }
+    }
+  }
+}

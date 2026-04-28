@@ -1,0 +1,505 @@
+{
+  "created_at": "2026-04-26 18:04:03 CEST",
+  "args": {
+    "roster": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/league_roster.json",
+    "results_jsonl": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/league_results.jsonl",
+    "games": 8,
+    "seed": 7100,
+    "seed_start": 7100000,
+    "k_factor": 16.0,
+    "bootstrap": false,
+    "include_policy": [],
+    "update_roster": false,
+    "no_append_results": true,
+    "progress_every": 0,
+    "device": "cpu",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "chancellor_margin": 0.1,
+    "retarget_margin": 0.1,
+    "veto_score": 0.05,
+    "force_score": 0.32,
+    "self_force_score": 0.55,
+    "min_princess_prob": 0.24,
+    "example_limit": 20,
+    "output": "smoke_load_8.json",
+    "markdown": "smoke_load_8.md",
+    "run_log": "step7_self_play_league/logs/smoke_load_8.md"
+  },
+  "policies": {
+    "champion_cbp": {
+      "games": 6,
+      "score_ge_1": 0.16666666666666666,
+      "main_round_win_rate": 0.16666666666666666,
+      "spy_bonus_rate": 0.0,
+      "mean_reward": 0.26666666666666666,
+      "outcomes": {
+        "winner": {
+          "count": 1,
+          "rate": 0.16666666666666666
+        },
+        "first_out": {
+          "count": 2,
+          "rate": 0.3333333333333333
+        },
+        "second_out": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "third_out": {
+          "count": 1,
+          "rate": 0.16666666666666666
+        },
+        "final_loser": {
+          "count": 2,
+          "rate": 0.3333333333333333
+        }
+      },
+      "by_seat": {
+        "player_0": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_1": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_2": {
+          "games": 2,
+          "score_ge_1": 0.0
+        },
+        "player_3": {
+          "games": 2,
+          "score_ge_1": 0.5
+        }
+      },
+      "tactical": {
+        "raw_counts": {
+          "baron_attempts": 2,
+          "baron_losing_comparisons": 1,
+          "baron_winning_comparisons": 1,
+          "chancellor_choices": 1,
+          "chancellor_plays": 1,
+          "guard_attempts": 5,
+          "guard_hits": 3,
+          "guard_misses": 2,
+          "known_guard_attempts": 1,
+          "known_guard_correct_guess": 1,
+          "known_guard_hits": 1,
+          "main_round_wins": 1,
+          "priest_on_unknown": 3,
+          "priest_plays": 3,
+          "priest_to_guard_attempts": 1,
+          "priest_to_guard_hits": 1,
+          "spy_plays": 1
+        },
+        "guard_hit_rate": 0.6,
+        "known_guard_hit_rate": 1.0,
+        "known_guard_correct_guess_rate": 1.0,
+        "priest_to_guard_hit_rate": 1.0,
+        "priest_on_unknown_rate": 1.0,
+        "baron_win_rate": 0.5,
+        "baron_loss_rate": 0.5,
+        "baron_tie_rate": 0.0,
+        "chancellor_keep_highest_rate": 0.0,
+        "chancellor_known_draw_win_rate": 0.0,
+        "spy_bonus_per_spy_play": 0.0,
+        "voluntary_countess_win_rate": 0.0
+      },
+      "elo": 1519.4090293486638,
+      "active": true
+    },
+    "curriculum_phase1": {
+      "games": 8,
+      "score_ge_1": 0.125,
+      "main_round_win_rate": 0.125,
+      "spy_bonus_rate": 0.0,
+      "mean_reward": 0.19999999999999998,
+      "outcomes": {
+        "winner": {
+          "count": 1,
+          "rate": 0.125
+        },
+        "first_out": {
+          "count": 3,
+          "rate": 0.375
+        },
+        "second_out": {
+          "count": 2,
+          "rate": 0.25
+        },
+        "third_out": {
+          "count": 1,
+          "rate": 0.125
+        },
+        "final_loser": {
+          "count": 1,
+          "rate": 0.125
+        }
+      },
+      "by_seat": {
+        "player_0": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_1": {
+          "games": 4,
+          "score_ge_1": 0.0
+        },
+        "player_2": {
+          "games": 2,
+          "score_ge_1": 0.5
+        },
+        "player_3": {
+          "games": 1,
+          "score_ge_1": 0.0
+        }
+      },
+      "tactical": {
+        "raw_counts": {
+          "chancellor_choices": 1,
+          "chancellor_kept_highest": 1,
+          "chancellor_plays": 1,
+          "guard_attempts": 10,
+          "guard_hits": 3,
+          "guard_misses": 7,
+          "known_guard_attempts": 1,
+          "known_guard_correct_guess": 1,
+          "known_guard_hits": 1,
+          "main_round_wins": 1,
+          "priest_on_unknown": 2,
+          "priest_plays": 2,
+          "priest_to_guard_attempts": 1,
+          "priest_to_guard_hits": 1,
+          "spy_plays": 3
+        },
+        "guard_hit_rate": 0.3,
+        "known_guard_hit_rate": 1.0,
+        "known_guard_correct_guess_rate": 1.0,
+        "priest_to_guard_hit_rate": 1.0,
+        "priest_on_unknown_rate": 1.0,
+        "baron_win_rate": 0.0,
+        "baron_loss_rate": 0.0,
+        "baron_tie_rate": 0.0,
+        "chancellor_keep_highest_rate": 1.0,
+        "chancellor_known_draw_win_rate": 0.0,
+        "spy_bonus_per_spy_play": 0.0,
+        "voluntary_countess_win_rate": 0.0
+      },
+      "elo": 1464.735520146651,
+      "active": true
+    },
+    "heuristic_fair": {
+      "games": 4,
+      "score_ge_1": 0.75,
+      "main_round_win_rate": 0.5,
+      "spy_bonus_rate": 0.25,
+      "mean_reward": 0.8,
+      "outcomes": {
+        "winner": {
+          "count": 3,
+          "rate": 0.75
+        },
+        "first_out": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "second_out": {
+          "count": 1,
+          "rate": 0.25
+        },
+        "third_out": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "final_loser": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "by_seat": {
+        "player_1": {
+          "games": 1,
+          "score_ge_1": 1.0
+        },
+        "player_3": {
+          "games": 3,
+          "score_ge_1": 0.6666666666666666
+        }
+      },
+      "tactical": {
+        "raw_counts": {
+          "baron_attempts": 1,
+          "baron_tie_comparisons": 1,
+          "chancellor_bottomed_king_plus": 1,
+          "chancellor_choices": 2,
+          "chancellor_kept_highest": 1,
+          "chancellor_known_draw_win_games": 1,
+          "chancellor_known_draws": 2,
+          "chancellor_plays": 2,
+          "chancellor_used_win_games": 2,
+          "forced_countess_discards": 1,
+          "guard_attempts": 3,
+          "guard_hits": 1,
+          "guard_misses": 2,
+          "known_guard_attempts": 1,
+          "known_guard_correct_guess": 1,
+          "known_guard_hits": 1,
+          "main_round_wins": 2,
+          "priest_on_unknown": 3,
+          "priest_plays": 3,
+          "priest_to_guard_attempts": 1,
+          "priest_to_guard_hits": 1,
+          "spy_bonus_win_games": 1,
+          "spy_bonus_wins": 1,
+          "spy_plays": 1
+        },
+        "guard_hit_rate": 0.3333333333333333,
+        "known_guard_hit_rate": 1.0,
+        "known_guard_correct_guess_rate": 1.0,
+        "priest_to_guard_hit_rate": 1.0,
+        "priest_on_unknown_rate": 1.0,
+        "baron_win_rate": 0.0,
+        "baron_loss_rate": 0.0,
+        "baron_tie_rate": 1.0,
+        "chancellor_keep_highest_rate": 0.5,
+        "chancellor_known_draw_win_rate": 0.5,
+        "spy_bonus_per_spy_play": 1.0,
+        "voluntary_countess_win_rate": 0.0
+      },
+      "elo": 1538.3766916759903,
+      "active": true
+    },
+    "step2_retarget": {
+      "games": 7,
+      "score_ge_1": 0.42857142857142855,
+      "main_round_win_rate": 0.42857142857142855,
+      "spy_bonus_rate": 0.14285714285714285,
+      "mean_reward": 0.6857142857142858,
+      "outcomes": {
+        "winner": {
+          "count": 3,
+          "rate": 0.42857142857142855
+        },
+        "first_out": {
+          "count": 3,
+          "rate": 0.42857142857142855
+        },
+        "second_out": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "third_out": {
+          "count": 1,
+          "rate": 0.14285714285714285
+        },
+        "final_loser": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "by_seat": {
+        "player_0": {
+          "games": 4,
+          "score_ge_1": 0.5
+        },
+        "player_1": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_2": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_3": {
+          "games": 1,
+          "score_ge_1": 1.0
+        }
+      },
+      "tactical": {
+        "raw_counts": {
+          "baron_attempts": 4,
+          "baron_winning_comparisons": 4,
+          "chancellor_choices": 2,
+          "chancellor_kept_highest": 2,
+          "chancellor_known_draw_win_games": 1,
+          "chancellor_known_draws": 2,
+          "chancellor_plays": 2,
+          "chancellor_used_win_games": 1,
+          "forced_countess_discards": 2,
+          "guard_attempts": 2,
+          "guard_misses": 2,
+          "main_round_wins": 3,
+          "priest_on_unknown": 1,
+          "priest_plays": 2,
+          "spy_bonus_win_games": 1,
+          "spy_bonus_wins": 1,
+          "spy_played_win_games": 1,
+          "spy_plays": 2
+        },
+        "guard_hit_rate": 0.0,
+        "known_guard_hit_rate": 0.0,
+        "known_guard_correct_guess_rate": 0.0,
+        "priest_to_guard_hit_rate": 0.0,
+        "priest_on_unknown_rate": 0.5,
+        "baron_win_rate": 1.0,
+        "baron_loss_rate": 0.0,
+        "baron_tie_rate": 0.0,
+        "chancellor_keep_highest_rate": 1.0,
+        "chancellor_known_draw_win_rate": 0.5,
+        "spy_bonus_per_spy_play": 0.5,
+        "voluntary_countess_win_rate": 0.0
+      },
+      "elo": 1509.4116623462205,
+      "active": true
+    },
+    "step3_fast": {
+      "games": 7,
+      "score_ge_1": 0.14285714285714285,
+      "main_round_win_rate": 0.14285714285714285,
+      "spy_bonus_rate": 0.0,
+      "mean_reward": 0.19999999999999998,
+      "outcomes": {
+        "winner": {
+          "count": 1,
+          "rate": 0.14285714285714285
+        },
+        "first_out": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "second_out": {
+          "count": 5,
+          "rate": 0.7142857142857143
+        },
+        "third_out": {
+          "count": 1,
+          "rate": 0.14285714285714285
+        },
+        "final_loser": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "by_seat": {
+        "player_0": {
+          "games": 2,
+          "score_ge_1": 0.0
+        },
+        "player_1": {
+          "games": 1,
+          "score_ge_1": 0.0
+        },
+        "player_2": {
+          "games": 3,
+          "score_ge_1": 0.0
+        },
+        "player_3": {
+          "games": 1,
+          "score_ge_1": 1.0
+        }
+      },
+      "tactical": {
+        "raw_counts": {
+          "baron_attempts": 4,
+          "baron_losing_comparisons": 2,
+          "baron_winning_comparisons": 2,
+          "chancellor_bottomed_king_plus": 1,
+          "chancellor_choices": 2,
+          "chancellor_kept_highest": 1,
+          "chancellor_plays": 2,
+          "guard_attempts": 10,
+          "guard_hits": 2,
+          "guard_misses": 8,
+          "main_round_wins": 1,
+          "priest_on_unknown": 4,
+          "priest_plays": 4,
+          "spy_played_win_games": 1,
+          "spy_plays": 1,
+          "voluntary_countess_discards": 1
+        },
+        "guard_hit_rate": 0.2,
+        "known_guard_hit_rate": 0.0,
+        "known_guard_correct_guess_rate": 0.0,
+        "priest_to_guard_hit_rate": 0.0,
+        "priest_on_unknown_rate": 1.0,
+        "baron_win_rate": 0.5,
+        "baron_loss_rate": 0.5,
+        "baron_tie_rate": 0.0,
+        "chancellor_keep_highest_rate": 0.5,
+        "chancellor_known_draw_win_rate": 0.0,
+        "spy_bonus_per_spy_play": 0.0,
+        "voluntary_countess_win_rate": 0.0
+      },
+      "elo": 1468.0670964824749,
+      "active": true
+    }
+  },
+  "roster": {
+    "created_at": "2026-04-26",
+    "max_active": 5,
+    "policies": [
+      {
+        "policy_id": "champion_cbp",
+        "kind": "composite",
+        "active": true,
+        "elo": 1519.4090293486638,
+        "games": 6,
+        "created_at": "2026-04-26",
+        "parent_id": null,
+        "base_checkpoint": "step2_retarget_distilled_attempt1.pth",
+        "advantage_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+        "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+        "use_advantage": true,
+        "use_chancellor": true,
+        "use_baron": true,
+        "use_prince": true
+      },
+      {
+        "policy_id": "curriculum_phase1",
+        "kind": "checkpoint",
+        "active": true,
+        "elo": 1464.735520146651,
+        "games": 8,
+        "created_at": "2026-04-26",
+        "parent_id": null,
+        "checkpoint": "curriculum_phase1.pth"
+      },
+      {
+        "policy_id": "step3_fast",
+        "kind": "composite",
+        "active": true,
+        "elo": 1468.0670964824749,
+        "games": 7,
+        "created_at": "2026-04-26",
+        "parent_id": null,
+        "base_checkpoint": "step2_retarget_distilled_attempt1.pth",
+        "advantage_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+        "use_advantage": true,
+        "use_chancellor": false,
+        "use_baron": false,
+        "use_prince": false
+      },
+      {
+        "policy_id": "step2_retarget",
+        "kind": "checkpoint",
+        "active": true,
+        "elo": 1509.4116623462205,
+        "games": 7,
+        "created_at": "2026-04-26",
+        "parent_id": null,
+        "checkpoint": "step2_retarget_distilled_attempt1.pth"
+      },
+      {
+        "policy_id": "heuristic_fair",
+        "kind": "heuristic",
+        "active": true,
+        "elo": 1538.3766916759903,
+        "games": 4,
+        "created_at": "2026-04-26",
+        "parent_id": null
+      }
+    ]
+  }
+}

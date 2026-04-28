@@ -1,0 +1,3365 @@
+{
+  "created_at": "2026-04-25 16:05:19 CEST",
+  "games_per_config": 1000,
+  "seed_start": 260000,
+  "seat_rotation": "eval_agent = player_{game % 4}",
+  "heuristic_mode": "shuffle_targets=True",
+  "policies": {
+    "heuristic_fair": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 518,
+          "winrate": 0.518,
+          "winrate_ci95": 0.03097023283089748,
+          "mean_reward": 0.7587999701499939,
+          "reward_std": 0.7872881293296814,
+          "reward_ci95": 0.048796624030685826,
+          "outcomes": {
+            "winner": {
+              "count": 518,
+              "rate": 0.518
+            },
+            "first_out": {
+              "count": 152,
+              "rate": 0.152
+            },
+            "second_out": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "third_out": {
+              "count": 79,
+              "rate": 0.079
+            },
+            "final_loser": {
+              "count": 129,
+              "rate": 0.129
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 126,
+              "winrate": 0.504,
+              "winrate_ci95": 0.061978658727016675,
+              "mean_reward": 0.7440000176429749,
+              "reward_std": 0.7954269647598267,
+              "reward_ci95": 0.09860214810145719
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 121,
+              "winrate": 0.484,
+              "winrate_ci95": 0.061948899922436074,
+              "mean_reward": 0.6944000124931335,
+              "reward_std": 0.7867202162742615,
+              "reward_ci95": 0.09752285214702451
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 136,
+              "winrate": 0.544,
+              "winrate_ci95": 0.06174018666638447,
+              "mean_reward": 0.800000011920929,
+              "reward_std": 0.772528350353241,
+              "reward_ci95": 0.0957636102211451
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 135,
+              "winrate": 0.54,
+              "winrate_ci95": 0.061781985723995625,
+              "mean_reward": 0.7968000173568726,
+              "reward_std": 0.789525032043457,
+              "reward_ci95": 0.0978705417674629
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 335,
+              "baron_losing_comparisons": 70,
+              "baron_tie_comparisons": 13,
+              "baron_winning_comparisons": 252,
+              "chancellor_bottomed_king_plus": 121,
+              "chancellor_choices": 425,
+              "chancellor_kept_highest": 314,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 39,
+              "chancellor_known_draws": 65,
+              "chancellor_plays": 425,
+              "chancellor_used_win_games": 215,
+              "forced_countess_discards": 93,
+              "guard_attempts": 988,
+              "guard_hits": 307,
+              "guard_misses": 681,
+              "known_guard_attempts": 145,
+              "known_guard_correct_guess": 142,
+              "known_guard_hits": 139,
+              "main_round_wins": 463,
+              "priest_on_unknown": 406,
+              "priest_plays": 417,
+              "priest_to_guard_attempts": 56,
+              "priest_to_guard_hits": 54,
+              "spy_bonus_win_games": 198,
+              "spy_bonus_wins": 198,
+              "spy_played_win_games": 167,
+              "spy_plays": 260,
+              "voluntary_countess_discards": 35,
+              "voluntary_countess_win_games": 28
+            },
+            "guard_hit_rate": 0.3107287449392713,
+            "known_guard_hit_rate": 0.9586206896551724,
+            "known_guard_correct_guess_rate": 0.9793103448275862,
+            "priest_to_guard_hit_rate": 0.9642857142857143,
+            "priest_on_unknown_rate": 0.973621103117506,
+            "baron_win_rate": 0.7522388059701492,
+            "baron_loss_rate": 0.208955223880597,
+            "baron_tie_rate": 0.03880597014925373,
+            "chancellor_keep_highest_rate": 0.7388235294117647,
+            "chancellor_known_draw_win_rate": 0.6,
+            "spy_bonus_per_spy_play": 0.7615384615384615,
+            "voluntary_countess_win_rate": 0.8
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 392,
+          "winrate": 0.392,
+          "winrate_ci95": 0.030258743820588452,
+          "mean_reward": 0.5809999704360962,
+          "reward_std": 0.7525948882102966,
+          "reward_ci95": 0.046646314215845336,
+          "outcomes": {
+            "winner": {
+              "count": 392,
+              "rate": 0.392
+            },
+            "first_out": {
+              "count": 183,
+              "rate": 0.183
+            },
+            "second_out": {
+              "count": 169,
+              "rate": 0.169
+            },
+            "third_out": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "final_loser": {
+              "count": 140,
+              "rate": 0.14
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 99,
+              "winrate": 0.396,
+              "winrate_ci95": 0.060625052722451306,
+              "mean_reward": 0.5944000482559204,
+              "reward_std": 0.7621867656707764,
+              "reward_ci95": 0.09448165365006343
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 98,
+              "winrate": 0.392,
+              "winrate_ci95": 0.060517487641176905,
+              "mean_reward": 0.5680000185966492,
+              "reward_std": 0.7377371191978455,
+              "reward_ci95": 0.09145084452548861
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 102,
+              "winrate": 0.408,
+              "winrate_ci95": 0.0609223997426234,
+              "mean_reward": 0.5839999914169312,
+              "reward_std": 0.733037531375885,
+              "reward_ci95": 0.09086827818665492
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 93,
+              "winrate": 0.372,
+              "winrate_ci95": 0.05991524766201004,
+              "mean_reward": 0.5776000022888184,
+              "reward_std": 0.7763364911079407,
+              "reward_ci95": 0.09623567073191987
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 366,
+              "baron_losing_comparisons": 89,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 272,
+              "chancellor_bottomed_king_plus": 107,
+              "chancellor_choices": 398,
+              "chancellor_kept_highest": 303,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 26,
+              "chancellor_known_draws": 53,
+              "chancellor_plays": 398,
+              "chancellor_used_win_games": 156,
+              "forced_countess_discards": 63,
+              "guard_attempts": 993,
+              "guard_hits": 262,
+              "guard_misses": 731,
+              "known_guard_attempts": 128,
+              "known_guard_correct_guess": 124,
+              "known_guard_hits": 120,
+              "main_round_wins": 355,
+              "priest_on_unknown": 375,
+              "priest_plays": 396,
+              "priest_to_guard_attempts": 49,
+              "priest_to_guard_hits": 46,
+              "spy_bonus_win_games": 137,
+              "spy_bonus_wins": 137,
+              "spy_played_win_games": 128,
+              "spy_plays": 244,
+              "voluntary_countess_discards": 30,
+              "voluntary_countess_win_games": 24
+            },
+            "guard_hit_rate": 0.2638469284994965,
+            "known_guard_hit_rate": 0.9375,
+            "known_guard_correct_guess_rate": 0.96875,
+            "priest_to_guard_hit_rate": 0.9387755102040817,
+            "priest_on_unknown_rate": 0.946969696969697,
+            "baron_win_rate": 0.7431693989071039,
+            "baron_loss_rate": 0.24316939890710382,
+            "baron_tie_rate": 0.01366120218579235,
+            "chancellor_keep_highest_rate": 0.7613065326633166,
+            "chancellor_known_draw_win_rate": 0.49056603773584906,
+            "spy_bonus_per_spy_play": 0.5614754098360656,
+            "voluntary_countess_win_rate": 0.8
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 315,
+          "winrate": 0.315,
+          "winrate_ci95": 0.028790992341355657,
+          "mean_reward": 0.4749999940395355,
+          "reward_std": 0.7431924343109131,
+          "reward_ci95": 0.046063544311660105,
+          "outcomes": {
+            "winner": {
+              "count": 315,
+              "rate": 0.315
+            },
+            "first_out": {
+              "count": 236,
+              "rate": 0.236
+            },
+            "second_out": {
+              "count": 191,
+              "rate": 0.191
+            },
+            "third_out": {
+              "count": 126,
+              "rate": 0.126
+            },
+            "final_loser": {
+              "count": 132,
+              "rate": 0.132
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 85,
+              "winrate": 0.34,
+              "winrate_ci95": 0.05872154766352808,
+              "mean_reward": 0.4983999729156494,
+              "reward_std": 0.7360960841178894,
+              "reward_ci95": 0.09124741488417824
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 83,
+              "winrate": 0.332,
+              "winrate_ci95": 0.05837721067677009,
+              "mean_reward": 0.5008000135421753,
+              "reward_std": 0.7556185126304626,
+              "reward_ci95": 0.09366744502008677
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 76,
+              "winrate": 0.304,
+              "winrate_ci95": 0.05702003487897915,
+              "mean_reward": 0.47920000553131104,
+              "reward_std": 0.7681453824043274,
+              "reward_ci95": 0.09522028675841475
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 71,
+              "winrate": 0.284,
+              "winrate_ci95": 0.0558987051871508,
+              "mean_reward": 0.42159998416900635,
+              "reward_std": 0.708811342716217,
+              "reward_ci95": 0.08786516902880512
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 328,
+              "baron_losing_comparisons": 119,
+              "baron_tie_comparisons": 9,
+              "baron_winning_comparisons": 200,
+              "chancellor_bottomed_king_plus": 96,
+              "chancellor_choices": 364,
+              "chancellor_kept_highest": 280,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 19,
+              "chancellor_known_draws": 43,
+              "chancellor_plays": 364,
+              "chancellor_used_win_games": 116,
+              "forced_countess_discards": 71,
+              "guard_attempts": 997,
+              "guard_hits": 259,
+              "guard_misses": 738,
+              "known_guard_attempts": 143,
+              "known_guard_correct_guess": 141,
+              "known_guard_hits": 139,
+              "main_round_wins": 276,
+              "priest_on_unknown": 394,
+              "priest_plays": 409,
+              "priest_to_guard_attempts": 46,
+              "priest_to_guard_hits": 44,
+              "spy_bonus_win_games": 131,
+              "spy_bonus_wins": 131,
+              "spy_played_win_games": 123,
+              "spy_plays": 237,
+              "voluntary_countess_discards": 39,
+              "voluntary_countess_win_games": 29
+            },
+            "guard_hit_rate": 0.2597793380140421,
+            "known_guard_hit_rate": 0.972027972027972,
+            "known_guard_correct_guess_rate": 0.986013986013986,
+            "priest_to_guard_hit_rate": 0.9565217391304348,
+            "priest_on_unknown_rate": 0.9633251833740831,
+            "baron_win_rate": 0.6097560975609756,
+            "baron_loss_rate": 0.3628048780487805,
+            "baron_tie_rate": 0.027439024390243903,
+            "chancellor_keep_highest_rate": 0.7692307692307693,
+            "chancellor_known_draw_win_rate": 0.4418604651162791,
+            "spy_bonus_per_spy_play": 0.5527426160337553,
+            "voluntary_countess_win_rate": 0.7435897435897436
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 292,
+          "winrate": 0.292,
+          "winrate_ci95": 0.0281815013368699,
+          "mean_reward": 0.43879997730255127,
+          "reward_std": 0.6970900893211365,
+          "reward_ci95": 0.04320609370229801,
+          "outcomes": {
+            "winner": {
+              "count": 292,
+              "rate": 0.292
+            },
+            "first_out": {
+              "count": 253,
+              "rate": 0.253
+            },
+            "second_out": {
+              "count": 190,
+              "rate": 0.19
+            },
+            "third_out": {
+              "count": 115,
+              "rate": 0.115
+            },
+            "final_loser": {
+              "count": 150,
+              "rate": 0.15
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 73,
+              "winrate": 0.292,
+              "winrate_ci95": 0.0563630026737398,
+              "mean_reward": 0.4503999948501587,
+              "reward_std": 0.7084771394729614,
+              "reward_ci95": 0.08782373971003703
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 68,
+              "winrate": 0.272,
+              "winrate_ci95": 0.055161517948656924,
+              "mean_reward": 0.3984000086784363,
+              "reward_std": 0.660422146320343,
+              "reward_ci95": 0.08186677666995378
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 78,
+              "winrate": 0.312,
+              "winrate_ci95": 0.05743248173638328,
+              "mean_reward": 0.46879997849464417,
+              "reward_std": 0.7235928773880005,
+              "reward_ci95": 0.08969750599480401
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 73,
+              "winrate": 0.292,
+              "winrate_ci95": 0.0563630026737398,
+              "mean_reward": 0.4376000165939331,
+              "reward_std": 0.6923772692680359,
+              "reward_ci95": 0.08582797746403505
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 293,
+              "baron_losing_comparisons": 87,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 201,
+              "chancellor_bottomed_king_plus": 115,
+              "chancellor_choices": 367,
+              "chancellor_kept_highest": 267,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 22,
+              "chancellor_known_draws": 49,
+              "chancellor_plays": 367,
+              "chancellor_used_win_games": 100,
+              "forced_countess_discards": 70,
+              "guard_attempts": 1025,
+              "guard_hits": 230,
+              "guard_misses": 795,
+              "known_guard_attempts": 133,
+              "known_guard_correct_guess": 133,
+              "known_guard_hits": 121,
+              "main_round_wins": 253,
+              "priest_on_unknown": 371,
+              "priest_plays": 381,
+              "priest_to_guard_attempts": 57,
+              "priest_to_guard_hits": 46,
+              "spy_bonus_win_games": 117,
+              "spy_bonus_wins": 117,
+              "spy_played_win_games": 114,
+              "spy_plays": 236,
+              "voluntary_countess_discards": 50,
+              "voluntary_countess_win_games": 31
+            },
+            "guard_hit_rate": 0.22439024390243903,
+            "known_guard_hit_rate": 0.9097744360902256,
+            "known_guard_correct_guess_rate": 1.0,
+            "priest_to_guard_hit_rate": 0.8070175438596491,
+            "priest_on_unknown_rate": 0.973753280839895,
+            "baron_win_rate": 0.6860068259385665,
+            "baron_loss_rate": 0.29692832764505117,
+            "baron_tie_rate": 0.017064846416382253,
+            "chancellor_keep_highest_rate": 0.7275204359673024,
+            "chancellor_known_draw_win_rate": 0.4489795918367347,
+            "spy_bonus_per_spy_play": 0.4957627118644068,
+            "voluntary_countess_win_rate": 0.62
+          }
+        }
+      },
+      "composite": 0.3415
+    },
+    "step2_retarget": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 517,
+          "winrate": 0.517,
+          "winrate_ci95": 0.030972403484392362,
+          "mean_reward": 0.7671999931335449,
+          "reward_std": 0.7948107719421387,
+          "reward_ci95": 0.04926288292894156,
+          "outcomes": {
+            "winner": {
+              "count": 517,
+              "rate": 0.517
+            },
+            "first_out": {
+              "count": 160,
+              "rate": 0.16
+            },
+            "second_out": {
+              "count": 118,
+              "rate": 0.118
+            },
+            "third_out": {
+              "count": 86,
+              "rate": 0.086
+            },
+            "final_loser": {
+              "count": 119,
+              "rate": 0.119
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 125,
+              "winrate": 0.5,
+              "winrate_ci95": 0.06198064213930023,
+              "mean_reward": 0.7319999933242798,
+              "reward_std": 0.7700493931770325,
+              "reward_ci95": 0.09545631701380214
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 130,
+              "winrate": 0.52,
+              "winrate_ci95": 0.06193103777590039,
+              "mean_reward": 0.7543999552726746,
+              "reward_std": 0.7797439694404602,
+              "reward_ci95": 0.09665806883637518
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 133,
+              "winrate": 0.532,
+              "winrate_ci95": 0.06185357553448304,
+              "mean_reward": 0.8056000471115112,
+              "reward_std": 0.8262497782707214,
+              "reward_ci95": 0.10242298681591964
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 129,
+              "winrate": 0.516,
+              "winrate_ci95": 0.061948899922436074,
+              "mean_reward": 0.7767999768257141,
+              "reward_std": 0.8001636266708374,
+              "reward_ci95": 0.0991893135093443
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 353,
+              "baron_losing_comparisons": 69,
+              "baron_tie_comparisons": 6,
+              "baron_winning_comparisons": 278,
+              "chancellor_bottomed_king_plus": 96,
+              "chancellor_choices": 393,
+              "chancellor_kept_highest": 299,
+              "chancellor_kept_princess": 9,
+              "chancellor_known_draw_win_games": 36,
+              "chancellor_known_draws": 48,
+              "chancellor_plays": 393,
+              "chancellor_used_win_games": 204,
+              "forced_countess_discards": 84,
+              "guard_attempts": 1008,
+              "guard_hits": 342,
+              "guard_misses": 666,
+              "known_guard_attempts": 128,
+              "known_guard_correct_guess": 120,
+              "known_guard_hits": 118,
+              "main_round_wins": 482,
+              "priest_on_unknown": 391,
+              "priest_plays": 412,
+              "priest_to_guard_attempts": 50,
+              "priest_to_guard_hits": 49,
+              "spy_bonus_win_games": 175,
+              "spy_bonus_wins": 175,
+              "spy_played_win_games": 174,
+              "spy_plays": 264,
+              "voluntary_countess_discards": 36,
+              "voluntary_countess_win_games": 25
+            },
+            "guard_hit_rate": 0.3392857142857143,
+            "known_guard_hit_rate": 0.921875,
+            "known_guard_correct_guess_rate": 0.9375,
+            "priest_to_guard_hit_rate": 0.98,
+            "priest_on_unknown_rate": 0.9490291262135923,
+            "baron_win_rate": 0.7875354107648725,
+            "baron_loss_rate": 0.1954674220963173,
+            "baron_tie_rate": 0.0169971671388102,
+            "chancellor_keep_highest_rate": 0.7608142493638677,
+            "chancellor_known_draw_win_rate": 0.75,
+            "spy_bonus_per_spy_play": 0.6628787878787878,
+            "voluntary_countess_win_rate": 0.6944444444444444
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 430,
+          "winrate": 0.43,
+          "winrate_ci95": 0.030685113002887898,
+          "mean_reward": 0.6455999612808228,
+          "reward_std": 0.7667076587677002,
+          "reward_ci95": 0.04752103453143304,
+          "outcomes": {
+            "winner": {
+              "count": 430,
+              "rate": 0.43
+            },
+            "first_out": {
+              "count": 180,
+              "rate": 0.18
+            },
+            "second_out": {
+              "count": 145,
+              "rate": 0.145
+            },
+            "third_out": {
+              "count": 133,
+              "rate": 0.133
+            },
+            "final_loser": {
+              "count": 112,
+              "rate": 0.112
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 109,
+              "winrate": 0.436,
+              "winrate_ci95": 0.06147079978005817,
+              "mean_reward": 0.6647999882698059,
+              "reward_std": 0.7757067680358887,
+              "reward_ci95": 0.0961576071893312
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 104,
+              "winrate": 0.416,
+              "winrate_ci95": 0.061099710978039824,
+              "mean_reward": 0.6151999831199646,
+              "reward_std": 0.7381659150123596,
+              "reward_ci95": 0.09150399770061418
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 100,
+              "winrate": 0.4,
+              "winrate_ci95": 0.060728378868532294,
+              "mean_reward": 0.6255999803543091,
+              "reward_std": 0.7985891699790955,
+              "reward_ci95": 0.0989941395739577
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 117,
+              "winrate": 0.468,
+              "winrate_ci95": 0.061853575534483056,
+              "mean_reward": 0.676800012588501,
+              "reward_std": 0.7512268424034119,
+              "reward_ci95": 0.09312304341493899
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 333,
+              "baron_losing_comparisons": 66,
+              "baron_tie_comparisons": 11,
+              "baron_winning_comparisons": 256,
+              "chancellor_bottomed_king_plus": 92,
+              "chancellor_choices": 369,
+              "chancellor_kept_highest": 281,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 33,
+              "chancellor_known_draws": 51,
+              "chancellor_plays": 369,
+              "chancellor_used_win_games": 173,
+              "forced_countess_discards": 58,
+              "guard_attempts": 1031,
+              "guard_hits": 348,
+              "guard_misses": 683,
+              "known_guard_attempts": 145,
+              "known_guard_correct_guess": 140,
+              "known_guard_hits": 132,
+              "main_round_wins": 393,
+              "priest_on_unknown": 374,
+              "priest_plays": 393,
+              "priest_to_guard_attempts": 46,
+              "priest_to_guard_hits": 40,
+              "spy_bonus_win_games": 145,
+              "spy_bonus_wins": 145,
+              "spy_played_win_games": 139,
+              "spy_plays": 252,
+              "voluntary_countess_discards": 23,
+              "voluntary_countess_win_games": 15
+            },
+            "guard_hit_rate": 0.3375363724539282,
+            "known_guard_hit_rate": 0.9103448275862069,
+            "known_guard_correct_guess_rate": 0.9655172413793104,
+            "priest_to_guard_hit_rate": 0.8695652173913043,
+            "priest_on_unknown_rate": 0.9516539440203562,
+            "baron_win_rate": 0.7687687687687688,
+            "baron_loss_rate": 0.1981981981981982,
+            "baron_tie_rate": 0.03303303303303303,
+            "chancellor_keep_highest_rate": 0.7615176151761518,
+            "chancellor_known_draw_win_rate": 0.6470588235294118,
+            "spy_bonus_per_spy_play": 0.5753968253968254,
+            "voluntary_countess_win_rate": 0.6521739130434783
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 357,
+          "winrate": 0.357,
+          "winrate_ci95": 0.029695843507130757,
+          "mean_reward": 0.5591999292373657,
+          "reward_std": 0.7628993391990662,
+          "reward_ci95": 0.04728499296685946,
+          "outcomes": {
+            "winner": {
+              "count": 357,
+              "rate": 0.357
+            },
+            "first_out": {
+              "count": 211,
+              "rate": 0.211
+            },
+            "second_out": {
+              "count": 166,
+              "rate": 0.166
+            },
+            "third_out": {
+              "count": 144,
+              "rate": 0.144
+            },
+            "final_loser": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 93,
+              "winrate": 0.372,
+              "winrate_ci95": 0.05991524766201004,
+              "mean_reward": 0.5751999616622925,
+              "reward_std": 0.7689115405082703,
+              "reward_ci95": 0.09531526130409657
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 84,
+              "winrate": 0.336,
+              "winrate_ci95": 0.05855173187532543,
+              "mean_reward": 0.5328000783920288,
+              "reward_std": 0.7606077790260315,
+              "reward_ci95": 0.09428592179482445
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 93,
+              "winrate": 0.372,
+              "winrate_ci95": 0.05991524766201004,
+              "mean_reward": 0.5824000239372253,
+              "reward_std": 0.7789288759231567,
+              "reward_ci95": 0.09655702502743434
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 87,
+              "winrate": 0.348,
+              "winrate_ci95": 0.05904722427345759,
+              "mean_reward": 0.5464000105857849,
+              "reward_std": 0.7415706515312195,
+              "reward_ci95": 0.09192604899002613
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 310,
+              "baron_losing_comparisons": 82,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 224,
+              "chancellor_bottomed_king_plus": 90,
+              "chancellor_choices": 349,
+              "chancellor_kept_highest": 265,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 24,
+              "chancellor_known_draws": 44,
+              "chancellor_plays": 349,
+              "chancellor_used_win_games": 110,
+              "forced_countess_discards": 71,
+              "guard_attempts": 981,
+              "guard_hits": 349,
+              "guard_misses": 632,
+              "known_guard_attempts": 127,
+              "known_guard_correct_guess": 121,
+              "known_guard_hits": 115,
+              "main_round_wins": 332,
+              "priest_on_unknown": 406,
+              "priest_plays": 427,
+              "priest_to_guard_attempts": 61,
+              "priest_to_guard_hits": 57,
+              "spy_bonus_win_games": 129,
+              "spy_bonus_wins": 129,
+              "spy_played_win_games": 127,
+              "spy_plays": 248,
+              "voluntary_countess_discards": 35,
+              "voluntary_countess_win_games": 25
+            },
+            "guard_hit_rate": 0.35575942915392456,
+            "known_guard_hit_rate": 0.905511811023622,
+            "known_guard_correct_guess_rate": 0.952755905511811,
+            "priest_to_guard_hit_rate": 0.9344262295081968,
+            "priest_on_unknown_rate": 0.9508196721311475,
+            "baron_win_rate": 0.7225806451612903,
+            "baron_loss_rate": 0.2645161290322581,
+            "baron_tie_rate": 0.012903225806451613,
+            "chancellor_keep_highest_rate": 0.7593123209169055,
+            "chancellor_known_draw_win_rate": 0.5454545454545454,
+            "spy_bonus_per_spy_play": 0.5201612903225806,
+            "voluntary_countess_win_rate": 0.7142857142857143
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 333,
+          "winrate": 0.333,
+          "winrate_ci95": 0.02921064219766488,
+          "mean_reward": 0.510200023651123,
+          "reward_std": 0.7008965015411377,
+          "reward_ci95": 0.043442014635552154,
+          "outcomes": {
+            "winner": {
+              "count": 333,
+              "rate": 0.333
+            },
+            "first_out": {
+              "count": 234,
+              "rate": 0.234
+            },
+            "second_out": {
+              "count": 181,
+              "rate": 0.181
+            },
+            "third_out": {
+              "count": 138,
+              "rate": 0.138
+            },
+            "final_loser": {
+              "count": 114,
+              "rate": 0.114
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 76,
+              "winrate": 0.304,
+              "winrate_ci95": 0.05702003487897915,
+              "mean_reward": 0.48079997301101685,
+              "reward_std": 0.7020195126533508,
+              "reward_ci95": 0.0870232453531885
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 86,
+              "winrate": 0.344,
+              "winrate_ci95": 0.058886698749378026,
+              "mean_reward": 0.5296000242233276,
+              "reward_std": 0.6993739008903503,
+              "reward_ci95": 0.08669528649293502
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 82,
+              "winrate": 0.328,
+              "winrate_ci95": 0.05819794173680028,
+              "mean_reward": 0.4928000271320343,
+              "reward_std": 0.7121995687484741,
+              "reward_ci95": 0.08828517712524414
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 89,
+              "winrate": 0.356,
+              "winrate_ci95": 0.05935454767412519,
+              "mean_reward": 0.5375999808311462,
+              "reward_std": 0.6881470084190369,
+              "reward_ci95": 0.08530358557899836
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 297,
+              "baron_losing_comparisons": 76,
+              "baron_tie_comparisons": 2,
+              "baron_winning_comparisons": 219,
+              "chancellor_bottomed_king_plus": 95,
+              "chancellor_choices": 327,
+              "chancellor_kept_highest": 237,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 30,
+              "chancellor_known_draws": 52,
+              "chancellor_plays": 327,
+              "chancellor_used_win_games": 121,
+              "forced_countess_discards": 63,
+              "guard_attempts": 1034,
+              "guard_hits": 403,
+              "guard_misses": 631,
+              "known_guard_attempts": 126,
+              "known_guard_correct_guess": 119,
+              "known_guard_hits": 112,
+              "main_round_wins": 305,
+              "priest_on_unknown": 370,
+              "priest_plays": 382,
+              "priest_to_guard_attempts": 58,
+              "priest_to_guard_hits": 55,
+              "spy_bonus_win_games": 96,
+              "spy_bonus_wins": 96,
+              "spy_played_win_games": 105,
+              "spy_plays": 226,
+              "voluntary_countess_discards": 46,
+              "voluntary_countess_win_games": 29
+            },
+            "guard_hit_rate": 0.3897485493230174,
+            "known_guard_hit_rate": 0.8888888888888888,
+            "known_guard_correct_guess_rate": 0.9444444444444444,
+            "priest_to_guard_hit_rate": 0.9482758620689655,
+            "priest_on_unknown_rate": 0.9685863874345549,
+            "baron_win_rate": 0.7373737373737373,
+            "baron_loss_rate": 0.2558922558922559,
+            "baron_tie_rate": 0.006734006734006734,
+            "chancellor_keep_highest_rate": 0.7247706422018348,
+            "chancellor_known_draw_win_rate": 0.5769230769230769,
+            "spy_bonus_per_spy_play": 0.4247787610619469,
+            "voluntary_countess_win_rate": 0.6304347826086957
+          }
+        }
+      },
+      "composite": 0.378
+    },
+    "step3_fast_dagger": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 519,
+          "winrate": 0.519,
+          "winrate_ci95": 0.03096793797462143,
+          "mean_reward": 0.7888000011444092,
+          "reward_std": 0.8152757883071899,
+          "reward_ci95": 0.05053131748306043,
+          "outcomes": {
+            "winner": {
+              "count": 519,
+              "rate": 0.519
+            },
+            "first_out": {
+              "count": 146,
+              "rate": 0.146
+            },
+            "second_out": {
+              "count": 123,
+              "rate": 0.123
+            },
+            "third_out": {
+              "count": 95,
+              "rate": 0.095
+            },
+            "final_loser": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 136,
+              "winrate": 0.544,
+              "winrate_ci95": 0.06174018666638447,
+              "mean_reward": 0.8264000415802002,
+              "reward_std": 0.823712944984436,
+              "reward_ci95": 0.10210851604507036
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 115,
+              "winrate": 0.46,
+              "winrate_ci95": 0.061781985723995625,
+              "mean_reward": 0.6855999827384949,
+              "reward_std": 0.802915096282959,
+              "reward_ci95": 0.09953039102558622
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 138,
+              "winrate": 0.552,
+              "winrate_ci95": 0.06164453953433345,
+              "mean_reward": 0.8568000197410583,
+              "reward_std": 0.8151403069496155,
+              "reward_ci95": 0.10104584459434716
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 130,
+              "winrate": 0.52,
+              "winrate_ci95": 0.06193103777590039,
+              "mean_reward": 0.7864000201225281,
+              "reward_std": 0.8089345097541809,
+              "reward_ci95": 0.10027656359140216
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 349,
+              "baron_losing_comparisons": 66,
+              "baron_tie_comparisons": 8,
+              "baron_winning_comparisons": 275,
+              "chancellor_bottomed_king_plus": 99,
+              "chancellor_choices": 353,
+              "chancellor_kept_highest": 259,
+              "chancellor_kept_princess": 7,
+              "chancellor_known_draw_win_games": 29,
+              "chancellor_known_draws": 42,
+              "chancellor_plays": 353,
+              "chancellor_used_win_games": 194,
+              "forced_countess_discards": 92,
+              "guard_attempts": 1060,
+              "guard_hits": 310,
+              "guard_misses": 750,
+              "known_guard_attempts": 118,
+              "known_guard_correct_guess": 111,
+              "known_guard_hits": 107,
+              "main_round_wins": 477,
+              "priest_on_unknown": 398,
+              "priest_plays": 410,
+              "priest_to_guard_attempts": 49,
+              "priest_to_guard_hits": 45,
+              "spy_bonus_win_games": 208,
+              "spy_bonus_wins": 208,
+              "spy_played_win_games": 189,
+              "spy_plays": 310,
+              "voluntary_countess_discards": 38,
+              "voluntary_countess_win_games": 30
+            },
+            "guard_hit_rate": 0.29245283018867924,
+            "known_guard_hit_rate": 0.9067796610169492,
+            "known_guard_correct_guess_rate": 0.940677966101695,
+            "priest_to_guard_hit_rate": 0.9183673469387755,
+            "priest_on_unknown_rate": 0.9707317073170731,
+            "baron_win_rate": 0.7879656160458453,
+            "baron_loss_rate": 0.18911174785100288,
+            "baron_tie_rate": 0.022922636103151862,
+            "chancellor_keep_highest_rate": 0.7337110481586402,
+            "chancellor_known_draw_win_rate": 0.6904761904761905,
+            "spy_bonus_per_spy_play": 0.6709677419354839,
+            "voluntary_countess_win_rate": 0.7894736842105263
+          },
+          "advantage": {
+            "decisions": 3922,
+            "advantage_checks": 3285,
+            "overrides": 587,
+            "check_rate": 0.8375828658847527,
+            "override_rate_per_decision": 0.1496685364609893,
+            "override_rate_per_check": 0.1786910197869102,
+            "stage_skips": 0,
+            "verify_checks": 0,
+            "verify_accepts": 0,
+            "verify_rejects": 0,
+            "verify_accept_rate": 0.0,
+            "mean_verify_win_delta": 0.0,
+            "mean_verify_score_delta": 0.0,
+            "mean_verify_t": 0.0,
+            "mean_override_margin": 0.1749701361969951,
+            "by_category": {
+              "baron": {
+                "seen": 788,
+                "checked": 782,
+                "overrides": 88,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.03130423507767508,
+                "mean_required_margin": 0.10000000000000014,
+                "mean_override_margin": 0.13356737360696902
+              },
+              "chancellor_card": {
+                "seen": 595,
+                "checked": 580,
+                "overrides": 105,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.04910247481331743,
+                "mean_required_margin": 0.10000000000000049,
+                "mean_override_margin": 0.17837063918511073
+              },
+              "chancellor_choice": {
+                "seen": 353,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 37,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 789,
+                "checked": 789,
+                "overrides": 153,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.05048637929890678,
+                "mean_required_margin": 0.1000000000000002,
+                "mean_override_margin": 0.14474018361249003
+              },
+              "handmaid": {
+                "seen": 116,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 431,
+                "checked": 401,
+                "overrides": 86,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.05147187152594105,
+                "mean_required_margin": 0.1000000000000002,
+                "mean_override_margin": 0.18799922069491343
+              },
+              "priest": {
+                "seen": 204,
+                "checked": 200,
+                "overrides": 79,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.106804078835994,
+                "mean_required_margin": 0.10000000000000003,
+                "mean_override_margin": 0.23659771039516111
+              },
+              "prince": {
+                "seen": 443,
+                "checked": 381,
+                "overrides": 69,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.04776123556701999,
+                "mean_required_margin": 0.10000000000000035,
+                "mean_override_margin": 0.20688543825045877
+              },
+              "spy": {
+                "seen": 166,
+                "checked": 152,
+                "overrides": 7,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.013634184167083157,
+                "mean_required_margin": 0.09999999999999977,
+                "mean_override_margin": 0.13501836040190288
+              }
+            }
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 462,
+          "winrate": 0.462,
+          "winrate_ci95": 0.030900691409740336,
+          "mean_reward": 0.6790000200271606,
+          "reward_std": 0.7696486115455627,
+          "reward_ci95": 0.04770331599455514,
+          "outcomes": {
+            "winner": {
+              "count": 462,
+              "rate": 0.462
+            },
+            "first_out": {
+              "count": 165,
+              "rate": 0.165
+            },
+            "second_out": {
+              "count": 155,
+              "rate": 0.155
+            },
+            "third_out": {
+              "count": 107,
+              "rate": 0.107
+            },
+            "final_loser": {
+              "count": 111,
+              "rate": 0.111
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 115,
+              "winrate": 0.46,
+              "winrate_ci95": 0.061781985723995625,
+              "mean_reward": 0.7064000368118286,
+              "reward_std": 0.7848815321922302,
+              "reward_ci95": 0.09729492680841159
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 115,
+              "winrate": 0.46,
+              "winrate_ci95": 0.061781985723995625,
+              "mean_reward": 0.6863999962806702,
+              "reward_std": 0.7720460295677185,
+              "reward_ci95": 0.09570382232345066
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 118,
+              "winrate": 0.472,
+              "winrate_ci95": 0.06188338017917249,
+              "mean_reward": 0.6591999530792236,
+              "reward_std": 0.7477000951766968,
+              "reward_ci95": 0.09268586797385302
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 114,
+              "winrate": 0.456,
+              "winrate_ci95": 0.061740186666384485,
+              "mean_reward": 0.6639999747276306,
+              "reward_std": 0.7725697159767151,
+              "reward_ci95": 0.09576873705222104
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 356,
+              "baron_losing_comparisons": 82,
+              "baron_tie_comparisons": 9,
+              "baron_winning_comparisons": 265,
+              "chancellor_bottomed_king_plus": 100,
+              "chancellor_choices": 320,
+              "chancellor_kept_highest": 227,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 29,
+              "chancellor_known_draws": 44,
+              "chancellor_plays": 320,
+              "chancellor_used_win_games": 161,
+              "forced_countess_discards": 62,
+              "guard_attempts": 1088,
+              "guard_hits": 322,
+              "guard_misses": 766,
+              "known_guard_attempts": 134,
+              "known_guard_correct_guess": 126,
+              "known_guard_hits": 123,
+              "main_round_wins": 415,
+              "priest_on_unknown": 372,
+              "priest_plays": 382,
+              "priest_to_guard_attempts": 53,
+              "priest_to_guard_hits": 52,
+              "spy_bonus_win_games": 163,
+              "spy_bonus_wins": 163,
+              "spy_played_win_games": 172,
+              "spy_plays": 309,
+              "voluntary_countess_discards": 35,
+              "voluntary_countess_win_games": 26
+            },
+            "guard_hit_rate": 0.2959558823529412,
+            "known_guard_hit_rate": 0.917910447761194,
+            "known_guard_correct_guess_rate": 0.9402985074626866,
+            "priest_to_guard_hit_rate": 0.9811320754716981,
+            "priest_on_unknown_rate": 0.9738219895287958,
+            "baron_win_rate": 0.7443820224719101,
+            "baron_loss_rate": 0.2303370786516854,
+            "baron_tie_rate": 0.025280898876404494,
+            "chancellor_keep_highest_rate": 0.709375,
+            "chancellor_known_draw_win_rate": 0.6590909090909091,
+            "spy_bonus_per_spy_play": 0.5275080906148867,
+            "voluntary_countess_win_rate": 0.7428571428571429
+          },
+          "advantage": {
+            "decisions": 3775,
+            "advantage_checks": 3224,
+            "overrides": 625,
+            "check_rate": 0.8540397350993377,
+            "override_rate_per_decision": 0.16556291390728478,
+            "override_rate_per_check": 0.19385856079404468,
+            "stage_skips": 0,
+            "verify_checks": 0,
+            "verify_accepts": 0,
+            "verify_rejects": 0,
+            "verify_accept_rate": 0.0,
+            "mean_verify_win_delta": 0.0,
+            "mean_verify_score_delta": 0.0,
+            "mean_verify_t": 0.0,
+            "mean_override_margin": 0.17293203346729277,
+            "by_category": {
+              "baron": {
+                "seen": 786,
+                "checked": 783,
+                "overrides": 100,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.03292039554627995,
+                "mean_required_margin": 0.10000000000000007,
+                "mean_override_margin": 0.14237180963158608
+              },
+              "chancellor_card": {
+                "seen": 545,
+                "checked": 529,
+                "overrides": 123,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.052123802173565825,
+                "mean_required_margin": 0.10000000000000048,
+                "mean_override_margin": 0.17420265024028173
+              },
+              "chancellor_choice": {
+                "seen": 320,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 33,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 800,
+                "checked": 799,
+                "overrides": 180,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.056610811277361436,
+                "mean_required_margin": 0.1000000000000002,
+                "mean_override_margin": 0.1482377339154482
+              },
+              "handmaid": {
+                "seen": 96,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 424,
+                "checked": 402,
+                "overrides": 79,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.051008524146134875,
+                "mean_required_margin": 0.10000000000000019,
+                "mean_override_margin": 0.19296121625583382
+              },
+              "priest": {
+                "seen": 171,
+                "checked": 171,
+                "overrides": 65,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.10028442720833577,
+                "mean_required_margin": 0.09999999999999988,
+                "mean_override_margin": 0.23830666771301856
+              },
+              "prince": {
+                "seen": 434,
+                "checked": 393,
+                "overrides": 72,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0511412558551053,
+                "mean_required_margin": 0.10000000000000037,
+                "mean_override_margin": 0.1946717660046286
+              },
+              "spy": {
+                "seen": 166,
+                "checked": 147,
+                "overrides": 6,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.015226520344513614,
+                "mean_required_margin": 0.09999999999999981,
+                "mean_override_margin": 0.16423087194561958
+              }
+            }
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 384,
+          "winrate": 0.384,
+          "winrate_ci95": 0.03014477451234293,
+          "mean_reward": 0.574400007724762,
+          "reward_std": 0.7618298530578613,
+          "reward_ci95": 0.047218706056830526,
+          "outcomes": {
+            "winner": {
+              "count": 384,
+              "rate": 0.384
+            },
+            "first_out": {
+              "count": 208,
+              "rate": 0.208
+            },
+            "second_out": {
+              "count": 175,
+              "rate": 0.175
+            },
+            "third_out": {
+              "count": 119,
+              "rate": 0.119
+            },
+            "final_loser": {
+              "count": 114,
+              "rate": 0.114
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 94,
+              "winrate": 0.376,
+              "winrate_ci95": 0.06004436887502441,
+              "mean_reward": 0.5511999726295471,
+              "reward_std": 0.7375761270523071,
+              "reward_ci95": 0.09143088758157977
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 92,
+              "winrate": 0.368,
+              "winrate_ci95": 0.059781735056788035,
+              "mean_reward": 0.5528000593185425,
+              "reward_std": 0.7507944107055664,
+              "reward_ci95": 0.09306943787236555
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 100,
+              "winrate": 0.4,
+              "winrate_ci95": 0.060728378868532294,
+              "mean_reward": 0.602400004863739,
+              "reward_std": 0.7882094979286194,
+              "reward_ci95": 0.09770746330250318
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 98,
+              "winrate": 0.392,
+              "winrate_ci95": 0.060517487641176905,
+              "mean_reward": 0.5911999344825745,
+              "reward_std": 0.7684286832809448,
+              "reward_ci95": 0.09525540555128495
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 340,
+              "baron_losing_comparisons": 98,
+              "baron_tie_comparisons": 8,
+              "baron_winning_comparisons": 234,
+              "chancellor_bottomed_king_plus": 82,
+              "chancellor_choices": 290,
+              "chancellor_kept_highest": 214,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 24,
+              "chancellor_known_draws": 39,
+              "chancellor_plays": 290,
+              "chancellor_used_win_games": 123,
+              "forced_countess_discards": 73,
+              "guard_attempts": 1060,
+              "guard_hits": 316,
+              "guard_misses": 744,
+              "known_guard_attempts": 124,
+              "known_guard_correct_guess": 106,
+              "known_guard_hits": 98,
+              "main_round_wins": 331,
+              "priest_on_unknown": 387,
+              "priest_plays": 399,
+              "priest_to_guard_attempts": 40,
+              "priest_to_guard_hits": 36,
+              "spy_bonus_win_games": 153,
+              "spy_bonus_wins": 153,
+              "spy_played_win_games": 149,
+              "spy_plays": 291,
+              "voluntary_countess_discards": 41,
+              "voluntary_countess_win_games": 31
+            },
+            "guard_hit_rate": 0.2981132075471698,
+            "known_guard_hit_rate": 0.7903225806451613,
+            "known_guard_correct_guess_rate": 0.8548387096774194,
+            "priest_to_guard_hit_rate": 0.9,
+            "priest_on_unknown_rate": 0.9699248120300752,
+            "baron_win_rate": 0.6882352941176471,
+            "baron_loss_rate": 0.28823529411764703,
+            "baron_tie_rate": 0.023529411764705882,
+            "chancellor_keep_highest_rate": 0.7379310344827587,
+            "chancellor_known_draw_win_rate": 0.6153846153846154,
+            "spy_bonus_per_spy_play": 0.5257731958762887,
+            "voluntary_countess_win_rate": 0.7560975609756098
+          },
+          "advantage": {
+            "decisions": 3678,
+            "advantage_checks": 3159,
+            "overrides": 657,
+            "check_rate": 0.8588907014681892,
+            "override_rate_per_decision": 0.17862969004893964,
+            "override_rate_per_check": 0.20797720797720798,
+            "stage_skips": 0,
+            "verify_checks": 0,
+            "verify_accepts": 0,
+            "verify_rejects": 0,
+            "verify_accept_rate": 0.0,
+            "mean_verify_win_delta": 0.0,
+            "mean_verify_score_delta": 0.0,
+            "mean_verify_t": 0.0,
+            "mean_override_margin": 0.16881672492537142,
+            "by_category": {
+              "baron": {
+                "seen": 722,
+                "checked": 719,
+                "overrides": 99,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.034076868534419734,
+                "mean_required_margin": 0.10000000000000028,
+                "mean_override_margin": 0.13872027156328914
+              },
+              "chancellor_card": {
+                "seen": 544,
+                "checked": 533,
+                "overrides": 121,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0527665708808134,
+                "mean_required_margin": 0.10000000000000044,
+                "mean_override_margin": 0.17011731413524012
+              },
+              "chancellor_choice": {
+                "seen": 290,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 38,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 792,
+                "checked": 792,
+                "overrides": 197,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.06037581445369399,
+                "mean_required_margin": 0.09999999999999995,
+                "mean_override_margin": 0.14545174362847044
+              },
+              "handmaid": {
+                "seen": 84,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 427,
+                "checked": 395,
+                "overrides": 79,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.05102781238906746,
+                "mean_required_margin": 0.1000000000000001,
+                "mean_override_margin": 0.19355624121955678
+              },
+              "priest": {
+                "seen": 195,
+                "checked": 192,
+                "overrides": 70,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.09330864884153318,
+                "mean_required_margin": 0.09999999999999998,
+                "mean_override_margin": 0.22374233635408539
+              },
+              "prince": {
+                "seen": 435,
+                "checked": 393,
+                "overrides": 82,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.05119816665999762,
+                "mean_required_margin": 0.10000000000000035,
+                "mean_override_margin": 0.19082915737498096
+              },
+              "spy": {
+                "seen": 151,
+                "checked": 135,
+                "overrides": 9,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.017350554797384475,
+                "mean_required_margin": 0.09999999999999978,
+                "mean_override_margin": 0.14891059779458576
+              }
+            }
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 345,
+          "winrate": 0.345,
+          "winrate_ci95": 0.029463631140781002,
+          "mean_reward": 0.5363999605178833,
+          "reward_std": 0.7470174431800842,
+          "reward_ci95": 0.046300622551635064,
+          "outcomes": {
+            "winner": {
+              "count": 345,
+              "rate": 0.345
+            },
+            "first_out": {
+              "count": 237,
+              "rate": 0.237
+            },
+            "second_out": {
+              "count": 186,
+              "rate": 0.186
+            },
+            "third_out": {
+              "count": 110,
+              "rate": 0.11
+            },
+            "final_loser": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 83,
+              "winrate": 0.332,
+              "winrate_ci95": 0.05837721067677009,
+              "mean_reward": 0.5152000188827515,
+              "reward_std": 0.7260915637016296,
+              "reward_ci95": 0.0900072419863655
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 84,
+              "winrate": 0.336,
+              "winrate_ci95": 0.05855173187532543,
+              "mean_reward": 0.5608000159263611,
+              "reward_std": 0.7823447585105896,
+              "reward_ci95": 0.09698046357701977
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 94,
+              "winrate": 0.376,
+              "winrate_ci95": 0.06004436887502441,
+              "mean_reward": 0.55840003490448,
+              "reward_std": 0.7559030055999756,
+              "reward_ci95": 0.0937027070626488
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 84,
+              "winrate": 0.336,
+              "winrate_ci95": 0.05855173187532543,
+              "mean_reward": 0.5112000107765198,
+              "reward_std": 0.7206348776817322,
+              "reward_ci95": 0.08933082448101223
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 290,
+              "baron_losing_comparisons": 76,
+              "baron_tie_comparisons": 6,
+              "baron_winning_comparisons": 208,
+              "chancellor_bottomed_king_plus": 96,
+              "chancellor_choices": 287,
+              "chancellor_kept_highest": 197,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 24,
+              "chancellor_known_draws": 38,
+              "chancellor_plays": 287,
+              "chancellor_used_win_games": 106,
+              "forced_countess_discards": 68,
+              "guard_attempts": 1097,
+              "guard_hits": 365,
+              "guard_misses": 732,
+              "known_guard_attempts": 140,
+              "known_guard_correct_guess": 130,
+              "known_guard_hits": 121,
+              "main_round_wins": 301,
+              "priest_on_unknown": 374,
+              "priest_plays": 381,
+              "priest_to_guard_attempts": 61,
+              "priest_to_guard_hits": 54,
+              "spy_bonus_win_games": 136,
+              "spy_bonus_wins": 136,
+              "spy_played_win_games": 131,
+              "spy_plays": 282,
+              "voluntary_countess_discards": 44,
+              "voluntary_countess_win_games": 28
+            },
+            "guard_hit_rate": 0.33272561531449407,
+            "known_guard_hit_rate": 0.8642857142857143,
+            "known_guard_correct_guess_rate": 0.9285714285714286,
+            "priest_to_guard_hit_rate": 0.8852459016393442,
+            "priest_on_unknown_rate": 0.9816272965879265,
+            "baron_win_rate": 0.7172413793103448,
+            "baron_loss_rate": 0.2620689655172414,
+            "baron_tie_rate": 0.020689655172413793,
+            "chancellor_keep_highest_rate": 0.686411149825784,
+            "chancellor_known_draw_win_rate": 0.631578947368421,
+            "spy_bonus_per_spy_play": 0.48226950354609927,
+            "voluntary_countess_win_rate": 0.6363636363636364
+          },
+          "advantage": {
+            "decisions": 3637,
+            "advantage_checks": 3110,
+            "overrides": 628,
+            "check_rate": 0.8551003574374485,
+            "override_rate_per_decision": 0.1726697827880121,
+            "override_rate_per_check": 0.20192926045016077,
+            "stage_skips": 0,
+            "verify_checks": 0,
+            "verify_accepts": 0,
+            "verify_rejects": 0,
+            "verify_accept_rate": 0.0,
+            "mean_verify_win_delta": 0.0,
+            "mean_verify_score_delta": 0.0,
+            "mean_verify_t": 0.0,
+            "mean_override_margin": 0.17578098979915024,
+            "by_category": {
+              "baron": {
+                "seen": 642,
+                "checked": 642,
+                "overrides": 84,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.03474381545448322,
+                "mean_required_margin": 0.10000000000000038,
+                "mean_override_margin": 0.13997805003254188
+              },
+              "chancellor_card": {
+                "seen": 533,
+                "checked": 519,
+                "overrides": 134,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.062269065109205386,
+                "mean_required_margin": 0.10000000000000044,
+                "mean_override_margin": 0.18645114974299473
+              },
+              "chancellor_choice": {
+                "seen": 287,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 43,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 820,
+                "checked": 815,
+                "overrides": 196,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.06010465666057508,
+                "mean_required_margin": 0.10000000000000003,
+                "mean_override_margin": 0.14918524380393175
+              },
+              "handmaid": {
+                "seen": 94,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 444,
+                "checked": 413,
+                "overrides": 78,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.050439061267756956,
+                "mean_required_margin": 0.10000000000000012,
+                "mean_override_margin": 0.2006490931679041
+              },
+              "priest": {
+                "seen": 159,
+                "checked": 154,
+                "overrides": 52,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.08658546198449739,
+                "mean_required_margin": 0.0999999999999998,
+                "mean_override_margin": 0.2279721501354988
+              },
+              "prince": {
+                "seen": 451,
+                "checked": 413,
+                "overrides": 77,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.04963375810200019,
+                "mean_required_margin": 0.10000000000000044,
+                "mean_override_margin": 0.2061161862371804
+              },
+              "spy": {
+                "seen": 164,
+                "checked": 154,
+                "overrides": 7,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.012280497409693607,
+                "mean_required_margin": 0.09999999999999978,
+                "mean_override_margin": 0.14734516079936708
+              }
+            }
+          }
+        }
+      },
+      "composite": 0.39749999999999996
+    },
+    "step3_hybrid_verify16": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 512,
+          "winrate": 0.512,
+          "winrate_ci95": 0.03098139457158118,
+          "mean_reward": 0.7521999478340149,
+          "reward_std": 0.7880579233169556,
+          "reward_ci95": 0.04884433748725067,
+          "outcomes": {
+            "winner": {
+              "count": 512,
+              "rate": 0.512
+            },
+            "first_out": {
+              "count": 161,
+              "rate": 0.161
+            },
+            "second_out": {
+              "count": 115,
+              "rate": 0.115
+            },
+            "third_out": {
+              "count": 93,
+              "rate": 0.093
+            },
+            "final_loser": {
+              "count": 119,
+              "rate": 0.119
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 122,
+              "winrate": 0.488,
+              "winrate_ci95": 0.06196278914316236,
+              "mean_reward": 0.7184000015258789,
+              "reward_std": 0.7816274762153625,
+              "reward_ci95": 0.09689155075513951
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 119,
+              "winrate": 0.476,
+              "winrate_ci95": 0.061909199264729625,
+              "mean_reward": 0.6880000233650208,
+              "reward_std": 0.7786758542060852,
+              "reward_ci95": 0.09652566088438153
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 148,
+              "winrate": 0.592,
+              "winrate_ci95": 0.0609223997426234,
+              "mean_reward": 0.855199933052063,
+              "reward_std": 0.7702421545982361,
+              "reward_ci95": 0.09548020955450752
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 123,
+              "winrate": 0.492,
+              "winrate_ci95": 0.061972708109295976,
+              "mean_reward": 0.7472000122070312,
+              "reward_std": 0.8109822273254395,
+              "reward_ci95": 0.10053040204532097
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 313,
+              "baron_losing_comparisons": 64,
+              "baron_tie_comparisons": 7,
+              "baron_winning_comparisons": 242,
+              "chancellor_bottomed_king_plus": 107,
+              "chancellor_choices": 406,
+              "chancellor_kept_highest": 304,
+              "chancellor_kept_princess": 6,
+              "chancellor_known_draw_win_games": 40,
+              "chancellor_known_draws": 66,
+              "chancellor_plays": 406,
+              "chancellor_used_win_games": 208,
+              "forced_countess_discards": 88,
+              "guard_attempts": 1013,
+              "guard_hits": 318,
+              "guard_misses": 695,
+              "known_guard_attempts": 126,
+              "known_guard_correct_guess": 122,
+              "known_guard_hits": 119,
+              "main_round_wins": 470,
+              "priest_on_unknown": 396,
+              "priest_plays": 413,
+              "priest_to_guard_attempts": 47,
+              "priest_to_guard_hits": 45,
+              "spy_bonus_win_games": 183,
+              "spy_bonus_wins": 183,
+              "spy_played_win_games": 165,
+              "spy_plays": 261,
+              "voluntary_countess_discards": 36,
+              "voluntary_countess_win_games": 26
+            },
+            "guard_hit_rate": 0.3139190523198421,
+            "known_guard_hit_rate": 0.9444444444444444,
+            "known_guard_correct_guess_rate": 0.9682539682539683,
+            "priest_to_guard_hit_rate": 0.9574468085106383,
+            "priest_on_unknown_rate": 0.9588377723970944,
+            "baron_win_rate": 0.7731629392971247,
+            "baron_loss_rate": 0.20447284345047922,
+            "baron_tie_rate": 0.022364217252396165,
+            "chancellor_keep_highest_rate": 0.7487684729064039,
+            "chancellor_known_draw_win_rate": 0.6060606060606061,
+            "spy_bonus_per_spy_play": 0.7011494252873564,
+            "voluntary_countess_win_rate": 0.7222222222222222
+          },
+          "advantage": {
+            "decisions": 3898,
+            "advantage_checks": 3211,
+            "overrides": 113,
+            "check_rate": 0.8237557721908672,
+            "override_rate_per_decision": 0.028989225243714726,
+            "override_rate_per_check": 0.03519152911865463,
+            "stage_skips": 0,
+            "verify_checks": 556,
+            "verify_accepts": 113,
+            "verify_rejects": 443,
+            "verify_accept_rate": 0.20323741007194246,
+            "mean_verify_win_delta": 0.0064073741007194245,
+            "mean_verify_score_delta": 0.0065973472490231675,
+            "mean_verify_t": null,
+            "mean_override_margin": 0.19298434567398728,
+            "by_category": {
+              "baron": {
+                "seen": 764,
+                "checked": 757,
+                "overrides": 7,
+                "stage_skips": 0,
+                "verify_checks": 59,
+                "verify_accepts": 7,
+                "verify_rejects": 52,
+                "verify_accept_rate": 0.11864406779661017,
+                "mean_verify_win_delta": 0.00847457627118644,
+                "mean_verify_score_delta": 0.008622878833902779,
+                "mean_verify_t": 0.12467575382456572,
+                "mean_best_advantage": 0.025567146825211683,
+                "mean_required_margin": 0.10000000000000021,
+                "mean_override_margin": 0.14465087865080153
+              },
+              "chancellor_card": {
+                "seen": 551,
+                "checked": 539,
+                "overrides": 6,
+                "stage_skips": 0,
+                "verify_checks": 34,
+                "verify_accepts": 6,
+                "verify_rejects": 28,
+                "verify_accept_rate": 0.17647058823529413,
+                "mean_verify_win_delta": -0.0900735294117647,
+                "mean_verify_score_delta": -0.09922794033499326,
+                "mean_verify_t": -0.5708014080241732,
+                "mean_best_advantage": 0.01771003703184163,
+                "mean_required_margin": 0.10000000000000059,
+                "mean_override_margin": 0.14912317196528116
+              },
+              "chancellor_choice": {
+                "seen": 406,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 32,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 826,
+                "checked": 822,
+                "overrides": 43,
+                "stage_skips": 0,
+                "verify_checks": 267,
+                "verify_accepts": 43,
+                "verify_rejects": 224,
+                "verify_accept_rate": 0.16104868913857678,
+                "mean_verify_win_delta": -0.011235955056179775,
+                "mean_verify_score_delta": -0.012102058459481414,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.08005370298704165,
+                "mean_required_margin": 0.10000000000000017,
+                "mean_override_margin": 0.17583954576836075
+              },
+              "handmaid": {
+                "seen": 112,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 384,
+                "checked": 353,
+                "overrides": 22,
+                "stage_skips": 0,
+                "verify_checks": 63,
+                "verify_accepts": 22,
+                "verify_rejects": 41,
+                "verify_accept_rate": 0.3492063492063492,
+                "mean_verify_win_delta": 0.09623015873015874,
+                "mean_verify_score_delta": 0.1015277739082064,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.048007719092092165,
+                "mean_required_margin": 0.10000000000000023,
+                "mean_override_margin": 0.20388238707726652
+              },
+              "priest": {
+                "seen": 200,
+                "checked": 196,
+                "overrides": 13,
+                "stage_skips": 0,
+                "verify_checks": 63,
+                "verify_accepts": 13,
+                "verify_rejects": 50,
+                "verify_accept_rate": 0.20634920634920634,
+                "mean_verify_win_delta": 0.00496031746031746,
+                "mean_verify_score_delta": 0.007708336023377284,
+                "mean_verify_t": 0.020609826866935372,
+                "mean_best_advantage": 0.09135686326771975,
+                "mean_required_margin": 0.09999999999999999,
+                "mean_override_margin": 0.275437572827706
+              },
+              "prince": {
+                "seen": 431,
+                "checked": 374,
+                "overrides": 22,
+                "stage_skips": 0,
+                "verify_checks": 66,
+                "verify_accepts": 22,
+                "verify_rejects": 44,
+                "verify_accept_rate": 0.3333333333333333,
+                "mean_verify_win_delta": 0.043560606060606064,
+                "mean_verify_score_delta": 0.045482952147722244,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.04331939546939205,
+                "mean_required_margin": 0.1000000000000004,
+                "mean_override_margin": 0.19421520219607788
+              },
+              "spy": {
+                "seen": 192,
+                "checked": 170,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 4,
+                "verify_accepts": 0,
+                "verify_rejects": 4,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": -0.03125,
+                "mean_verify_score_delta": -0.02984374202787876,
+                "mean_verify_t": -0.16187441984092507,
+                "mean_best_advantage": 0.0134207142626538,
+                "mean_required_margin": 0.09999999999999985,
+                "mean_override_margin": 0.0
+              }
+            }
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 453,
+          "winrate": 0.453,
+          "winrate_ci95": 0.030853102041772072,
+          "mean_reward": 0.6607999801635742,
+          "reward_std": 0.7598311901092529,
+          "reward_ci95": 0.04709482523122936,
+          "outcomes": {
+            "winner": {
+              "count": 453,
+              "rate": 0.453
+            },
+            "first_out": {
+              "count": 177,
+              "rate": 0.177
+            },
+            "second_out": {
+              "count": 145,
+              "rate": 0.145
+            },
+            "third_out": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "final_loser": {
+              "count": 109,
+              "rate": 0.109
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 114,
+              "winrate": 0.456,
+              "winrate_ci95": 0.061740186666384485,
+              "mean_reward": 0.6823999881744385,
+              "reward_std": 0.7673918604850769,
+              "reward_ci95": 0.09512688041988558
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 108,
+              "winrate": 0.432,
+              "winrate_ci95": 0.061404769899414166,
+              "mean_reward": 0.6568000316619873,
+              "reward_std": 0.7839220762252808,
+              "reward_ci95": 0.09717599186690722
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 120,
+              "winrate": 0.48,
+              "winrate_ci95": 0.06193103777590039,
+              "mean_reward": 0.6711999773979187,
+              "reward_std": 0.7446143627166748,
+              "reward_ci95": 0.09230335359938555
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 111,
+              "winrate": 0.444,
+              "winrate_ci95": 0.06159067274839592,
+              "mean_reward": 0.6327999830245972,
+              "reward_std": 0.7417035698890686,
+              "reward_ci95": 0.09194253024404378
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 341,
+              "baron_losing_comparisons": 77,
+              "baron_tie_comparisons": 10,
+              "baron_winning_comparisons": 254,
+              "chancellor_bottomed_king_plus": 90,
+              "chancellor_choices": 375,
+              "chancellor_kept_highest": 290,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 39,
+              "chancellor_known_draws": 59,
+              "chancellor_plays": 375,
+              "chancellor_used_win_games": 175,
+              "forced_countess_discards": 61,
+              "guard_attempts": 1049,
+              "guard_hits": 332,
+              "guard_misses": 717,
+              "known_guard_attempts": 136,
+              "known_guard_correct_guess": 133,
+              "known_guard_hits": 130,
+              "main_round_wins": 410,
+              "priest_on_unknown": 369,
+              "priest_plays": 393,
+              "priest_to_guard_attempts": 54,
+              "priest_to_guard_hits": 51,
+              "spy_bonus_win_games": 149,
+              "spy_bonus_wins": 149,
+              "spy_played_win_games": 145,
+              "spy_plays": 250,
+              "voluntary_countess_discards": 44,
+              "voluntary_countess_win_games": 34
+            },
+            "guard_hit_rate": 0.31649189704480457,
+            "known_guard_hit_rate": 0.9558823529411765,
+            "known_guard_correct_guess_rate": 0.9779411764705882,
+            "priest_to_guard_hit_rate": 0.9444444444444444,
+            "priest_on_unknown_rate": 0.9389312977099237,
+            "baron_win_rate": 0.7448680351906158,
+            "baron_loss_rate": 0.22580645161290322,
+            "baron_tie_rate": 0.02932551319648094,
+            "chancellor_keep_highest_rate": 0.7733333333333333,
+            "chancellor_known_draw_win_rate": 0.6610169491525424,
+            "spy_bonus_per_spy_play": 0.596,
+            "voluntary_countess_win_rate": 0.7727272727272727
+          },
+          "advantage": {
+            "decisions": 3850,
+            "advantage_checks": 3224,
+            "overrides": 116,
+            "check_rate": 0.8374025974025974,
+            "override_rate_per_decision": 0.03012987012987013,
+            "override_rate_per_check": 0.03598014888337469,
+            "stage_skips": 0,
+            "verify_checks": 563,
+            "verify_accepts": 116,
+            "verify_rejects": 447,
+            "verify_accept_rate": 0.20603907637655416,
+            "mean_verify_win_delta": -0.002997335701598579,
+            "mean_verify_score_delta": -0.0035768210314930503,
+            "mean_verify_t": null,
+            "mean_override_margin": 0.19055407006165076,
+            "by_category": {
+              "baron": {
+                "seen": 803,
+                "checked": 799,
+                "overrides": 19,
+                "stage_skips": 0,
+                "verify_checks": 83,
+                "verify_accepts": 19,
+                "verify_rejects": 64,
+                "verify_accept_rate": 0.2289156626506024,
+                "mean_verify_win_delta": -0.002259036144578313,
+                "mean_verify_score_delta": -0.001995483776610569,
+                "mean_verify_t": -0.02230996500731002,
+                "mean_best_advantage": 0.02782005289142884,
+                "mean_required_margin": 0.09999999999999992,
+                "mean_override_margin": 0.14823520614912636
+              },
+              "chancellor_card": {
+                "seen": 490,
+                "checked": 478,
+                "overrides": 4,
+                "stage_skips": 0,
+                "verify_checks": 23,
+                "verify_accepts": 4,
+                "verify_rejects": 19,
+                "verify_accept_rate": 0.17391304347826086,
+                "mean_verify_win_delta": -0.035326086956521736,
+                "mean_verify_score_delta": -0.03695651597302893,
+                "mean_verify_t": -0.28222177326080133,
+                "mean_best_advantage": 0.014668053717481042,
+                "mean_required_margin": 0.10000000000000049,
+                "mean_override_margin": 0.12778278812766075
+              },
+              "chancellor_choice": {
+                "seen": 375,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 42,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 846,
+                "checked": 840,
+                "overrides": 42,
+                "stage_skips": 0,
+                "verify_checks": 266,
+                "verify_accepts": 42,
+                "verify_rejects": 224,
+                "verify_accept_rate": 0.15789473684210525,
+                "mean_verify_win_delta": -0.015037593984962405,
+                "mean_verify_score_delta": -0.016799812746510833,
+                "mean_verify_t": -0.2283023803963845,
+                "mean_best_advantage": 0.0775568488852254,
+                "mean_required_margin": 0.10000000000000013,
+                "mean_override_margin": 0.1823526065619219
+              },
+              "handmaid": {
+                "seen": 99,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 417,
+                "checked": 392,
+                "overrides": 19,
+                "stage_skips": 0,
+                "verify_checks": 72,
+                "verify_accepts": 19,
+                "verify_rejects": 53,
+                "verify_accept_rate": 0.2638888888888889,
+                "mean_verify_win_delta": 0.026909722222222224,
+                "mean_verify_score_delta": 0.027491318701423652,
+                "mean_verify_t": 0.12239373324739239,
+                "mean_best_advantage": 0.04455139155841756,
+                "mean_required_margin": 0.10000000000000023,
+                "mean_override_margin": 0.19236360882457934
+              },
+              "priest": {
+                "seen": 178,
+                "checked": 177,
+                "overrides": 13,
+                "stage_skips": 0,
+                "verify_checks": 54,
+                "verify_accepts": 13,
+                "verify_rejects": 41,
+                "verify_accept_rate": 0.24074074074074073,
+                "mean_verify_win_delta": -0.011574074074074073,
+                "mean_verify_score_delta": -0.011377314864485353,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.09344636588383698,
+                "mean_required_margin": 0.0999999999999999,
+                "mean_override_margin": 0.30376044718118816
+              },
+              "prince": {
+                "seen": 416,
+                "checked": 380,
+                "overrides": 18,
+                "stage_skips": 0,
+                "verify_checks": 62,
+                "verify_accepts": 18,
+                "verify_rejects": 44,
+                "verify_accept_rate": 0.2903225806451613,
+                "mean_verify_win_delta": 0.034274193548387094,
+                "mean_verify_score_delta": 0.03583669339516951,
+                "mean_verify_t": 0.2871280192074283,
+                "mean_best_advantage": 0.042231571693953716,
+                "mean_required_margin": 0.10000000000000041,
+                "mean_override_margin": 0.1895368533829848
+              },
+              "spy": {
+                "seen": 184,
+                "checked": 158,
+                "overrides": 1,
+                "stage_skips": 0,
+                "verify_checks": 3,
+                "verify_accepts": 1,
+                "verify_rejects": 2,
+                "verify_accept_rate": 0.3333333333333333,
+                "mean_verify_win_delta": -0.041666666666666664,
+                "mean_verify_score_delta": -0.03874998788038889,
+                "mean_verify_t": -0.452979691063954,
+                "mean_best_advantage": 0.013715308442523208,
+                "mean_required_margin": 0.0999999999999998,
+                "mean_override_margin": 0.10240484029054642
+              }
+            }
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 393,
+          "winrate": 0.393,
+          "winrate_ci95": 0.030272388766002595,
+          "mean_reward": 0.5835999846458435,
+          "reward_std": 0.7456346750259399,
+          "reward_ci95": 0.046214917768906,
+          "outcomes": {
+            "winner": {
+              "count": 393,
+              "rate": 0.393
+            },
+            "first_out": {
+              "count": 201,
+              "rate": 0.201
+            },
+            "second_out": {
+              "count": 169,
+              "rate": 0.169
+            },
+            "third_out": {
+              "count": 124,
+              "rate": 0.124
+            },
+            "final_loser": {
+              "count": 113,
+              "rate": 0.113
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 101,
+              "winrate": 0.404,
+              "winrate_ci95": 0.06082748768114626,
+              "mean_reward": 0.5848000049591064,
+              "reward_std": 0.7364298701286316,
+              "reward_ci95": 0.09128879142674408
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 91,
+              "winrate": 0.364,
+              "winrate_ci95": 0.059643801568981164,
+              "mean_reward": 0.5455999970436096,
+              "reward_std": 0.7368586659431458,
+              "reward_ci95": 0.09134194460186965
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 96,
+              "winrate": 0.384,
+              "winrate_ci95": 0.06028954902468586,
+              "mean_reward": 0.579200029373169,
+              "reward_std": 0.7592939734458923,
+              "reward_ci95": 0.09412305443467374
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 105,
+              "winrate": 0.42,
+              "winrate_ci95": 0.06118214641543725,
+              "mean_reward": 0.6247999668121338,
+              "reward_std": 0.7475994825363159,
+              "reward_ci95": 0.09267339017174908
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 318,
+              "baron_losing_comparisons": 79,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 234,
+              "chancellor_bottomed_king_plus": 92,
+              "chancellor_choices": 356,
+              "chancellor_kept_highest": 268,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 29,
+              "chancellor_known_draws": 46,
+              "chancellor_plays": 356,
+              "chancellor_used_win_games": 145,
+              "forced_countess_discards": 74,
+              "guard_attempts": 1006,
+              "guard_hits": 353,
+              "guard_misses": 653,
+              "known_guard_attempts": 129,
+              "known_guard_correct_guess": 122,
+              "known_guard_hits": 117,
+              "main_round_wins": 360,
+              "priest_on_unknown": 392,
+              "priest_plays": 399,
+              "priest_to_guard_attempts": 53,
+              "priest_to_guard_hits": 51,
+              "spy_bonus_win_games": 122,
+              "spy_bonus_wins": 122,
+              "spy_played_win_games": 127,
+              "spy_plays": 257,
+              "voluntary_countess_discards": 44,
+              "voluntary_countess_win_games": 34
+            },
+            "guard_hit_rate": 0.3508946322067594,
+            "known_guard_hit_rate": 0.9069767441860465,
+            "known_guard_correct_guess_rate": 0.9457364341085271,
+            "priest_to_guard_hit_rate": 0.9622641509433962,
+            "priest_on_unknown_rate": 0.9824561403508771,
+            "baron_win_rate": 0.7358490566037735,
+            "baron_loss_rate": 0.24842767295597484,
+            "baron_tie_rate": 0.015723270440251572,
+            "chancellor_keep_highest_rate": 0.7528089887640449,
+            "chancellor_known_draw_win_rate": 0.6304347826086957,
+            "spy_bonus_per_spy_play": 0.47470817120622566,
+            "voluntary_countess_win_rate": 0.7727272727272727
+          },
+          "advantage": {
+            "decisions": 3759,
+            "advantage_checks": 3165,
+            "overrides": 128,
+            "check_rate": 0.8419792498004789,
+            "override_rate_per_decision": 0.034051609470603886,
+            "override_rate_per_check": 0.04044233807266982,
+            "stage_skips": 0,
+            "verify_checks": 525,
+            "verify_accepts": 128,
+            "verify_rejects": 397,
+            "verify_accept_rate": 0.2438095238095238,
+            "mean_verify_win_delta": 0.014404761904761905,
+            "mean_verify_score_delta": 0.014799999119270416,
+            "mean_verify_t": null,
+            "mean_override_margin": 0.1914693082217127,
+            "by_category": {
+              "baron": {
+                "seen": 722,
+                "checked": 719,
+                "overrides": 9,
+                "stage_skips": 0,
+                "verify_checks": 47,
+                "verify_accepts": 9,
+                "verify_rejects": 38,
+                "verify_accept_rate": 0.19148936170212766,
+                "mean_verify_win_delta": 0.023936170212765957,
+                "mean_verify_score_delta": 0.02428191201637519,
+                "mean_verify_t": 0.1107290256535499,
+                "mean_best_advantage": 0.02433140795050974,
+                "mean_required_margin": 0.10000000000000027,
+                "mean_override_margin": 0.17239228470457924
+              },
+              "chancellor_card": {
+                "seen": 488,
+                "checked": 478,
+                "overrides": 5,
+                "stage_skips": 0,
+                "verify_checks": 20,
+                "verify_accepts": 5,
+                "verify_rejects": 15,
+                "verify_accept_rate": 0.25,
+                "mean_verify_win_delta": -0.059375,
+                "mean_verify_score_delta": -0.06462500095367432,
+                "mean_verify_t": -0.6110096029905904,
+                "mean_best_advantage": 0.014219401616634311,
+                "mean_required_margin": 0.10000000000000053,
+                "mean_override_margin": 0.12952502071857452
+              },
+              "chancellor_choice": {
+                "seen": 356,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 41,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 819,
+                "checked": 816,
+                "overrides": 47,
+                "stage_skips": 0,
+                "verify_checks": 279,
+                "verify_accepts": 47,
+                "verify_rejects": 232,
+                "verify_accept_rate": 0.16845878136200718,
+                "mean_verify_win_delta": -0.02441756272401434,
+                "mean_verify_score_delta": -0.026668906966466323,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.0820572772154621,
+                "mean_required_margin": 0.09999999999999999,
+                "mean_override_margin": 0.20256807877028243
+              },
+              "handmaid": {
+                "seen": 87,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 422,
+                "checked": 386,
+                "overrides": 17,
+                "stage_skips": 0,
+                "verify_checks": 49,
+                "verify_accepts": 17,
+                "verify_rejects": 32,
+                "verify_accept_rate": 0.3469387755102041,
+                "mean_verify_win_delta": 0.058673469387755105,
+                "mean_verify_score_delta": 0.06168367011634139,
+                "mean_verify_t": 0.4756766133356491,
+                "mean_best_advantage": 0.03290551749584048,
+                "mean_required_margin": 0.10000000000000013,
+                "mean_override_margin": 0.19032367406522527
+              },
+              "priest": {
+                "seen": 201,
+                "checked": 197,
+                "overrides": 21,
+                "stage_skips": 0,
+                "verify_checks": 57,
+                "verify_accepts": 21,
+                "verify_rejects": 36,
+                "verify_accept_rate": 0.3684210526315789,
+                "mean_verify_win_delta": 0.08991228070175439,
+                "mean_verify_score_delta": 0.09608552526486547,
+                "mean_verify_t": null,
+                "mean_best_advantage": 0.07707473730224038,
+                "mean_required_margin": 0.10000000000000003,
+                "mean_override_margin": 0.21326012519143878
+              },
+              "prince": {
+                "seen": 438,
+                "checked": 400,
+                "overrides": 24,
+                "stage_skips": 0,
+                "verify_checks": 66,
+                "verify_accepts": 24,
+                "verify_rejects": 42,
+                "verify_accept_rate": 0.36363636363636365,
+                "mean_verify_win_delta": 0.08049242424242424,
+                "mean_verify_score_delta": 0.08565340834585103,
+                "mean_verify_t": 0.6328073597336404,
+                "mean_best_advantage": 0.04462904055370018,
+                "mean_required_margin": 0.10000000000000041,
+                "mean_override_margin": 0.18821062427014112
+              },
+              "spy": {
+                "seen": 185,
+                "checked": 169,
+                "overrides": 5,
+                "stage_skips": 0,
+                "verify_checks": 7,
+                "verify_accepts": 5,
+                "verify_rejects": 2,
+                "verify_accept_rate": 0.7142857142857143,
+                "mean_verify_win_delta": 0.16071428571428573,
+                "mean_verify_score_delta": 0.17276785842009953,
+                "mean_verify_t": 1.0130295823911568,
+                "mean_best_advantage": 0.013589864084221555,
+                "mean_required_margin": 0.09999999999999983,
+                "mean_override_margin": 0.1114392027258873
+              }
+            }
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 343,
+          "winrate": 0.343,
+          "winrate_ci95": 0.02942292306348912,
+          "mean_reward": 0.5364000201225281,
+          "reward_std": 0.7344896197319031,
+          "reward_ci95": 0.045524137597082626,
+          "outcomes": {
+            "winner": {
+              "count": 343,
+              "rate": 0.343
+            },
+            "first_out": {
+              "count": 229,
+              "rate": 0.229
+            },
+            "second_out": {
+              "count": 195,
+              "rate": 0.195
+            },
+            "third_out": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "final_loser": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 79,
+              "winrate": 0.316,
+              "winrate_ci95": 0.05763119955024361,
+              "mean_reward": 0.4992000162601471,
+              "reward_std": 0.7142544388771057,
+              "reward_ci95": 0.08853989769568632
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 82,
+              "winrate": 0.328,
+              "winrate_ci95": 0.05819794173680028,
+              "mean_reward": 0.5432000160217285,
+              "reward_std": 0.7550190687179565,
+              "reward_ci95": 0.09359313612731548
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 86,
+              "winrate": 0.344,
+              "winrate_ci95": 0.058886698749378026,
+              "mean_reward": 0.5311999917030334,
+              "reward_std": 0.750084400177002,
+              "reward_ci95": 0.09298142978538104
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 96,
+              "winrate": 0.384,
+              "winrate_ci95": 0.06028954902468586,
+              "mean_reward": 0.5720000267028809,
+              "reward_std": 0.7157765626907349,
+              "reward_ci95": 0.08872858015819589
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 285,
+              "baron_losing_comparisons": 72,
+              "baron_tie_comparisons": 2,
+              "baron_winning_comparisons": 211,
+              "chancellor_bottomed_king_plus": 104,
+              "chancellor_choices": 357,
+              "chancellor_kept_highest": 256,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 34,
+              "chancellor_known_draws": 59,
+              "chancellor_plays": 357,
+              "chancellor_used_win_games": 130,
+              "forced_countess_discards": 59,
+              "guard_attempts": 1036,
+              "guard_hits": 398,
+              "guard_misses": 638,
+              "known_guard_attempts": 120,
+              "known_guard_correct_guess": 115,
+              "known_guard_hits": 109,
+              "main_round_wins": 310,
+              "priest_on_unknown": 372,
+              "priest_plays": 380,
+              "priest_to_guard_attempts": 55,
+              "priest_to_guard_hits": 50,
+              "spy_bonus_win_games": 119,
+              "spy_bonus_wins": 119,
+              "spy_played_win_games": 113,
+              "spy_plays": 237,
+              "voluntary_countess_discards": 47,
+              "voluntary_countess_win_games": 30
+            },
+            "guard_hit_rate": 0.3841698841698842,
+            "known_guard_hit_rate": 0.9083333333333333,
+            "known_guard_correct_guess_rate": 0.9583333333333334,
+            "priest_to_guard_hit_rate": 0.9090909090909091,
+            "priest_on_unknown_rate": 0.9789473684210527,
+            "baron_win_rate": 0.7403508771929824,
+            "baron_loss_rate": 0.25263157894736843,
+            "baron_tie_rate": 0.007017543859649123,
+            "chancellor_keep_highest_rate": 0.7170868347338936,
+            "chancellor_known_draw_win_rate": 0.576271186440678,
+            "spy_bonus_per_spy_play": 0.5021097046413502,
+            "voluntary_countess_win_rate": 0.6382978723404256
+          },
+          "advantage": {
+            "decisions": 3678,
+            "advantage_checks": 3092,
+            "overrides": 103,
+            "check_rate": 0.8406742794997281,
+            "override_rate_per_decision": 0.028004350190320826,
+            "override_rate_per_check": 0.0333117723156533,
+            "stage_skips": 0,
+            "verify_checks": 485,
+            "verify_accepts": 103,
+            "verify_rejects": 382,
+            "verify_accept_rate": 0.21237113402061855,
+            "mean_verify_win_delta": 0.02654639175257732,
+            "mean_verify_score_delta": 0.028068298364139748,
+            "mean_verify_t": 3.4098578156342003,
+            "mean_override_margin": 0.18462973695646212,
+            "by_category": {
+              "baron": {
+                "seen": 678,
+                "checked": 677,
+                "overrides": 11,
+                "stage_skips": 0,
+                "verify_checks": 63,
+                "verify_accepts": 11,
+                "verify_rejects": 52,
+                "verify_accept_rate": 0.1746031746031746,
+                "mean_verify_win_delta": -0.006944444444444444,
+                "mean_verify_score_delta": -0.0074007933994474275,
+                "mean_verify_t": -0.01695805722297936,
+                "mean_best_advantage": 0.026422424280418955,
+                "mean_required_margin": 0.1000000000000003,
+                "mean_override_margin": 0.14608004689216614
+              },
+              "chancellor_card": {
+                "seen": 465,
+                "checked": 456,
+                "overrides": 3,
+                "stage_skips": 0,
+                "verify_checks": 22,
+                "verify_accepts": 3,
+                "verify_rejects": 19,
+                "verify_accept_rate": 0.13636363636363635,
+                "mean_verify_win_delta": -0.03977272727272727,
+                "mean_verify_score_delta": -0.043125000160547315,
+                "mean_verify_t": -0.23165619195213563,
+                "mean_best_advantage": 0.014388551557714348,
+                "mean_required_margin": 0.10000000000000048,
+                "mean_override_margin": 0.10693495720624924
+              },
+              "chancellor_choice": {
+                "seen": 357,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "countess": {
+                "seen": 45,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "guard": {
+                "seen": 856,
+                "checked": 849,
+                "overrides": 37,
+                "stage_skips": 0,
+                "verify_checks": 252,
+                "verify_accepts": 37,
+                "verify_rejects": 215,
+                "verify_accept_rate": 0.14682539682539683,
+                "mean_verify_win_delta": 0.005208333333333333,
+                "mean_verify_score_delta": 0.005136407844330524,
+                "mean_verify_t": -0.04056384443010618,
+                "mean_best_advantage": 0.07569674686479379,
+                "mean_required_margin": 0.09999999999999995,
+                "mean_override_margin": 0.19129992115336494
+              },
+              "handmaid": {
+                "seen": 93,
+                "checked": 0,
+                "overrides": 0,
+                "stage_skips": 0,
+                "verify_checks": 0,
+                "verify_accepts": 0,
+                "verify_rejects": 0,
+                "verify_accept_rate": 0.0,
+                "mean_verify_win_delta": 0.0,
+                "mean_verify_score_delta": 0.0,
+                "mean_verify_t": 0.0,
+                "mean_best_advantage": 0.0,
+                "mean_required_margin": 0.0,
+                "mean_override_margin": 0.0
+              },
+              "king": {
+                "seen": 423,
+                "checked": 396,
+                "overrides": 20,
+                "stage_skips": 0,
+                "verify_checks": 47,
+                "verify_accepts": 20,
+                "verify_rejects": 27,
+                "verify_accept_rate": 0.425531914893617,
+                "mean_verify_win_delta": 0.14095744680851063,
+                "mean_verify_score_delta": 0.1488563808218695,
+                "mean_verify_t": 18.74631047455047,
+                "mean_best_advantage": 0.03226569694034153,
+                "mean_required_margin": 0.10000000000000012,
+                "mean_override_margin": 0.17766175977885723
+              },
+              "priest": {
+                "seen": 164,
+                "checked": 160,
+                "overrides": 10,
+                "stage_skips": 0,
+                "verify_checks": 42,
+                "verify_accepts": 10,
+                "verify_rejects": 32,
+                "verify_accept_rate": 0.23809523809523808,
+                "mean_verify_win_delta": 0.03125,
+                "mean_verify_score_delta": 0.03272321108462555,
+                "mean_verify_t": 0.16884591397291085,
+                "mean_best_advantage": 0.07424420786555856,
+                "mean_required_margin": 0.09999999999999978,
+                "mean_override_margin": 0.29808075577020643
+              },
+              "prince": {
+                "seen": 420,
+                "checked": 387,
+                "overrides": 20,
+                "stage_skips": 0,
+                "verify_checks": 54,
+                "verify_accepts": 20,
+                "verify_rejects": 34,
+                "verify_accept_rate": 0.37037037037037035,
+                "mean_verify_win_delta": 0.08796296296296297,
+                "mean_verify_score_delta": 0.09553240957945862,
+                "mean_verify_t": 14.469214277212439,
+                "mean_best_advantage": 0.03938419033005564,
+                "mean_required_margin": 0.1000000000000004,
+                "mean_override_margin": 0.16157655119895936
+              },
+              "spy": {
+                "seen": 177,
+                "checked": 167,
+                "overrides": 2,
+                "stage_skips": 0,
+                "verify_checks": 5,
+                "verify_accepts": 2,
+                "verify_rejects": 3,
+                "verify_accept_rate": 0.4,
+                "mean_verify_win_delta": 0.0375,
+                "mean_verify_score_delta": 0.040875007212162015,
+                "mean_verify_t": 0.13244630935238533,
+                "mean_best_advantage": 0.009635945079390874,
+                "mean_required_margin": 0.09999999999999983,
+                "mean_override_margin": 0.1227533295750618
+              }
+            }
+          }
+        }
+      },
+      "composite": 0.39690000000000003
+    }
+  }
+}

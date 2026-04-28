@@ -1,0 +1,961 @@
+{
+  "created_at": "2026-04-26 17:12:13 CEST",
+  "args": {
+    "games": 1000,
+    "seed_start": 3200000,
+    "seed_stride": 10000,
+    "policy": "step3_fast_dagger",
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "king_usage_step3_1000_seed3200000.json",
+    "markdown": "king_usage_step3_1000_seed3200000.md",
+    "run_log": "step5_execution_heads/cards/king/logs/2026-04-26_king_usage_step3_1000_seed3200000.md"
+  },
+  "policy": {
+    "configs": {
+      "vs_0H_3R": {
+        "games": 1000,
+        "wins": 519,
+        "winrate": 0.519,
+        "outcomes": {
+          "winner": {
+            "count": 519,
+            "rate": 0.519
+          },
+          "first_out": {
+            "count": 146,
+            "rate": 0.146
+          },
+          "second_out": {
+            "count": 123,
+            "rate": 0.123
+          },
+          "third_out": {
+            "count": 95,
+            "rate": 0.095
+          },
+          "final_loser": {
+            "count": 117,
+            "rate": 0.117
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "king_hand": {
+          "games": 231,
+          "winrate": 0.5887445887445888
+        },
+        "king_played": {
+          "games": 126,
+          "winrate": 0.5634920634920635
+        },
+        "king": {
+          "hand_events": 496,
+          "played_events": 126,
+          "play_rate": 0.2540322580645161,
+          "target_known_before_rate": 0.031746031746031744,
+          "received_higher_rate": 0.2619047619047619,
+          "received_lower_rate": 0.6825396825396826,
+          "received_equal_rate": 0.007936507936507936,
+          "received_princess_rate": 0.047619047619047616,
+          "gave_princess_rate": 0.38095238095238093,
+          "received_cards": {
+            "0": 17,
+            "1": 12,
+            "2": 7,
+            "3": 16,
+            "4": 22,
+            "5": 20,
+            "6": 7,
+            "7": 0,
+            "8": 13,
+            "9": 6
+          },
+          "phase_rows": {
+            "early": {
+              "hand_events": 133,
+              "hand_winrate": 0.5263157894736842,
+              "played_events": 19,
+              "play_rate": 0.14285714285714285,
+              "played_winrate": 0.2631578947368421,
+              "received_higher_rate": 0.10526315789473684,
+              "received_lower_rate": 0.8947368421052632,
+              "received_equal_rate": 0.0
+            },
+            "mid": {
+              "hand_events": 174,
+              "hand_winrate": 0.6091954022988506,
+              "played_events": 35,
+              "play_rate": 0.20114942528735633,
+              "played_winrate": 0.5428571428571428,
+              "received_higher_rate": 0.02857142857142857,
+              "received_lower_rate": 0.9428571428571428,
+              "received_equal_rate": 0.02857142857142857
+            },
+            "late": {
+              "hand_events": 189,
+              "hand_winrate": 0.7142857142857143,
+              "played_events": 72,
+              "play_rate": 0.38095238095238093,
+              "played_winrate": 0.6527777777777778,
+              "received_higher_rate": 0.4166666666666667,
+              "received_lower_rate": 0.5,
+              "received_equal_rate": 0.0
+            }
+          },
+          "companion_rows": {
+            "0": {
+              "name": "Espionne",
+              "hand_events": 47,
+              "hand_winrate": 0.6595744680851063,
+              "played_events": 4,
+              "play_rate": 0.0851063829787234,
+              "played_winrate": 1.0,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "1": {
+              "name": "Garde",
+              "hand_events": 127,
+              "hand_winrate": 0.5984251968503937,
+              "played_events": 14,
+              "play_rate": 0.11023622047244094,
+              "played_winrate": 0.6428571428571429,
+              "received_higher_rate": 0.8571428571428571,
+              "received_lower_rate": 0.14285714285714285,
+              "received_equal_rate": 0.0
+            },
+            "2": {
+              "name": "Pretre",
+              "hand_events": 42,
+              "hand_winrate": 0.6190476190476191,
+              "played_events": 15,
+              "play_rate": 0.35714285714285715,
+              "played_winrate": 0.4666666666666667,
+              "received_higher_rate": 0.8,
+              "received_lower_rate": 0.2,
+              "received_equal_rate": 0.0
+            },
+            "3": {
+              "name": "Baron",
+              "hand_events": 49,
+              "hand_winrate": 0.7142857142857143,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "4": {
+              "name": "Servante",
+              "hand_events": 39,
+              "hand_winrate": 0.7692307692307693,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "5": {
+              "name": "Prince",
+              "hand_events": 57,
+              "hand_winrate": 0.5964912280701754,
+              "played_events": 5,
+              "play_rate": 0.08771929824561403,
+              "played_winrate": 0.6,
+              "received_higher_rate": 0.2,
+              "received_lower_rate": 0.8,
+              "received_equal_rate": 0.0
+            },
+            "6": {
+              "name": "Chancelier",
+              "hand_events": 51,
+              "hand_winrate": 0.5098039215686274,
+              "played_events": 40,
+              "play_rate": 0.7843137254901961,
+              "played_winrate": 0.475,
+              "received_higher_rate": 0.1,
+              "received_lower_rate": 0.875,
+              "received_equal_rate": 0.025
+            },
+            "8": {
+              "name": "Comtesse",
+              "hand_events": 36,
+              "hand_winrate": 0.6666666666666666,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "9": {
+              "name": "Princesse",
+              "hand_events": 48,
+              "hand_winrate": 0.6041666666666666,
+              "played_events": 48,
+              "play_rate": 1.0,
+              "played_winrate": 0.6041666666666666,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.875,
+              "received_equal_rate": 0.0
+            }
+          }
+        }
+      },
+      "vs_1H_2R": {
+        "games": 1000,
+        "wins": 453,
+        "winrate": 0.453,
+        "outcomes": {
+          "winner": {
+            "count": 453,
+            "rate": 0.453
+          },
+          "first_out": {
+            "count": 158,
+            "rate": 0.158
+          },
+          "second_out": {
+            "count": 153,
+            "rate": 0.153
+          },
+          "third_out": {
+            "count": 103,
+            "rate": 0.103
+          },
+          "final_loser": {
+            "count": 133,
+            "rate": 0.133
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "king_hand": {
+          "games": 254,
+          "winrate": 0.4645669291338583
+        },
+        "king_played": {
+          "games": 139,
+          "winrate": 0.460431654676259
+        },
+        "king": {
+          "hand_events": 548,
+          "played_events": 139,
+          "play_rate": 0.25364963503649635,
+          "target_known_before_rate": 0.02158273381294964,
+          "received_higher_rate": 0.33093525179856115,
+          "received_lower_rate": 0.6258992805755396,
+          "received_equal_rate": 0.04316546762589928,
+          "received_princess_rate": 0.1079136690647482,
+          "gave_princess_rate": 0.33093525179856115,
+          "received_cards": {
+            "0": 19,
+            "1": 17,
+            "2": 12,
+            "3": 22,
+            "4": 13,
+            "5": 12,
+            "6": 14,
+            "7": 0,
+            "8": 15,
+            "9": 15
+          },
+          "phase_rows": {
+            "early": {
+              "hand_events": 124,
+              "hand_winrate": 0.4032258064516129,
+              "played_events": 21,
+              "play_rate": 0.1693548387096774,
+              "played_winrate": 0.23809523809523808,
+              "received_higher_rate": 0.14285714285714285,
+              "received_lower_rate": 0.8095238095238095,
+              "received_equal_rate": 0.047619047619047616
+            },
+            "mid": {
+              "hand_events": 200,
+              "hand_winrate": 0.495,
+              "played_events": 33,
+              "play_rate": 0.165,
+              "played_winrate": 0.5454545454545454,
+              "received_higher_rate": 0.09090909090909091,
+              "received_lower_rate": 0.8787878787878788,
+              "received_equal_rate": 0.030303030303030304
+            },
+            "late": {
+              "hand_events": 224,
+              "hand_winrate": 0.5758928571428571,
+              "played_events": 85,
+              "play_rate": 0.3794642857142857,
+              "played_winrate": 0.4823529411764706,
+              "received_higher_rate": 0.47058823529411764,
+              "received_lower_rate": 0.4823529411764706,
+              "received_equal_rate": 0.047058823529411764
+            }
+          },
+          "companion_rows": {
+            "0": {
+              "name": "Espionne",
+              "hand_events": 61,
+              "hand_winrate": 0.6229508196721312,
+              "played_events": 9,
+              "play_rate": 0.14754098360655737,
+              "played_winrate": 0.6666666666666666,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "1": {
+              "name": "Garde",
+              "hand_events": 150,
+              "hand_winrate": 0.58,
+              "played_events": 18,
+              "play_rate": 0.12,
+              "played_winrate": 0.4444444444444444,
+              "received_higher_rate": 0.7222222222222222,
+              "received_lower_rate": 0.1111111111111111,
+              "received_equal_rate": 0.16666666666666666
+            },
+            "2": {
+              "name": "Pretre",
+              "hand_events": 55,
+              "hand_winrate": 0.45454545454545453,
+              "played_events": 16,
+              "play_rate": 0.2909090909090909,
+              "played_winrate": 0.375,
+              "received_higher_rate": 0.6875,
+              "received_lower_rate": 0.25,
+              "received_equal_rate": 0.0625
+            },
+            "3": {
+              "name": "Baron",
+              "hand_events": 39,
+              "hand_winrate": 0.41025641025641024,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "4": {
+              "name": "Servante",
+              "hand_events": 46,
+              "hand_winrate": 0.5,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "5": {
+              "name": "Prince",
+              "hand_events": 59,
+              "hand_winrate": 0.423728813559322,
+              "played_events": 5,
+              "play_rate": 0.0847457627118644,
+              "played_winrate": 1.0,
+              "received_higher_rate": 0.8,
+              "received_lower_rate": 0.2,
+              "received_equal_rate": 0.0
+            },
+            "6": {
+              "name": "Chancelier",
+              "hand_events": 61,
+              "hand_winrate": 0.4098360655737705,
+              "played_events": 45,
+              "play_rate": 0.7377049180327869,
+              "played_winrate": 0.37777777777777777,
+              "received_higher_rate": 0.2,
+              "received_lower_rate": 0.7555555555555555,
+              "received_equal_rate": 0.044444444444444446
+            },
+            "8": {
+              "name": "Comtesse",
+              "hand_events": 31,
+              "hand_winrate": 0.5483870967741935,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "9": {
+              "name": "Princesse",
+              "hand_events": 46,
+              "hand_winrate": 0.4782608695652174,
+              "played_events": 46,
+              "play_rate": 1.0,
+              "played_winrate": 0.4782608695652174,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 1.0,
+              "received_equal_rate": 0.0
+            }
+          }
+        }
+      },
+      "vs_2H_1R": {
+        "games": 1000,
+        "wins": 368,
+        "winrate": 0.368,
+        "outcomes": {
+          "winner": {
+            "count": 368,
+            "rate": 0.368
+          },
+          "first_out": {
+            "count": 216,
+            "rate": 0.216
+          },
+          "second_out": {
+            "count": 179,
+            "rate": 0.179
+          },
+          "third_out": {
+            "count": 131,
+            "rate": 0.131
+          },
+          "final_loser": {
+            "count": 106,
+            "rate": 0.106
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "king_hand": {
+          "games": 212,
+          "winrate": 0.38207547169811323
+        },
+        "king_played": {
+          "games": 117,
+          "winrate": 0.29914529914529914
+        },
+        "king": {
+          "hand_events": 440,
+          "played_events": 117,
+          "play_rate": 0.26590909090909093,
+          "target_known_before_rate": 0.017094017094017096,
+          "received_higher_rate": 0.36752136752136755,
+          "received_lower_rate": 0.5897435897435898,
+          "received_equal_rate": 0.03418803418803419,
+          "received_princess_rate": 0.10256410256410256,
+          "gave_princess_rate": 0.3504273504273504,
+          "received_cards": {
+            "0": 7,
+            "1": 18,
+            "2": 8,
+            "3": 25,
+            "4": 9,
+            "5": 12,
+            "6": 7,
+            "7": 0,
+            "8": 18,
+            "9": 12
+          },
+          "phase_rows": {
+            "early": {
+              "hand_events": 118,
+              "hand_winrate": 0.3559322033898305,
+              "played_events": 24,
+              "play_rate": 0.2033898305084746,
+              "played_winrate": 0.20833333333333334,
+              "received_higher_rate": 0.08333333333333333,
+              "received_lower_rate": 0.875,
+              "received_equal_rate": 0.041666666666666664
+            },
+            "mid": {
+              "hand_events": 151,
+              "hand_winrate": 0.3973509933774834,
+              "played_events": 26,
+              "play_rate": 0.17218543046357615,
+              "played_winrate": 0.38461538461538464,
+              "received_higher_rate": 0.3076923076923077,
+              "received_lower_rate": 0.6538461538461539,
+              "received_equal_rate": 0.0
+            },
+            "late": {
+              "hand_events": 171,
+              "hand_winrate": 0.4269005847953216,
+              "played_events": 67,
+              "play_rate": 0.391812865497076,
+              "played_winrate": 0.29850746268656714,
+              "received_higher_rate": 0.4925373134328358,
+              "received_lower_rate": 0.4626865671641791,
+              "received_equal_rate": 0.04477611940298507
+            }
+          },
+          "companion_rows": {
+            "0": {
+              "name": "Espionne",
+              "hand_events": 37,
+              "hand_winrate": 0.4594594594594595,
+              "played_events": 3,
+              "play_rate": 0.08108108108108109,
+              "played_winrate": 0.3333333333333333,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "1": {
+              "name": "Garde",
+              "hand_events": 113,
+              "hand_winrate": 0.336283185840708,
+              "played_events": 16,
+              "play_rate": 0.1415929203539823,
+              "played_winrate": 0.3125,
+              "received_higher_rate": 0.8125,
+              "received_lower_rate": 0.0625,
+              "received_equal_rate": 0.125
+            },
+            "2": {
+              "name": "Pretre",
+              "hand_events": 48,
+              "hand_winrate": 0.375,
+              "played_events": 17,
+              "play_rate": 0.3541666666666667,
+              "played_winrate": 0.35294117647058826,
+              "received_higher_rate": 0.8235294117647058,
+              "received_lower_rate": 0.11764705882352941,
+              "received_equal_rate": 0.058823529411764705
+            },
+            "3": {
+              "name": "Baron",
+              "hand_events": 52,
+              "hand_winrate": 0.5192307692307693,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "4": {
+              "name": "Servante",
+              "hand_events": 28,
+              "hand_winrate": 0.4642857142857143,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "5": {
+              "name": "Prince",
+              "hand_events": 44,
+              "hand_winrate": 0.45454545454545453,
+              "played_events": 6,
+              "play_rate": 0.13636363636363635,
+              "played_winrate": 0.3333333333333333,
+              "received_higher_rate": 0.5,
+              "received_lower_rate": 0.5,
+              "received_equal_rate": 0.0
+            },
+            "6": {
+              "name": "Chancelier",
+              "hand_events": 46,
+              "hand_winrate": 0.32608695652173914,
+              "played_events": 34,
+              "play_rate": 0.7391304347826086,
+              "played_winrate": 0.20588235294117646,
+              "received_higher_rate": 0.29411764705882354,
+              "received_lower_rate": 0.6764705882352942,
+              "received_equal_rate": 0.029411764705882353
+            },
+            "8": {
+              "name": "Comtesse",
+              "hand_events": 31,
+              "hand_winrate": 0.41935483870967744,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "9": {
+              "name": "Princesse",
+              "hand_events": 41,
+              "hand_winrate": 0.34146341463414637,
+              "played_events": 41,
+              "play_rate": 1.0,
+              "played_winrate": 0.34146341463414637,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.975609756097561,
+              "received_equal_rate": 0.0
+            }
+          }
+        }
+      },
+      "vs_3H": {
+        "games": 1000,
+        "wins": 343,
+        "winrate": 0.343,
+        "outcomes": {
+          "winner": {
+            "count": 343,
+            "rate": 0.343
+          },
+          "first_out": {
+            "count": 242,
+            "rate": 0.242
+          },
+          "second_out": {
+            "count": 198,
+            "rate": 0.198
+          },
+          "third_out": {
+            "count": 108,
+            "rate": 0.108
+          },
+          "final_loser": {
+            "count": 109,
+            "rate": 0.109
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "king_hand": {
+          "games": 218,
+          "winrate": 0.3669724770642202
+        },
+        "king_played": {
+          "games": 116,
+          "winrate": 0.2413793103448276
+        },
+        "king": {
+          "hand_events": 482,
+          "played_events": 116,
+          "play_rate": 0.24066390041493776,
+          "target_known_before_rate": 0.04310344827586207,
+          "received_higher_rate": 0.35344827586206895,
+          "received_lower_rate": 0.6120689655172413,
+          "received_equal_rate": 0.008620689655172414,
+          "received_princess_rate": 0.12931034482758622,
+          "gave_princess_rate": 0.43103448275862066,
+          "received_cards": {
+            "0": 7,
+            "1": 14,
+            "2": 3,
+            "3": 22,
+            "4": 8,
+            "5": 15,
+            "6": 7,
+            "7": 0,
+            "8": 22,
+            "9": 15
+          },
+          "phase_rows": {
+            "early": {
+              "hand_events": 109,
+              "hand_winrate": 0.29357798165137616,
+              "played_events": 20,
+              "play_rate": 0.1834862385321101,
+              "played_winrate": 0.1,
+              "received_higher_rate": 0.2,
+              "received_lower_rate": 0.8,
+              "received_equal_rate": 0.0
+            },
+            "mid": {
+              "hand_events": 195,
+              "hand_winrate": 0.40512820512820513,
+              "played_events": 31,
+              "play_rate": 0.15897435897435896,
+              "played_winrate": 0.2903225806451613,
+              "received_higher_rate": 0.12903225806451613,
+              "received_lower_rate": 0.7741935483870968,
+              "received_equal_rate": 0.03225806451612903
+            },
+            "late": {
+              "hand_events": 178,
+              "hand_winrate": 0.43258426966292135,
+              "played_events": 65,
+              "play_rate": 0.3651685393258427,
+              "played_winrate": 0.26153846153846155,
+              "received_higher_rate": 0.5076923076923077,
+              "received_lower_rate": 0.47692307692307695,
+              "received_equal_rate": 0.0
+            }
+          },
+          "companion_rows": {
+            "0": {
+              "name": "Espionne",
+              "hand_events": 49,
+              "hand_winrate": 0.5918367346938775,
+              "played_events": 1,
+              "play_rate": 0.02040816326530612,
+              "played_winrate": 1.0,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "1": {
+              "name": "Garde",
+              "hand_events": 130,
+              "hand_winrate": 0.45384615384615384,
+              "played_events": 11,
+              "play_rate": 0.08461538461538462,
+              "played_winrate": 0.0,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "2": {
+              "name": "Pretre",
+              "hand_events": 27,
+              "hand_winrate": 0.37037037037037035,
+              "played_events": 12,
+              "play_rate": 0.4444444444444444,
+              "played_winrate": 0.3333333333333333,
+              "received_higher_rate": 0.9166666666666666,
+              "received_lower_rate": 0.08333333333333333,
+              "received_equal_rate": 0.0
+            },
+            "3": {
+              "name": "Baron",
+              "hand_events": 49,
+              "hand_winrate": 0.4897959183673469,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "4": {
+              "name": "Servante",
+              "hand_events": 45,
+              "hand_winrate": 0.37777777777777777,
+              "played_events": 1,
+              "play_rate": 0.022222222222222223,
+              "played_winrate": 0.0,
+              "received_higher_rate": 1.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "5": {
+              "name": "Prince",
+              "hand_events": 54,
+              "hand_winrate": 0.2962962962962963,
+              "played_events": 5,
+              "play_rate": 0.09259259259259259,
+              "played_winrate": 0.4,
+              "received_higher_rate": 0.8,
+              "received_lower_rate": 0.2,
+              "received_equal_rate": 0.0
+            },
+            "6": {
+              "name": "Chancelier",
+              "hand_events": 49,
+              "hand_winrate": 0.20408163265306123,
+              "played_events": 36,
+              "play_rate": 0.7346938775510204,
+              "played_winrate": 0.19444444444444445,
+              "received_higher_rate": 0.3611111111111111,
+              "received_lower_rate": 0.6111111111111112,
+              "received_equal_rate": 0.027777777777777776
+            },
+            "8": {
+              "name": "Comtesse",
+              "hand_events": 29,
+              "hand_winrate": 0.3103448275862069,
+              "played_events": 0,
+              "play_rate": 0.0,
+              "played_winrate": 0.0,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.0,
+              "received_equal_rate": 0.0
+            },
+            "9": {
+              "name": "Princesse",
+              "hand_events": 50,
+              "hand_winrate": 0.28,
+              "played_events": 50,
+              "play_rate": 1.0,
+              "played_winrate": 0.28,
+              "received_higher_rate": 0.0,
+              "received_lower_rate": 0.94,
+              "received_equal_rate": 0.0
+            }
+          }
+        }
+      }
+    },
+    "composite": 0.3901
+  },
+  "summary": {
+    "king_hand": {
+      "games": 915,
+      "winrate": 0.453551912568306
+    },
+    "king_played": {
+      "games": 498,
+      "winrate": 0.39759036144578314
+    },
+    "king": {
+      "hand_events": 1966,
+      "played_events": 498,
+      "play_rate": 0.2533062054933876,
+      "target_known_before_rate": 0.028112449799196786,
+      "received_higher_rate": 0.3273092369477912,
+      "received_lower_rate": 0.6285140562248996,
+      "received_equal_rate": 0.024096385542168676,
+      "received_princess_rate": 0.0963855421686747,
+      "gave_princess_rate": 0.3714859437751004,
+      "phase_rows": {
+        "early": {
+          "hand_events": 484,
+          "hand_winrate": 0.40082644628099173,
+          "played_events": 84,
+          "play_rate": 0.17355371900826447,
+          "played_winrate": 0.20238095238095238,
+          "received_higher_rate": 0.13095238095238096,
+          "received_lower_rate": 0.8452380952380952,
+          "received_equal_rate": 0.023809523809523808
+        },
+        "mid": {
+          "hand_events": 720,
+          "hand_winrate": 0.4777777777777778,
+          "played_events": 125,
+          "play_rate": 0.1736111111111111,
+          "played_winrate": 0.448,
+          "received_higher_rate": 0.128,
+          "received_lower_rate": 0.824,
+          "received_equal_rate": 0.024
+        },
+        "late": {
+          "hand_events": 762,
+          "hand_winrate": 0.5433070866141733,
+          "played_events": 289,
+          "play_rate": 0.37926509186351703,
+          "played_winrate": 0.43252595155709345,
+          "received_higher_rate": 0.47058823529411764,
+          "received_lower_rate": 0.4809688581314879,
+          "received_equal_rate": 0.02422145328719723
+        }
+      },
+      "companion_rows": {
+        "0": {
+          "name": "Espionne",
+          "hand_events": 194,
+          "hand_winrate": 0.5927835051546392,
+          "played_events": 17,
+          "play_rate": 0.08762886597938144,
+          "played_winrate": 0.7058823529411765,
+          "received_higher_rate": 1.0,
+          "received_lower_rate": 0.0,
+          "received_equal_rate": 0.0
+        },
+        "1": {
+          "name": "Garde",
+          "hand_events": 520,
+          "hand_winrate": 0.5,
+          "played_events": 59,
+          "play_rate": 0.11346153846153846,
+          "played_winrate": 0.3728813559322034,
+          "received_higher_rate": 0.8305084745762712,
+          "received_lower_rate": 0.0847457627118644,
+          "received_equal_rate": 0.0847457627118644
+        },
+        "2": {
+          "name": "Pretre",
+          "hand_events": 172,
+          "hand_winrate": 0.45930232558139533,
+          "played_events": 60,
+          "play_rate": 0.3488372093023256,
+          "played_winrate": 0.38333333333333336,
+          "received_higher_rate": 0.8,
+          "received_lower_rate": 0.16666666666666666,
+          "received_equal_rate": 0.03333333333333333
+        },
+        "3": {
+          "name": "Baron",
+          "hand_events": 189,
+          "hand_winrate": 0.5396825396825397,
+          "played_events": 0,
+          "play_rate": 0.0,
+          "played_winrate": 0.0,
+          "received_higher_rate": 0.0,
+          "received_lower_rate": 0.0,
+          "received_equal_rate": 0.0
+        },
+        "4": {
+          "name": "Servante",
+          "hand_events": 158,
+          "hand_winrate": 0.5253164556962026,
+          "played_events": 1,
+          "play_rate": 0.006329113924050633,
+          "played_winrate": 0.0,
+          "received_higher_rate": 1.0,
+          "received_lower_rate": 0.0,
+          "received_equal_rate": 0.0
+        },
+        "5": {
+          "name": "Prince",
+          "hand_events": 214,
+          "hand_winrate": 0.4439252336448598,
+          "played_events": 21,
+          "play_rate": 0.09813084112149532,
+          "played_winrate": 0.5714285714285714,
+          "received_higher_rate": 0.5714285714285714,
+          "received_lower_rate": 0.42857142857142855,
+          "received_equal_rate": 0.0
+        },
+        "6": {
+          "name": "Chancelier",
+          "hand_events": 207,
+          "hand_winrate": 0.3671497584541063,
+          "played_events": 155,
+          "play_rate": 0.748792270531401,
+          "played_winrate": 0.3225806451612903,
+          "received_higher_rate": 0.23225806451612904,
+          "received_lower_rate": 0.7354838709677419,
+          "received_equal_rate": 0.03225806451612903
+        },
+        "8": {
+          "name": "Comtesse",
+          "hand_events": 127,
+          "hand_winrate": 0.49606299212598426,
+          "played_events": 0,
+          "play_rate": 0.0,
+          "played_winrate": 0.0,
+          "received_higher_rate": 0.0,
+          "received_lower_rate": 0.0,
+          "received_equal_rate": 0.0
+        },
+        "9": {
+          "name": "Princesse",
+          "hand_events": 185,
+          "hand_winrate": 0.42702702702702705,
+          "played_events": 185,
+          "play_rate": 1.0,
+          "played_winrate": 0.42702702702702705,
+          "received_higher_rate": 0.0,
+          "received_lower_rate": 0.9459459459459459,
+          "received_equal_rate": 0.0
+        }
+      }
+    }
+  }
+}

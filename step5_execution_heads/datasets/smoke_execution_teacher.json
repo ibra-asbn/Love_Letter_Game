@@ -1,0 +1,1293 @@
+[
+  {
+    "kind": "king_target",
+    "label": "Roi - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610000,
+    "turn": 5,
+    "seat": "player_0",
+    "phase": "mid",
+    "deck_remaining": 9,
+    "hand": [
+      7,
+      6
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 730,
+    "model_decoded": {
+      "kind": "card",
+      "action": 730,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p3"
+    },
+    "best_action": 730,
+    "best_decoded": {
+      "kind": "card",
+      "action": 730,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p3"
+    },
+    "candidate_count": 2,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 730,
+        "decoded": {
+          "kind": "card",
+          "action": 730,
+          "card": 7,
+          "card_name": "Roi",
+          "target": 3,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Roi->p3"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.5,
+        "score": 0.5249999761581421,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 710,
+        "decoded": {
+          "kind": "card",
+          "action": 710,
+          "card": 7,
+          "card_name": "Roi",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Roi->p1"
+        },
+        "winrate": 0.0,
+        "mean_reward": 0.0,
+        "score": 0.0,
+        "wins": 0,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 116622654
+  },
+  {
+    "kind": "priest_target",
+    "label": "Pretre - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610000,
+    "turn": 9,
+    "seat": "player_0",
+    "phase": "mid",
+    "deck_remaining": 6,
+    "hand": [
+      2,
+      0
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 230,
+    "model_decoded": {
+      "kind": "card",
+      "action": 230,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p3"
+    },
+    "best_action": 230,
+    "best_decoded": {
+      "kind": "card",
+      "action": 230,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p3"
+    },
+    "candidate_count": 1,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 230,
+        "decoded": {
+          "kind": "card",
+          "action": 230,
+          "card": 2,
+          "card_name": "Pretre",
+          "target": 3,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Pretre->p3"
+        },
+        "winrate": 0.5,
+        "mean_reward": 1.0,
+        "score": 0.550000011920929,
+        "wins": 1,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 116596613
+  },
+  {
+    "kind": "priest_target",
+    "label": "Pretre - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610000,
+    "turn": 14,
+    "seat": "player_0",
+    "phase": "late",
+    "deck_remaining": 0,
+    "hand": [
+      2,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 210,
+    "model_decoded": {
+      "kind": "card",
+      "action": 210,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p1"
+    },
+    "best_action": 210,
+    "best_decoded": {
+      "kind": "card",
+      "action": 210,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p1"
+    },
+    "candidate_count": 1,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 210,
+        "decoded": {
+          "kind": "card",
+          "action": 210,
+          "card": 2,
+          "card_name": "Pretre",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Pretre->p1"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.0,
+        "score": 1.0499999523162842,
+        "wins": 2,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 116639873
+  },
+  {
+    "kind": "priest_target",
+    "label": "Pretre - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610002,
+    "turn": 13,
+    "seat": "player_2",
+    "phase": "late",
+    "deck_remaining": 1,
+    "hand": [
+      3,
+      2
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 200,
+    "model_decoded": {
+      "kind": "card",
+      "action": 200,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 0,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p0"
+    },
+    "best_action": 200,
+    "best_decoded": {
+      "kind": "card",
+      "action": 200,
+      "card": 2,
+      "card_name": "Pretre",
+      "target": 0,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Pretre->p0"
+    },
+    "candidate_count": 1,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 200,
+        "decoded": {
+          "kind": "card",
+          "action": 200,
+          "card": 2,
+          "card_name": "Pretre",
+          "target": 0,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Pretre->p0"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 118629393
+  },
+  {
+    "kind": "chancellor_choice",
+    "label": "Chancelier - choix de carte/ordre",
+    "config": "vs_0H_3R",
+    "seed": 610003,
+    "turn": 1,
+    "seat": "player_3",
+    "phase": "early",
+    "deck_remaining": 13,
+    "hand": [],
+    "pool": [
+      0,
+      5,
+      1
+    ],
+    "baron_kept_card": null,
+    "model_action": 902,
+    "model_decoded": {
+      "kind": "chancellor_choice",
+      "action": 902,
+      "label": "ChancellorChoice:902"
+    },
+    "best_action": 901,
+    "best_decoded": {
+      "kind": "chancellor_choice",
+      "action": 901,
+      "label": "ChancellorChoice:901"
+    },
+    "candidate_count": 6,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 901,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 901,
+          "label": "ChancellorChoice:901"
+        },
+        "winrate": 1.0,
+        "mean_reward": 2.200000047683716,
+        "score": 1.1100000143051147,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 900,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 900,
+          "label": "ChancellorChoice:900"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.7000000476837158,
+        "score": 1.0850000381469727,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 904,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 904,
+          "label": "ChancellorChoice:904"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 905,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 905,
+          "label": "ChancellorChoice:905"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 903,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 903,
+          "label": "ChancellorChoice:903"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.5,
+        "score": 0.5249999761581421,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 902,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 902,
+          "label": "ChancellorChoice:902"
+        },
+        "winrate": 0.0,
+        "mean_reward": 0.0,
+        "score": 0.0,
+        "wins": 0,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": -1.0,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 1.0,
+      "mean_score_delta": 1.1100000143051147,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": null
+    },
+    "clear_regret": true,
+    "decision_seed": 119617370
+  },
+  {
+    "kind": "chancellor_choice",
+    "label": "Chancelier - choix de carte/ordre",
+    "config": "vs_0H_3R",
+    "seed": 610005,
+    "turn": 9,
+    "seat": "player_1",
+    "phase": "late",
+    "deck_remaining": 5,
+    "hand": [],
+    "pool": [
+      0,
+      5,
+      3
+    ],
+    "baron_kept_card": null,
+    "model_action": 902,
+    "model_decoded": {
+      "kind": "chancellor_choice",
+      "action": 902,
+      "label": "ChancellorChoice:902"
+    },
+    "best_action": 901,
+    "best_decoded": {
+      "kind": "chancellor_choice",
+      "action": 901,
+      "label": "ChancellorChoice:901"
+    },
+    "candidate_count": 6,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 901,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 901,
+          "label": "ChancellorChoice:901"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.5,
+        "score": 1.0750000476837158,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 902,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 902,
+          "label": "ChancellorChoice:902"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.100000023841858,
+        "score": 1.0549999475479126,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 904,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 904,
+          "label": "ChancellorChoice:904"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.100000023841858,
+        "score": 1.0549999475479126,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 900,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 900,
+          "label": "ChancellorChoice:900"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.0,
+        "score": 1.0499999523162842,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 905,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 905,
+          "label": "ChancellorChoice:905"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.0,
+        "score": 1.0499999523162842,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 903,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 903,
+          "label": "ChancellorChoice:903"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.5,
+        "score": 0.5249999761581421,
+        "wins": 1,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": 0.0,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.020000040531158447,
+      "std_score_delta": 0.028284328058362007,
+      "sem_score_delta": 0.020000040171372708,
+      "t_stat": 1.0000000179892508
+    },
+    "clear_regret": false,
+    "decision_seed": 121690784
+  },
+  {
+    "kind": "king_target",
+    "label": "Roi - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610006,
+    "turn": 13,
+    "seat": "player_2",
+    "phase": "late",
+    "deck_remaining": 0,
+    "hand": [
+      7,
+      1
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 730,
+    "model_decoded": {
+      "kind": "card",
+      "action": 730,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p3"
+    },
+    "best_action": 730,
+    "best_decoded": {
+      "kind": "card",
+      "action": 730,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p3"
+    },
+    "candidate_count": 1,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 730,
+        "decoded": {
+          "kind": "card",
+          "action": 730,
+          "card": 7,
+          "card_name": "Roi",
+          "target": 3,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Roi->p3"
+        },
+        "winrate": 1.0,
+        "mean_reward": 2.0,
+        "score": 1.100000023841858,
+        "wins": 2,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 122696080
+  },
+  {
+    "kind": "baron_target",
+    "label": "Baron - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610008,
+    "turn": 13,
+    "seat": "player_0",
+    "phase": "late",
+    "deck_remaining": 1,
+    "hand": [
+      7,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": 7,
+    "model_action": 310,
+    "model_decoded": {
+      "kind": "card",
+      "action": 310,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p1"
+    },
+    "best_action": 310,
+    "best_decoded": {
+      "kind": "card",
+      "action": 310,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p1"
+    },
+    "candidate_count": 2,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 310,
+        "decoded": {
+          "kind": "card",
+          "action": 310,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p1"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 320,
+        "decoded": {
+          "kind": "card",
+          "action": 320,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 2,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p2"
+        },
+        "winrate": 0.5,
+        "mean_reward": 1.2000000476837158,
+        "score": 0.5600000023841858,
+        "wins": 1,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 124642377
+  },
+  {
+    "kind": "chancellor_choice",
+    "label": "Chancelier - choix de carte/ordre",
+    "config": "vs_0H_3R",
+    "seed": 610014,
+    "turn": 4,
+    "seat": "player_2",
+    "phase": "mid",
+    "deck_remaining": 10,
+    "hand": [],
+    "pool": [
+      0,
+      3,
+      4
+    ],
+    "baron_kept_card": null,
+    "model_action": 904,
+    "model_decoded": {
+      "kind": "chancellor_choice",
+      "action": 904,
+      "label": "ChancellorChoice:904"
+    },
+    "best_action": 903,
+    "best_decoded": {
+      "kind": "chancellor_choice",
+      "action": 903,
+      "label": "ChancellorChoice:903"
+    },
+    "candidate_count": 6,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 903,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 903,
+          "label": "ChancellorChoice:903"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 902,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 902,
+          "label": "ChancellorChoice:902"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.7000000476837158,
+        "score": 0.5349999666213989,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 904,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 904,
+          "label": "ChancellorChoice:904"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.7000000476837158,
+        "score": 0.5349999666213989,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 905,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 905,
+          "label": "ChancellorChoice:905"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.7000000476837158,
+        "score": 0.5349999666213989,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 900,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 900,
+          "label": "ChancellorChoice:900"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.6000000238418579,
+        "score": 0.5299999713897705,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 901,
+        "decoded": {
+          "kind": "chancellor_choice",
+          "action": 901,
+          "label": "ChancellorChoice:901"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.5,
+        "score": 0.5249999761581421,
+        "wins": 1,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": 1.0,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.5,
+      "mean_score_delta": 0.5249999761581421,
+      "std_score_delta": 0.7424620389938354,
+      "sem_score_delta": 0.5249999425461319,
+      "t_stat": 1.0000000640228834
+    },
+    "clear_regret": true,
+    "decision_seed": 130645193
+  },
+  {
+    "kind": "baron_target",
+    "label": "Baron - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610014,
+    "turn": 12,
+    "seat": "player_2",
+    "phase": "late",
+    "deck_remaining": 3,
+    "hand": [
+      6,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": 6,
+    "model_action": 330,
+    "model_decoded": {
+      "kind": "card",
+      "action": 330,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p3"
+    },
+    "best_action": 330,
+    "best_decoded": {
+      "kind": "card",
+      "action": 330,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 3,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p3"
+    },
+    "candidate_count": 3,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 330,
+        "decoded": {
+          "kind": "card",
+          "action": 330,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 3,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p3"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 300,
+        "decoded": {
+          "kind": "card",
+          "action": 300,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 0,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p0"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.7000000476837158,
+        "score": 0.5349999666213989,
+        "wins": 1,
+        "rollouts": 2
+      },
+      {
+        "action": 310,
+        "decoded": {
+          "kind": "card",
+          "action": 310,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p1"
+        },
+        "winrate": 0.0,
+        "mean_reward": 0.0,
+        "score": 0.0,
+        "wins": 0,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": -1.0,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 130635839
+  },
+  {
+    "kind": "baron_low_target",
+    "label": "Baron avec carte faible - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610015,
+    "turn": 13,
+    "seat": "player_3",
+    "phase": "late",
+    "deck_remaining": 1,
+    "hand": [
+      3,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": 3,
+    "model_action": 300,
+    "model_decoded": {
+      "kind": "card",
+      "action": 300,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 0,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p0"
+    },
+    "best_action": 310,
+    "best_decoded": {
+      "kind": "card",
+      "action": 310,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p1"
+    },
+    "candidate_count": 2,
+    "other_card_legal": false,
+    "candidate_rows": [
+      {
+        "action": 310,
+        "decoded": {
+          "kind": "card",
+          "action": 310,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p1"
+        },
+        "winrate": 0.0,
+        "mean_reward": 0.20000000298023224,
+        "score": 0.010000000707805157,
+        "wins": 0,
+        "rollouts": 2
+      },
+      {
+        "action": 300,
+        "decoded": {
+          "kind": "card",
+          "action": 300,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 0,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p0"
+        },
+        "winrate": 0.0,
+        "mean_reward": -0.20000000298023224,
+        "score": -0.010000000707805157,
+        "wins": 0,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.020000001415610313,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": null
+    },
+    "clear_regret": false,
+    "decision_seed": 131647341
+  },
+  {
+    "kind": "king_target",
+    "label": "Roi - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610017,
+    "turn": 12,
+    "seat": "player_1",
+    "phase": "late",
+    "deck_remaining": 4,
+    "hand": [
+      7,
+      2
+    ],
+    "pool": [],
+    "baron_kept_card": null,
+    "model_action": 720,
+    "model_decoded": {
+      "kind": "card",
+      "action": 720,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 2,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p2"
+    },
+    "best_action": 720,
+    "best_decoded": {
+      "kind": "card",
+      "action": 720,
+      "card": 7,
+      "card_name": "Roi",
+      "target": 2,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Roi->p2"
+    },
+    "candidate_count": 1,
+    "other_card_legal": true,
+    "candidate_rows": [
+      {
+        "action": 720,
+        "decoded": {
+          "kind": "card",
+          "action": 720,
+          "card": 7,
+          "card_name": "Roi",
+          "target": 2,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Roi->p2"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2999999523162842,
+        "score": 1.065000057220459,
+        "wins": 2,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 133685627
+  },
+  {
+    "kind": "baron_target",
+    "label": "Baron - choix de cible",
+    "config": "vs_0H_3R",
+    "seed": 610019,
+    "turn": 14,
+    "seat": "player_3",
+    "phase": "late",
+    "deck_remaining": 2,
+    "hand": [
+      9,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": 9,
+    "model_action": 320,
+    "model_decoded": {
+      "kind": "card",
+      "action": 320,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 2,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p2"
+    },
+    "best_action": 300,
+    "best_decoded": {
+      "kind": "card",
+      "action": 300,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 0,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p0"
+    },
+    "candidate_count": 3,
+    "other_card_legal": false,
+    "candidate_rows": [
+      {
+        "action": 300,
+        "decoded": {
+          "kind": "card",
+          "action": 300,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 0,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p0"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 310,
+        "decoded": {
+          "kind": "card",
+          "action": 310,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p1"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 320,
+        "decoded": {
+          "kind": "card",
+          "action": 320,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 2,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p2"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 135652896
+  },
+  {
+    "kind": "baron_low_target",
+    "label": "Baron avec carte faible - choix de cible",
+    "config": "vs_1H_2R",
+    "seed": 620014,
+    "turn": 15,
+    "seat": "player_2",
+    "phase": "late",
+    "deck_remaining": 2,
+    "hand": [
+      3,
+      3
+    ],
+    "pool": [],
+    "baron_kept_card": 3,
+    "model_action": 310,
+    "model_decoded": {
+      "kind": "card",
+      "action": 310,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p1"
+    },
+    "best_action": 310,
+    "best_decoded": {
+      "kind": "card",
+      "action": 310,
+      "card": 3,
+      "card_name": "Baron",
+      "target": 1,
+      "guess": 0,
+      "guess_name": "Espionne",
+      "label": "Baron->p1"
+    },
+    "candidate_count": 2,
+    "other_card_legal": false,
+    "candidate_rows": [
+      {
+        "action": 310,
+        "decoded": {
+          "kind": "card",
+          "action": 310,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 1,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p1"
+        },
+        "winrate": 1.0,
+        "mean_reward": 1.2000000476837158,
+        "score": 1.059999942779541,
+        "wins": 2,
+        "rollouts": 2
+      },
+      {
+        "action": 330,
+        "decoded": {
+          "kind": "card",
+          "action": 330,
+          "card": 3,
+          "card_name": "Baron",
+          "target": 3,
+          "guess": 0,
+          "guess_name": "Espionne",
+          "label": "Baron->p3"
+        },
+        "winrate": 0.5,
+        "mean_reward": 0.7000000476837158,
+        "score": 0.5349999666213989,
+        "wins": 1,
+        "rollouts": 2
+      }
+    ],
+    "crn_correlation": null,
+    "delta_best_vs_model": {
+      "n": 2,
+      "mean_win_delta": 0.0,
+      "mean_score_delta": 0.0,
+      "std_score_delta": 0.0,
+      "sem_score_delta": 0.0,
+      "t_stat": 0.0
+    },
+    "clear_regret": false,
+    "decision_seed": 1540762410
+  }
+]

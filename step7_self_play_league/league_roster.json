@@ -1,0 +1,98 @@
+{
+  "created_at": "2026-04-26",
+  "max_active": 5,
+  "policies": [
+    {
+      "policy_id": "champion_cbp",
+      "kind": "composite",
+      "active": true,
+      "elo": 1546.7024960925096,
+      "games": 7926,
+      "created_at": "2026-04-26",
+      "parent_id": null,
+      "base_checkpoint": "step2_retarget_distilled_attempt1.pth",
+      "advantage_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+      "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+      "use_advantage": true,
+      "use_chancellor": true,
+      "use_baron": true,
+      "use_prince": true
+    },
+    {
+      "policy_id": "curriculum_phase1",
+      "kind": "checkpoint",
+      "active": true,
+      "elo": 1506.7526867935642,
+      "games": 8042,
+      "created_at": "2026-04-26",
+      "parent_id": null,
+      "checkpoint": "curriculum_phase1.pth"
+    },
+    {
+      "policy_id": "step3_fast",
+      "kind": "composite",
+      "active": true,
+      "elo": 1446.4825038689169,
+      "games": 8028,
+      "created_at": "2026-04-26",
+      "parent_id": null,
+      "base_checkpoint": "step2_retarget_distilled_attempt1.pth",
+      "advantage_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+      "use_advantage": true,
+      "use_chancellor": false,
+      "use_baron": false,
+      "use_prince": false
+    },
+    {
+      "policy_id": "step2_retarget",
+      "kind": "checkpoint",
+      "active": true,
+      "elo": 1520.54980228275,
+      "games": 8033,
+      "created_at": "2026-04-26",
+      "parent_id": null,
+      "checkpoint": "step2_retarget_distilled_attempt1.pth"
+    },
+    {
+      "policy_id": "heuristic_fair",
+      "kind": "heuristic",
+      "active": true,
+      "elo": 1479.512510962297,
+      "games": 7971,
+      "created_at": "2026-04-26",
+      "parent_id": null
+    },
+    {
+      "policy_id": "sp_iter_0001",
+      "kind": "composite",
+      "active": false,
+      "elo": 1546.7024960925096,
+      "games": 0,
+      "created_at": "2026-04-26 18:23:32 CEST",
+      "parent_id": "champion_cbp",
+      "base_checkpoint": "step7_self_play_league/checkpoints/sp_iter_0001_final_candidate.pth",
+      "advantage_checkpoint": "step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth",
+      "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+      "use_advantage": true,
+      "use_chancellor": true,
+      "use_baron": true,
+      "use_prince": true
+    },
+    {
+      "policy_id": "sp_iter_0002",
+      "kind": "composite",
+      "active": false,
+      "elo": 1546.7024960925096,
+      "games": 0,
+      "created_at": "2026-04-26 18:37:11 CEST",
+      "parent_id": "champion_cbp",
+      "base_checkpoint": "step7_self_play_league/checkpoints/sp_iter_0002_final_candidate.pth",
+      "advantage_checkpoint": "step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth",
+      "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+      "use_advantage": true,
+      "use_chancellor": true,
+      "use_baron": true,
+      "use_prince": true
+    }
+  ]
+}

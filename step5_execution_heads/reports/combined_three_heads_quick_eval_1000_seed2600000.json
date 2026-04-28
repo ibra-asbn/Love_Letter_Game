@@ -1,0 +1,5401 @@
+{
+  "created_at": "2026-04-26 16:22:16 CEST",
+  "args": {
+    "games": 1000,
+    "seed_start": 2600000,
+    "seed_stride": 10000,
+    "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+    "chancellor_margin": 0.1,
+    "retarget_margin": 0.1,
+    "veto_score": 0.05,
+    "force_score": 0.32,
+    "self_force_score": 0.55,
+    "min_princess_prob": 0.24,
+    "example_limit": 20,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "combined_three_heads_quick_eval_1000_seed2600000.json",
+    "markdown": "combined_three_heads_quick_eval_1000_seed2600000.md",
+    "run_log": "step5_execution_heads/logs/2026-04-26_combined_three_heads_quick_eval_1000_seed2600000.md"
+  },
+  "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+  "policies": {
+    "baseline": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 545,
+          "winrate": 0.545,
+          "winrate_ci95": 0.030864555075361125,
+          "mean_reward": 0.800000011920929,
+          "reward_std": 0.7922121286392212,
+          "reward_ci95": 0.0491018174991249,
+          "outcomes": {
+            "winner": {
+              "count": 545,
+              "rate": 0.545
+            },
+            "first_out": {
+              "count": 145,
+              "rate": 0.145
+            },
+            "second_out": {
+              "count": 125,
+              "rate": 0.125
+            },
+            "third_out": {
+              "count": 83,
+              "rate": 0.083
+            },
+            "final_loser": {
+              "count": 102,
+              "rate": 0.102
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 130,
+              "winrate": 0.52,
+              "winrate_ci95": 0.06193103777590039,
+              "mean_reward": 0.7455999851226807,
+              "reward_std": 0.7672813534736633,
+              "reward_ci95": 0.09511318122567237
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 125,
+              "winrate": 0.5,
+              "winrate_ci95": 0.06198064213930023,
+              "mean_reward": 0.7432000041007996,
+              "reward_std": 0.7857568264007568,
+              "reward_ci95": 0.09740342714078493
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 147,
+              "winrate": 0.588,
+              "winrate_ci95": 0.0610131346383711,
+              "mean_reward": 0.8791999220848083,
+              "reward_std": 0.8107079267501831,
+              "reward_ci95": 0.10049639909215555
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 143,
+              "winrate": 0.572,
+              "winrate_ci95": 0.061334660530567874,
+              "mean_reward": 0.8320000171661377,
+              "reward_std": 0.7959497570991516,
+              "reward_ci95": 0.09866695727782307
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 323,
+              "baron_losing_comparisons": 58,
+              "baron_tie_comparisons": 10,
+              "baron_winning_comparisons": 255,
+              "chancellor_bottomed_king_plus": 98,
+              "chancellor_choices": 356,
+              "chancellor_kept_highest": 267,
+              "chancellor_kept_princess": 9,
+              "chancellor_known_draw_win_games": 31,
+              "chancellor_known_draws": 44,
+              "chancellor_plays": 356,
+              "chancellor_used_win_games": 195,
+              "forced_countess_discards": 70,
+              "guard_attempts": 1072,
+              "guard_hits": 313,
+              "guard_misses": 759,
+              "known_guard_attempts": 131,
+              "known_guard_correct_guess": 122,
+              "known_guard_hits": 117,
+              "main_round_wins": 483,
+              "priest_on_unknown": 400,
+              "priest_plays": 405,
+              "priest_to_guard_attempts": 66,
+              "priest_to_guard_hits": 61,
+              "spy_bonus_win_games": 215,
+              "spy_bonus_wins": 215,
+              "spy_played_win_games": 223,
+              "spy_plays": 326,
+              "voluntary_countess_discards": 36,
+              "voluntary_countess_win_games": 25
+            },
+            "guard_hit_rate": 0.29197761194029853,
+            "known_guard_hit_rate": 0.8931297709923665,
+            "known_guard_correct_guess_rate": 0.9312977099236641,
+            "priest_to_guard_hit_rate": 0.9242424242424242,
+            "priest_on_unknown_rate": 0.9876543209876543,
+            "baron_win_rate": 0.7894736842105263,
+            "baron_loss_rate": 0.17956656346749225,
+            "baron_tie_rate": 0.030959752321981424,
+            "chancellor_keep_highest_rate": 0.75,
+            "chancellor_known_draw_win_rate": 0.7045454545454546,
+            "spy_bonus_per_spy_play": 0.6595092024539877,
+            "voluntary_countess_win_rate": 0.6944444444444444
+          },
+          "prince": {
+            "hand_games": 423,
+            "hand_winrate": 0.640661938534279,
+            "played_games": 320,
+            "played_winrate": 0.665625,
+            "play_rate": 0.5150645624103299,
+            "target_self_rate": 0.42618384401114207,
+            "princess_hit_rate": 0.07799442896935933,
+            "self_suicide_rate": 0.002785515320334262
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "baron": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 434,
+          "winrate": 0.434,
+          "winrate_ci95": 0.03071914696732317,
+          "mean_reward": 0.6541999578475952,
+          "reward_std": 0.7872880101203918,
+          "reward_ci95": 0.048796616491228365,
+          "outcomes": {
+            "winner": {
+              "count": 434,
+              "rate": 0.434
+            },
+            "first_out": {
+              "count": 188,
+              "rate": 0.188
+            },
+            "second_out": {
+              "count": 161,
+              "rate": 0.161
+            },
+            "third_out": {
+              "count": 106,
+              "rate": 0.106
+            },
+            "final_loser": {
+              "count": 111,
+              "rate": 0.111
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 119,
+              "winrate": 0.476,
+              "winrate_ci95": 0.061909199264729625,
+              "mean_reward": 0.7279999852180481,
+              "reward_std": 0.7842040657997131,
+              "reward_ci95": 0.09721094479171319
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 108,
+              "winrate": 0.432,
+              "winrate_ci95": 0.061404769899414166,
+              "mean_reward": 0.6784000396728516,
+              "reward_std": 0.8181524872779846,
+              "reward_ci95": 0.10141923622528244
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 105,
+              "winrate": 0.42,
+              "winrate_ci95": 0.06118214641543725,
+              "mean_reward": 0.5935999751091003,
+              "reward_std": 0.7525683045387268,
+              "reward_ci95": 0.09328933368877863
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 102,
+              "winrate": 0.408,
+              "winrate_ci95": 0.0609223997426234,
+              "mean_reward": 0.61680006980896,
+              "reward_std": 0.7857975363731384,
+              "reward_ci95": 0.09740847103782876
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 358,
+              "baron_losing_comparisons": 92,
+              "baron_tie_comparisons": 6,
+              "baron_winning_comparisons": 260,
+              "chancellor_bottomed_king_plus": 86,
+              "chancellor_choices": 288,
+              "chancellor_kept_highest": 204,
+              "chancellor_kept_princess": 4,
+              "chancellor_known_draw_win_games": 18,
+              "chancellor_known_draws": 32,
+              "chancellor_plays": 288,
+              "chancellor_used_win_games": 124,
+              "forced_countess_discards": 66,
+              "guard_attempts": 1049,
+              "guard_hits": 323,
+              "guard_misses": 726,
+              "known_guard_attempts": 127,
+              "known_guard_correct_guess": 117,
+              "known_guard_hits": 112,
+              "main_round_wins": 387,
+              "priest_on_unknown": 390,
+              "priest_plays": 400,
+              "priest_to_guard_attempts": 58,
+              "priest_to_guard_hits": 54,
+              "spy_bonus_win_games": 169,
+              "spy_bonus_wins": 169,
+              "spy_played_win_games": 176,
+              "spy_plays": 305,
+              "voluntary_countess_discards": 42,
+              "voluntary_countess_win_games": 28
+            },
+            "guard_hit_rate": 0.30791229742612014,
+            "known_guard_hit_rate": 0.8818897637795275,
+            "known_guard_correct_guess_rate": 0.9212598425196851,
+            "priest_to_guard_hit_rate": 0.9310344827586207,
+            "priest_on_unknown_rate": 0.975,
+            "baron_win_rate": 0.7262569832402235,
+            "baron_loss_rate": 0.2569832402234637,
+            "baron_tie_rate": 0.01675977653631285,
+            "chancellor_keep_highest_rate": 0.7083333333333334,
+            "chancellor_known_draw_win_rate": 0.5625,
+            "spy_bonus_per_spy_play": 0.5540983606557377,
+            "voluntary_countess_win_rate": 0.6666666666666666
+          },
+          "prince": {
+            "hand_games": 411,
+            "hand_winrate": 0.44038929440389296,
+            "played_games": 311,
+            "played_winrate": 0.45980707395498394,
+            "play_rate": 0.5324881141045958,
+            "target_self_rate": 0.43452380952380953,
+            "princess_hit_rate": 0.06845238095238096,
+            "self_suicide_rate": 0.002976190476190476
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "baron": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 399,
+          "winrate": 0.399,
+          "winrate_ci95": 0.030351471766621136,
+          "mean_reward": 0.6010000109672546,
+          "reward_std": 0.762652575969696,
+          "reward_ci95": 0.04726969917739248,
+          "outcomes": {
+            "winner": {
+              "count": 399,
+              "rate": 0.399
+            },
+            "first_out": {
+              "count": 192,
+              "rate": 0.192
+            },
+            "second_out": {
+              "count": 167,
+              "rate": 0.167
+            },
+            "third_out": {
+              "count": 120,
+              "rate": 0.12
+            },
+            "final_loser": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 102,
+              "winrate": 0.408,
+              "winrate_ci95": 0.0609223997426234,
+              "mean_reward": 0.6039999723434448,
+              "reward_std": 0.7581979036331177,
+              "reward_ci95": 0.09398718587170382
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 100,
+              "winrate": 0.4,
+              "winrate_ci95": 0.060728378868532294,
+              "mean_reward": 0.5983999967575073,
+              "reward_std": 0.761050283908844,
+              "reward_ci95": 0.09434077134787956
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 100,
+              "winrate": 0.4,
+              "winrate_ci95": 0.060728378868532294,
+              "mean_reward": 0.6327999830245972,
+              "reward_std": 0.7883426547050476,
+              "reward_ci95": 0.09772396717489323
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 97,
+              "winrate": 0.388,
+              "winrate_ci95": 0.06040566097974593,
+              "mean_reward": 0.5688000321388245,
+              "reward_std": 0.7409092783927917,
+              "reward_ci95": 0.09184406492955585
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 306,
+              "baron_losing_comparisons": 92,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 210,
+              "chancellor_bottomed_king_plus": 86,
+              "chancellor_choices": 304,
+              "chancellor_kept_highest": 223,
+              "chancellor_kept_princess": 5,
+              "chancellor_known_draw_win_games": 29,
+              "chancellor_known_draws": 43,
+              "chancellor_plays": 304,
+              "chancellor_used_win_games": 133,
+              "forced_countess_discards": 83,
+              "guard_attempts": 1088,
+              "guard_hits": 352,
+              "guard_misses": 736,
+              "known_guard_attempts": 144,
+              "known_guard_correct_guess": 133,
+              "known_guard_hits": 123,
+              "main_round_wins": 348,
+              "priest_on_unknown": 371,
+              "priest_plays": 379,
+              "priest_to_guard_attempts": 51,
+              "priest_to_guard_hits": 48,
+              "spy_bonus_win_games": 159,
+              "spy_bonus_wins": 159,
+              "spy_played_win_games": 151,
+              "spy_plays": 304,
+              "voluntary_countess_discards": 37,
+              "voluntary_countess_win_games": 28
+            },
+            "guard_hit_rate": 0.3235294117647059,
+            "known_guard_hit_rate": 0.8541666666666666,
+            "known_guard_correct_guess_rate": 0.9236111111111112,
+            "priest_to_guard_hit_rate": 0.9411764705882353,
+            "priest_on_unknown_rate": 0.978891820580475,
+            "baron_win_rate": 0.6862745098039216,
+            "baron_loss_rate": 0.3006535947712418,
+            "baron_tie_rate": 0.013071895424836602,
+            "chancellor_keep_highest_rate": 0.7335526315789473,
+            "chancellor_known_draw_win_rate": 0.6744186046511628,
+            "spy_bonus_per_spy_play": 0.5230263157894737,
+            "voluntary_countess_win_rate": 0.7567567567567568
+          },
+          "prince": {
+            "hand_games": 411,
+            "hand_winrate": 0.45985401459854014,
+            "played_games": 326,
+            "played_winrate": 0.5306748466257669,
+            "play_rate": 0.5538922155688623,
+            "target_self_rate": 0.4702702702702703,
+            "princess_hit_rate": 0.0891891891891892,
+            "self_suicide_rate": 0.010810810810810811
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "baron": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 326,
+          "winrate": 0.326,
+          "winrate_ci95": 0.029053256588547866,
+          "mean_reward": 0.498199999332428,
+          "reward_std": 0.7296553254127502,
+          "reward_ci95": 0.04522450824825245,
+          "outcomes": {
+            "winner": {
+              "count": 326,
+              "rate": 0.326
+            },
+            "first_out": {
+              "count": 234,
+              "rate": 0.234
+            },
+            "second_out": {
+              "count": 197,
+              "rate": 0.197
+            },
+            "third_out": {
+              "count": 134,
+              "rate": 0.134
+            },
+            "final_loser": {
+              "count": 109,
+              "rate": 0.109
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 83,
+              "winrate": 0.332,
+              "winrate_ci95": 0.05837721067677009,
+              "mean_reward": 0.5087999701499939,
+              "reward_std": 0.7369142174720764,
+              "reward_ci95": 0.0913488356659923
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 83,
+              "winrate": 0.332,
+              "winrate_ci95": 0.05837721067677009,
+              "mean_reward": 0.5095999836921692,
+              "reward_std": 0.7448945641517639,
+              "reward_ci95": 0.09233808787992505
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 75,
+              "winrate": 0.3,
+              "winrate_ci95": 0.0568061968450626,
+              "mean_reward": 0.47120001912117004,
+              "reward_std": 0.7337919473648071,
+              "reward_ci95": 0.09096179761704606
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 85,
+              "winrate": 0.34,
+              "winrate_ci95": 0.05872154766352808,
+              "mean_reward": 0.5031999945640564,
+              "reward_std": 0.701590895652771,
+              "reward_ci95": 0.08697010725697787
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 290,
+              "baron_losing_comparisons": 88,
+              "baron_tie_comparisons": 2,
+              "baron_winning_comparisons": 200,
+              "chancellor_bottomed_king_plus": 73,
+              "chancellor_choices": 254,
+              "chancellor_kept_highest": 183,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 17,
+              "chancellor_known_draws": 29,
+              "chancellor_plays": 254,
+              "chancellor_used_win_games": 84,
+              "forced_countess_discards": 68,
+              "guard_attempts": 1064,
+              "guard_hits": 314,
+              "guard_misses": 750,
+              "known_guard_attempts": 125,
+              "known_guard_correct_guess": 116,
+              "known_guard_hits": 113,
+              "main_round_wins": 289,
+              "priest_on_unknown": 383,
+              "priest_plays": 395,
+              "priest_to_guard_attempts": 55,
+              "priest_to_guard_hits": 52,
+              "spy_bonus_win_games": 124,
+              "spy_bonus_wins": 124,
+              "spy_played_win_games": 133,
+              "spy_plays": 279,
+              "voluntary_countess_discards": 47,
+              "voluntary_countess_win_games": 31
+            },
+            "guard_hit_rate": 0.2951127819548872,
+            "known_guard_hit_rate": 0.904,
+            "known_guard_correct_guess_rate": 0.928,
+            "priest_to_guard_hit_rate": 0.9454545454545454,
+            "priest_on_unknown_rate": 0.9696202531645569,
+            "baron_win_rate": 0.6896551724137931,
+            "baron_loss_rate": 0.30344827586206896,
+            "baron_tie_rate": 0.006896551724137931,
+            "chancellor_keep_highest_rate": 0.7204724409448819,
+            "chancellor_known_draw_win_rate": 0.5862068965517241,
+            "spy_bonus_per_spy_play": 0.4444444444444444,
+            "voluntary_countess_win_rate": 0.6595744680851063
+          },
+          "prince": {
+            "hand_games": 398,
+            "hand_winrate": 0.3693467336683417,
+            "played_games": 315,
+            "played_winrate": 0.43174603174603177,
+            "play_rate": 0.5667752442996743,
+            "target_self_rate": 0.46839080459770116,
+            "princess_hit_rate": 0.10057471264367816,
+            "self_suicide_rate": 0.0028735632183908046
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "baron": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.3914
+    },
+    "cb": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 538,
+          "winrate": 0.538,
+          "winrate_ci95": 0.03090069140974033,
+          "mean_reward": 0.7941999435424805,
+          "reward_std": 0.791205644607544,
+          "reward_ci95": 0.049039436028062634,
+          "outcomes": {
+            "winner": {
+              "count": 538,
+              "rate": 0.538
+            },
+            "first_out": {
+              "count": 150,
+              "rate": 0.15
+            },
+            "second_out": {
+              "count": 125,
+              "rate": 0.125
+            },
+            "third_out": {
+              "count": 80,
+              "rate": 0.08
+            },
+            "final_loser": {
+              "count": 107,
+              "rate": 0.107
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 129,
+              "winrate": 0.516,
+              "winrate_ci95": 0.061948899922436074,
+              "mean_reward": 0.7391999363899231,
+              "reward_std": 0.7636644244194031,
+              "reward_ci95": 0.09466482476916636
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 122,
+              "winrate": 0.488,
+              "winrate_ci95": 0.06196278914316236,
+              "mean_reward": 0.7232000231742859,
+              "reward_std": 0.7870081663131714,
+              "reward_ci95": 0.09755854393866202
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 148,
+              "winrate": 0.592,
+              "winrate_ci95": 0.0609223997426234,
+              "mean_reward": 0.902400016784668,
+              "reward_std": 0.8153001070022583,
+              "reward_ci95": 0.10106565074910671
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 139,
+              "winrate": 0.556,
+              "winrate_ci95": 0.06159067274839592,
+              "mean_reward": 0.8119999766349792,
+              "reward_std": 0.7852745056152344,
+              "reward_ci95": 0.0973436392430905
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 246,
+              "baron_losing_comparisons": 37,
+              "baron_tie_comparisons": 6,
+              "baron_winning_comparisons": 203,
+              "chancellor_bottomed_king_plus": 48,
+              "chancellor_choices": 356,
+              "chancellor_kept_highest": 321,
+              "chancellor_kept_princess": 82,
+              "chancellor_known_draw_win_games": 27,
+              "chancellor_known_draws": 43,
+              "chancellor_plays": 356,
+              "chancellor_used_win_games": 202,
+              "forced_countess_discards": 69,
+              "guard_attempts": 1080,
+              "guard_hits": 305,
+              "guard_misses": 775,
+              "known_guard_attempts": 119,
+              "known_guard_correct_guess": 107,
+              "known_guard_hits": 104,
+              "main_round_wins": 474,
+              "priest_on_unknown": 409,
+              "priest_plays": 412,
+              "priest_to_guard_attempts": 54,
+              "priest_to_guard_hits": 52,
+              "spy_bonus_win_games": 226,
+              "spy_bonus_wins": 226,
+              "spy_played_win_games": 233,
+              "spy_plays": 349,
+              "voluntary_countess_discards": 39,
+              "voluntary_countess_win_games": 27
+            },
+            "guard_hit_rate": 0.2824074074074074,
+            "known_guard_hit_rate": 0.8739495798319328,
+            "known_guard_correct_guess_rate": 0.8991596638655462,
+            "priest_to_guard_hit_rate": 0.9629629629629629,
+            "priest_on_unknown_rate": 0.9927184466019418,
+            "baron_win_rate": 0.8252032520325203,
+            "baron_loss_rate": 0.15040650406504066,
+            "baron_tie_rate": 0.024390243902439025,
+            "chancellor_keep_highest_rate": 0.901685393258427,
+            "chancellor_known_draw_win_rate": 0.627906976744186,
+            "spy_bonus_per_spy_play": 0.6475644699140402,
+            "voluntary_countess_win_rate": 0.6923076923076923
+          },
+          "prince": {
+            "hand_games": 418,
+            "hand_winrate": 0.6411483253588517,
+            "played_games": 347,
+            "played_winrate": 0.6253602305475504,
+            "play_rate": 0.5911179173047473,
+            "target_self_rate": 0.5284974093264249,
+            "princess_hit_rate": 0.06735751295336788,
+            "self_suicide_rate": 0.0025906735751295338
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 339,
+                "forced": 17,
+                "overrides": 102,
+                "sum_best_margin": 27
+              },
+              "override_rate": 0.3008849557522124
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 684,
+                "base_baron_plays": 324,
+                "overrides": 327
+              },
+              "override_rate": 0.4780701754385965
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 330,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 3,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 4.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 122,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9117647483944894,
+                  "p_lower": 0.11764705926179886,
+                  "p_equal": 0.29411765933036804,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.3529412746429443,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0142858330408733,
+                  "p_lower": 1.0000001192092896,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.2142856121063232,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.026666673272848107,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.6666669845581055,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  2,
+                  6
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.10824171453714371
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  5
+                ],
+                "base_action": 904,
+                "chosen": 905,
+                "margin": 0.10742732137441635
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.7859596188531982,
+                  "p_lower": 0.9090909361839294,
+                  "p_equal": 0.0,
+                  "p_higher": 0.09090909361839294,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  9
+                ],
+                "base_action": 902,
+                "chosen": 904,
+                "margin": 0.14537639915943146
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.4941176895052195,
+                  "p_lower": 0.4117647111415863,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.529411792755127,
+                  "expected": 3.411764621734619,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 1.3,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 133,
+                "chosen": 136,
+                "best_baron": 330,
+                "alt": 136,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -0.13,
+                  "p_lower": 0.0,
+                  "p_equal": 1.0,
+                  "p_higher": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 133,
+                "chosen": 136,
+                "best_baron": 330,
+                "alt": 136,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.1666667014360428,
+                  "p_lower": 0.0,
+                  "p_equal": 0.3333333432674408,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 3.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  1,
+                  4,
+                  6
+                ],
+                "base_action": 904,
+                "chosen": 902,
+                "margin": 0.12451927363872528
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.48529412485659124,
+                  "p_lower": 0.7647058963775635,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.1764705926179886,
+                  "expected": 3.2941176891326904,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.6666666232049465,
+                  "p_lower": 0.3333333432674408,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.5833333134651184,
+                  "expected": 3.9166667461395264,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.2708332933485508,
+                  "p_lower": 0.6666666269302368,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.25,
+                  "expected": 3.8333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 115,
+                "chosen": 118,
+                "best_baron": 310,
+                "alt": 118,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -1.3,
+                  "p_lower": 0.0,
+                  "p_equal": 0.25,
+                  "p_higher": 0.75,
+                  "expected": 5.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 220,
+                "best_baron": 310,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -0.25,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0625,
+                  "p_higher": 0.4375,
+                  "expected": 3.125,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1
+                ],
+                "base_action": 901,
+                "chosen": 900,
+                "margin": 0.320282518863678
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 473,
+          "winrate": 0.473,
+          "winrate_ci95": 0.030945104194363283,
+          "mean_reward": 0.7131999731063843,
+          "reward_std": 0.7907881140708923,
+          "reward_ci95": 0.04901355684031533,
+          "outcomes": {
+            "winner": {
+              "count": 473,
+              "rate": 0.473
+            },
+            "first_out": {
+              "count": 173,
+              "rate": 0.173
+            },
+            "second_out": {
+              "count": 143,
+              "rate": 0.143
+            },
+            "third_out": {
+              "count": 100,
+              "rate": 0.1
+            },
+            "final_loser": {
+              "count": 111,
+              "rate": 0.111
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 123,
+              "winrate": 0.492,
+              "winrate_ci95": 0.061972708109295976,
+              "mean_reward": 0.7544000148773193,
+              "reward_std": 0.7965931296348572,
+              "reward_ci95": 0.09874670965888381
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 116,
+              "winrate": 0.464,
+              "winrate_ci95": 0.06181977956609034,
+              "mean_reward": 0.7264000177383423,
+              "reward_std": 0.8166413307189941,
+              "reward_ci95": 0.1012319108651165
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 113,
+              "winrate": 0.452,
+              "winrate_ci95": 0.061694374252438934,
+              "mean_reward": 0.6527999639511108,
+              "reward_std": 0.7646778225898743,
+              "reward_ci95": 0.09479044720944187
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 121,
+              "winrate": 0.484,
+              "winrate_ci95": 0.061948899922436074,
+              "mean_reward": 0.7191999554634094,
+              "reward_std": 0.7807889580726624,
+              "reward_ci95": 0.09678760425507481
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 283,
+              "baron_losing_comparisons": 45,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 234,
+              "chancellor_bottomed_king_plus": 35,
+              "chancellor_choices": 317,
+              "chancellor_kept_highest": 274,
+              "chancellor_kept_princess": 78,
+              "chancellor_known_draw_win_games": 17,
+              "chancellor_known_draws": 36,
+              "chancellor_plays": 317,
+              "chancellor_used_win_games": 160,
+              "forced_countess_discards": 62,
+              "guard_attempts": 1080,
+              "guard_hits": 327,
+              "guard_misses": 753,
+              "known_guard_attempts": 128,
+              "known_guard_correct_guess": 109,
+              "known_guard_hits": 107,
+              "main_round_wins": 421,
+              "priest_on_unknown": 392,
+              "priest_plays": 404,
+              "priest_to_guard_attempts": 50,
+              "priest_to_guard_hits": 48,
+              "spy_bonus_win_games": 189,
+              "spy_bonus_wins": 189,
+              "spy_played_win_games": 195,
+              "spy_plays": 336,
+              "voluntary_countess_discards": 39,
+              "voluntary_countess_win_games": 24
+            },
+            "guard_hit_rate": 0.30277777777777776,
+            "known_guard_hit_rate": 0.8359375,
+            "known_guard_correct_guess_rate": 0.8515625,
+            "priest_to_guard_hit_rate": 0.96,
+            "priest_on_unknown_rate": 0.9702970297029703,
+            "baron_win_rate": 0.8268551236749117,
+            "baron_loss_rate": 0.15901060070671377,
+            "baron_tie_rate": 0.014134275618374558,
+            "chancellor_keep_highest_rate": 0.8643533123028391,
+            "chancellor_known_draw_win_rate": 0.4722222222222222,
+            "spy_bonus_per_spy_play": 0.5625,
+            "voluntary_countess_win_rate": 0.6153846153846154
+          },
+          "prince": {
+            "hand_games": 412,
+            "hand_winrate": 0.5,
+            "played_games": 351,
+            "played_winrate": 0.5128205128205128,
+            "play_rate": 0.6374172185430463,
+            "target_self_rate": 0.4987012987012987,
+            "princess_hit_rate": 0.07272727272727272,
+            "self_suicide_rate": 0.005194805194805195
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 302,
+                "forced": 15,
+                "overrides": 108,
+                "sum_best_margin": 27
+              },
+              "override_rate": 0.3576158940397351
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 734,
+                "base_baron_plays": 355,
+                "overrides": 351
+              },
+              "override_rate": 0.4782016348773842
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.10000000298023222,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  7,
+                  5
+                ],
+                "base_action": 902,
+                "chosen": 900,
+                "margin": 0.1951591670513153
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.026666673272848107,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.4666669368743896,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 105,
+                "chosen": 102,
+                "best_baron": 300,
+                "alt": 102,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8571428954601289,
+                  "p_lower": 0.1428571492433548,
+                  "p_equal": 0.2857142984867096,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.000000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0103703710767957,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.5000000417232514,
+                  "p_lower": 0.4444444477558136,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5555555820465088,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.0846153877675533,
+                  "p_lower": 0.6153846383094788,
+                  "p_equal": 0.07692307978868484,
+                  "p_higher": 0.3076923191547394,
+                  "expected": 3.692307710647583,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 520,
+                "best_baron": 300,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.25625000000000003,
+                  "p_lower": 0.6875,
+                  "p_equal": 0.0625,
+                  "p_higher": 0.25,
+                  "expected": 3.3125,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 126,
+                "chosen": 120,
+                "best_baron": 320,
+                "alt": 120,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 7.000000476837158,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0141414144304064,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.1818182468414307,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  0,
+                  1
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.26189208030700684
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.41666665449738505,
+                  "p_lower": 0.7333333492279053,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.20000001788139343,
+                  "expected": 3.4000000953674316,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  6,
+                  4,
+                  1
+                ],
+                "base_action": 900,
+                "chosen": 905,
+                "margin": 0.14918753504753113
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.32692307010293004,
+                  "p_lower": 0.692307710647583,
+                  "p_equal": 0.07692307978868484,
+                  "p_higher": 0.23076924681663513,
+                  "expected": 3.307692289352417,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 1.008395062022739,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 1.888888955116272,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  9,
+                  3
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0149206352233886,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.357142925262451,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  4,
+                  3
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 490,
+                "stats": {
+                  "kept": 4,
+                  "target": 0,
+                  "score": 1.3,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                }
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 415,
+          "winrate": 0.415,
+          "winrate_ci95": 0.030539227888078634,
+          "mean_reward": 0.6335999965667725,
+          "reward_std": 0.7663883566856384,
+          "reward_ci95": 0.04750124345558841,
+          "outcomes": {
+            "winner": {
+              "count": 415,
+              "rate": 0.415
+            },
+            "first_out": {
+              "count": 184,
+              "rate": 0.184
+            },
+            "second_out": {
+              "count": 146,
+              "rate": 0.146
+            },
+            "third_out": {
+              "count": 110,
+              "rate": 0.11
+            },
+            "final_loser": {
+              "count": 145,
+              "rate": 0.145
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 111,
+              "winrate": 0.444,
+              "winrate_ci95": 0.06159067274839592,
+              "mean_reward": 0.6704000234603882,
+              "reward_std": 0.7784110903739929,
+              "reward_ci95": 0.09649284162603804
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 103,
+              "winrate": 0.412,
+              "winrate_ci95": 0.06101313463837111,
+              "mean_reward": 0.6320000290870667,
+              "reward_std": 0.7643663883209229,
+              "reward_ci95": 0.09475183764776554
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 101,
+              "winrate": 0.404,
+              "winrate_ci95": 0.06082748768114626,
+              "mean_reward": 0.6311999559402466,
+              "reward_std": 0.7670114636421204,
+              "reward_ci95": 0.09507972865290185
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 100,
+              "winrate": 0.4,
+              "winrate_ci95": 0.060728378868532294,
+              "mean_reward": 0.6008000373840332,
+              "reward_std": 0.7539756894111633,
+              "reward_ci95": 0.09346379673450994
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 232,
+              "baron_losing_comparisons": 48,
+              "baron_winning_comparisons": 184,
+              "chancellor_bottomed_king_plus": 49,
+              "chancellor_choices": 324,
+              "chancellor_kept_highest": 285,
+              "chancellor_kept_princess": 74,
+              "chancellor_known_draw_win_games": 27,
+              "chancellor_known_draws": 40,
+              "chancellor_plays": 324,
+              "chancellor_used_win_games": 150,
+              "forced_countess_discards": 80,
+              "guard_attempts": 1116,
+              "guard_hits": 352,
+              "guard_misses": 764,
+              "known_guard_attempts": 146,
+              "known_guard_correct_guess": 130,
+              "known_guard_hits": 119,
+              "main_round_wins": 369,
+              "priest_on_unknown": 376,
+              "priest_plays": 388,
+              "priest_to_guard_attempts": 53,
+              "priest_to_guard_hits": 47,
+              "spy_bonus_win_games": 167,
+              "spy_bonus_wins": 167,
+              "spy_played_win_games": 162,
+              "spy_plays": 312,
+              "voluntary_countess_discards": 35,
+              "voluntary_countess_win_games": 23
+            },
+            "guard_hit_rate": 0.3154121863799283,
+            "known_guard_hit_rate": 0.815068493150685,
+            "known_guard_correct_guess_rate": 0.8904109589041096,
+            "priest_to_guard_hit_rate": 0.8867924528301887,
+            "priest_on_unknown_rate": 0.9690721649484536,
+            "baron_win_rate": 0.7931034482758621,
+            "baron_loss_rate": 0.20689655172413793,
+            "baron_tie_rate": 0.0,
+            "chancellor_keep_highest_rate": 0.8796296296296297,
+            "chancellor_known_draw_win_rate": 0.675,
+            "spy_bonus_per_spy_play": 0.5352564102564102,
+            "voluntary_countess_win_rate": 0.6571428571428571
+          },
+          "prince": {
+            "hand_games": 410,
+            "hand_winrate": 0.47073170731707314,
+            "played_games": 362,
+            "played_winrate": 0.5,
+            "play_rate": 0.6550632911392406,
+            "target_self_rate": 0.5434782608695652,
+            "princess_hit_rate": 0.0748792270531401,
+            "self_suicide_rate": 0.012077294685990338
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 312,
+                "forced": 12,
+                "overrides": 100,
+                "sum_best_margin": 25
+              },
+              "override_rate": 0.32051282051282054
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 682,
+                "base_baron_plays": 314,
+                "overrides": 309
+              },
+              "override_rate": 0.4530791788856305
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 530,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": -0.07999998629093177,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.0,
+                  "p_higher": 0.4000000059604645,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 220,
+                "best_baron": 310,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -0.800000023841858,
+                  "p_lower": 0.3333333432674408,
+                  "p_equal": 0.0,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 4.333333492279053,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 103,
+                "chosen": 102,
+                "best_baron": 300,
+                "alt": 102,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 4.800000190734863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.8550694444444444,
+                  "p_lower": 0.9375,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0625,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  7,
+                  0,
+                  9
+                ],
+                "base_action": 900,
+                "chosen": 905,
+                "margin": 0.3100675344467163
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.2315789438784122,
+                  "p_lower": 0.6842105388641357,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.2631579041481018,
+                  "expected": 3.263158082962036,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 210,
+                "best_baron": 300,
+                "alt": 210,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 330,
+                "best_baron": 330,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 3,
+                  "score": 0.48333332538604734,
+                  "p_lower": 0.75,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.1666666716337204,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 116,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.3125,
+                  "p_higher": 0.5625,
+                  "expected": 3.4375,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  5
+                ],
+                "base_action": 904,
+                "chosen": 905,
+                "margin": 0.1111261174082756
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 230,
+                "best_baron": 310,
+                "alt": 230,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -0.4789473973214627,
+                  "p_lower": 0.42105263471603394,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.5263158082962036,
+                  "expected": 3.421052932739258,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.41666665449738505,
+                  "p_lower": 0.7333333492279053,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.20000001788139343,
+                  "expected": 3.4666669368743896,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.48529412485659124,
+                  "p_lower": 0.7647058963775635,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.1764705926179886,
+                  "expected": 3.411764621734619,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  5,
+                  6
+                ],
+                "base_action": 904,
+                "chosen": 901,
+                "margin": 0.17805996537208557
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1,
+                  7
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.21585851907730103
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  2,
+                  1
+                ],
+                "base_action": 902,
+                "chosen": 901,
+                "margin": 0.31946420669555664
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  7,
+                  3
+                ],
+                "companion": 7,
+                "base_action": 330,
+                "chosen": 320,
+                "best_baron": 320,
+                "alt": 720,
+                "stats": {
+                  "kept": 7,
+                  "target": 2,
+                  "score": 1.0,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.142857313156128,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1
+                ],
+                "base_action": 901,
+                "chosen": 900,
+                "margin": 0.33995839953422546
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 350,
+          "winrate": 0.35,
+          "winrate_ci95": 0.02956288213283678,
+          "mean_reward": 0.5374000072479248,
+          "reward_std": 0.7423484921455383,
+          "reward_ci95": 0.04601123555577057,
+          "outcomes": {
+            "winner": {
+              "count": 350,
+              "rate": 0.35
+            },
+            "first_out": {
+              "count": 217,
+              "rate": 0.217
+            },
+            "second_out": {
+              "count": 169,
+              "rate": 0.169
+            },
+            "third_out": {
+              "count": 129,
+              "rate": 0.129
+            },
+            "final_loser": {
+              "count": 135,
+              "rate": 0.135
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 90,
+              "winrate": 0.36,
+              "winrate_ci95": 0.05950141645372822,
+              "mean_reward": 0.5600000023841858,
+              "reward_std": 0.7660809755325317,
+              "reward_ci95": 0.09496438249315063
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 96,
+              "winrate": 0.384,
+              "winrate_ci95": 0.06028954902468586,
+              "mean_reward": 0.5967999696731567,
+              "reward_std": 0.7819908857345581,
+              "reward_ci95": 0.09693659901349061
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 81,
+              "winrate": 0.324,
+              "winrate_ci95": 0.05801388104238502,
+              "mean_reward": 0.5120000243186951,
+              "reward_std": 0.7360000610351562,
+              "reward_ci95": 0.09123551762029908
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 83,
+              "winrate": 0.332,
+              "winrate_ci95": 0.05837721067677009,
+              "mean_reward": 0.48079997301101685,
+              "reward_std": 0.6755378842353821,
+              "reward_ci95": 0.08374054295472075
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 234,
+              "baron_losing_comparisons": 46,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 187,
+              "chancellor_bottomed_king_plus": 27,
+              "chancellor_choices": 280,
+              "chancellor_kept_highest": 254,
+              "chancellor_kept_princess": 67,
+              "chancellor_known_draw_win_games": 15,
+              "chancellor_known_draws": 29,
+              "chancellor_plays": 280,
+              "chancellor_used_win_games": 109,
+              "forced_countess_discards": 70,
+              "guard_attempts": 1097,
+              "guard_hits": 311,
+              "guard_misses": 786,
+              "known_guard_attempts": 126,
+              "known_guard_correct_guess": 112,
+              "known_guard_hits": 109,
+              "main_round_wins": 314,
+              "priest_on_unknown": 374,
+              "priest_plays": 385,
+              "priest_to_guard_attempts": 46,
+              "priest_to_guard_hits": 43,
+              "spy_bonus_win_games": 133,
+              "spy_bonus_wins": 133,
+              "spy_played_win_games": 143,
+              "spy_plays": 295,
+              "voluntary_countess_discards": 50,
+              "voluntary_countess_win_games": 35
+            },
+            "guard_hit_rate": 0.2835004557885141,
+            "known_guard_hit_rate": 0.8650793650793651,
+            "known_guard_correct_guess_rate": 0.8888888888888888,
+            "priest_to_guard_hit_rate": 0.9347826086956522,
+            "priest_on_unknown_rate": 0.9714285714285714,
+            "baron_win_rate": 0.7991452991452992,
+            "baron_loss_rate": 0.19658119658119658,
+            "baron_tie_rate": 0.004273504273504274,
+            "chancellor_keep_highest_rate": 0.9071428571428571,
+            "chancellor_known_draw_win_rate": 0.5172413793103449,
+            "spy_bonus_per_spy_play": 0.45084745762711864,
+            "voluntary_countess_win_rate": 0.7
+          },
+          "prince": {
+            "hand_games": 398,
+            "hand_winrate": 0.3969849246231156,
+            "played_games": 354,
+            "played_winrate": 0.4322033898305085,
+            "play_rate": 0.64891846921797,
+            "target_self_rate": 0.5230769230769231,
+            "princess_hit_rate": 0.09230769230769231,
+            "self_suicide_rate": 0.002564102564102564
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 267,
+                "forced": 13,
+                "overrides": 88,
+                "sum_best_margin": 22
+              },
+              "override_rate": 0.3295880149812734
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 685,
+                "base_baron_plays": 299,
+                "overrides": 334
+              },
+              "override_rate": 0.48759124087591244
+            },
+            "prince": {
+              "raw_counts": {},
+              "override_rate": 0.0
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.5882353305816651,
+                  "p_lower": 0.4117647111415863,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.6470587253570557,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.3625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.0,
+                  "p_higher": 0.875,
+                  "expected": 5.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  7,
+                  3
+                ],
+                "companion": 7,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 710,
+                "stats": {
+                  "kept": 7,
+                  "target": 1,
+                  "score": 0.5749999128282071,
+                  "p_lower": 0.8333332538604736,
+                  "p_equal": 0.0,
+                  "p_higher": 0.1666666716337204,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.5394737221300603,
+                  "p_lower": 0.7894737124443054,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.15789473056793213,
+                  "expected": 3.210526466369629,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -1.160000017285347,
+                  "p_lower": 0.20000000298023224,
+                  "p_equal": 0.0,
+                  "p_higher": 0.800000011920929,
+                  "expected": 6.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 0.8550694444444444,
+                  "p_lower": 0.9375,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0625,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  7
+                ],
+                "base_action": 901,
+                "chosen": 900,
+                "margin": 0.2537324130535126
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1,
+                  2
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.23690617084503174
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 520,
+                "best_baron": 300,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": -0.04285713210701944,
+                  "p_lower": 0.5714285969734192,
+                  "p_equal": 0.0714285746216774,
+                  "p_higher": 0.3571428656578064,
+                  "expected": 3.9285714626312256,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  6,
+                  5,
+                  3
+                ],
+                "base_action": 900,
+                "chosen": 903,
+                "margin": 0.12680473923683167
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 520,
+                "best_baron": 310,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.10000000298023222,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.777777671813965,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 134,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.9,
+                  "p_lower": 0.0,
+                  "p_equal": 0.5,
+                  "p_higher": 0.5,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.016161617702908,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.636363983154297,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 104,
+                "best_baron": 300,
+                "alt": 104,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.77272729575634,
+                  "p_lower": 0.1818181872367859,
+                  "p_equal": 0.27272728085517883,
+                  "p_higher": 0.5454545617103577,
+                  "expected": 3.2727272510528564,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 100,
+                "best_baron": 300,
+                "alt": 100,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.7000000312924386,
+                  "p_lower": 0.2857142984867096,
+                  "p_equal": 0.1428571492433548,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.142857313156128,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 138,
+                "chosen": 139,
+                "best_baron": 330,
+                "alt": 139,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.3,
+                  "p_lower": 0.0,
+                  "p_equal": 0.25,
+                  "p_higher": 0.75,
+                  "expected": 5.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 320,
+                "chosen": 500,
+                "best_baron": 320,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 2,
+                  "score": -1.3800000205636025,
+                  "p_lower": 0.0,
+                  "p_equal": 0.20000000298023224,
+                  "p_higher": 0.800000011920929,
+                  "expected": 6.400000095367432,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  8
+                ],
+                "companion": 8,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.8308730451348756,
+                  "p_lower": 0.9285714626312256,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0714285746216774,
+                  "expected": 2.9285714626312256,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.03571426272392271,
+                  "p_lower": 0.6428571343421936,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3571428656578064,
+                  "expected": 3.7857143878936768,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 120,
+                "chosen": 109,
+                "best_baron": 300,
+                "alt": 109,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.3800000205636025,
+                  "p_lower": 0.0,
+                  "p_equal": 0.20000000298023224,
+                  "p_higher": 0.800000011920929,
+                  "expected": 5.800000190734863,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.4129
+    },
+    "cbp": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 536,
+          "winrate": 0.536,
+          "winrate_ci95": 0.030909889783045163,
+          "mean_reward": 0.7799999713897705,
+          "reward_std": 0.7830197811126709,
+          "reward_ci95": 0.04853206823798106,
+          "outcomes": {
+            "winner": {
+              "count": 536,
+              "rate": 0.536
+            },
+            "first_out": {
+              "count": 151,
+              "rate": 0.151
+            },
+            "second_out": {
+              "count": 127,
+              "rate": 0.127
+            },
+            "third_out": {
+              "count": 79,
+              "rate": 0.079
+            },
+            "final_loser": {
+              "count": 107,
+              "rate": 0.107
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 127,
+              "winrate": 0.508,
+              "winrate_ci95": 0.061972708109295976,
+              "mean_reward": 0.7400000095367432,
+              "reward_std": 0.7746483087539673,
+              "reward_ci95": 0.09602639801107442
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 121,
+              "winrate": 0.484,
+              "winrate_ci95": 0.061948899922436074,
+              "mean_reward": 0.7039999961853027,
+              "reward_std": 0.7744314074516296,
+              "reward_ci95": 0.09599951230575558
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 149,
+              "winrate": 0.596,
+              "winrate_ci95": 0.06082748768114626,
+              "mean_reward": 0.8824000358581543,
+              "reward_std": 0.7978535294532776,
+              "reward_ci95": 0.09890294983592313
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 139,
+              "winrate": 0.556,
+              "winrate_ci95": 0.06159067274839592,
+              "mean_reward": 0.7935999631881714,
+              "reward_std": 0.7733298540115356,
+              "reward_ci95": 0.09586296519161386
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 255,
+              "baron_losing_comparisons": 40,
+              "baron_tie_comparisons": 6,
+              "baron_winning_comparisons": 209,
+              "chancellor_bottomed_king_plus": 48,
+              "chancellor_choices": 368,
+              "chancellor_kept_highest": 329,
+              "chancellor_kept_princess": 85,
+              "chancellor_known_draw_win_games": 31,
+              "chancellor_known_draws": 46,
+              "chancellor_plays": 368,
+              "chancellor_used_win_games": 211,
+              "forced_countess_discards": 72,
+              "guard_attempts": 1061,
+              "guard_hits": 296,
+              "guard_misses": 765,
+              "known_guard_attempts": 105,
+              "known_guard_correct_guess": 92,
+              "known_guard_hits": 89,
+              "main_round_wins": 469,
+              "priest_on_unknown": 378,
+              "priest_plays": 382,
+              "priest_to_guard_attempts": 44,
+              "priest_to_guard_hits": 42,
+              "spy_bonus_win_games": 218,
+              "spy_bonus_wins": 218,
+              "spy_played_win_games": 225,
+              "spy_plays": 334,
+              "voluntary_countess_discards": 43,
+              "voluntary_countess_win_games": 30
+            },
+            "guard_hit_rate": 0.27898209236569277,
+            "known_guard_hit_rate": 0.8476190476190476,
+            "known_guard_correct_guess_rate": 0.8761904761904762,
+            "priest_to_guard_hit_rate": 0.9545454545454546,
+            "priest_on_unknown_rate": 0.9895287958115183,
+            "baron_win_rate": 0.8196078431372549,
+            "baron_loss_rate": 0.1568627450980392,
+            "baron_tie_rate": 0.023529411764705882,
+            "chancellor_keep_highest_rate": 0.8940217391304348,
+            "chancellor_known_draw_win_rate": 0.6739130434782609,
+            "spy_bonus_per_spy_play": 0.6526946107784432,
+            "voluntary_countess_win_rate": 0.6976744186046512
+          },
+          "prince": {
+            "hand_games": 418,
+            "hand_winrate": 0.6363636363636364,
+            "played_games": 368,
+            "played_winrate": 0.6331521739130435,
+            "play_rate": 0.7163120567375887,
+            "target_self_rate": 0.6188118811881188,
+            "princess_hit_rate": 0.09405940594059406,
+            "self_suicide_rate": 0.0024752475247524753
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 349,
+                "forced": 19,
+                "overrides": 107,
+                "sum_best_margin": 29
+              },
+              "override_rate": 0.30659025787965616
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 708,
+                "base_baron_plays": 319,
+                "overrides": 327
+              },
+              "override_rate": 0.461864406779661
+            },
+            "prince": {
+              "raw_counts": {
+                "base_prince_plays": 324,
+                "overrides": 163,
+                "prince_hand_checks": 564
+              },
+              "override_rate": 0.28900709219858156
+            },
+            "examples": [
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  7
+                ],
+                "companion": 7,
+                "base_action": 530,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.9166666666666666,
+                  "p_princess": 0.25,
+                  "p_countess": 0.25,
+                  "p_high": 0.5,
+                  "expected": 7.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.1848889010151227,
+                  "p_princess": 0.06666667014360428,
+                  "p_countess": 0.06666667014360428,
+                  "p_high": 0.13333334028720856,
+                  "expected": 2.9333336353302,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 230,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 122,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9117647483944894,
+                  "p_lower": 0.11764705926179886,
+                  "p_equal": 0.29411765933036804,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.3529412746429443,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0142858330408733,
+                  "p_lower": 1.0000001192092896,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.2142856121063232,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.026666673272848107,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.6666669845581055,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1,
+                  4
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.28103527426719666
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  2,
+                  6
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.10824171453714371
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  5
+                ],
+                "base_action": 904,
+                "chosen": 905,
+                "margin": 0.10742732137441635
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.7859596188531982,
+                  "p_lower": 0.9090909361839294,
+                  "p_equal": 0.0,
+                  "p_higher": 0.09090909361839294,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  9
+                ],
+                "base_action": 902,
+                "chosen": 904,
+                "margin": 0.14537639915943146
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 230,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.4941176895052195,
+                  "p_lower": 0.4117647111415863,
+                  "p_equal": 0.05882352963089943,
+                  "p_higher": 0.529411792755127,
+                  "expected": 3.411764621734619,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 1.3,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 0.3836111111111111,
+                  "p_lower": 0.75,
+                  "p_equal": 0.0,
+                  "p_higher": 0.25,
+                  "expected": 4.75,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 133,
+                "chosen": 136,
+                "best_baron": 330,
+                "alt": 136,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -0.13,
+                  "p_lower": 0.0,
+                  "p_equal": 1.0,
+                  "p_higher": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 133,
+                "chosen": 136,
+                "best_baron": 330,
+                "alt": 136,
+                "stats": {
+                  "kept": 1,
+                  "target": 3,
+                  "score": -1.1666667014360428,
+                  "p_lower": 0.0,
+                  "p_equal": 0.3333333432674408,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 3.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  1,
+                  4,
+                  6
+                ],
+                "base_action": 904,
+                "chosen": 902,
+                "margin": 0.12451927363872528
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 476,
+          "winrate": 0.476,
+          "winrate_ci95": 0.030954599632364813,
+          "mean_reward": 0.711199939250946,
+          "reward_std": 0.7890973091125488,
+          "reward_ci95": 0.048908758381557116,
+          "outcomes": {
+            "winner": {
+              "count": 476,
+              "rate": 0.476
+            },
+            "first_out": {
+              "count": 175,
+              "rate": 0.175
+            },
+            "second_out": {
+              "count": 141,
+              "rate": 0.141
+            },
+            "third_out": {
+              "count": 93,
+              "rate": 0.093
+            },
+            "final_loser": {
+              "count": 115,
+              "rate": 0.115
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 118,
+              "winrate": 0.472,
+              "winrate_ci95": 0.06188338017917249,
+              "mean_reward": 0.72079998254776,
+              "reward_std": 0.7941582798957825,
+              "reward_ci95": 0.09844488255820269
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 113,
+              "winrate": 0.452,
+              "winrate_ci95": 0.061694374252438934,
+              "mean_reward": 0.6968000531196594,
+              "reward_std": 0.8078055381774902,
+              "reward_ci95": 0.10013661618194389
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 118,
+              "winrate": 0.472,
+              "winrate_ci95": 0.06188338017917249,
+              "mean_reward": 0.6800000071525574,
+              "reward_std": 0.7685831189155579,
+              "reward_ci95": 0.09527455577324509
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 127,
+              "winrate": 0.508,
+              "winrate_ci95": 0.061972708109295976,
+              "mean_reward": 0.7471999526023865,
+              "reward_std": 0.7836913466453552,
+              "reward_ci95": 0.09714738716528645
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 288,
+              "baron_losing_comparisons": 45,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 239,
+              "chancellor_bottomed_king_plus": 37,
+              "chancellor_choices": 329,
+              "chancellor_kept_highest": 282,
+              "chancellor_kept_princess": 81,
+              "chancellor_known_draw_win_games": 22,
+              "chancellor_known_draws": 43,
+              "chancellor_plays": 329,
+              "chancellor_used_win_games": 172,
+              "forced_countess_discards": 60,
+              "guard_attempts": 1046,
+              "guard_hits": 307,
+              "guard_misses": 739,
+              "known_guard_attempts": 110,
+              "known_guard_correct_guess": 94,
+              "known_guard_hits": 93,
+              "main_round_wins": 426,
+              "priest_on_unknown": 367,
+              "priest_plays": 378,
+              "priest_to_guard_attempts": 44,
+              "priest_to_guard_hits": 43,
+              "spy_bonus_win_games": 185,
+              "spy_bonus_wins": 185,
+              "spy_played_win_games": 188,
+              "spy_plays": 335,
+              "voluntary_countess_discards": 41,
+              "voluntary_countess_win_games": 27
+            },
+            "guard_hit_rate": 0.29349904397705545,
+            "known_guard_hit_rate": 0.8454545454545455,
+            "known_guard_correct_guess_rate": 0.8545454545454545,
+            "priest_to_guard_hit_rate": 0.9772727272727273,
+            "priest_on_unknown_rate": 0.9708994708994709,
+            "baron_win_rate": 0.8298611111111112,
+            "baron_loss_rate": 0.15625,
+            "baron_tie_rate": 0.013888888888888888,
+            "chancellor_keep_highest_rate": 0.8571428571428571,
+            "chancellor_known_draw_win_rate": 0.5116279069767442,
+            "spy_bonus_per_spy_play": 0.5522388059701493,
+            "voluntary_countess_win_rate": 0.6585365853658537
+          },
+          "prince": {
+            "hand_games": 412,
+            "hand_winrate": 0.5072815533980582,
+            "played_games": 377,
+            "played_winrate": 0.5172413793103449,
+            "play_rate": 0.7840909090909091,
+            "target_self_rate": 0.5628019323671497,
+            "princess_hit_rate": 0.0893719806763285,
+            "self_suicide_rate": 0.0
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 314,
+                "forced": 15,
+                "overrides": 113,
+                "sum_best_margin": 28
+              },
+              "override_rate": 0.35987261146496813
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 760,
+                "base_baron_plays": 351,
+                "overrides": 352
+              },
+              "override_rate": 0.4631578947368421
+            },
+            "prince": {
+              "raw_counts": {
+                "base_prince_plays": 339,
+                "overrides": 137,
+                "prince_hand_checks": 528
+              },
+              "override_rate": 0.25946969696969696
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.10000000298023222,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  7,
+                  5
+                ],
+                "base_action": 902,
+                "chosen": 900,
+                "margin": 0.1951591670513153
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.026666673272848107,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.4666669368743896,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 105,
+                "chosen": 102,
+                "best_baron": 300,
+                "alt": 102,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8571428954601289,
+                  "p_lower": 0.1428571492433548,
+                  "p_equal": 0.2857142984867096,
+                  "p_higher": 0.5714285969734192,
+                  "expected": 3.000000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0103703710767957,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 2.3333334922790527,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.5000000417232514,
+                  "p_lower": 0.4444444477558136,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5555555820465088,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 500,
+                "best_baron": 310,
+                "alt": 500,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.0846153877675533,
+                  "p_lower": 0.6153846383094788,
+                  "p_equal": 0.07692307978868484,
+                  "p_higher": 0.3076923191547394,
+                  "expected": 3.692307710647583,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 520,
+                "best_baron": 300,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.25625000000000003,
+                  "p_lower": 0.6875,
+                  "p_equal": 0.0625,
+                  "p_higher": 0.25,
+                  "expected": 3.3125,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 126,
+                "chosen": 120,
+                "best_baron": 320,
+                "alt": 120,
+                "stats": {
+                  "kept": 1,
+                  "target": 2,
+                  "score": -1.7,
+                  "p_lower": 0.0,
+                  "p_equal": 0.0,
+                  "p_higher": 1.0,
+                  "expected": 7.000000476837158,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0141414144304064,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.1818182468414307,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  0,
+                  1
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.26189208030700684
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 0,
+                  "score": 0.41666665449738505,
+                  "p_lower": 0.7333333492279053,
+                  "p_equal": 0.06666667014360428,
+                  "p_higher": 0.20000001788139343,
+                  "expected": 3.4000000953674316,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  6,
+                  4,
+                  1
+                ],
+                "base_action": 900,
+                "chosen": 905,
+                "margin": 0.14918753504753113
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.9947367995977402,
+                  "p_lower": 0.10526315867900848,
+                  "p_equal": 0.2631579041481018,
+                  "p_higher": 0.6315789222717285,
+                  "expected": 3.473684549331665,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 1.008395062022739,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 1.888888955116272,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  9,
+                  3
+                ],
+                "companion": 9,
+                "base_action": 310,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 0,
+                  "score": 1.0149206352233886,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.357142925262451,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 430,
+          "winrate": 0.43,
+          "winrate_ci95": 0.030685113002887898,
+          "mean_reward": 0.6579999923706055,
+          "reward_std": 0.7771718502044678,
+          "reward_ci95": 0.04816961259009821,
+          "outcomes": {
+            "winner": {
+              "count": 430,
+              "rate": 0.43
+            },
+            "first_out": {
+              "count": 185,
+              "rate": 0.185
+            },
+            "second_out": {
+              "count": 143,
+              "rate": 0.143
+            },
+            "third_out": {
+              "count": 116,
+              "rate": 0.116
+            },
+            "final_loser": {
+              "count": 126,
+              "rate": 0.126
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 114,
+              "winrate": 0.456,
+              "winrate_ci95": 0.061740186666384485,
+              "mean_reward": 0.7064000368118286,
+              "reward_std": 0.8139035701751709,
+              "reward_ci95": 0.10089253726626159
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 104,
+              "winrate": 0.416,
+              "winrate_ci95": 0.061099710978039824,
+              "mean_reward": 0.6376000046730042,
+              "reward_std": 0.7623295783996582,
+              "reward_ci95": 0.09449935629619037
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 104,
+              "winrate": 0.416,
+              "winrate_ci95": 0.061099710978039824,
+              "mean_reward": 0.6439999938011169,
+              "reward_std": 0.7736561894416809,
+              "reward_ci95": 0.09590341438091154
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 108,
+              "winrate": 0.432,
+              "winrate_ci95": 0.061404769899414166,
+              "mean_reward": 0.6439999938011169,
+              "reward_std": 0.7554495334625244,
+              "reward_ci95": 0.0936464928677926
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 244,
+              "baron_losing_comparisons": 48,
+              "baron_winning_comparisons": 196,
+              "chancellor_bottomed_king_plus": 50,
+              "chancellor_choices": 332,
+              "chancellor_kept_highest": 292,
+              "chancellor_kept_princess": 79,
+              "chancellor_known_draw_win_games": 30,
+              "chancellor_known_draws": 41,
+              "chancellor_plays": 332,
+              "chancellor_used_win_games": 158,
+              "forced_countess_discards": 73,
+              "guard_attempts": 1088,
+              "guard_hits": 347,
+              "guard_misses": 741,
+              "known_guard_attempts": 134,
+              "known_guard_correct_guess": 118,
+              "known_guard_hits": 110,
+              "main_round_wins": 384,
+              "priest_on_unknown": 349,
+              "priest_plays": 360,
+              "priest_to_guard_attempts": 45,
+              "priest_to_guard_hits": 40,
+              "spy_bonus_win_games": 175,
+              "spy_bonus_wins": 175,
+              "spy_played_win_games": 165,
+              "spy_plays": 320,
+              "voluntary_countess_discards": 35,
+              "voluntary_countess_win_games": 25
+            },
+            "guard_hit_rate": 0.31893382352941174,
+            "known_guard_hit_rate": 0.8208955223880597,
+            "known_guard_correct_guess_rate": 0.8805970149253731,
+            "priest_to_guard_hit_rate": 0.8888888888888888,
+            "priest_on_unknown_rate": 0.9694444444444444,
+            "baron_win_rate": 0.8032786885245902,
+            "baron_loss_rate": 0.19672131147540983,
+            "baron_tie_rate": 0.0,
+            "chancellor_keep_highest_rate": 0.8795180722891566,
+            "chancellor_known_draw_win_rate": 0.7317073170731707,
+            "spy_bonus_per_spy_play": 0.546875,
+            "voluntary_countess_win_rate": 0.7142857142857143
+          },
+          "prince": {
+            "hand_games": 410,
+            "hand_winrate": 0.5073170731707317,
+            "played_games": 385,
+            "played_winrate": 0.5168831168831168,
+            "play_rate": 0.7911504424778761,
+            "target_self_rate": 0.5682326621923938,
+            "princess_hit_rate": 0.09619686800894854,
+            "self_suicide_rate": 0.006711409395973154
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 320,
+                "forced": 12,
+                "overrides": 105,
+                "sum_best_margin": 26
+              },
+              "override_rate": 0.328125
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 704,
+                "base_baron_plays": 329,
+                "overrides": 319
+              },
+              "override_rate": 0.453125
+            },
+            "prince": {
+              "raw_counts": {
+                "base_prince_plays": 370,
+                "overrides": 138,
+                "prince_hand_checks": 565
+              },
+              "override_rate": 0.24424778761061947
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.0135671930842929,
+                  "p_lower": 0.9999999403953552,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.0526318550109863,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 500,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.6655555750926336,
+                  "p_princess": 0.1666666716337204,
+                  "p_countess": 0.1666666716337204,
+                  "p_high": 0.5,
+                  "expected": 6.833333492279053,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 530,
+                "best_baron": 310,
+                "alt": 530,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": -0.07999998629093177,
+                  "p_lower": 0.6000000238418579,
+                  "p_equal": 0.0,
+                  "p_higher": 0.4000000059604645,
+                  "expected": 4.0,
+                  "known": false,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 220,
+                "best_baron": 310,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 1,
+                  "score": -0.800000023841858,
+                  "p_lower": 0.3333333432674408,
+                  "p_equal": 0.0,
+                  "p_higher": 0.6666666865348816,
+                  "expected": 4.333333492279053,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 500,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.06333333333333332,
+                  "p_princess": 0.0,
+                  "p_countess": 0.125,
+                  "p_high": 0.125,
+                  "expected": 4.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": -0.620000034570694,
+                  "p_lower": 0.4000000059604645,
+                  "p_equal": 0.0,
+                  "p_higher": 0.6000000238418579,
+                  "expected": 5.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 135,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 1,
+                  "score": 0.8550694444444444,
+                  "p_lower": 0.9375,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0625,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 132,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.9755555848280588,
+                  "p_princess": 0.3333333432674408,
+                  "p_countess": 0.0,
+                  "p_high": 0.3333333432674408,
+                  "expected": 4.333333492279053,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  7,
+                  0,
+                  9
+                ],
+                "base_action": 900,
+                "chosen": 905,
+                "margin": 0.3100675344467163
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 330,
+                "chosen": 510,
+                "best_baron": 300,
+                "alt": 510,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": 0.2315789438784122,
+                  "p_lower": 0.6842105388641357,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.2631579041481018,
+                  "expected": 3.263158082962036,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 210,
+                "best_baron": 300,
+                "alt": 210,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.35000000000000003,
+                  "p_lower": 0.5,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  9,
+                  5
+                ],
+                "companion": 9,
+                "base_action": 530,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.039999999999999994,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": -5.0,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 330,
+                "best_baron": 330,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 3,
+                  "score": 0.48333332538604734,
+                  "p_lower": 0.75,
+                  "p_equal": 0.0833333358168602,
+                  "p_higher": 0.1666666716337204,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 139,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 4.249999999999999,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 116,
+                "chosen": 106,
+                "best_baron": 300,
+                "alt": 106,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.8625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.3125,
+                  "p_higher": 0.5625,
+                  "expected": 3.4375,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  0,
+                  1,
+                  5
+                ],
+                "base_action": 904,
+                "chosen": 905,
+                "margin": 0.1111261174082756
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 355,
+          "winrate": 0.355,
+          "winrate_ci95": 0.029658563013065888,
+          "mean_reward": 0.5428000092506409,
+          "reward_std": 0.7458741664886475,
+          "reward_ci95": 0.046229759190925104,
+          "outcomes": {
+            "winner": {
+              "count": 355,
+              "rate": 0.355
+            },
+            "first_out": {
+              "count": 225,
+              "rate": 0.225
+            },
+            "second_out": {
+              "count": 170,
+              "rate": 0.17
+            },
+            "third_out": {
+              "count": 126,
+              "rate": 0.126
+            },
+            "final_loser": {
+              "count": 124,
+              "rate": 0.124
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 250,
+              "wins": 95,
+              "winrate": 0.38,
+              "winrate_ci95": 0.06016912696724127,
+              "mean_reward": 0.597599983215332,
+              "reward_std": 0.7863805294036865,
+              "reward_ci95": 0.0974807442770846
+            },
+            "player_1": {
+              "games": 250,
+              "wins": 95,
+              "winrate": 0.38,
+              "winrate_ci95": 0.06016912696724127,
+              "mean_reward": 0.5799999833106995,
+              "reward_std": 0.7771229147911072,
+              "reward_ci95": 0.09633315591693739
+            },
+            "player_2": {
+              "games": 250,
+              "wins": 81,
+              "winrate": 0.324,
+              "winrate_ci95": 0.05801388104238502,
+              "mean_reward": 0.4976000189781189,
+              "reward_std": 0.7240402102470398,
+              "reward_ci95": 0.08975295870445628
+            },
+            "player_3": {
+              "games": 250,
+              "wins": 84,
+              "winrate": 0.336,
+              "winrate_ci95": 0.05855173187532543,
+              "mean_reward": 0.4959999918937683,
+              "reward_std": 0.6856704354286194,
+              "reward_ci95": 0.08499658641049651
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 241,
+              "baron_losing_comparisons": 47,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 193,
+              "chancellor_bottomed_king_plus": 28,
+              "chancellor_choices": 291,
+              "chancellor_kept_highest": 264,
+              "chancellor_kept_princess": 70,
+              "chancellor_known_draw_win_games": 17,
+              "chancellor_known_draws": 33,
+              "chancellor_plays": 291,
+              "chancellor_used_win_games": 123,
+              "forced_countess_discards": 63,
+              "guard_attempts": 1062,
+              "guard_hits": 298,
+              "guard_misses": 764,
+              "known_guard_attempts": 116,
+              "known_guard_correct_guess": 103,
+              "known_guard_hits": 102,
+              "main_round_wins": 321,
+              "priest_on_unknown": 345,
+              "priest_plays": 355,
+              "priest_to_guard_attempts": 40,
+              "priest_to_guard_hits": 39,
+              "spy_bonus_win_games": 133,
+              "spy_bonus_wins": 133,
+              "spy_played_win_games": 144,
+              "spy_plays": 296,
+              "voluntary_countess_discards": 52,
+              "voluntary_countess_win_games": 34
+            },
+            "guard_hit_rate": 0.2806026365348399,
+            "known_guard_hit_rate": 0.8793103448275862,
+            "known_guard_correct_guess_rate": 0.8879310344827587,
+            "priest_to_guard_hit_rate": 0.975,
+            "priest_on_unknown_rate": 0.971830985915493,
+            "baron_win_rate": 0.8008298755186722,
+            "baron_loss_rate": 0.1950207468879668,
+            "baron_tie_rate": 0.004149377593360996,
+            "chancellor_keep_highest_rate": 0.9072164948453608,
+            "chancellor_known_draw_win_rate": 0.5151515151515151,
+            "spy_bonus_per_spy_play": 0.44932432432432434,
+            "voluntary_countess_win_rate": 0.6538461538461539
+          },
+          "prince": {
+            "hand_games": 398,
+            "hand_winrate": 0.40954773869346733,
+            "played_games": 382,
+            "played_winrate": 0.418848167539267,
+            "play_rate": 0.8015267175572519,
+            "target_self_rate": 0.530952380952381,
+            "princess_hit_rate": 0.13095238095238096,
+            "self_suicide_rate": 0.002380952380952381
+          },
+          "step5": {
+            "chancellor": {
+              "raw_counts": {
+                "checks": 276,
+                "forced": 15,
+                "overrides": 93,
+                "sum_best_margin": 23
+              },
+              "override_rate": 0.33695652173913043
+            },
+            "baron": {
+              "raw_counts": {
+                "baron_hand_checks": 690,
+                "base_baron_plays": 298,
+                "overrides": 332
+              },
+              "override_rate": 0.4811594202898551
+            },
+            "prince": {
+              "raw_counts": {
+                "base_prince_plays": 340,
+                "overrides": 129,
+                "prince_hand_checks": 524
+              },
+              "override_rate": 0.24618320610687022
+            },
+            "examples": [
+              {
+                "module": "baron",
+                "hand": [
+                  2,
+                  3
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 220,
+                "best_baron": 300,
+                "alt": 220,
+                "stats": {
+                  "kept": 2,
+                  "target": 0,
+                  "score": -0.5882353305816651,
+                  "p_lower": 0.4117647111415863,
+                  "p_equal": 0.0,
+                  "p_higher": 0.5882353186607361,
+                  "expected": 3.6470587253570557,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 105,
+                "best_baron": 300,
+                "alt": 105,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -1.3625,
+                  "p_lower": 0.125,
+                  "p_equal": 0.0,
+                  "p_higher": 0.875,
+                  "expected": 5.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  7,
+                  3
+                ],
+                "companion": 7,
+                "base_action": 330,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 710,
+                "stats": {
+                  "kept": 7,
+                  "target": 1,
+                  "score": 0.5749999128282071,
+                  "p_lower": 0.8333332538604736,
+                  "p_equal": 0.0,
+                  "p_higher": 0.1666666716337204,
+                  "expected": 3.500000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  6,
+                  3
+                ],
+                "companion": 6,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 690,
+                "stats": {
+                  "kept": 6,
+                  "target": 1,
+                  "score": 0.5394737221300603,
+                  "p_lower": 0.7894737124443054,
+                  "p_equal": 0.05263157933950424,
+                  "p_higher": 0.15789473056793213,
+                  "expected": 3.210526466369629,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  3
+                ],
+                "companion": 3,
+                "base_action": 330,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 300,
+                "stats": {
+                  "kept": 3,
+                  "target": 0,
+                  "score": -1.160000017285347,
+                  "p_lower": 0.20000000298023224,
+                  "p_equal": 0.0,
+                  "p_higher": 0.800000011920929,
+                  "expected": 6.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  8,
+                  3
+                ],
+                "companion": 8,
+                "base_action": 320,
+                "chosen": 300,
+                "best_baron": 300,
+                "alt": 890,
+                "stats": {
+                  "kept": 8,
+                  "target": 0,
+                  "score": 0.8550694444444444,
+                  "p_lower": 0.9375,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0625,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  7
+                ],
+                "base_action": 901,
+                "chosen": 900,
+                "margin": 0.2537324130535126
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  9,
+                  1,
+                  2
+                ],
+                "base_action": 904,
+                "chosen": 900,
+                "margin": 0.23690617084503174
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 300,
+                "chosen": 520,
+                "best_baron": 300,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 0,
+                  "score": -0.04285713210701944,
+                  "p_lower": 0.5714285969734192,
+                  "p_equal": 0.0714285746216774,
+                  "p_higher": 0.3571428656578064,
+                  "expected": 3.9285714626312256,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 1.293333370288213,
+                  "p_princess": 0.3333333432674408,
+                  "p_countess": 0.3333333432674408,
+                  "p_high": 1.0,
+                  "expected": 8.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "chancellor",
+                "pool": [
+                  6,
+                  5,
+                  3
+                ],
+                "base_action": 900,
+                "chosen": 903,
+                "margin": 0.12680473923683167
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 520,
+                "chosen": 690,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 710,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.9711111398537953,
+                  "p_princess": 0.3333333432674408,
+                  "p_countess": 0.0,
+                  "p_high": 0.3333333432674408,
+                  "expected": 3.6666667461395264,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 1.7966666666666666,
+                  "p_princess": 0.5,
+                  "p_countess": 0.5,
+                  "p_high": 1.0,
+                  "expected": 8.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "prince",
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  5,
+                  3
+                ],
+                "companion": 5,
+                "base_action": 310,
+                "chosen": 520,
+                "best_baron": 310,
+                "alt": 520,
+                "stats": {
+                  "kept": 5,
+                  "target": 1,
+                  "score": 0.10000000298023222,
+                  "p_lower": 0.6666666865348816,
+                  "p_equal": 0.0,
+                  "p_higher": 0.3333333432674408,
+                  "expected": 3.777777671813965,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 134,
+                "chosen": 119,
+                "best_baron": 310,
+                "alt": 119,
+                "stats": {
+                  "kept": 1,
+                  "target": 1,
+                  "score": -0.9,
+                  "p_lower": 0.0,
+                  "p_equal": 0.5,
+                  "p_higher": 0.5,
+                  "expected": 3.25,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  3,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 320,
+                "chosen": 310,
+                "best_baron": 310,
+                "alt": 990,
+                "stats": {
+                  "kept": 9,
+                  "target": 1,
+                  "score": 1.016161617702908,
+                  "p_lower": 1.0,
+                  "p_equal": 0.0,
+                  "p_higher": 0.0,
+                  "expected": 3.636363983154297,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "module": "baron",
+                "hand": [
+                  1,
+                  3
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 104,
+                "best_baron": 300,
+                "alt": 104,
+                "stats": {
+                  "kept": 1,
+                  "target": 0,
+                  "score": -0.77272729575634,
+                  "p_lower": 0.1818181872367859,
+                  "p_equal": 0.27272728085517883,
+                  "p_higher": 0.5454545617103577,
+                  "expected": 3.2727272510528564,
+                  "known": false,
+                  "reliable": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.4198
+    }
+  },
+  "outcomes": {
+    "baseline": {
+      "winner": 0.426,
+      "first_out": 0.18975,
+      "second_out": 0.1625,
+      "third_out": 0.11075,
+      "final_loser": 0.111,
+      "unknown_loss": 0.0
+    },
+    "cb": {
+      "winner": 0.444,
+      "first_out": 0.181,
+      "second_out": 0.14575,
+      "third_out": 0.10475,
+      "final_loser": 0.1245,
+      "unknown_loss": 0.0
+    },
+    "cbp": {
+      "winner": 0.44925,
+      "first_out": 0.184,
+      "second_out": 0.14525,
+      "third_out": 0.1035,
+      "final_loser": 0.118,
+      "unknown_loss": 0.0
+    }
+  },
+  "tactical": {
+    "baseline": {
+      "raw_counts": {
+        "baron_attempts": 1277,
+        "baron_losing_comparisons": 330,
+        "baron_tie_comparisons": 22,
+        "baron_winning_comparisons": 925,
+        "chancellor_bottomed_king_plus": 343,
+        "chancellor_choices": 1202,
+        "chancellor_kept_highest": 877,
+        "chancellor_kept_princess": 20,
+        "chancellor_known_draw_win_games": 95,
+        "chancellor_known_draws": 148,
+        "chancellor_plays": 1202,
+        "chancellor_used_win_games": 536,
+        "forced_countess_discards": 287,
+        "guard_attempts": 4273,
+        "guard_hits": 1302,
+        "guard_misses": 2971,
+        "known_guard_attempts": 527,
+        "known_guard_correct_guess": 488,
+        "known_guard_hits": 465,
+        "main_round_wins": 1507,
+        "priest_on_unknown": 1544,
+        "priest_plays": 1579,
+        "priest_to_guard_attempts": 230,
+        "priest_to_guard_hits": 215,
+        "spy_bonus_win_games": 667,
+        "spy_bonus_wins": 667,
+        "spy_played_win_games": 683,
+        "spy_plays": 1214,
+        "voluntary_countess_discards": 162,
+        "voluntary_countess_win_games": 112
+      },
+      "guard_hit_rate": 0.3047039550666979,
+      "known_guard_hit_rate": 0.8823529411764706,
+      "known_guard_correct_guess_rate": 0.9259962049335864,
+      "priest_to_guard_hit_rate": 0.9347826086956522,
+      "priest_on_unknown_rate": 0.9778340721975934,
+      "baron_win_rate": 0.7243539545810493,
+      "baron_loss_rate": 0.25841816758026626,
+      "baron_tie_rate": 0.017227877838684416,
+      "chancellor_keep_highest_rate": 0.7296173044925125,
+      "chancellor_known_draw_win_rate": 0.6418918918918919,
+      "spy_bonus_per_spy_play": 0.5494233937397035,
+      "voluntary_countess_win_rate": 0.691358024691358
+    },
+    "cb": {
+      "raw_counts": {
+        "baron_attempts": 995,
+        "baron_losing_comparisons": 176,
+        "baron_tie_comparisons": 11,
+        "baron_winning_comparisons": 808,
+        "chancellor_bottomed_king_plus": 159,
+        "chancellor_choices": 1277,
+        "chancellor_kept_highest": 1134,
+        "chancellor_kept_princess": 301,
+        "chancellor_known_draw_win_games": 86,
+        "chancellor_known_draws": 148,
+        "chancellor_plays": 1277,
+        "chancellor_used_win_games": 621,
+        "forced_countess_discards": 281,
+        "guard_attempts": 4373,
+        "guard_hits": 1295,
+        "guard_misses": 3078,
+        "known_guard_attempts": 519,
+        "known_guard_correct_guess": 458,
+        "known_guard_hits": 439,
+        "main_round_wins": 1578,
+        "priest_on_unknown": 1551,
+        "priest_plays": 1589,
+        "priest_to_guard_attempts": 203,
+        "priest_to_guard_hits": 190,
+        "spy_bonus_win_games": 715,
+        "spy_bonus_wins": 715,
+        "spy_played_win_games": 733,
+        "spy_plays": 1292,
+        "voluntary_countess_discards": 163,
+        "voluntary_countess_win_games": 109
+      },
+      "guard_hit_rate": 0.29613537617196434,
+      "known_guard_hit_rate": 0.8458574181117534,
+      "known_guard_correct_guess_rate": 0.882466281310212,
+      "priest_to_guard_hit_rate": 0.9359605911330049,
+      "priest_on_unknown_rate": 0.9760855884203902,
+      "baron_win_rate": 0.8120603015075377,
+      "baron_loss_rate": 0.17688442211055277,
+      "baron_tie_rate": 0.011055276381909548,
+      "chancellor_keep_highest_rate": 0.8880187940485513,
+      "chancellor_known_draw_win_rate": 0.581081081081081,
+      "spy_bonus_per_spy_play": 0.5534055727554179,
+      "voluntary_countess_win_rate": 0.6687116564417178
+    },
+    "cbp": {
+      "raw_counts": {
+        "baron_attempts": 1028,
+        "baron_losing_comparisons": 180,
+        "baron_tie_comparisons": 11,
+        "baron_winning_comparisons": 837,
+        "chancellor_bottomed_king_plus": 163,
+        "chancellor_choices": 1320,
+        "chancellor_kept_highest": 1167,
+        "chancellor_kept_princess": 315,
+        "chancellor_known_draw_win_games": 100,
+        "chancellor_known_draws": 163,
+        "chancellor_plays": 1320,
+        "chancellor_used_win_games": 664,
+        "forced_countess_discards": 268,
+        "guard_attempts": 4257,
+        "guard_hits": 1248,
+        "guard_misses": 3009,
+        "known_guard_attempts": 465,
+        "known_guard_correct_guess": 407,
+        "known_guard_hits": 394,
+        "main_round_wins": 1600,
+        "priest_on_unknown": 1439,
+        "priest_plays": 1475,
+        "priest_to_guard_attempts": 173,
+        "priest_to_guard_hits": 164,
+        "spy_bonus_win_games": 711,
+        "spy_bonus_wins": 711,
+        "spy_played_win_games": 722,
+        "spy_plays": 1285,
+        "voluntary_countess_discards": 171,
+        "voluntary_countess_win_games": 116
+      },
+      "guard_hit_rate": 0.29316420014094435,
+      "known_guard_hit_rate": 0.8473118279569892,
+      "known_guard_correct_guess_rate": 0.875268817204301,
+      "priest_to_guard_hit_rate": 0.9479768786127167,
+      "priest_on_unknown_rate": 0.9755932203389831,
+      "baron_win_rate": 0.8142023346303502,
+      "baron_loss_rate": 0.17509727626459143,
+      "baron_tie_rate": 0.010700389105058366,
+      "chancellor_keep_highest_rate": 0.884090909090909,
+      "chancellor_known_draw_win_rate": 0.6134969325153374,
+      "spy_bonus_per_spy_play": 0.553307392996109,
+      "voluntary_countess_win_rate": 0.6783625730994152
+    }
+  }
+}

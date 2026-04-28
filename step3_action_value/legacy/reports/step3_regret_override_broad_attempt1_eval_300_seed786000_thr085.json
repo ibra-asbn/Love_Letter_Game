@@ -1,0 +1,2471 @@
+{
+  "created_at": "2026-04-25 10:34:58 CEST",
+  "games": 300,
+  "seed_start": 786000,
+  "args": {
+    "checkpoint": "step3_regret_override_broad_attempt1.pth",
+    "base_checkpoint": null,
+    "games": 300,
+    "seed_start": 786000,
+    "gate_threshold": 0.85,
+    "categories": null,
+    "compare_baseline": false,
+    "example_limit": 20,
+    "device": "cpu",
+    "output": "step3_regret_override_broad_attempt1_eval_300_seed786000_thr085.json",
+    "run_log": "step3_action_value/logs/2026-04-25_step3_regret_override_broad_attempt1_eval_300_seed786000_thr085.md"
+  },
+  "override_configs": {
+    "vs_0H_3R": {
+      "games": 300,
+      "wins": 161,
+      "winrate": 0.5366666666666666,
+      "winrate_ci95": 0.0564279830764318,
+      "mean_reward": 0.7879999876022339,
+      "reward_std": 0.7786244750022888,
+      "reward_ci95": 0.08810965398473071,
+      "avg_actions_player0": 3.9066666666666667,
+      "override": {
+        "decisions": 1172,
+        "override_checks": 987,
+        "overrides": 25,
+        "check_rate": 0.8421501706484642,
+        "override_rate_per_decision": 0.021331058020477817,
+        "override_rate_per_check": 0.025329280648429583,
+        "by_category": {
+          "baron": {
+            "seen": 206,
+            "checked": 205,
+            "overrides": 0,
+            "mean_gate_prob": 0.7352730791743208,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_card": {
+            "seen": 144,
+            "checked": 143,
+            "overrides": 0,
+            "mean_gate_prob": 0.7455926429141652,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 107,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "countess": {
+            "seen": 10,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "guard": {
+            "seen": 253,
+            "checked": 251,
+            "overrides": 6,
+            "mean_gate_prob": 0.742369801637186,
+            "mean_override_gate_prob": 0.851719319820404
+          },
+          "handmaid": {
+            "seen": 33,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "king": {
+            "seen": 152,
+            "checked": 145,
+            "overrides": 4,
+            "mean_gate_prob": 0.7479485815969007,
+            "mean_override_gate_prob": 0.8551091104745865
+          },
+          "priest": {
+            "seen": 63,
+            "checked": 61,
+            "overrides": 2,
+            "mean_gate_prob": 0.7612405311865885,
+            "mean_override_gate_prob": 0.8575039803981781
+          },
+          "prince": {
+            "seen": 152,
+            "checked": 136,
+            "overrides": 12,
+            "mean_gate_prob": 0.7699457726934377,
+            "mean_override_gate_prob": 0.8570890973011652
+          },
+          "spy": {
+            "seen": 52,
+            "checked": 46,
+            "overrides": 1,
+            "mean_gate_prob": 0.7193356117476588,
+            "mean_override_gate_prob": 0.8519758582115173
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "prince",
+          "gate_prob": 0.8549112677574158,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.857725977897644,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.850204586982727,
+          "model_action": 134,
+          "model_decoded": {
+            "kind": "card",
+            "action": 134,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p3:Servante"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "spy",
+          "gate_prob": 0.8519758582115173,
+          "model_action": 490,
+          "model_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          },
+          "chosen_action": 90,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 90,
+            "card": 0,
+            "card_name": "Espionne",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Espionne"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.8572819828987122,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8604767322540283,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8750256299972534,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8594730496406555,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8619557619094849,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8553794026374817,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        }
+      ]
+    },
+    "vs_1H_2R": {
+      "games": 300,
+      "wins": 115,
+      "winrate": 0.38333333333333336,
+      "winrate_ci95": 0.055018528865451485,
+      "mean_reward": 0.5793333649635315,
+      "reward_std": 0.7380873560905457,
+      "reward_ci95": 0.08352244714762082,
+      "avg_actions_player0": 3.5233333333333334,
+      "override": {
+        "decisions": 1057,
+        "override_checks": 894,
+        "overrides": 25,
+        "check_rate": 0.8457899716177862,
+        "override_rate_per_decision": 0.023651844843897825,
+        "override_rate_per_check": 0.02796420581655481,
+        "by_category": {
+          "baron": {
+            "seen": 186,
+            "checked": 185,
+            "overrides": 0,
+            "mean_gate_prob": 0.7455782687341844,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_card": {
+            "seen": 131,
+            "checked": 129,
+            "overrides": 0,
+            "mean_gate_prob": 0.7487190185591232,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 100,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "countess": {
+            "seen": 10,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "guard": {
+            "seen": 224,
+            "checked": 221,
+            "overrides": 6,
+            "mean_gate_prob": 0.7444330755941468,
+            "mean_override_gate_prob": 0.851719319820404
+          },
+          "handmaid": {
+            "seen": 25,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "king": {
+            "seen": 138,
+            "checked": 132,
+            "overrides": 5,
+            "mean_gate_prob": 0.7519540795774171,
+            "mean_override_gate_prob": 0.8584161043167114
+          },
+          "priest": {
+            "seen": 66,
+            "checked": 66,
+            "overrides": 2,
+            "mean_gate_prob": 0.7588037604635413,
+            "mean_override_gate_prob": 0.8575039803981781
+          },
+          "prince": {
+            "seen": 124,
+            "checked": 110,
+            "overrides": 12,
+            "mean_gate_prob": 0.7742582570422779,
+            "mean_override_gate_prob": 0.8570890973011652
+          },
+          "spy": {
+            "seen": 53,
+            "checked": 51,
+            "overrides": 0,
+            "mean_gate_prob": 0.7258827990176631,
+            "mean_override_gate_prob": 0.0
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "prince",
+          "gate_prob": 0.8549112677574158,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.857725977897644,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.850204586982727,
+          "model_action": 134,
+          "model_decoded": {
+            "kind": "card",
+            "action": 134,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p3:Servante"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.8572819828987122,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8604767322540283,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8750256299972534,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8501849174499512,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8809322118759155,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8619557619094849,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8553794026374817,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        }
+      ]
+    },
+    "vs_2H_1R": {
+      "games": 300,
+      "wins": 73,
+      "winrate": 0.24333333333333335,
+      "winrate_ci95": 0.04855663116021981,
+      "mean_reward": 0.3906666934490204,
+      "reward_std": 0.6668679714202881,
+      "reward_ci95": 0.07546321329962245,
+      "avg_actions_player0": 3.13,
+      "override": {
+        "decisions": 939,
+        "override_checks": 780,
+        "overrides": 24,
+        "check_rate": 0.8306709265175719,
+        "override_rate_per_decision": 0.025559105431309903,
+        "override_rate_per_check": 0.03076923076923077,
+        "by_category": {
+          "baron": {
+            "seen": 165,
+            "checked": 163,
+            "overrides": 0,
+            "mean_gate_prob": 0.7420173280078209,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_card": {
+            "seen": 127,
+            "checked": 124,
+            "overrides": 0,
+            "mean_gate_prob": 0.7451887029793954,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 88,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "countess": {
+            "seen": 8,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "guard": {
+            "seen": 199,
+            "checked": 198,
+            "overrides": 6,
+            "mean_gate_prob": 0.7503997710618105,
+            "mean_override_gate_prob": 0.851719319820404
+          },
+          "handmaid": {
+            "seen": 30,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "king": {
+            "seen": 113,
+            "checked": 105,
+            "overrides": 5,
+            "mean_gate_prob": 0.7521714630581083,
+            "mean_override_gate_prob": 0.8576975226402282
+          },
+          "priest": {
+            "seen": 49,
+            "checked": 48,
+            "overrides": 2,
+            "mean_gate_prob": 0.7613267774383227,
+            "mean_override_gate_prob": 0.8575039803981781
+          },
+          "prince": {
+            "seen": 115,
+            "checked": 99,
+            "overrides": 11,
+            "mean_gate_prob": 0.7793795574795116,
+            "mean_override_gate_prob": 0.8566466732458635
+          },
+          "spy": {
+            "seen": 45,
+            "checked": 43,
+            "overrides": 0,
+            "mean_gate_prob": 0.7281916266263917,
+            "mean_override_gate_prob": 0.0
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "prince",
+          "gate_prob": 0.8549112677574158,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.857725977897644,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.850204586982727,
+          "model_action": 134,
+          "model_decoded": {
+            "kind": "card",
+            "action": 134,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p3:Servante"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.8572819828987122,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8604767322540283,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8750256299972534,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8501849174499512,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8773393034934998,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 730,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 730,
+            "card": 7,
+            "card_name": "Roi",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Roi->p3"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8553794026374817,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        }
+      ]
+    },
+    "vs_3H": {
+      "games": 300,
+      "wins": 46,
+      "winrate": 0.15333333333333332,
+      "winrate_ci95": 0.04077274616247512,
+      "mean_reward": 0.27133336663246155,
+      "reward_std": 0.5942879915237427,
+      "reward_ci95": 0.06725001677364732,
+      "avg_actions_player0": 2.6166666666666667,
+      "override": {
+        "decisions": 785,
+        "override_checks": 644,
+        "overrides": 28,
+        "check_rate": 0.8203821656050956,
+        "override_rate_per_decision": 0.035668789808917196,
+        "override_rate_per_check": 0.043478260869565216,
+        "by_category": {
+          "baron": {
+            "seen": 129,
+            "checked": 128,
+            "overrides": 0,
+            "mean_gate_prob": 0.7483237534761429,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_card": {
+            "seen": 110,
+            "checked": 109,
+            "overrides": 0,
+            "mean_gate_prob": 0.7475353014578513,
+            "mean_override_gate_prob": 0.0
+          },
+          "chancellor_choice": {
+            "seen": 80,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "countess": {
+            "seen": 11,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "guard": {
+            "seen": 176,
+            "checked": 175,
+            "overrides": 9,
+            "mean_gate_prob": 0.7579696897097996,
+            "mean_override_gate_prob": 0.8526700801319547
+          },
+          "handmaid": {
+            "seen": 26,
+            "checked": 0,
+            "overrides": 0,
+            "mean_gate_prob": 0.0,
+            "mean_override_gate_prob": 0.0
+          },
+          "king": {
+            "seen": 85,
+            "checked": 77,
+            "overrides": 5,
+            "mean_gate_prob": 0.7709949217833482,
+            "mean_override_gate_prob": 0.8605591297149658
+          },
+          "priest": {
+            "seen": 42,
+            "checked": 41,
+            "overrides": 2,
+            "mean_gate_prob": 0.7643976909358327,
+            "mean_override_gate_prob": 0.8575039803981781
+          },
+          "prince": {
+            "seen": 91,
+            "checked": 80,
+            "overrides": 12,
+            "mean_gate_prob": 0.7884252518415451,
+            "mean_override_gate_prob": 0.8549483865499496
+          },
+          "spy": {
+            "seen": 35,
+            "checked": 34,
+            "overrides": 0,
+            "mean_gate_prob": 0.7339719235897064,
+            "mean_override_gate_prob": 0.0
+          }
+        }
+      },
+      "examples": [
+        {
+          "category": "guard",
+          "gate_prob": 0.8598020672798157,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 119,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 119,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 9,
+            "guess_name": "Princesse",
+            "label": "Garde->p1:Princesse"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8549112677574158,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.857725977897644,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.850204586982727,
+          "model_action": 134,
+          "model_decoded": {
+            "kind": "card",
+            "action": 134,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 3,
+            "guess": 4,
+            "guess_name": "Servante",
+            "label": "Garde->p3:Servante"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "king",
+          "gate_prob": 0.8644929528236389,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 230,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 230,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p3"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8556464314460754,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "priest",
+          "gate_prob": 0.8572819828987122,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 490,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 490,
+            "card": 4,
+            "card_name": "Servante",
+            "target": 9,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Servante"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8604767322540283,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.8525781035423279,
+          "model_action": 500,
+          "model_decoded": {
+            "kind": "card",
+            "action": 500,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 0,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p0"
+          },
+          "chosen_action": 112,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 112,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 2,
+            "guess_name": "Pretre",
+            "label": "Garde->p1:Pretre"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.851719319820404,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "guard",
+          "gate_prob": 0.8518357872962952,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 116,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 116,
+            "card": 1,
+            "card_name": "Garde",
+            "target": 1,
+            "guess": 6,
+            "guess_name": "Chancelier",
+            "label": "Garde->p1:Chancelier"
+          }
+        },
+        {
+          "category": "prince",
+          "gate_prob": 0.857081413269043,
+          "model_action": 210,
+          "model_decoded": {
+            "kind": "card",
+            "action": 210,
+            "card": 2,
+            "card_name": "Pretre",
+            "target": 1,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Pretre->p1"
+          },
+          "chosen_action": 530,
+          "chosen_decoded": {
+            "kind": "card",
+            "action": 530,
+            "card": 5,
+            "card_name": "Prince",
+            "target": 3,
+            "guess": 0,
+            "guess_name": "Espionne",
+            "label": "Prince->p3"
+          }
+        }
+      ]
+    }
+  },
+  "override_composite": 0.26466666666666666,
+  "baseline_configs": {},
+  "baseline_composite": null
+}

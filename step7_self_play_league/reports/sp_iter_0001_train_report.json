@@ -1,0 +1,505 @@
+{
+  "created_at": "2026-04-26 18:23:32 CEST",
+  "candidate_id": "sp_iter_0001",
+  "parent_id": "champion_cbp",
+  "parent_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+  "final_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_final_candidate.pth",
+  "registered": true,
+  "history": [
+    {
+      "iteration": 1,
+      "decisions": 8192,
+      "collect": {
+        "games": 2313,
+        "mean_reward": 0.49416342412451364,
+        "score_ge_1": 0.31906614785992216,
+        "candidate_seats": {
+          "player_1": 584,
+          "player_0": 549,
+          "player_2": 592,
+          "player_3": 588
+        },
+        "opponents": {
+          "champion_cbp": 1941,
+          "step2_retarget": 1526,
+          "heuristic_fair": 1092,
+          "curriculum_phase1": 1405,
+          "step3_fast": 975
+        },
+        "module_stats": {
+          "decisions": 8192,
+          "advantage_checks": 6958,
+          "final_overrides": 2262,
+          "chancellor_checks": 654,
+          "chancellor_sum_best_margin": 48.828537970781326,
+          "chancellor_overrides": 185,
+          "baron_baron_hand_checks": 1536,
+          "baron_overrides": 730,
+          "baron_base_baron_plays": 678,
+          "advantage_overrides": 1426,
+          "prince_prince_hand_checks": 1128,
+          "prince_base_prince_plays": 715,
+          "prince_overrides": 324,
+          "chancellor_forced": 31
+        }
+      },
+      "update": {
+        "policy_loss": -0.005036499632600074,
+        "value_loss": 0.8434811681509018,
+        "bc_loss": 3.1402922620375953,
+        "kl_loss": 0.00010993868937956078,
+        "entropy": 0.27718987222760916,
+        "mean_ratio": 1.0001384057104588
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0001_candidate.pth"
+    },
+    {
+      "iteration": 2,
+      "decisions": 8192,
+      "collect": {
+        "games": 2382,
+        "mean_reward": 0.445424013434089,
+        "score_ge_1": 0.28883291351805207,
+        "candidate_seats": {
+          "player_1": 590,
+          "player_3": 602,
+          "player_2": 591,
+          "player_0": 599
+        },
+        "opponents": {
+          "curriculum_phase1": 1185,
+          "champion_cbp": 1536,
+          "step2_retarget": 1258,
+          "heuristic_fair": 969,
+          "step3_fast": 814,
+          "sp_iter_0001_snapshot_iter_0001": 1384
+        },
+        "module_stats": {
+          "decisions": 8195,
+          "advantage_checks": 6974,
+          "final_overrides": 2363,
+          "baron_baron_hand_checks": 1576,
+          "baron_base_baron_plays": 706,
+          "baron_overrides": 787,
+          "prince_prince_hand_checks": 1174,
+          "prince_base_prince_plays": 752,
+          "advantage_overrides": 1406,
+          "chancellor_forced": 27,
+          "chancellor_checks": 649,
+          "chancellor_sum_best_margin": 61.69946565106511,
+          "prince_overrides": 341,
+          "chancellor_overrides": 235
+        }
+      },
+      "update": {
+        "policy_loss": -0.004489417313986148,
+        "value_loss": 0.717751977344354,
+        "bc_loss": 3.366396442055702,
+        "kl_loss": 0.0003870971298359412,
+        "entropy": 0.2770901083325346,
+        "mean_ratio": 1.0002299882471561
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0002_candidate.pth"
+    },
+    {
+      "iteration": 3,
+      "decisions": 8192,
+      "collect": {
+        "games": 2336,
+        "mean_reward": 0.4365582191780822,
+        "score_ge_1": 0.2906678082191781,
+        "candidate_seats": {
+          "player_1": 601,
+          "player_2": 577,
+          "player_3": 556,
+          "player_0": 602
+        },
+        "opponents": {
+          "champion_cbp": 1496,
+          "sp_iter_0001_snapshot_iter_0002": 1369,
+          "step2_retarget": 1274,
+          "curriculum_phase1": 1084,
+          "step3_fast": 813,
+          "heuristic_fair": 972
+        },
+        "module_stats": {
+          "decisions": 8195,
+          "advantage_checks": 6936,
+          "baron_baron_hand_checks": 1557,
+          "baron_base_baron_plays": 716,
+          "final_overrides": 2316,
+          "prince_prince_hand_checks": 1159,
+          "prince_overrides": 322,
+          "chancellor_checks": 682,
+          "chancellor_sum_best_margin": 56.51610831171274,
+          "prince_base_prince_plays": 743,
+          "advantage_overrides": 1454,
+          "baron_overrides": 753,
+          "chancellor_overrides": 213,
+          "chancellor_forced": 39
+        }
+      },
+      "update": {
+        "policy_loss": -0.0038714486872777343,
+        "value_loss": 0.6270324190457662,
+        "bc_loss": 3.34890586634477,
+        "kl_loss": 0.0005673584485824298,
+        "entropy": 0.27102893746147555,
+        "mean_ratio": 1.0033574340244134
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0003_candidate.pth"
+    },
+    {
+      "iteration": 4,
+      "decisions": 8192,
+      "collect": {
+        "games": 2347,
+        "mean_reward": 0.4759267149552621,
+        "score_ge_1": 0.31103536429484446,
+        "candidate_seats": {
+          "player_1": 599,
+          "player_0": 589,
+          "player_3": 584,
+          "player_2": 575
+        },
+        "opponents": {
+          "step3_fast": 806,
+          "step2_retarget": 1229,
+          "champion_cbp": 1547,
+          "sp_iter_0001_snapshot_iter_0003": 1394,
+          "curriculum_phase1": 1141,
+          "heuristic_fair": 924
+        },
+        "module_stats": {
+          "decisions": 8192,
+          "advantage_checks": 6958,
+          "advantage_overrides": 1455,
+          "final_overrides": 2311,
+          "prince_prince_hand_checks": 1110,
+          "prince_base_prince_plays": 715,
+          "prince_overrides": 317,
+          "chancellor_checks": 643,
+          "chancellor_sum_best_margin": 54.41089954972267,
+          "chancellor_overrides": 197,
+          "baron_baron_hand_checks": 1542,
+          "baron_base_baron_plays": 722,
+          "baron_overrides": 739,
+          "chancellor_forced": 31
+        }
+      },
+      "update": {
+        "policy_loss": -0.003932617439810808,
+        "value_loss": 0.668671291321516,
+        "bc_loss": 3.3675807068745294,
+        "kl_loss": 0.0008160148063325323,
+        "entropy": 0.26878566046555835,
+        "mean_ratio": 1.0018964918951194
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0004_candidate.pth"
+    },
+    {
+      "iteration": 5,
+      "decisions": 8192,
+      "collect": {
+        "games": 2318,
+        "mean_reward": 0.48360655737704916,
+        "score_ge_1": 0.3127696289905091,
+        "candidate_seats": {
+          "player_2": 579,
+          "player_1": 596,
+          "player_3": 569,
+          "player_0": 574
+        },
+        "opponents": {
+          "sp_iter_0001_snapshot_iter_0004": 1350,
+          "champion_cbp": 1491,
+          "step3_fast": 787,
+          "curriculum_phase1": 1119,
+          "heuristic_fair": 941,
+          "step2_retarget": 1266
+        },
+        "module_stats": {
+          "decisions": 8192,
+          "advantage_checks": 6891,
+          "chancellor_checks": 715,
+          "chancellor_sum_best_margin": 55.01342646405101,
+          "advantage_overrides": 1338,
+          "final_overrides": 2212,
+          "prince_prince_hand_checks": 1128,
+          "prince_overrides": 291,
+          "baron_baron_hand_checks": 1575,
+          "baron_overrides": 765,
+          "baron_base_baron_plays": 702,
+          "prince_base_prince_plays": 742,
+          "chancellor_overrides": 199,
+          "chancellor_forced": 28
+        }
+      },
+      "update": {
+        "policy_loss": -0.003958990118311097,
+        "value_loss": 0.6356328452626864,
+        "bc_loss": 3.1103323052326837,
+        "kl_loss": 0.0010719570806638028,
+        "entropy": 0.2773619191721082,
+        "mean_ratio": 1.0027712943653266
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0005_candidate.pth"
+    },
+    {
+      "iteration": 6,
+      "decisions": 8192,
+      "collect": {
+        "games": 2347,
+        "mean_reward": 0.4546229228802727,
+        "score_ge_1": 0.30123561994034936,
+        "candidate_seats": {
+          "player_2": 601,
+          "player_1": 568,
+          "player_3": 585,
+          "player_0": 593
+        },
+        "opponents": {
+          "champion_cbp": 1490,
+          "curriculum_phase1": 1129,
+          "sp_iter_0001_snapshot_iter_0005": 1353,
+          "step3_fast": 844,
+          "heuristic_fair": 1003,
+          "step2_retarget": 1222
+        },
+        "module_stats": {
+          "decisions": 8192,
+          "advantage_checks": 6922,
+          "final_overrides": 2370,
+          "baron_baron_hand_checks": 1638,
+          "baron_overrides": 791,
+          "baron_base_baron_plays": 740,
+          "prince_prince_hand_checks": 1059,
+          "prince_base_prince_plays": 693,
+          "advantage_overrides": 1466,
+          "prince_overrides": 275,
+          "chancellor_checks": 680,
+          "chancellor_sum_best_margin": 52.68288802355528,
+          "chancellor_overrides": 204,
+          "chancellor_forced": 37
+        }
+      },
+      "update": {
+        "policy_loss": -0.0042320388796118396,
+        "value_loss": 0.5961053936431805,
+        "bc_loss": 3.3283616304397583,
+        "kl_loss": 0.0011359569665122156,
+        "entropy": 0.27370452259977657,
+        "mean_ratio": 1.0031267069280148
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0006_candidate.pth"
+    },
+    {
+      "iteration": 7,
+      "decisions": 8192,
+      "collect": {
+        "games": 2295,
+        "mean_reward": 0.45045751633986925,
+        "score_ge_1": 0.2932461873638344,
+        "candidate_seats": {
+          "player_0": 583,
+          "player_1": 593,
+          "player_2": 567,
+          "player_3": 552
+        },
+        "opponents": {
+          "curriculum_phase1": 1131,
+          "sp_iter_0001_snapshot_iter_0006": 1345,
+          "step3_fast": 758,
+          "step2_retarget": 1220,
+          "champion_cbp": 1458,
+          "heuristic_fair": 973
+        },
+        "module_stats": {
+          "decisions": 8193,
+          "advantage_checks": 6958,
+          "final_overrides": 2367,
+          "chancellor_checks": 667,
+          "chancellor_sum_best_margin": 59.5640404894948,
+          "baron_baron_hand_checks": 1616,
+          "baron_base_baron_plays": 722,
+          "baron_overrides": 760,
+          "prince_prince_hand_checks": 1097,
+          "prince_base_prince_plays": 718,
+          "advantage_overrides": 1457,
+          "chancellor_overrides": 221,
+          "prince_overrides": 306,
+          "chancellor_forced": 28
+        }
+      },
+      "update": {
+        "policy_loss": -0.003763473612101128,
+        "value_loss": 0.558390298858285,
+        "bc_loss": 3.356589823961258,
+        "kl_loss": 0.0013281560435037438,
+        "entropy": 0.2763572620848815,
+        "mean_ratio": 1.0038974359631538
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0007_candidate.pth"
+    },
+    {
+      "iteration": 8,
+      "decisions": 8192,
+      "collect": {
+        "games": 2318,
+        "mean_reward": 0.4665228645383952,
+        "score_ge_1": 0.30241587575496115,
+        "candidate_seats": {
+          "player_2": 623,
+          "player_1": 581,
+          "player_3": 566,
+          "player_0": 548
+        },
+        "opponents": {
+          "step3_fast": 819,
+          "curriculum_phase1": 1123,
+          "heuristic_fair": 952,
+          "sp_iter_0001_snapshot_iter_0007": 1397,
+          "champion_cbp": 1436,
+          "step2_retarget": 1227
+        },
+        "module_stats": {
+          "decisions": 8192,
+          "advantage_checks": 6954,
+          "advantage_overrides": 1481,
+          "final_overrides": 2393,
+          "baron_baron_hand_checks": 1569,
+          "baron_base_baron_plays": 733,
+          "baron_overrides": 760,
+          "chancellor_checks": 676,
+          "chancellor_sum_best_margin": 59.63808577880263,
+          "prince_prince_hand_checks": 1167,
+          "prince_base_prince_plays": 753,
+          "chancellor_overrides": 225,
+          "prince_overrides": 310,
+          "chancellor_forced": 30
+        }
+      },
+      "update": {
+        "policy_loss": -0.004599357431288809,
+        "value_loss": 0.5821396273871263,
+        "bc_loss": 3.3748681396245956,
+        "kl_loss": 0.0015941900249648218,
+        "entropy": 0.27498961705714464,
+        "mean_ratio": 1.00137955447038
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0008_candidate.pth"
+    },
+    {
+      "iteration": 9,
+      "decisions": 8192,
+      "collect": {
+        "games": 2352,
+        "mean_reward": 0.45425170068027204,
+        "score_ge_1": 0.3031462585034014,
+        "candidate_seats": {
+          "player_1": 543,
+          "player_0": 590,
+          "player_2": 601,
+          "player_3": 618
+        },
+        "opponents": {
+          "step3_fast": 821,
+          "curriculum_phase1": 1098,
+          "sp_iter_0001_snapshot_iter_0008": 1472,
+          "champion_cbp": 1499,
+          "heuristic_fair": 943,
+          "step2_retarget": 1223
+        },
+        "module_stats": {
+          "decisions": 8193,
+          "advantage_checks": 6885,
+          "prince_prince_hand_checks": 1123,
+          "prince_base_prince_plays": 723,
+          "baron_baron_hand_checks": 1567,
+          "baron_base_baron_plays": 712,
+          "advantage_overrides": 1460,
+          "final_overrides": 2336,
+          "chancellor_checks": 695,
+          "chancellor_sum_best_margin": 63.42635666579008,
+          "chancellor_overrides": 221,
+          "prince_overrides": 306,
+          "baron_overrides": 742,
+          "chancellor_forced": 31
+        }
+      },
+      "update": {
+        "policy_loss": -0.003500495212695872,
+        "value_loss": 0.5340817260245482,
+        "bc_loss": 3.2489676972230277,
+        "kl_loss": 0.001953754540105971,
+        "entropy": 0.28316275402903557,
+        "mean_ratio": 1.005234271287918
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0009_candidate.pth"
+    },
+    {
+      "iteration": 10,
+      "decisions": 8192,
+      "collect": {
+        "games": 2357,
+        "mean_reward": 0.44234196011879506,
+        "score_ge_1": 0.28722952906236743,
+        "candidate_seats": {
+          "player_1": 575,
+          "player_3": 642,
+          "player_0": 582,
+          "player_2": 558
+        },
+        "opponents": {
+          "step2_retarget": 1268,
+          "champion_cbp": 1460,
+          "sp_iter_0001_snapshot_iter_0009": 1433,
+          "step3_fast": 799,
+          "curriculum_phase1": 1162,
+          "heuristic_fair": 949
+        },
+        "module_stats": {
+          "decisions": 8193,
+          "advantage_checks": 6955,
+          "chancellor_checks": 688,
+          "chancellor_sum_best_margin": 55.624813843518496,
+          "prince_prince_hand_checks": 1144,
+          "prince_base_prince_plays": 742,
+          "final_overrides": 2280,
+          "baron_baron_hand_checks": 1561,
+          "baron_overrides": 717,
+          "baron_base_baron_plays": 699,
+          "advantage_overrides": 1457,
+          "prince_overrides": 340,
+          "chancellor_overrides": 221,
+          "chancellor_forced": 22
+        }
+      },
+      "update": {
+        "policy_loss": -0.0035356813847708204,
+        "value_loss": 0.5439773350954056,
+        "bc_loss": 3.2170639435450235,
+        "kl_loss": 0.002383427602277758,
+        "entropy": 0.2788019186506669,
+        "mean_ratio": 1.0093073112269242
+      },
+      "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step7_self_play_league/checkpoints/sp_iter_0001_iter_0010_candidate.pth"
+    }
+  ],
+  "candidate_entry": {
+    "policy_id": "sp_iter_0001",
+    "kind": "composite",
+    "active": false,
+    "elo": 1546.7024960925096,
+    "games": 0,
+    "created_at": "2026-04-26 18:23:32 CEST",
+    "parent_id": "champion_cbp",
+    "base_checkpoint": "step7_self_play_league/checkpoints/sp_iter_0001_final_candidate.pth",
+    "advantage_checkpoint": "step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "chancellor_head": "step5_execution_heads/cards/chancellor/checkpoints/chancellor_head_v1.pth",
+    "use_advantage": true,
+    "use_chancellor": true,
+    "use_baron": true,
+    "use_prince": true
+  }
+}

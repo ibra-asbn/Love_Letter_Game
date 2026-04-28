@@ -1,0 +1,4127 @@
+{
+  "created_at": "2026-04-26 16:00:55 CEST",
+  "args": {
+    "games": 1000,
+    "seed_start": 2400000,
+    "seed_stride": 10000,
+    "example_limit": 24,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "retarget_margin": 0.1,
+    "veto_score": 0.05,
+    "force_score": 0.32,
+    "self_force_score": 0.55,
+    "min_princess_prob": 0.24,
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "prince_specialist_v1_eval_1000_seed2400000.json",
+    "markdown": "prince_specialist_v1_eval_1000_seed2400000.md",
+    "run_log": "step5_execution_heads/cards/prince/logs/2026-04-26_prince_specialist_v1_eval_1000_seed2400000.md"
+  },
+  "policies": {
+    "baseline": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 549,
+          "winrate": 0.549,
+          "mean_reward": 0.8133999705314636,
+          "outcomes": {
+            "final_loser": {
+              "count": 107,
+              "rate": 0.107
+            },
+            "first_out": {
+              "count": 151,
+              "rate": 0.151
+            },
+            "second_out": {
+              "count": 114,
+              "rate": 0.114
+            },
+            "third_out": {
+              "count": 79,
+              "rate": 0.079
+            },
+            "winner": {
+              "count": 549,
+              "rate": 0.549
+            }
+          },
+          "prince_hand": {
+            "games": 436,
+            "winrate": 0.6077981651376146
+          },
+          "prince_played": {
+            "games": 340,
+            "winrate": 0.65
+          },
+          "prince": {
+            "hand_events": 684,
+            "played_events": 385,
+            "play_rate": 0.5628654970760234,
+            "target_self_rate": 0.4077922077922078,
+            "target_opponent_rate": 0.5922077922077922,
+            "princess_hit_rate": 0.07792207792207792,
+            "self_suicide_rate": 0.0025974025974025974,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 80,
+                "hand_winrate": 0.675,
+                "played_events": 68,
+                "play_rate": 0.85,
+                "played_winrate": 0.6911764705882353,
+                "princess_hit_rate": 0.07352941176470588
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 145,
+                "hand_winrate": 0.5310344827586206,
+                "played_events": 87,
+                "play_rate": 0.6,
+                "played_winrate": 0.5172413793103449,
+                "princess_hit_rate": 0.022988505747126436
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 53,
+                "hand_winrate": 0.49056603773584906,
+                "played_events": 5,
+                "play_rate": 0.09433962264150944,
+                "played_winrate": 0.4,
+                "princess_hit_rate": 0.2
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 76,
+                "hand_winrate": 0.5526315789473685,
+                "played_events": 4,
+                "play_rate": 0.05263157894736842,
+                "played_winrate": 1.0,
+                "princess_hit_rate": 1.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 58,
+                "hand_winrate": 0.6379310344827587,
+                "played_events": 2,
+                "play_rate": 0.034482758620689655,
+                "played_winrate": 0.5,
+                "princess_hit_rate": 1.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 22,
+                "hand_winrate": 0.6363636363636364,
+                "played_events": 22,
+                "play_rate": 1.0,
+                "played_winrate": 0.6363636363636364,
+                "princess_hit_rate": 0.3181818181818182
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 82,
+                "hand_winrate": 0.6829268292682927,
+                "played_events": 82,
+                "play_rate": 1.0,
+                "played_winrate": 0.6829268292682927,
+                "princess_hit_rate": 0.036585365853658534
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 52,
+                "hand_winrate": 0.6153846153846154,
+                "played_events": 47,
+                "play_rate": 0.9038461538461539,
+                "played_winrate": 0.5957446808510638,
+                "princess_hit_rate": 0.10638297872340426
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 48,
+                "hand_winrate": 0.5416666666666666,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 68,
+                "hand_winrate": 0.8088235294117647,
+                "played_events": 68,
+                "play_rate": 1.0,
+                "played_winrate": 0.8088235294117647,
+                "princess_hit_rate": 0.014705882352941176
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 226,
+                "hand_winrate": 0.5929203539823009,
+                "played_events": 133,
+                "play_rate": 0.588495575221239,
+                "played_winrate": 0.6015037593984962
+              },
+              "mid": {
+                "hand_events": 235,
+                "hand_winrate": 0.6,
+                "played_events": 131,
+                "play_rate": 0.5574468085106383,
+                "played_winrate": 0.6412213740458015
+              },
+              "late": {
+                "hand_events": 223,
+                "hand_winrate": 0.6457399103139013,
+                "played_events": 121,
+                "play_rate": 0.5426008968609866,
+                "played_winrate": 0.7272727272727273
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 684,
+              "base_prince_plays": 385
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 428,
+          "winrate": 0.428,
+          "mean_reward": 0.6228000521659851,
+          "outcomes": {
+            "final_loser": {
+              "count": 105,
+              "rate": 0.105
+            },
+            "first_out": {
+              "count": 172,
+              "rate": 0.172
+            },
+            "second_out": {
+              "count": 173,
+              "rate": 0.173
+            },
+            "third_out": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "winner": {
+              "count": 428,
+              "rate": 0.428
+            }
+          },
+          "prince_hand": {
+            "games": 419,
+            "winrate": 0.4964200477326969
+          },
+          "prince_played": {
+            "games": 305,
+            "winrate": 0.5868852459016394
+          },
+          "prince": {
+            "hand_events": 680,
+            "played_events": 345,
+            "play_rate": 0.5073529411764706,
+            "target_self_rate": 0.36231884057971014,
+            "target_opponent_rate": 0.6376811594202898,
+            "princess_hit_rate": 0.1072463768115942,
+            "self_suicide_rate": 0.0,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 66,
+                "hand_winrate": 0.6060606060606061,
+                "played_events": 52,
+                "play_rate": 0.7878787878787878,
+                "played_winrate": 0.6538461538461539,
+                "princess_hit_rate": 0.09615384615384616
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 131,
+                "hand_winrate": 0.48091603053435117,
+                "played_events": 81,
+                "play_rate": 0.6183206106870229,
+                "played_winrate": 0.49382716049382713,
+                "princess_hit_rate": 0.012345679012345678
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 66,
+                "hand_winrate": 0.3939393939393939,
+                "played_events": 3,
+                "play_rate": 0.045454545454545456,
+                "played_winrate": 0.3333333333333333,
+                "princess_hit_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 90,
+                "hand_winrate": 0.4111111111111111,
+                "played_events": 8,
+                "play_rate": 0.08888888888888889,
+                "played_winrate": 0.875,
+                "princess_hit_rate": 0.375
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 67,
+                "hand_winrate": 0.5373134328358209,
+                "played_events": 4,
+                "play_rate": 0.05970149253731343,
+                "played_winrate": 0.75,
+                "princess_hit_rate": 1.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 14,
+                "hand_winrate": 0.2857142857142857,
+                "played_events": 14,
+                "play_rate": 1.0,
+                "played_winrate": 0.2857142857142857,
+                "princess_hit_rate": 0.07142857142857142
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 63,
+                "hand_winrate": 0.5714285714285714,
+                "played_events": 63,
+                "play_rate": 1.0,
+                "played_winrate": 0.5714285714285714,
+                "princess_hit_rate": 0.23809523809523808
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 53,
+                "hand_winrate": 0.5471698113207547,
+                "played_events": 46,
+                "play_rate": 0.8679245283018868,
+                "played_winrate": 0.5652173913043478,
+                "princess_hit_rate": 0.17391304347826086
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 56,
+                "hand_winrate": 0.42857142857142855,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 74,
+                "hand_winrate": 0.7297297297297297,
+                "played_events": 74,
+                "play_rate": 1.0,
+                "played_winrate": 0.7297297297297297,
+                "princess_hit_rate": 0.0
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 249,
+                "hand_winrate": 0.43373493975903615,
+                "played_events": 114,
+                "play_rate": 0.4578313253012048,
+                "played_winrate": 0.5263157894736842
+              },
+              "mid": {
+                "hand_events": 231,
+                "hand_winrate": 0.5194805194805194,
+                "played_events": 114,
+                "play_rate": 0.4935064935064935,
+                "played_winrate": 0.5789473684210527
+              },
+              "late": {
+                "hand_events": 200,
+                "hand_winrate": 0.605,
+                "played_events": 117,
+                "play_rate": 0.585,
+                "played_winrate": 0.6752136752136753
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 680,
+              "base_prince_plays": 345
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 395,
+          "winrate": 0.395,
+          "mean_reward": 0.6083999872207642,
+          "outcomes": {
+            "final_loser": {
+              "count": 115,
+              "rate": 0.115
+            },
+            "first_out": {
+              "count": 212,
+              "rate": 0.212
+            },
+            "second_out": {
+              "count": 155,
+              "rate": 0.155
+            },
+            "third_out": {
+              "count": 123,
+              "rate": 0.123
+            },
+            "winner": {
+              "count": 395,
+              "rate": 0.395
+            }
+          },
+          "prince_hand": {
+            "games": 398,
+            "winrate": 0.4120603015075377
+          },
+          "prince_played": {
+            "games": 307,
+            "winrate": 0.4560260586319218
+          },
+          "prince": {
+            "hand_events": 616,
+            "played_events": 339,
+            "play_rate": 0.5503246753246753,
+            "target_self_rate": 0.471976401179941,
+            "target_opponent_rate": 0.528023598820059,
+            "princess_hit_rate": 0.061946902654867256,
+            "self_suicide_rate": 0.011799410029498525,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 70,
+                "hand_winrate": 0.37142857142857144,
+                "played_events": 63,
+                "play_rate": 0.9,
+                "played_winrate": 0.38095238095238093,
+                "princess_hit_rate": 0.031746031746031744
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 142,
+                "hand_winrate": 0.3873239436619718,
+                "played_events": 90,
+                "play_rate": 0.6338028169014085,
+                "played_winrate": 0.4,
+                "princess_hit_rate": 0.022222222222222223
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 48,
+                "hand_winrate": 0.3333333333333333,
+                "played_events": 6,
+                "play_rate": 0.125,
+                "played_winrate": 0.6666666666666666,
+                "princess_hit_rate": 0.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 68,
+                "hand_winrate": 0.36764705882352944,
+                "played_events": 4,
+                "play_rate": 0.058823529411764705,
+                "played_winrate": 1.0,
+                "princess_hit_rate": 0.0
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 48,
+                "hand_winrate": 0.3125,
+                "played_events": 1,
+                "play_rate": 0.020833333333333332,
+                "played_winrate": 1.0,
+                "princess_hit_rate": 0.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 14,
+                "hand_winrate": 0.35714285714285715,
+                "played_events": 14,
+                "play_rate": 1.0,
+                "played_winrate": 0.35714285714285715,
+                "princess_hit_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 75,
+                "hand_winrate": 0.44,
+                "played_events": 75,
+                "play_rate": 1.0,
+                "played_winrate": 0.44,
+                "princess_hit_rate": 0.12
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 42,
+                "hand_winrate": 0.30952380952380953,
+                "played_events": 37,
+                "play_rate": 0.8809523809523809,
+                "played_winrate": 0.32432432432432434,
+                "princess_hit_rate": 0.10810810810810811
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 60,
+                "hand_winrate": 0.48333333333333334,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 49,
+                "hand_winrate": 0.6938775510204082,
+                "played_events": 49,
+                "play_rate": 1.0,
+                "played_winrate": 0.6938775510204082,
+                "princess_hit_rate": 0.08163265306122448
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 246,
+                "hand_winrate": 0.3617886178861789,
+                "played_events": 141,
+                "play_rate": 0.573170731707317,
+                "played_winrate": 0.41843971631205673
+              },
+              "mid": {
+                "hand_events": 214,
+                "hand_winrate": 0.4158878504672897,
+                "played_events": 110,
+                "play_rate": 0.514018691588785,
+                "played_winrate": 0.43636363636363634
+              },
+              "late": {
+                "hand_events": 156,
+                "hand_winrate": 0.46794871794871795,
+                "played_events": 88,
+                "play_rate": 0.5641025641025641,
+                "played_winrate": 0.5227272727272727
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 616,
+              "base_prince_plays": 339
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 316,
+          "winrate": 0.316,
+          "mean_reward": 0.4984000027179718,
+          "outcomes": {
+            "final_loser": {
+              "count": 144,
+              "rate": 0.144
+            },
+            "first_out": {
+              "count": 230,
+              "rate": 0.23
+            },
+            "second_out": {
+              "count": 188,
+              "rate": 0.188
+            },
+            "third_out": {
+              "count": 122,
+              "rate": 0.122
+            },
+            "winner": {
+              "count": 316,
+              "rate": 0.316
+            }
+          },
+          "prince_hand": {
+            "games": 384,
+            "winrate": 0.3645833333333333
+          },
+          "prince_played": {
+            "games": 305,
+            "winrate": 0.4
+          },
+          "prince": {
+            "hand_events": 586,
+            "played_events": 333,
+            "play_rate": 0.568259385665529,
+            "target_self_rate": 0.37237237237237236,
+            "target_opponent_rate": 0.6276276276276276,
+            "princess_hit_rate": 0.0960960960960961,
+            "self_suicide_rate": 0.003003003003003003,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 48,
+                "hand_winrate": 0.4166666666666667,
+                "played_events": 41,
+                "play_rate": 0.8541666666666666,
+                "played_winrate": 0.4146341463414634,
+                "princess_hit_rate": 0.04878048780487805
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 141,
+                "hand_winrate": 0.3617021276595745,
+                "played_events": 88,
+                "play_rate": 0.624113475177305,
+                "played_winrate": 0.4318181818181818,
+                "princess_hit_rate": 0.03409090909090909
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 48,
+                "hand_winrate": 0.3541666666666667,
+                "played_events": 2,
+                "play_rate": 0.041666666666666664,
+                "played_winrate": 0.5,
+                "princess_hit_rate": 1.0
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 63,
+                "hand_winrate": 0.23809523809523808,
+                "played_events": 5,
+                "play_rate": 0.07936507936507936,
+                "played_winrate": 0.6,
+                "princess_hit_rate": 0.4
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 44,
+                "hand_winrate": 0.29545454545454547,
+                "played_events": 1,
+                "play_rate": 0.022727272727272728,
+                "played_winrate": 1.0,
+                "princess_hit_rate": 1.0
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 14,
+                "hand_winrate": 0.14285714285714285,
+                "played_events": 14,
+                "play_rate": 1.0,
+                "played_winrate": 0.14285714285714285,
+                "princess_hit_rate": 0.2857142857142857
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 69,
+                "hand_winrate": 0.37681159420289856,
+                "played_events": 69,
+                "play_rate": 1.0,
+                "played_winrate": 0.37681159420289856,
+                "princess_hit_rate": 0.17391304347826086
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 59,
+                "hand_winrate": 0.23728813559322035,
+                "played_events": 53,
+                "play_rate": 0.8983050847457628,
+                "played_winrate": 0.22641509433962265,
+                "princess_hit_rate": 0.09433962264150944
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 40,
+                "hand_winrate": 0.325,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 60,
+                "hand_winrate": 0.6,
+                "played_events": 60,
+                "play_rate": 1.0,
+                "played_winrate": 0.6,
+                "princess_hit_rate": 0.016666666666666666
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 230,
+                "hand_winrate": 0.29130434782608694,
+                "played_events": 128,
+                "play_rate": 0.5565217391304348,
+                "played_winrate": 0.3671875
+              },
+              "mid": {
+                "hand_events": 200,
+                "hand_winrate": 0.35,
+                "played_events": 109,
+                "play_rate": 0.545,
+                "played_winrate": 0.3486238532110092
+              },
+              "late": {
+                "hand_events": 156,
+                "hand_winrate": 0.44871794871794873,
+                "played_events": 96,
+                "play_rate": 0.6153846153846154,
+                "played_winrate": 0.53125
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 586,
+              "base_prince_plays": 333
+            },
+            "override_rate": 0.0,
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.3854
+    },
+    "specialist": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 1000,
+          "wins": 555,
+          "winrate": 0.555,
+          "mean_reward": 0.8223999738693237,
+          "outcomes": {
+            "final_loser": {
+              "count": 105,
+              "rate": 0.105
+            },
+            "first_out": {
+              "count": 150,
+              "rate": 0.15
+            },
+            "second_out": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "third_out": {
+              "count": 73,
+              "rate": 0.073
+            },
+            "winner": {
+              "count": 555,
+              "rate": 0.555
+            }
+          },
+          "prince_hand": {
+            "games": 436,
+            "winrate": 0.6215596330275229
+          },
+          "prince_played": {
+            "games": 372,
+            "winrate": 0.6397849462365591
+          },
+          "prince": {
+            "hand_events": 634,
+            "played_events": 422,
+            "play_rate": 0.6656151419558359,
+            "target_self_rate": 0.518957345971564,
+            "target_opponent_rate": 0.48104265402843605,
+            "princess_hit_rate": 0.09004739336492891,
+            "self_suicide_rate": 0.002369668246445498,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 73,
+                "hand_winrate": 0.6712328767123288,
+                "played_events": 73,
+                "play_rate": 1.0,
+                "played_winrate": 0.6712328767123288,
+                "princess_hit_rate": 0.0821917808219178
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 130,
+                "hand_winrate": 0.5615384615384615,
+                "played_events": 130,
+                "play_rate": 1.0,
+                "played_winrate": 0.5615384615384615,
+                "princess_hit_rate": 0.038461538461538464
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 46,
+                "hand_winrate": 0.6521739130434783,
+                "played_events": 33,
+                "play_rate": 0.717391304347826,
+                "played_winrate": 0.6060606060606061,
+                "princess_hit_rate": 0.09090909090909091
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 73,
+                "hand_winrate": 0.5342465753424658,
+                "played_events": 6,
+                "play_rate": 0.0821917808219178,
+                "played_winrate": 1.0,
+                "princess_hit_rate": 0.8333333333333334
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 57,
+                "hand_winrate": 0.7017543859649122,
+                "played_events": 5,
+                "play_rate": 0.08771929824561403,
+                "played_winrate": 0.8,
+                "princess_hit_rate": 0.6
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 20,
+                "hand_winrate": 0.6,
+                "played_events": 20,
+                "play_rate": 1.0,
+                "played_winrate": 0.6,
+                "princess_hit_rate": 0.3
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 74,
+                "hand_winrate": 0.6891891891891891,
+                "played_events": 56,
+                "play_rate": 0.7567567567567568,
+                "played_winrate": 0.6428571428571429,
+                "princess_hit_rate": 0.05357142857142857
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 50,
+                "hand_winrate": 0.66,
+                "played_events": 36,
+                "play_rate": 0.72,
+                "played_winrate": 0.6111111111111112,
+                "princess_hit_rate": 0.16666666666666666
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 48,
+                "hand_winrate": 0.5625,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 63,
+                "hand_winrate": 0.8095238095238095,
+                "played_events": 63,
+                "play_rate": 1.0,
+                "played_winrate": 0.8095238095238095,
+                "princess_hit_rate": 0.015873015873015872
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 215,
+                "hand_winrate": 0.5906976744186047,
+                "played_events": 160,
+                "play_rate": 0.7441860465116279,
+                "played_winrate": 0.61875
+              },
+              "mid": {
+                "hand_events": 209,
+                "hand_winrate": 0.6028708133971292,
+                "played_events": 141,
+                "play_rate": 0.6746411483253588,
+                "played_winrate": 0.5957446808510638
+              },
+              "late": {
+                "hand_events": 210,
+                "hand_winrate": 0.7238095238095238,
+                "played_events": 121,
+                "play_rate": 0.5761904761904761,
+                "played_winrate": 0.743801652892562
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 634,
+              "base_prince_plays": 352,
+              "overrides": 158,
+              "prince_to_other": 27,
+              "other_to_prince": 97,
+              "prince_retarget": 34
+            },
+            "override_rate": 0.24921135646687698,
+            "examples": [
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 520,
+                "chosen": 790,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.24,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 7.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.24,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 7.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 500,
+                "chosen": 690,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.007916666666666655,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0625,
+                  "p_high": 0.125,
+                  "expected": 2.875,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.007916666666666655,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0625,
+                  "p_high": 0.125,
+                  "expected": 2.875,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 510,
+                "chosen": 690,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": -0.04888889034589132,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.6666667461395264,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": -0.04888889034589132,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.6666667461395264,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 138,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  5
+                ],
+                "companion": 5,
+                "base_action": 520,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.28666667501131693,
+                  "p_princess": 0.09090909361839294,
+                  "p_countess": 0.09090909361839294,
+                  "p_high": 0.27272728085517883,
+                  "expected": 3.1818182468414307,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.02,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 5.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 510,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.3133333358168601,
+                  "p_princess": 0.10000000149011612,
+                  "p_countess": 0.10000000149011612,
+                  "p_high": 0.20000000298023224,
+                  "expected": 3.799999952316284,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 510,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.4983333333333333,
+                  "p_princess": 0.125,
+                  "p_countess": 0.125,
+                  "p_high": 0.375,
+                  "expected": 4.625,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  4
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.98,
+                  "p_princess": 0.25,
+                  "p_countess": 0.25,
+                  "p_high": 0.75,
+                  "expected": 7.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 530,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.38285716215769444,
+                  "p_princess": 0.1428571492433548,
+                  "p_countess": 0.0,
+                  "p_high": 0.1428571492433548,
+                  "expected": 3.000000238418579,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.039999999999999994,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 520,
+                "chosen": 690,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": -0.04666666865348817,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": -0.04666666865348817,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 530,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 4.249999999999999,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.54,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 500,
+                "chosen": 700,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": -0.02666666666666667,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": -0.02666666666666667,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 3.5,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 500,
+                "chosen": 690,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.03333333333333333,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 5.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.03333333333333333,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 5.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 530,
+                "chosen": 730,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": -0.07866666992505392,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.7000000476837158,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": -0.07866666992505392,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.7000000476837158,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 510,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": -0.44999999999999996,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 126,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 124,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 510,
+                "chosen": 690,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 1000,
+          "wins": 429,
+          "winrate": 0.429,
+          "mean_reward": 0.6317999958992004,
+          "outcomes": {
+            "final_loser": {
+              "count": 120,
+              "rate": 0.12
+            },
+            "first_out": {
+              "count": 172,
+              "rate": 0.172
+            },
+            "second_out": {
+              "count": 162,
+              "rate": 0.162
+            },
+            "third_out": {
+              "count": 117,
+              "rate": 0.117
+            },
+            "winner": {
+              "count": 429,
+              "rate": 0.429
+            }
+          },
+          "prince_hand": {
+            "games": 419,
+            "winrate": 0.4988066825775656
+          },
+          "prince_played": {
+            "games": 356,
+            "winrate": 0.5393258426966292
+          },
+          "prince": {
+            "hand_events": 606,
+            "played_events": 410,
+            "play_rate": 0.6765676567656765,
+            "target_self_rate": 0.524390243902439,
+            "target_opponent_rate": 0.47560975609756095,
+            "princess_hit_rate": 0.1024390243902439,
+            "self_suicide_rate": 0.0,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 59,
+                "hand_winrate": 0.6610169491525424,
+                "played_events": 59,
+                "play_rate": 1.0,
+                "played_winrate": 0.6610169491525424,
+                "princess_hit_rate": 0.06779661016949153
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 118,
+                "hand_winrate": 0.4915254237288136,
+                "played_events": 118,
+                "play_rate": 1.0,
+                "played_winrate": 0.4915254237288136,
+                "princess_hit_rate": 0.05084745762711865
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 63,
+                "hand_winrate": 0.42857142857142855,
+                "played_events": 53,
+                "play_rate": 0.8412698412698413,
+                "played_winrate": 0.4528301886792453,
+                "princess_hit_rate": 0.03773584905660377
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 80,
+                "hand_winrate": 0.4125,
+                "played_events": 10,
+                "play_rate": 0.125,
+                "played_winrate": 0.6,
+                "princess_hit_rate": 0.3
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 56,
+                "hand_winrate": 0.5178571428571429,
+                "played_events": 5,
+                "play_rate": 0.08928571428571429,
+                "played_winrate": 0.6,
+                "princess_hit_rate": 0.6
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 11,
+                "hand_winrate": 0.36363636363636365,
+                "played_events": 11,
+                "play_rate": 1.0,
+                "played_winrate": 0.36363636363636365,
+                "princess_hit_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 62,
+                "hand_winrate": 0.5161290322580645,
+                "played_events": 57,
+                "play_rate": 0.9193548387096774,
+                "played_winrate": 0.5614035087719298,
+                "princess_hit_rate": 0.2982456140350877
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 45,
+                "hand_winrate": 0.4222222222222222,
+                "played_events": 34,
+                "play_rate": 0.7555555555555555,
+                "played_winrate": 0.4117647058823529,
+                "princess_hit_rate": 0.20588235294117646
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 49,
+                "hand_winrate": 0.3673469387755102,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 63,
+                "hand_winrate": 0.7301587301587301,
+                "played_events": 63,
+                "play_rate": 1.0,
+                "played_winrate": 0.7301587301587301,
+                "princess_hit_rate": 0.0
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 236,
+                "hand_winrate": 0.461864406779661,
+                "played_events": 156,
+                "play_rate": 0.6610169491525424,
+                "played_winrate": 0.5
+              },
+              "mid": {
+                "hand_events": 194,
+                "hand_winrate": 0.5051546391752577,
+                "played_events": 126,
+                "play_rate": 0.6494845360824743,
+                "played_winrate": 0.5317460317460317
+              },
+              "late": {
+                "hand_events": 176,
+                "hand_winrate": 0.5568181818181818,
+                "played_events": 128,
+                "play_rate": 0.7272727272727273,
+                "played_winrate": 0.6328125
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 606,
+              "base_prince_plays": 313,
+              "overrides": 153,
+              "other_to_prince": 109,
+              "prince_retarget": 32,
+              "prince_to_other": 12
+            },
+            "override_rate": 0.2524752475247525,
+            "examples": [
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 230,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 720,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.77,
+                  "p_princess": 0.25,
+                  "p_countess": 0.0,
+                  "p_high": 0.25,
+                  "expected": 5.25,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 119,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 1.7966666666666666,
+                  "p_princess": 0.5,
+                  "p_countess": 0.5,
+                  "p_high": 1.0,
+                  "expected": 8.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 118,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 4.109999999999999,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  4,
+                  5
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 1.9366666666666665,
+                  "p_princess": 0.5,
+                  "p_countess": 0.5,
+                  "p_high": 1.0,
+                  "expected": 8.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 500,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 2.96,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 520,
+                "chosen": 690,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.01166666433215141,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0833333358168602,
+                  "p_high": 0.1666666716337204,
+                  "expected": 2.750000238418579,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.01166666433215141,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0833333358168602,
+                  "p_high": 0.1666666716337204,
+                  "expected": 2.750000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 520,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.04749999999999999,
+                  "p_princess": 0.0,
+                  "p_countess": 0.125,
+                  "p_high": 0.25,
+                  "expected": 3.0,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 530,
+                "chosen": 730,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.018666664510965353,
+                  "p_princess": 0.0,
+                  "p_countess": 0.10000000149011612,
+                  "p_high": 0.10000000149011612,
+                  "expected": 3.0999999046325684,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.018666664510965353,
+                  "p_princess": 0.0,
+                  "p_countess": 0.10000000149011612,
+                  "p_high": 0.10000000149011612,
+                  "expected": 3.0999999046325684,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 230,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 1000,
+          "wins": 405,
+          "winrate": 0.405,
+          "mean_reward": 0.625,
+          "outcomes": {
+            "final_loser": {
+              "count": 121,
+              "rate": 0.121
+            },
+            "first_out": {
+              "count": 210,
+              "rate": 0.21
+            },
+            "second_out": {
+              "count": 150,
+              "rate": 0.15
+            },
+            "third_out": {
+              "count": 114,
+              "rate": 0.114
+            },
+            "winner": {
+              "count": 405,
+              "rate": 0.405
+            }
+          },
+          "prince_hand": {
+            "games": 398,
+            "winrate": 0.4371859296482412
+          },
+          "prince_played": {
+            "games": 341,
+            "winrate": 0.4633431085043988
+          },
+          "prince": {
+            "hand_events": 540,
+            "played_events": 377,
+            "play_rate": 0.6981481481481482,
+            "target_self_rate": 0.5358090185676393,
+            "target_opponent_rate": 0.46419098143236076,
+            "princess_hit_rate": 0.07161803713527852,
+            "self_suicide_rate": 0.007957559681697613,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 60,
+                "hand_winrate": 0.4166666666666667,
+                "played_events": 60,
+                "play_rate": 1.0,
+                "played_winrate": 0.4166666666666667,
+                "princess_hit_rate": 0.05
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 124,
+                "hand_winrate": 0.41935483870967744,
+                "played_events": 123,
+                "play_rate": 0.9919354838709677,
+                "played_winrate": 0.4146341463414634,
+                "princess_hit_rate": 0.024390243902439025
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 39,
+                "hand_winrate": 0.41025641025641024,
+                "played_events": 32,
+                "play_rate": 0.8205128205128205,
+                "played_winrate": 0.4375,
+                "princess_hit_rate": 0.125
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 61,
+                "hand_winrate": 0.3442622950819672,
+                "played_events": 6,
+                "play_rate": 0.09836065573770492,
+                "played_winrate": 0.5,
+                "princess_hit_rate": 0.16666666666666666
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 37,
+                "hand_winrate": 0.40540540540540543,
+                "played_events": 5,
+                "play_rate": 0.13513513513513514,
+                "played_winrate": 0.8,
+                "princess_hit_rate": 0.2
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 8,
+                "hand_winrate": 0.375,
+                "played_events": 8,
+                "play_rate": 1.0,
+                "played_winrate": 0.375,
+                "princess_hit_rate": 0.0
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 65,
+                "hand_winrate": 0.5076923076923077,
+                "played_events": 60,
+                "play_rate": 0.9230769230769231,
+                "played_winrate": 0.5,
+                "princess_hit_rate": 0.16666666666666666
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 40,
+                "hand_winrate": 0.225,
+                "played_events": 32,
+                "play_rate": 0.8,
+                "played_winrate": 0.25,
+                "princess_hit_rate": 0.0625
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 55,
+                "hand_winrate": 0.45454545454545453,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 51,
+                "hand_winrate": 0.7058823529411765,
+                "played_events": 51,
+                "play_rate": 1.0,
+                "played_winrate": 0.7058823529411765,
+                "princess_hit_rate": 0.058823529411764705
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 231,
+                "hand_winrate": 0.4025974025974026,
+                "played_events": 168,
+                "play_rate": 0.7272727272727273,
+                "played_winrate": 0.42857142857142855
+              },
+              "mid": {
+                "hand_events": 177,
+                "hand_winrate": 0.4350282485875706,
+                "played_events": 128,
+                "play_rate": 0.7231638418079096,
+                "played_winrate": 0.4453125
+              },
+              "late": {
+                "hand_events": 132,
+                "hand_winrate": 0.49242424242424243,
+                "played_events": 81,
+                "play_rate": 0.6136363636363636,
+                "played_winrate": 0.5555555555555556
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 540,
+              "base_prince_plays": 304,
+              "overrides": 121,
+              "prince_retarget": 30,
+              "other_to_prince": 82,
+              "prince_to_other": 9
+            },
+            "override_rate": 0.22407407407407406,
+            "examples": [
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 500,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.3809523995717366,
+                  "p_princess": 0.1428571492433548,
+                  "p_countess": 0.0,
+                  "p_high": 0.1428571492433548,
+                  "expected": 2.7142858505249023,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 116,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 500,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.3703703716397285,
+                  "p_princess": 0.1111111119389534,
+                  "p_countess": 0.1111111119389534,
+                  "p_high": 0.3333333432674408,
+                  "expected": 3.555555582046509,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 119,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 520,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 1.7633333333333332,
+                  "p_princess": 0.5,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 8.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 500,
+                "chosen": 690,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 106,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  4
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 1.623333333333333,
+                  "p_princess": 0.5,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 8.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 510,
+                "chosen": 710,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.004444444129864361,
+                  "p_princess": 0.0,
+                  "p_countess": 0.1111111119389534,
+                  "p_high": 0.1111111119389534,
+                  "expected": 2.6666667461395264,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.004444444129864361,
+                  "p_princess": 0.0,
+                  "p_countess": 0.1111111119389534,
+                  "p_high": 0.1111111119389534,
+                  "expected": 2.6666667461395264,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 530,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.039999999999999994,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  4,
+                  5
+                ],
+                "companion": 4,
+                "base_action": 490,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 1.7966666666666666,
+                  "p_princess": 0.5,
+                  "p_countess": 0.5,
+                  "p_high": 1.0,
+                  "expected": 8.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 520,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.2624242492516835,
+                  "p_princess": 0.09090909361839294,
+                  "p_countess": 0.09090909361839294,
+                  "p_high": 0.1818181872367859,
+                  "expected": 2.8181817531585693,
+                  "known": false,
+                  "reliable": false
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 520,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 1.57,
+                  "p_princess": 0.5,
+                  "p_countess": 0.0,
+                  "p_high": 0.5,
+                  "expected": 7.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  9
+                ],
+                "companion": 9,
+                "base_action": 500,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.15666667024294537,
+                  "p_princess": 0.0,
+                  "p_countess": 0.1666666716337204,
+                  "p_high": 0.3333333432674408,
+                  "expected": 5.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.0062222231924533855,
+                  "p_princess": 0.0,
+                  "p_countess": 0.06666667014360428,
+                  "p_high": 0.13333334028720856,
+                  "expected": 2.7333333492279053,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 510,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 0.7383333333333333,
+                  "p_princess": 0.25,
+                  "p_countess": 0.0,
+                  "p_high": 0.25,
+                  "expected": 4.25,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 114,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 1000,
+          "wins": 326,
+          "winrate": 0.326,
+          "mean_reward": 0.5108000040054321,
+          "outcomes": {
+            "final_loser": {
+              "count": 143,
+              "rate": 0.143
+            },
+            "first_out": {
+              "count": 229,
+              "rate": 0.229
+            },
+            "second_out": {
+              "count": 183,
+              "rate": 0.183
+            },
+            "third_out": {
+              "count": 119,
+              "rate": 0.119
+            },
+            "winner": {
+              "count": 326,
+              "rate": 0.326
+            }
+          },
+          "prince_hand": {
+            "games": 384,
+            "winrate": 0.390625
+          },
+          "prince_played": {
+            "games": 343,
+            "winrate": 0.40524781341107874
+          },
+          "prince": {
+            "hand_events": 511,
+            "played_events": 375,
+            "play_rate": 0.7338551859099804,
+            "target_self_rate": 0.4666666666666667,
+            "target_opponent_rate": 0.5333333333333333,
+            "princess_hit_rate": 0.12,
+            "self_suicide_rate": 0.0026666666666666666,
+            "companion_rows": {
+              "0": {
+                "name": "Espionne",
+                "hand_events": 39,
+                "hand_winrate": 0.46153846153846156,
+                "played_events": 39,
+                "play_rate": 1.0,
+                "played_winrate": 0.46153846153846156,
+                "princess_hit_rate": 0.20512820512820512
+              },
+              "1": {
+                "name": "Garde",
+                "hand_events": 124,
+                "hand_winrate": 0.3790322580645161,
+                "played_events": 122,
+                "play_rate": 0.9838709677419355,
+                "played_winrate": 0.36885245901639346,
+                "princess_hit_rate": 0.040983606557377046
+              },
+              "2": {
+                "name": "Pretre",
+                "hand_events": 46,
+                "hand_winrate": 0.43478260869565216,
+                "played_events": 37,
+                "play_rate": 0.8043478260869565,
+                "played_winrate": 0.43243243243243246,
+                "princess_hit_rate": 0.10810810810810811
+              },
+              "3": {
+                "name": "Baron",
+                "hand_events": 55,
+                "hand_winrate": 0.2909090909090909,
+                "played_events": 8,
+                "play_rate": 0.14545454545454545,
+                "played_winrate": 0.625,
+                "princess_hit_rate": 0.5
+              },
+              "4": {
+                "name": "Servante",
+                "hand_events": 38,
+                "hand_winrate": 0.42105263157894735,
+                "played_events": 4,
+                "play_rate": 0.10526315789473684,
+                "played_winrate": 0.75,
+                "princess_hit_rate": 0.75
+              },
+              "5": {
+                "name": "Prince",
+                "hand_events": 10,
+                "hand_winrate": 0.2,
+                "played_events": 10,
+                "play_rate": 1.0,
+                "played_winrate": 0.2,
+                "princess_hit_rate": 0.2
+              },
+              "6": {
+                "name": "Chancelier",
+                "hand_events": 57,
+                "hand_winrate": 0.42105263157894735,
+                "played_events": 55,
+                "play_rate": 0.9649122807017544,
+                "played_winrate": 0.4,
+                "princess_hit_rate": 0.23636363636363636
+              },
+              "7": {
+                "name": "Roi",
+                "hand_events": 53,
+                "hand_winrate": 0.20754716981132076,
+                "played_events": 47,
+                "play_rate": 0.8867924528301887,
+                "played_winrate": 0.19148936170212766,
+                "princess_hit_rate": 0.10638297872340426
+              },
+              "8": {
+                "name": "Comtesse",
+                "hand_events": 36,
+                "hand_winrate": 0.4444444444444444,
+                "played_events": 0,
+                "play_rate": 0.0,
+                "played_winrate": 0.0,
+                "princess_hit_rate": 0.0
+              },
+              "9": {
+                "name": "Princesse",
+                "hand_events": 53,
+                "hand_winrate": 0.6226415094339622,
+                "played_events": 53,
+                "play_rate": 1.0,
+                "played_winrate": 0.6226415094339622,
+                "princess_hit_rate": 0.018867924528301886
+              }
+            },
+            "phase_rows": {
+              "early": {
+                "hand_events": 223,
+                "hand_winrate": 0.3004484304932735,
+                "played_events": 167,
+                "play_rate": 0.7488789237668162,
+                "played_winrate": 0.3413173652694611
+              },
+              "mid": {
+                "hand_events": 158,
+                "hand_winrate": 0.34177215189873417,
+                "played_events": 112,
+                "play_rate": 0.7088607594936709,
+                "played_winrate": 0.3125
+              },
+              "late": {
+                "hand_events": 130,
+                "hand_winrate": 0.6307692307692307,
+                "played_events": 96,
+                "play_rate": 0.7384615384615385,
+                "played_winrate": 0.6354166666666666
+              }
+            }
+          },
+          "specialist": {
+            "raw_counts": {
+              "prince_hand_checks": 511,
+              "overrides": 125,
+              "other_to_prince": 93,
+              "base_prince_plays": 286,
+              "prince_retarget": 28,
+              "prince_to_other": 4
+            },
+            "override_rate": 0.2446183953033268,
+            "examples": [
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 500,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.1853333450357119,
+                  "p_princess": 0.06666667014360428,
+                  "p_countess": 0.06666667014360428,
+                  "p_high": 0.13333334028720856,
+                  "expected": 3.000000238418579,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 230,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 4.249999999999999,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 200,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.7033333333333333,
+                  "p_princess": 0.25,
+                  "p_countess": 0.0,
+                  "p_high": 0.25,
+                  "expected": 2.75,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 500,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.42666667064030955,
+                  "p_princess": 0.1111111119389534,
+                  "p_countess": 0.1111111119389534,
+                  "p_high": 0.3333333432674408,
+                  "expected": 5.333333492279053,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 0.19833333333333333,
+                  "p_princess": 0.0625,
+                  "p_countess": 0.0625,
+                  "p_high": 0.1875,
+                  "expected": 3.3125,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 500,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": false,
+                  "score": 1.51,
+                  "p_princess": 0.5,
+                  "p_countess": 0.0,
+                  "p_high": 0.5,
+                  "expected": 6.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  0
+                ],
+                "companion": 0,
+                "base_action": 510,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 1.9366666666666665,
+                  "p_princess": 0.5,
+                  "p_countess": 0.5,
+                  "p_high": 1.0,
+                  "expected": 8.5,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": false,
+                  "score": 4.249999999999999,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  2,
+                  5
+                ],
+                "companion": 2,
+                "base_action": 220,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  0,
+                  5
+                ],
+                "companion": 0,
+                "base_action": 90,
+                "chosen": 520,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 0.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 104,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  3,
+                  5
+                ],
+                "companion": 3,
+                "base_action": 320,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 2.96,
+                  "p_princess": 1.0,
+                  "p_countess": 0.0,
+                  "p_high": 1.0,
+                  "expected": 9.0,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 119,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  1
+                ],
+                "companion": 1,
+                "base_action": 127,
+                "chosen": 500,
+                "best_prince": 500,
+                "best_stats": {
+                  "target": 0,
+                  "self_target": true,
+                  "score": 0.74,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  6,
+                  5
+                ],
+                "companion": 6,
+                "base_action": 520,
+                "chosen": 690,
+                "best_prince": 520,
+                "best_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 2,
+                  "self_target": true,
+                  "score": -0.08,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 6.0,
+                  "known": true,
+                  "reliable": true
+                }
+              },
+              {
+                "hand": [
+                  7,
+                  5
+                ],
+                "companion": 7,
+                "base_action": 730,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 1.0155555858214695,
+                  "p_princess": 0.3333333432674408,
+                  "p_countess": 0.0,
+                  "p_high": 0.3333333432674408,
+                  "expected": 5.333333492279053,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  1,
+                  5
+                ],
+                "companion": 1,
+                "base_action": 109,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": true,
+                  "score": 0.82,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 1.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              },
+              {
+                "hand": [
+                  5,
+                  6
+                ],
+                "companion": 6,
+                "base_action": 530,
+                "chosen": 510,
+                "best_prince": 510,
+                "best_stats": {
+                  "target": 1,
+                  "self_target": false,
+                  "score": 0.475,
+                  "p_princess": 0.125,
+                  "p_countess": 0.125,
+                  "p_high": 0.375,
+                  "expected": 5.25,
+                  "known": false,
+                  "reliable": true
+                },
+                "current_stats": {
+                  "target": 3,
+                  "self_target": false,
+                  "score": 0.20888890018065764,
+                  "p_princess": 0.06666667014360428,
+                  "p_countess": 0.06666667014360428,
+                  "p_high": 0.20000001788139343,
+                  "expected": 3.133333444595337,
+                  "known": false,
+                  "reliable": false
+                }
+              },
+              {
+                "hand": [
+                  5,
+                  2
+                ],
+                "companion": 2,
+                "base_action": 210,
+                "chosen": 530,
+                "best_prince": 530,
+                "best_stats": {
+                  "target": 3,
+                  "self_target": true,
+                  "score": 0.62,
+                  "p_princess": 0.0,
+                  "p_countess": 0.0,
+                  "p_high": 0.0,
+                  "expected": 2.0,
+                  "known": true,
+                  "reliable": true
+                },
+                "current_stats": null
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.3932
+    }
+  },
+  "summary": {
+    "baseline": {
+      "composite": 0.3854,
+      "prince_hand": {
+        "games": 1637,
+        "winrate": 0.4746487477092242
+      },
+      "prince_played": {
+        "games": 1257,
+        "winrate": 0.5266507557677009
+      },
+      "prince": {
+        "hand_events": 2566,
+        "played_events": 1402,
+        "play_rate": 0.5463756819953235,
+        "target_self_rate": 0.4037089871611983,
+        "target_opponent_rate": 0.5962910128388017,
+        "princess_hit_rate": 0.08559201141226819,
+        "self_suicide_rate": 0.0042796005706134095,
+        "companion_rows": {
+          "0": {
+            "name": "Espionne",
+            "hand_events": 264,
+            "hand_winrate": 0.5303030303030303,
+            "played_events": 224,
+            "play_rate": 0.8484848484848485,
+            "played_winrate": 0.5446428571428571,
+            "princess_hit_rate": 0.0625
+          },
+          "1": {
+            "name": "Garde",
+            "hand_events": 559,
+            "hand_winrate": 0.4400715563506261,
+            "played_events": 346,
+            "play_rate": 0.6189624329159212,
+            "played_winrate": 0.4595375722543353,
+            "princess_hit_rate": 0.023121387283236993
+          },
+          "2": {
+            "name": "Pretre",
+            "hand_events": 215,
+            "hand_winrate": 0.3953488372093023,
+            "played_events": 16,
+            "play_rate": 0.07441860465116279,
+            "played_winrate": 0.5,
+            "princess_hit_rate": 0.1875
+          },
+          "3": {
+            "name": "Baron",
+            "hand_events": 297,
+            "hand_winrate": 0.4006734006734007,
+            "played_events": 21,
+            "play_rate": 0.0707070707070707,
+            "played_winrate": 0.8571428571428571,
+            "princess_hit_rate": 0.42857142857142855
+          },
+          "4": {
+            "name": "Servante",
+            "hand_events": 217,
+            "hand_winrate": 0.46543778801843316,
+            "played_events": 8,
+            "play_rate": 0.03686635944700461,
+            "played_winrate": 0.75,
+            "princess_hit_rate": 0.875
+          },
+          "5": {
+            "name": "Prince",
+            "hand_events": 64,
+            "hand_winrate": 0.390625,
+            "played_events": 64,
+            "play_rate": 1.0,
+            "played_winrate": 0.390625,
+            "princess_hit_rate": 0.1875
+          },
+          "6": {
+            "name": "Chancelier",
+            "hand_events": 289,
+            "hand_winrate": 0.5224913494809689,
+            "played_events": 289,
+            "play_rate": 1.0,
+            "played_winrate": 0.5224913494809689,
+            "princess_hit_rate": 0.13494809688581316
+          },
+          "7": {
+            "name": "Roi",
+            "hand_events": 206,
+            "hand_winrate": 0.42718446601941745,
+            "played_events": 183,
+            "play_rate": 0.8883495145631068,
+            "played_winrate": 0.4262295081967213,
+            "princess_hit_rate": 0.12021857923497267
+          },
+          "8": {
+            "name": "Comtesse",
+            "hand_events": 204,
+            "hand_winrate": 0.45098039215686275,
+            "played_events": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "princess_hit_rate": 0.0
+          },
+          "9": {
+            "name": "Princesse",
+            "hand_events": 251,
+            "hand_winrate": 0.7131474103585658,
+            "played_events": 251,
+            "play_rate": 1.0,
+            "played_winrate": 0.7131474103585658,
+            "princess_hit_rate": 0.02390438247011952
+          }
+        },
+        "phase_rows": {
+          "early": {
+            "hand_events": 951,
+            "hand_winrate": 0.4185068349106204,
+            "played_events": 516,
+            "play_rate": 0.5425867507886435,
+            "played_winrate": 0.47674418604651164
+          },
+          "mid": {
+            "hand_events": 880,
+            "hand_winrate": 0.4772727272727273,
+            "played_events": 464,
+            "play_rate": 0.5272727272727272,
+            "played_winrate": 0.5086206896551724
+          },
+          "late": {
+            "hand_events": 735,
+            "hand_winrate": 0.5551020408163265,
+            "played_events": 422,
+            "play_rate": 0.5741496598639456,
+            "played_winrate": 0.6255924170616114
+          }
+        }
+      }
+    },
+    "specialist": {
+      "composite": 0.3932,
+      "prince_hand": {
+        "games": 1637,
+        "winrate": 0.49114233353695785
+      },
+      "prince_played": {
+        "games": 1412,
+        "winrate": 0.5148725212464589
+      },
+      "prince": {
+        "hand_events": 2291,
+        "played_events": 1584,
+        "play_rate": 0.6914011348756002,
+        "target_self_rate": 0.5119949494949495,
+        "target_opponent_rate": 0.4880050505050505,
+        "princess_hit_rate": 0.09595959595959595,
+        "self_suicide_rate": 0.0031565656565656565,
+        "companion_rows": {
+          "0": {
+            "name": "Espionne",
+            "hand_events": 231,
+            "hand_winrate": 0.5670995670995671,
+            "played_events": 231,
+            "play_rate": 1.0,
+            "played_winrate": 0.5670995670995671,
+            "princess_hit_rate": 0.09090909090909091
+          },
+          "1": {
+            "name": "Garde",
+            "hand_events": 496,
+            "hand_winrate": 0.4637096774193548,
+            "played_events": 493,
+            "play_rate": 0.9939516129032258,
+            "played_winrate": 0.460446247464503,
+            "princess_hit_rate": 0.038539553752535496
+          },
+          "2": {
+            "name": "Pretre",
+            "hand_events": 194,
+            "hand_winrate": 0.4793814432989691,
+            "played_events": 155,
+            "play_rate": 0.7989690721649485,
+            "played_winrate": 0.4774193548387097,
+            "princess_hit_rate": 0.08387096774193549
+          },
+          "3": {
+            "name": "Baron",
+            "hand_events": 269,
+            "hand_winrate": 0.4052044609665427,
+            "played_events": 30,
+            "play_rate": 0.11152416356877323,
+            "played_winrate": 0.6666666666666666,
+            "princess_hit_rate": 0.43333333333333335
+          },
+          "4": {
+            "name": "Servante",
+            "hand_events": 188,
+            "hand_winrate": 0.5319148936170213,
+            "played_events": 19,
+            "play_rate": 0.10106382978723404,
+            "played_winrate": 0.7368421052631579,
+            "princess_hit_rate": 0.5263157894736842
+          },
+          "5": {
+            "name": "Prince",
+            "hand_events": 49,
+            "hand_winrate": 0.42857142857142855,
+            "played_events": 49,
+            "play_rate": 1.0,
+            "played_winrate": 0.42857142857142855,
+            "princess_hit_rate": 0.16326530612244897
+          },
+          "6": {
+            "name": "Chancelier",
+            "hand_events": 258,
+            "hand_winrate": 0.5426356589147286,
+            "played_events": 228,
+            "play_rate": 0.8837209302325582,
+            "played_winrate": 0.5263157894736842,
+            "princess_hit_rate": 0.18859649122807018
+          },
+          "7": {
+            "name": "Roi",
+            "hand_events": 188,
+            "hand_winrate": 0.3829787234042553,
+            "played_events": 149,
+            "play_rate": 0.7925531914893617,
+            "played_winrate": 0.35570469798657717,
+            "princess_hit_rate": 0.1342281879194631
+          },
+          "8": {
+            "name": "Comtesse",
+            "hand_events": 188,
+            "hand_winrate": 0.4574468085106383,
+            "played_events": 0,
+            "play_rate": 0.0,
+            "played_winrate": 0.0,
+            "princess_hit_rate": 0.0
+          },
+          "9": {
+            "name": "Princesse",
+            "hand_events": 230,
+            "hand_winrate": 0.7217391304347827,
+            "played_events": 230,
+            "play_rate": 1.0,
+            "played_winrate": 0.7217391304347827,
+            "princess_hit_rate": 0.021739130434782608
+          }
+        },
+        "phase_rows": {
+          "early": {
+            "hand_events": 905,
+            "hand_winrate": 0.4375690607734807,
+            "played_events": 651,
+            "play_rate": 0.7193370165745856,
+            "played_winrate": 0.4700460829493088
+          },
+          "mid": {
+            "hand_events": 738,
+            "hand_winrate": 0.481029810298103,
+            "played_events": 507,
+            "play_rate": 0.6869918699186992,
+            "played_winrate": 0.47928994082840237
+          },
+          "late": {
+            "hand_events": 648,
+            "hand_winrate": 0.6126543209876543,
+            "played_events": 426,
+            "play_rate": 0.6574074074074074,
+            "played_winrate": 0.6502347417840375
+          }
+        }
+      }
+    }
+  }
+}

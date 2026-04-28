@@ -1,0 +1,4982 @@
+{
+  "created_at": "2026-04-25 16:07:07 CEST",
+  "checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth",
+  "base_checkpoint": "/Users/assebbi/Library/CloudStorage/OneDrive-UniversalMusicGroup/Love Letter Test/step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth",
+  "games_per_config": 1000,
+  "seed_start": 260000,
+  "taxonomy": {
+    "card_groups": {
+      "information_active": {
+        "label": "Information active",
+        "cards": {
+          "Garde": 1,
+          "Pretre": 2,
+          "Baron": 3,
+          "Chancelier": 6,
+          "Roi": 7
+        }
+      },
+      "hypothesis_pressure": {
+        "label": "Hypothese / ciblage",
+        "cards": {
+          "Garde": 1,
+          "Baron": 3,
+          "Prince": 5,
+          "Roi": 7
+        }
+      },
+      "elimination_pressure": {
+        "label": "Pression elimination",
+        "cards": {
+          "Garde": 1,
+          "Baron": 3,
+          "Prince": 5,
+          "Princesse": 9
+        }
+      },
+      "hand_deck_control": {
+        "label": "Controle main/pioche",
+        "cards": {
+          "Prince": 5,
+          "Chancelier": 6,
+          "Roi": 7,
+          "Comtesse": 8
+        }
+      },
+      "safe_tempo": {
+        "label": "Tempo sur",
+        "cards": {
+          "Espionne": 0,
+          "Servante": 4,
+          "Comtesse": 8
+        }
+      },
+      "passive_value_or_constraint": {
+        "label": "Valeur passive / contrainte",
+        "cards": {
+          "Espionne": 0,
+          "Comtesse": 8,
+          "Princesse": 9
+        }
+      },
+      "high_risk_trap": {
+        "label": "Risque fort",
+        "cards": {
+          "Baron": 3,
+          "Prince": 5,
+          "Roi": 7,
+          "Comtesse": 8,
+          "Princesse": 9
+        }
+      },
+      "public_reveal": {
+        "label": "Revelation publique",
+        "cards": {
+          "Garde": 1,
+          "Baron": 3,
+          "Prince": 5,
+          "Princesse": 9
+        }
+      }
+    },
+    "phases": {
+      "early": "deck_remaining >= 11",
+      "mid": "6 <= deck_remaining <= 10",
+      "late": "deck_remaining <= 5"
+    }
+  },
+  "results": {
+    "overall": {
+      "games": 4000,
+      "wins": 1710,
+      "winrate": 0.4275,
+      "winrate_ci95": 0.015331402333120085,
+      "mean_reward": 0.6446500420570374,
+      "reward_std": 0.7800746560096741,
+      "reward_ci95": 0.02417476521665258,
+      "outcomes": {
+        "winner": {
+          "count": 1710,
+          "rate": 0.4275
+        },
+        "first_out": {
+          "count": 756,
+          "rate": 0.189
+        },
+        "second_out": {
+          "count": 639,
+          "rate": 0.15975
+        },
+        "third_out": {
+          "count": 431,
+          "rate": 0.10775
+        },
+        "final_loser": {
+          "count": 464,
+          "rate": 0.116
+        },
+        "unknown_loss": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "loss_positions": {
+        "first_out": {
+          "count": 756,
+          "rate_among_losses": 0.33013100436681225
+        },
+        "second_out": {
+          "count": 639,
+          "rate_among_losses": 0.2790393013100437
+        },
+        "third_out": {
+          "count": 431,
+          "rate_among_losses": 0.18820960698689956
+        },
+        "final_loser": {
+          "count": 464,
+          "rate_among_losses": 0.20262008733624454
+        },
+        "unknown_loss": {
+          "count": 0,
+          "rate_among_losses": 0.0
+        }
+      }
+    },
+    "by_config": {
+      "vs_0H_3R": {
+        "games": 1000,
+        "wins": 519,
+        "winrate": 0.519,
+        "winrate_ci95": 0.03096793797462143,
+        "mean_reward": 0.7888000011444092,
+        "reward_std": 0.8152757883071899,
+        "reward_ci95": 0.05053131748306043,
+        "outcomes": {
+          "winner": {
+            "count": 519,
+            "rate": 0.519
+          },
+          "first_out": {
+            "count": 146,
+            "rate": 0.146
+          },
+          "second_out": {
+            "count": 123,
+            "rate": 0.123
+          },
+          "third_out": {
+            "count": 95,
+            "rate": 0.095
+          },
+          "final_loser": {
+            "count": 117,
+            "rate": 0.117
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "loss_positions": {
+          "first_out": {
+            "count": 146,
+            "rate_among_losses": 0.30353430353430355
+          },
+          "second_out": {
+            "count": 123,
+            "rate_among_losses": 0.25571725571725573
+          },
+          "third_out": {
+            "count": 95,
+            "rate_among_losses": 0.19750519750519752
+          },
+          "final_loser": {
+            "count": 117,
+            "rate_among_losses": 0.24324324324324326
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate_among_losses": 0.0
+          }
+        },
+        "composite_component_label": "vs 3 randoms",
+        "tactical_raw_counts": {
+          "baron_attempts": 349,
+          "baron_losing_comparisons": 66,
+          "baron_tie_comparisons": 8,
+          "baron_winning_comparisons": 275,
+          "chancellor_bottomed_king_plus": 99,
+          "chancellor_choices": 353,
+          "chancellor_kept_highest": 259,
+          "chancellor_kept_princess": 7,
+          "chancellor_known_draw_win_games": 29,
+          "chancellor_known_draws": 42,
+          "chancellor_plays": 353,
+          "chancellor_used_win_games": 194,
+          "forced_countess_discards": 92,
+          "guard_attempts": 1060,
+          "guard_hits": 310,
+          "guard_misses": 750,
+          "known_guard_attempts": 118,
+          "known_guard_correct_guess": 111,
+          "known_guard_hits": 107,
+          "main_round_wins": 477,
+          "priest_on_unknown": 398,
+          "priest_plays": 410,
+          "priest_to_guard_attempts": 49,
+          "priest_to_guard_hits": 45,
+          "spy_bonus_win_games": 208,
+          "spy_bonus_wins": 208,
+          "spy_played_win_games": 189,
+          "spy_plays": 310,
+          "voluntary_countess_discards": 38,
+          "voluntary_countess_win_games": 30
+        }
+      },
+      "vs_1H_2R": {
+        "games": 1000,
+        "wins": 462,
+        "winrate": 0.462,
+        "winrate_ci95": 0.030900691409740336,
+        "mean_reward": 0.6790000200271606,
+        "reward_std": 0.7696486115455627,
+        "reward_ci95": 0.04770331599455514,
+        "outcomes": {
+          "winner": {
+            "count": 462,
+            "rate": 0.462
+          },
+          "first_out": {
+            "count": 165,
+            "rate": 0.165
+          },
+          "second_out": {
+            "count": 155,
+            "rate": 0.155
+          },
+          "third_out": {
+            "count": 107,
+            "rate": 0.107
+          },
+          "final_loser": {
+            "count": 111,
+            "rate": 0.111
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "loss_positions": {
+          "first_out": {
+            "count": 165,
+            "rate_among_losses": 0.3066914498141264
+          },
+          "second_out": {
+            "count": 155,
+            "rate_among_losses": 0.28810408921933084
+          },
+          "third_out": {
+            "count": 107,
+            "rate_among_losses": 0.19888475836431227
+          },
+          "final_loser": {
+            "count": 111,
+            "rate_among_losses": 0.20631970260223048
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate_among_losses": 0.0
+          }
+        },
+        "composite_component_label": "vs 1H+2R",
+        "tactical_raw_counts": {
+          "baron_attempts": 356,
+          "baron_losing_comparisons": 82,
+          "baron_tie_comparisons": 9,
+          "baron_winning_comparisons": 265,
+          "chancellor_bottomed_king_plus": 100,
+          "chancellor_choices": 320,
+          "chancellor_kept_highest": 227,
+          "chancellor_kept_princess": 2,
+          "chancellor_known_draw_win_games": 29,
+          "chancellor_known_draws": 44,
+          "chancellor_plays": 320,
+          "chancellor_used_win_games": 161,
+          "forced_countess_discards": 62,
+          "guard_attempts": 1088,
+          "guard_hits": 322,
+          "guard_misses": 766,
+          "known_guard_attempts": 134,
+          "known_guard_correct_guess": 126,
+          "known_guard_hits": 123,
+          "main_round_wins": 415,
+          "priest_on_unknown": 372,
+          "priest_plays": 382,
+          "priest_to_guard_attempts": 53,
+          "priest_to_guard_hits": 52,
+          "spy_bonus_win_games": 163,
+          "spy_bonus_wins": 163,
+          "spy_played_win_games": 172,
+          "spy_plays": 309,
+          "voluntary_countess_discards": 35,
+          "voluntary_countess_win_games": 26
+        }
+      },
+      "vs_2H_1R": {
+        "games": 1000,
+        "wins": 384,
+        "winrate": 0.384,
+        "winrate_ci95": 0.03014477451234293,
+        "mean_reward": 0.574400007724762,
+        "reward_std": 0.7618298530578613,
+        "reward_ci95": 0.047218706056830526,
+        "outcomes": {
+          "winner": {
+            "count": 384,
+            "rate": 0.384
+          },
+          "first_out": {
+            "count": 208,
+            "rate": 0.208
+          },
+          "second_out": {
+            "count": 175,
+            "rate": 0.175
+          },
+          "third_out": {
+            "count": 119,
+            "rate": 0.119
+          },
+          "final_loser": {
+            "count": 114,
+            "rate": 0.114
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "loss_positions": {
+          "first_out": {
+            "count": 208,
+            "rate_among_losses": 0.33766233766233766
+          },
+          "second_out": {
+            "count": 175,
+            "rate_among_losses": 0.2840909090909091
+          },
+          "third_out": {
+            "count": 119,
+            "rate_among_losses": 0.19318181818181818
+          },
+          "final_loser": {
+            "count": 114,
+            "rate_among_losses": 0.18506493506493507
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate_among_losses": 0.0
+          }
+        },
+        "composite_component_label": "vs 2H+1R",
+        "tactical_raw_counts": {
+          "baron_attempts": 340,
+          "baron_losing_comparisons": 98,
+          "baron_tie_comparisons": 8,
+          "baron_winning_comparisons": 234,
+          "chancellor_bottomed_king_plus": 82,
+          "chancellor_choices": 290,
+          "chancellor_kept_highest": 214,
+          "chancellor_kept_princess": 3,
+          "chancellor_known_draw_win_games": 24,
+          "chancellor_known_draws": 39,
+          "chancellor_plays": 290,
+          "chancellor_used_win_games": 123,
+          "forced_countess_discards": 73,
+          "guard_attempts": 1060,
+          "guard_hits": 316,
+          "guard_misses": 744,
+          "known_guard_attempts": 124,
+          "known_guard_correct_guess": 106,
+          "known_guard_hits": 98,
+          "main_round_wins": 331,
+          "priest_on_unknown": 387,
+          "priest_plays": 399,
+          "priest_to_guard_attempts": 40,
+          "priest_to_guard_hits": 36,
+          "spy_bonus_win_games": 153,
+          "spy_bonus_wins": 153,
+          "spy_played_win_games": 149,
+          "spy_plays": 291,
+          "voluntary_countess_discards": 41,
+          "voluntary_countess_win_games": 31
+        }
+      },
+      "vs_3H": {
+        "games": 1000,
+        "wins": 345,
+        "winrate": 0.345,
+        "winrate_ci95": 0.029463631140781002,
+        "mean_reward": 0.5363999605178833,
+        "reward_std": 0.7470174431800842,
+        "reward_ci95": 0.046300622551635064,
+        "outcomes": {
+          "winner": {
+            "count": 345,
+            "rate": 0.345
+          },
+          "first_out": {
+            "count": 237,
+            "rate": 0.237
+          },
+          "second_out": {
+            "count": 186,
+            "rate": 0.186
+          },
+          "third_out": {
+            "count": 110,
+            "rate": 0.11
+          },
+          "final_loser": {
+            "count": 122,
+            "rate": 0.122
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "loss_positions": {
+          "first_out": {
+            "count": 237,
+            "rate_among_losses": 0.3618320610687023
+          },
+          "second_out": {
+            "count": 186,
+            "rate_among_losses": 0.28396946564885495
+          },
+          "third_out": {
+            "count": 110,
+            "rate_among_losses": 0.16793893129770993
+          },
+          "final_loser": {
+            "count": 122,
+            "rate_among_losses": 0.18625954198473282
+          },
+          "unknown_loss": {
+            "count": 0,
+            "rate_among_losses": 0.0
+          }
+        },
+        "composite_component_label": "vs 3H",
+        "tactical_raw_counts": {
+          "baron_attempts": 290,
+          "baron_losing_comparisons": 76,
+          "baron_tie_comparisons": 6,
+          "baron_winning_comparisons": 208,
+          "chancellor_bottomed_king_plus": 96,
+          "chancellor_choices": 287,
+          "chancellor_kept_highest": 197,
+          "chancellor_kept_princess": 4,
+          "chancellor_known_draw_win_games": 24,
+          "chancellor_known_draws": 38,
+          "chancellor_plays": 287,
+          "chancellor_used_win_games": 106,
+          "forced_countess_discards": 68,
+          "guard_attempts": 1097,
+          "guard_hits": 365,
+          "guard_misses": 732,
+          "known_guard_attempts": 140,
+          "known_guard_correct_guess": 130,
+          "known_guard_hits": 121,
+          "main_round_wins": 301,
+          "priest_on_unknown": 374,
+          "priest_plays": 381,
+          "priest_to_guard_attempts": 61,
+          "priest_to_guard_hits": 54,
+          "spy_bonus_win_games": 136,
+          "spy_bonus_wins": 136,
+          "spy_played_win_games": 131,
+          "spy_plays": 282,
+          "voluntary_countess_discards": 44,
+          "voluntary_countess_win_games": 28
+        }
+      }
+    },
+    "composite": 0.39749999999999996,
+    "clusters": {
+      "early_high_card": {
+        "label": "Grosse carte tot",
+        "summary": {
+          "games": 1194,
+          "wins": 594,
+          "winrate": 0.49748743718592964,
+          "winrate_ci95": 0.028360796839879854,
+          "mean_reward": 0.7601339817047119,
+          "reward_std": 0.7765094041824341,
+          "reward_ci95": 0.0440454081348641,
+          "outcomes": {
+            "winner": {
+              "count": 594,
+              "rate": 0.49748743718592964
+            },
+            "first_out": {
+              "count": 126,
+              "rate": 0.10552763819095477
+            },
+            "second_out": {
+              "count": 182,
+              "rate": 0.152428810720268
+            },
+            "third_out": {
+              "count": 152,
+              "rate": 0.1273031825795645
+            },
+            "final_loser": {
+              "count": 140,
+              "rate": 0.11725293132328309
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 126,
+              "rate_among_losses": 0.21
+            },
+            "second_out": {
+              "count": 182,
+              "rate_among_losses": 0.30333333333333334
+            },
+            "third_out": {
+              "count": 152,
+              "rate_among_losses": 0.25333333333333335
+            },
+            "final_loser": {
+              "count": 140,
+              "rate_among_losses": 0.23333333333333334
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "early_princess": {
+        "label": "Princesse tot",
+        "summary": {
+          "games": 445,
+          "wins": 217,
+          "winrate": 0.48764044943820223,
+          "winrate_ci95": 0.04644225998295792,
+          "mean_reward": 0.7640449404716492,
+          "reward_std": 0.7733550071716309,
+          "reward_ci95": 0.07185466410094657,
+          "outcomes": {
+            "winner": {
+              "count": 217,
+              "rate": 0.48764044943820223
+            },
+            "first_out": {
+              "count": 48,
+              "rate": 0.10786516853932585
+            },
+            "second_out": {
+              "count": 72,
+              "rate": 0.16179775280898875
+            },
+            "third_out": {
+              "count": 62,
+              "rate": 0.1393258426966292
+            },
+            "final_loser": {
+              "count": 46,
+              "rate": 0.10337078651685393
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 48,
+              "rate_among_losses": 0.21052631578947367
+            },
+            "second_out": {
+              "count": 72,
+              "rate_among_losses": 0.3157894736842105
+            },
+            "third_out": {
+              "count": 62,
+              "rate_among_losses": 0.2719298245614035
+            },
+            "final_loser": {
+              "count": 46,
+              "rate_among_losses": 0.20175438596491227
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "early_countess": {
+        "label": "Comtesse tot",
+        "summary": {
+          "games": 405,
+          "wins": 225,
+          "winrate": 0.5555555555555556,
+          "winrate_ci95": 0.048395061728395056,
+          "mean_reward": 0.8464197516441345,
+          "reward_std": 0.7840498089790344,
+          "reward_ci95": 0.07636110926752028,
+          "outcomes": {
+            "winner": {
+              "count": 225,
+              "rate": 0.5555555555555556
+            },
+            "first_out": {
+              "count": 32,
+              "rate": 0.07901234567901234
+            },
+            "second_out": {
+              "count": 41,
+              "rate": 0.10123456790123457
+            },
+            "third_out": {
+              "count": 51,
+              "rate": 0.1259259259259259
+            },
+            "final_loser": {
+              "count": 56,
+              "rate": 0.1382716049382716
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 32,
+              "rate_among_losses": 0.17777777777777778
+            },
+            "second_out": {
+              "count": 41,
+              "rate_among_losses": 0.22777777777777777
+            },
+            "third_out": {
+              "count": 51,
+              "rate_among_losses": 0.2833333333333333
+            },
+            "final_loser": {
+              "count": 56,
+              "rate_among_losses": 0.3111111111111111
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "guard_heavy": {
+        "label": "Beaucoup de Gardes",
+        "summary": {
+          "games": 1546,
+          "wins": 936,
+          "winrate": 0.6054333764553687,
+          "winrate_ci95": 0.024363780538646414,
+          "mean_reward": 0.9192755818367004,
+          "reward_std": 0.7739641070365906,
+          "reward_ci95": 0.03858088236554135,
+          "outcomes": {
+            "winner": {
+              "count": 936,
+              "rate": 0.6054333764553687
+            },
+            "first_out": {
+              "count": 48,
+              "rate": 0.031047865459249677
+            },
+            "second_out": {
+              "count": 118,
+              "rate": 0.07632600258732213
+            },
+            "third_out": {
+              "count": 192,
+              "rate": 0.12419146183699871
+            },
+            "final_loser": {
+              "count": 252,
+              "rate": 0.1630012936610608
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 48,
+              "rate_among_losses": 0.07868852459016394
+            },
+            "second_out": {
+              "count": 118,
+              "rate_among_losses": 0.19344262295081968
+            },
+            "third_out": {
+              "count": 192,
+              "rate_among_losses": 0.31475409836065577
+            },
+            "final_loser": {
+              "count": 252,
+              "rate_among_losses": 0.4131147540983607
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "baron_pressure": {
+        "label": "Pression Baron",
+        "summary": {
+          "games": 1297,
+          "wins": 682,
+          "winrate": 0.525828835774865,
+          "winrate_ci95": 0.02717539419165889,
+          "mean_reward": 0.839938223361969,
+          "reward_std": 0.8444710373878479,
+          "reward_ci95": 0.045959030314893845,
+          "outcomes": {
+            "winner": {
+              "count": 682,
+              "rate": 0.525828835774865
+            },
+            "first_out": {
+              "count": 107,
+              "rate": 0.08249807247494217
+            },
+            "second_out": {
+              "count": 205,
+              "rate": 0.15805705474171164
+            },
+            "third_out": {
+              "count": 174,
+              "rate": 0.1341557440246723
+            },
+            "final_loser": {
+              "count": 129,
+              "rate": 0.09946029298380879
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 107,
+              "rate_among_losses": 0.17398373983739837
+            },
+            "second_out": {
+              "count": 205,
+              "rate_among_losses": 0.3333333333333333
+            },
+            "third_out": {
+              "count": 174,
+              "rate_among_losses": 0.28292682926829266
+            },
+            "final_loser": {
+              "count": 129,
+              "rate_among_losses": 0.2097560975609756
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "low_baron_risk": {
+        "label": "Baron avec petite carte",
+        "summary": {
+          "games": 1010,
+          "wins": 476,
+          "winrate": 0.47128712871287126,
+          "winrate_ci95": 0.030785634968853323,
+          "mean_reward": 0.7255445718765259,
+          "reward_std": 0.8285505771636963,
+          "reward_ci95": 0.051099237853499624,
+          "outcomes": {
+            "winner": {
+              "count": 476,
+              "rate": 0.47128712871287126
+            },
+            "first_out": {
+              "count": 144,
+              "rate": 0.14257425742574256
+            },
+            "second_out": {
+              "count": 150,
+              "rate": 0.1485148514851485
+            },
+            "third_out": {
+              "count": 107,
+              "rate": 0.10594059405940594
+            },
+            "final_loser": {
+              "count": 133,
+              "rate": 0.1316831683168317
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 144,
+              "rate_among_losses": 0.2696629213483146
+            },
+            "second_out": {
+              "count": 150,
+              "rate_among_losses": 0.2808988764044944
+            },
+            "third_out": {
+              "count": 107,
+              "rate_among_losses": 0.20037453183520598
+            },
+            "final_loser": {
+              "count": 133,
+              "rate_among_losses": 0.24906367041198502
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "priest_to_guard_line": {
+        "label": "Pretre puis Garde",
+        "summary": {
+          "games": 504,
+          "wins": 335,
+          "winrate": 0.6646825396825397,
+          "winrate_ci95": 0.04121696623841317,
+          "mean_reward": 1.0309523344039917,
+          "reward_std": 0.7650048732757568,
+          "reward_ci95": 0.06678901002930712,
+          "outcomes": {
+            "winner": {
+              "count": 335,
+              "rate": 0.6646825396825397
+            },
+            "first_out": {
+              "count": 10,
+              "rate": 0.01984126984126984
+            },
+            "second_out": {
+              "count": 35,
+              "rate": 0.06944444444444445
+            },
+            "third_out": {
+              "count": 57,
+              "rate": 0.1130952380952381
+            },
+            "final_loser": {
+              "count": 67,
+              "rate": 0.13293650793650794
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 10,
+              "rate_among_losses": 0.05917159763313609
+            },
+            "second_out": {
+              "count": 35,
+              "rate_among_losses": 0.20710059171597633
+            },
+            "third_out": {
+              "count": 57,
+              "rate_among_losses": 0.33727810650887574
+            },
+            "final_loser": {
+              "count": 67,
+              "rate_among_losses": 0.39644970414201186
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "chancellor_game": {
+        "label": "Partie avec Chancelier",
+        "summary": {
+          "games": 1142,
+          "wins": 584,
+          "winrate": 0.51138353765324,
+          "winrate_ci95": 0.028992151038416333,
+          "mean_reward": 0.7346760034561157,
+          "reward_std": 0.7479375600814819,
+          "reward_ci95": 0.04337988233896641,
+          "outcomes": {
+            "winner": {
+              "count": 584,
+              "rate": 0.51138353765324
+            },
+            "first_out": {
+              "count": 98,
+              "rate": 0.08581436077057793
+            },
+            "second_out": {
+              "count": 132,
+              "rate": 0.11558669001751314
+            },
+            "third_out": {
+              "count": 127,
+              "rate": 0.11120840630472854
+            },
+            "final_loser": {
+              "count": 201,
+              "rate": 0.17600700525394045
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 98,
+              "rate_among_losses": 0.17562724014336917
+            },
+            "second_out": {
+              "count": 132,
+              "rate_among_losses": 0.23655913978494625
+            },
+            "third_out": {
+              "count": 127,
+              "rate_among_losses": 0.22759856630824374
+            },
+            "final_loser": {
+              "count": 201,
+              "rate_among_losses": 0.3602150537634409
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "spy_game": {
+        "label": "Partie avec Espionne",
+        "summary": {
+          "games": 1103,
+          "wins": 641,
+          "winrate": 0.5811423390752494,
+          "winrate_ci95": 0.029116743809442614,
+          "mean_reward": 1.0469627380371094,
+          "reward_std": 0.9612281918525696,
+          "reward_ci95": 0.0567276552455915,
+          "outcomes": {
+            "winner": {
+              "count": 641,
+              "rate": 0.5811423390752494
+            },
+            "first_out": {
+              "count": 111,
+              "rate": 0.10063463281958296
+            },
+            "second_out": {
+              "count": 132,
+              "rate": 0.11967361740707162
+            },
+            "third_out": {
+              "count": 125,
+              "rate": 0.11332728921124206
+            },
+            "final_loser": {
+              "count": 94,
+              "rate": 0.08522212148685404
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 111,
+              "rate_among_losses": 0.24025974025974026
+            },
+            "second_out": {
+              "count": 132,
+              "rate_among_losses": 0.2857142857142857
+            },
+            "third_out": {
+              "count": 125,
+              "rate_among_losses": 0.27056277056277056
+            },
+            "final_loser": {
+              "count": 94,
+              "rate_among_losses": 0.20346320346320346
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "king_game": {
+        "label": "Partie avec Roi",
+        "summary": {
+          "games": 464,
+          "wins": 207,
+          "winrate": 0.44612068965517243,
+          "winrate_ci95": 0.0452304423278498,
+          "mean_reward": 0.6646550893783569,
+          "reward_std": 0.7229912281036377,
+          "reward_ci95": 0.06578549261534745,
+          "outcomes": {
+            "winner": {
+              "count": 207,
+              "rate": 0.44612068965517243
+            },
+            "first_out": {
+              "count": 27,
+              "rate": 0.05818965517241379
+            },
+            "second_out": {
+              "count": 74,
+              "rate": 0.15948275862068967
+            },
+            "third_out": {
+              "count": 76,
+              "rate": 0.16379310344827586
+            },
+            "final_loser": {
+              "count": 80,
+              "rate": 0.1724137931034483
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 27,
+              "rate_among_losses": 0.10505836575875487
+            },
+            "second_out": {
+              "count": 74,
+              "rate_among_losses": 0.28793774319066145
+            },
+            "third_out": {
+              "count": 76,
+              "rate_among_losses": 0.29571984435797666
+            },
+            "final_loser": {
+              "count": 80,
+              "rate_among_losses": 0.311284046692607
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "prince_game": {
+        "label": "Partie avec Prince",
+        "summary": {
+          "games": 1249,
+          "wins": 660,
+          "winrate": 0.5284227381905524,
+          "winrate_ci95": 0.0276848407036619,
+          "mean_reward": 0.7758206725120544,
+          "reward_std": 0.7704457640647888,
+          "reward_ci95": 0.04272843121799559,
+          "outcomes": {
+            "winner": {
+              "count": 660,
+              "rate": 0.5284227381905524
+            },
+            "first_out": {
+              "count": 73,
+              "rate": 0.05844675740592474
+            },
+            "second_out": {
+              "count": 162,
+              "rate": 0.1297037630104083
+            },
+            "third_out": {
+              "count": 138,
+              "rate": 0.11048839071257005
+            },
+            "final_loser": {
+              "count": 216,
+              "rate": 0.17293835068054444
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 73,
+              "rate_among_losses": 0.12393887945670629
+            },
+            "second_out": {
+              "count": 162,
+              "rate_among_losses": 0.27504244482173174
+            },
+            "third_out": {
+              "count": 138,
+              "rate_among_losses": 0.23429541595925296
+            },
+            "final_loser": {
+              "count": 216,
+              "rate_among_losses": 0.366723259762309
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "handmaid_game": {
+        "label": "Partie avec Servante",
+        "summary": {
+          "games": 1482,
+          "wins": 833,
+          "winrate": 0.5620782726045884,
+          "winrate_ci95": 0.02525972481788777,
+          "mean_reward": 0.7977057695388794,
+          "reward_std": 0.7601193785667419,
+          "reward_ci95": 0.038700252614937175,
+          "outcomes": {
+            "winner": {
+              "count": 833,
+              "rate": 0.5620782726045884
+            },
+            "first_out": {
+              "count": 73,
+              "rate": 0.049257759784075573
+            },
+            "second_out": {
+              "count": 154,
+              "rate": 0.1039136302294197
+            },
+            "third_out": {
+              "count": 175,
+              "rate": 0.11808367071524967
+            },
+            "final_loser": {
+              "count": 247,
+              "rate": 0.16666666666666666
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 73,
+              "rate_among_losses": 0.11248073959938366
+            },
+            "second_out": {
+              "count": 154,
+              "rate_among_losses": 0.23728813559322035
+            },
+            "third_out": {
+              "count": 175,
+              "rate_among_losses": 0.2696456086286595
+            },
+            "final_loser": {
+              "count": 247,
+              "rate_among_losses": 0.38058551617873654
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "info_dense": {
+        "label": "Main riche en information",
+        "summary": {
+          "games": 2562,
+          "wins": 1429,
+          "winrate": 0.557767369242779,
+          "winrate_ci95": 0.019231734401484426,
+          "mean_reward": 0.8442623019218445,
+          "reward_std": 0.7928596138954163,
+          "reward_ci95": 0.030701728248350095,
+          "outcomes": {
+            "winner": {
+              "count": 1429,
+              "rate": 0.557767369242779
+            },
+            "first_out": {
+              "count": 107,
+              "rate": 0.04176424668227947
+            },
+            "second_out": {
+              "count": 285,
+              "rate": 0.11124121779859485
+            },
+            "third_out": {
+              "count": 304,
+              "rate": 0.11865729898516784
+            },
+            "final_loser": {
+              "count": 437,
+              "rate": 0.17056986729117876
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 107,
+              "rate_among_losses": 0.09443954104148279
+            },
+            "second_out": {
+              "count": 285,
+              "rate_among_losses": 0.25154457193292146
+            },
+            "third_out": {
+              "count": 304,
+              "rate_among_losses": 0.26831421006178285
+            },
+            "final_loser": {
+              "count": 437,
+              "rate_among_losses": 0.3857016769638129
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "control_dense": {
+        "label": "Main riche en controle",
+        "summary": {
+          "games": 1595,
+          "wins": 907,
+          "winrate": 0.5686520376175549,
+          "winrate_ci95": 0.024305966943176494,
+          "mean_reward": 0.8416300415992737,
+          "reward_std": 0.7708302140235901,
+          "reward_ci95": 0.03782983794640707,
+          "outcomes": {
+            "winner": {
+              "count": 907,
+              "rate": 0.5686520376175549
+            },
+            "first_out": {
+              "count": 55,
+              "rate": 0.034482758620689655
+            },
+            "second_out": {
+              "count": 162,
+              "rate": 0.10156739811912226
+            },
+            "third_out": {
+              "count": 196,
+              "rate": 0.12288401253918495
+            },
+            "final_loser": {
+              "count": 275,
+              "rate": 0.1724137931034483
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 55,
+              "rate_among_losses": 0.07994186046511628
+            },
+            "second_out": {
+              "count": 162,
+              "rate_among_losses": 0.23546511627906977
+            },
+            "third_out": {
+              "count": 196,
+              "rate_among_losses": 0.28488372093023256
+            },
+            "final_loser": {
+              "count": 275,
+              "rate_among_losses": 0.3997093023255814
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "late_control": {
+        "label": "Controle en fin de manche",
+        "summary": {
+          "games": 1717,
+          "wins": 985,
+          "winrate": 0.5736750145602796,
+          "winrate_ci95": 0.02339237321947606,
+          "mean_reward": 0.8448456525802612,
+          "reward_std": 0.7760040163993835,
+          "reward_ci95": 0.03670581894071639,
+          "outcomes": {
+            "winner": {
+              "count": 985,
+              "rate": 0.5736750145602796
+            },
+            "first_out": {
+              "count": 42,
+              "rate": 0.0244612696563774
+            },
+            "second_out": {
+              "count": 151,
+              "rate": 0.08794408852649971
+            },
+            "third_out": {
+              "count": 198,
+              "rate": 0.11531741409435062
+            },
+            "final_loser": {
+              "count": 341,
+              "rate": 0.1986022131624927
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 42,
+              "rate_among_losses": 0.05737704918032787
+            },
+            "second_out": {
+              "count": 151,
+              "rate_among_losses": 0.2062841530054645
+            },
+            "third_out": {
+              "count": 198,
+              "rate_among_losses": 0.27049180327868855
+            },
+            "final_loser": {
+              "count": 341,
+              "rate_among_losses": 0.46584699453551914
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "voluntary_countess": {
+        "label": "Comtesse volontaire",
+        "summary": {
+          "games": 158,
+          "wins": 115,
+          "winrate": 0.7278481012658228,
+          "winrate_ci95": 0.06939906013602756,
+          "mean_reward": 1.0164556503295898,
+          "reward_std": 0.6663579940795898,
+          "reward_ci95": 0.10390469345713454,
+          "outcomes": {
+            "winner": {
+              "count": 115,
+              "rate": 0.7278481012658228
+            },
+            "first_out": {
+              "count": 4,
+              "rate": 0.02531645569620253
+            },
+            "second_out": {
+              "count": 10,
+              "rate": 0.06329113924050633
+            },
+            "third_out": {
+              "count": 18,
+              "rate": 0.11392405063291139
+            },
+            "final_loser": {
+              "count": 11,
+              "rate": 0.06962025316455696
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 4,
+              "rate_among_losses": 0.09302325581395349
+            },
+            "second_out": {
+              "count": 10,
+              "rate_among_losses": 0.23255813953488372
+            },
+            "third_out": {
+              "count": 18,
+              "rate_among_losses": 0.4186046511627907
+            },
+            "final_loser": {
+              "count": 11,
+              "rate_among_losses": 0.2558139534883721
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      },
+      "trap_dense": {
+        "label": "Beaucoup de cartes pieges",
+        "summary": {
+          "games": 2036,
+          "wins": 1239,
+          "winrate": 0.6085461689587426,
+          "winrate_ci95": 0.0212008964450665,
+          "mean_reward": 0.9310412406921387,
+          "reward_std": 0.7943558096885681,
+          "reward_ci95": 0.034505019724674874,
+          "outcomes": {
+            "winner": {
+              "count": 1239,
+              "rate": 0.6085461689587426
+            },
+            "first_out": {
+              "count": 55,
+              "rate": 0.027013752455795677
+            },
+            "second_out": {
+              "count": 195,
+              "rate": 0.09577603143418467
+            },
+            "third_out": {
+              "count": 247,
+              "rate": 0.12131630648330059
+            },
+            "final_loser": {
+              "count": 300,
+              "rate": 0.14734774066797643
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "loss_positions": {
+            "first_out": {
+              "count": 55,
+              "rate_among_losses": 0.06900878293601004
+            },
+            "second_out": {
+              "count": 195,
+              "rate_among_losses": 0.24466750313676286
+            },
+            "third_out": {
+              "count": 247,
+              "rate_among_losses": 0.3099121706398996
+            },
+            "final_loser": {
+              "count": 300,
+              "rate_among_losses": 0.37641154328732745
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate_among_losses": 0.0
+            }
+          }
+        }
+      }
+    },
+    "group_phase": {
+      "information_active": {
+        "label": "Information active",
+        "cards": "Garde, Pretre, Baron, Chancelier, Roi",
+        "phases": {
+          "early": {
+            "games_with_group": 3362,
+            "game_rate": 0.8405,
+            "decision_exposures": 4289,
+            "summary": {
+              "games": 3362,
+              "wins": 1503,
+              "winrate": 0.4470553242117787,
+              "winrate_ci95": 0.016806554682829274,
+              "mean_reward": 0.6690660715103149,
+              "reward_std": 0.7755336165428162,
+              "reward_ci95": 0.026215481633900344,
+              "outcomes": {
+                "winner": {
+                  "count": 1503,
+                  "rate": 0.4470553242117787
+                },
+                "first_out": {
+                  "count": 517,
+                  "rate": 0.15377751338488996
+                },
+                "second_out": {
+                  "count": 545,
+                  "rate": 0.16210588935157644
+                },
+                "third_out": {
+                  "count": 384,
+                  "rate": 0.11421772754312909
+                },
+                "final_loser": {
+                  "count": 413,
+                  "rate": 0.12284354550862582
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 517,
+                  "rate_among_losses": 0.2781065088757396
+                },
+                "second_out": {
+                  "count": 545,
+                  "rate_among_losses": 0.29316837009144703
+                },
+                "third_out": {
+                  "count": 384,
+                  "rate_among_losses": 0.20656266810112964
+                },
+                "final_loser": {
+                  "count": 413,
+                  "rate_among_losses": 0.2221624529316837
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2943,
+            "game_rate": 0.73575,
+            "decision_exposures": 4279,
+            "summary": {
+              "games": 2943,
+              "wins": 1493,
+              "winrate": 0.507305470608223,
+              "winrate_ci95": 0.018062779618309165,
+              "mean_reward": 0.7648657560348511,
+              "reward_std": 0.7895871996879578,
+              "reward_ci95": 0.02852732541698479,
+              "outcomes": {
+                "winner": {
+                  "count": 1493,
+                  "rate": 0.507305470608223
+                },
+                "first_out": {
+                  "count": 238,
+                  "rate": 0.08086986068637445
+                },
+                "second_out": {
+                  "count": 422,
+                  "rate": 0.14339109751953788
+                },
+                "third_out": {
+                  "count": 368,
+                  "rate": 0.12504247366632687
+                },
+                "final_loser": {
+                  "count": 422,
+                  "rate": 0.14339109751953788
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 238,
+                  "rate_among_losses": 0.16413793103448276
+                },
+                "second_out": {
+                  "count": 422,
+                  "rate_among_losses": 0.2910344827586207
+                },
+                "third_out": {
+                  "count": 368,
+                  "rate_among_losses": 0.2537931034482759
+                },
+                "final_loser": {
+                  "count": 422,
+                  "rate_among_losses": 0.2910344827586207
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 2289,
+            "game_rate": 0.57225,
+            "decision_exposures": 4211,
+            "summary": {
+              "games": 2289,
+              "wins": 1330,
+              "winrate": 0.581039755351682,
+              "winrate_ci95": 0.020212615119451403,
+              "mean_reward": 0.8812582492828369,
+              "reward_std": 0.7951595783233643,
+              "reward_ci95": 0.03257522912144101,
+              "outcomes": {
+                "winner": {
+                  "count": 1330,
+                  "rate": 0.581039755351682
+                },
+                "first_out": {
+                  "count": 65,
+                  "rate": 0.02839667977282656
+                },
+                "second_out": {
+                  "count": 195,
+                  "rate": 0.08519003931847968
+                },
+                "third_out": {
+                  "count": 251,
+                  "rate": 0.10965487112276102
+                },
+                "final_loser": {
+                  "count": 448,
+                  "rate": 0.19571865443425077
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 65,
+                  "rate_among_losses": 0.06777893639207508
+                },
+                "second_out": {
+                  "count": 195,
+                  "rate_among_losses": 0.20333680917622524
+                },
+                "third_out": {
+                  "count": 251,
+                  "rate_among_losses": 0.26173096976016685
+                },
+                "final_loser": {
+                  "count": 448,
+                  "rate_among_losses": 0.46715328467153283
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "hypothesis_pressure": {
+        "label": "Hypothese / ciblage",
+        "cards": "Garde, Baron, Prince, Roi",
+        "phases": {
+          "early": {
+            "games_with_group": 3197,
+            "game_rate": 0.79925,
+            "decision_exposures": 3961,
+            "summary": {
+              "games": 3197,
+              "wins": 1428,
+              "winrate": 0.44666875195495775,
+              "winrate_ci95": 0.017233367012782958,
+              "mean_reward": 0.6697528958320618,
+              "reward_std": 0.7793401479721069,
+              "reward_ci95": 0.027015425257777906,
+              "outcomes": {
+                "winner": {
+                  "count": 1428,
+                  "rate": 0.44666875195495775
+                },
+                "first_out": {
+                  "count": 486,
+                  "rate": 0.1520175164216453
+                },
+                "second_out": {
+                  "count": 537,
+                  "rate": 0.16796997184860807
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate": 0.11135439474507351
+                },
+                "final_loser": {
+                  "count": 390,
+                  "rate": 0.12198936502971536
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 486,
+                  "rate_among_losses": 0.27473148671565856
+                },
+                "second_out": {
+                  "count": 537,
+                  "rate_among_losses": 0.3035613340870548
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate_among_losses": 0.20124364047484455
+                },
+                "final_loser": {
+                  "count": 390,
+                  "rate_among_losses": 0.22046353872244207
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2867,
+            "game_rate": 0.71675,
+            "decision_exposures": 3955,
+            "summary": {
+              "games": 2867,
+              "wins": 1448,
+              "winrate": 0.5050575514475061,
+              "winrate_ci95": 0.018301640093961593,
+              "mean_reward": 0.7618416547775269,
+              "reward_std": 0.7877563238143921,
+              "reward_ci95": 0.028835941013394515,
+              "outcomes": {
+                "winner": {
+                  "count": 1448,
+                  "rate": 0.5050575514475061
+                },
+                "first_out": {
+                  "count": 223,
+                  "rate": 0.07778165329612836
+                },
+                "second_out": {
+                  "count": 429,
+                  "rate": 0.14963376351587024
+                },
+                "third_out": {
+                  "count": 372,
+                  "rate": 0.129752354377398
+                },
+                "final_loser": {
+                  "count": 395,
+                  "rate": 0.13777467736309731
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 223,
+                  "rate_among_losses": 0.15715292459478505
+                },
+                "second_out": {
+                  "count": 429,
+                  "rate_among_losses": 0.3023255813953488
+                },
+                "third_out": {
+                  "count": 372,
+                  "rate_among_losses": 0.26215644820295986
+                },
+                "final_loser": {
+                  "count": 395,
+                  "rate_among_losses": 0.2783650458069063
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 2257,
+            "game_rate": 0.56425,
+            "decision_exposures": 3810,
+            "summary": {
+              "games": 2257,
+              "wins": 1314,
+              "winrate": 0.5821887461231724,
+              "winrate_ci95": 0.020347556436274724,
+              "mean_reward": 0.8832077980041504,
+              "reward_std": 0.7959616780281067,
+              "reward_ci95": 0.03283843599438563,
+              "outcomes": {
+                "winner": {
+                  "count": 1314,
+                  "rate": 0.5821887461231724
+                },
+                "first_out": {
+                  "count": 67,
+                  "rate": 0.02968542312804608
+                },
+                "second_out": {
+                  "count": 193,
+                  "rate": 0.08551174124944617
+                },
+                "third_out": {
+                  "count": 252,
+                  "rate": 0.11165263624280018
+                },
+                "final_loser": {
+                  "count": 431,
+                  "rate": 0.1909614532565352
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 67,
+                  "rate_among_losses": 0.07104984093319194
+                },
+                "second_out": {
+                  "count": 193,
+                  "rate_among_losses": 0.2046659597030753
+                },
+                "third_out": {
+                  "count": 252,
+                  "rate_among_losses": 0.2672322375397667
+                },
+                "final_loser": {
+                  "count": 431,
+                  "rate_among_losses": 0.45705196182396607
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "elimination_pressure": {
+        "label": "Pression elimination",
+        "cards": "Garde, Baron, Prince, Princesse",
+        "phases": {
+          "early": {
+            "games_with_group": 3185,
+            "game_rate": 0.79625,
+            "decision_exposures": 3959,
+            "summary": {
+              "games": 3185,
+              "wins": 1434,
+              "winrate": 0.4502354788069074,
+              "winrate_ci95": 0.017278640351844416,
+              "mean_reward": 0.6793093085289001,
+              "reward_std": 0.7848499417304993,
+              "reward_ci95": 0.027257623053433558,
+              "outcomes": {
+                "winner": {
+                  "count": 1434,
+                  "rate": 0.4502354788069074
+                },
+                "first_out": {
+                  "count": 488,
+                  "rate": 0.1532182103610675
+                },
+                "second_out": {
+                  "count": 525,
+                  "rate": 0.16483516483516483
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate": 0.11177394034536892
+                },
+                "final_loser": {
+                  "count": 382,
+                  "rate": 0.11993720565149137
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 488,
+                  "rate_among_losses": 0.278697886921759
+                },
+                "second_out": {
+                  "count": 525,
+                  "rate_among_losses": 0.2998286693318104
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate_among_losses": 0.2033123929183324
+                },
+                "final_loser": {
+                  "count": 382,
+                  "rate_among_losses": 0.21816105082809822
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2845,
+            "game_rate": 0.71125,
+            "decision_exposures": 3932,
+            "summary": {
+              "games": 2845,
+              "wins": 1467,
+              "winrate": 0.5156414762741652,
+              "winrate_ci95": 0.018364213406625484,
+              "mean_reward": 0.7798944711685181,
+              "reward_std": 0.7907305955886841,
+              "reward_ci95": 0.029056512334018108,
+              "outcomes": {
+                "winner": {
+                  "count": 1467,
+                  "rate": 0.5156414762741652
+                },
+                "first_out": {
+                  "count": 223,
+                  "rate": 0.07838312829525483
+                },
+                "second_out": {
+                  "count": 409,
+                  "rate": 0.1437609841827768
+                },
+                "third_out": {
+                  "count": 365,
+                  "rate": 0.1282952548330404
+                },
+                "final_loser": {
+                  "count": 381,
+                  "rate": 0.13391915641476274
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 223,
+                  "rate_among_losses": 0.16182873730043543
+                },
+                "second_out": {
+                  "count": 409,
+                  "rate_among_losses": 0.29680696661828737
+                },
+                "third_out": {
+                  "count": 365,
+                  "rate_among_losses": 0.2648766328011611
+                },
+                "final_loser": {
+                  "count": 381,
+                  "rate_among_losses": 0.2764876632801161
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 2310,
+            "game_rate": 0.5775,
+            "decision_exposures": 4030,
+            "summary": {
+              "games": 2310,
+              "wins": 1365,
+              "winrate": 0.5909090909090909,
+              "winrate_ci95": 0.02005027490251483,
+              "mean_reward": 0.8984414935112,
+              "reward_std": 0.7969569563865662,
+              "reward_ci95": 0.0325001196469458,
+              "outcomes": {
+                "winner": {
+                  "count": 1365,
+                  "rate": 0.5909090909090909
+                },
+                "first_out": {
+                  "count": 71,
+                  "rate": 0.030735930735930735
+                },
+                "second_out": {
+                  "count": 196,
+                  "rate": 0.08484848484848485
+                },
+                "third_out": {
+                  "count": 254,
+                  "rate": 0.10995670995670996
+                },
+                "final_loser": {
+                  "count": 424,
+                  "rate": 0.18354978354978355
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 71,
+                  "rate_among_losses": 0.07513227513227513
+                },
+                "second_out": {
+                  "count": 196,
+                  "rate_among_losses": 0.2074074074074074
+                },
+                "third_out": {
+                  "count": 254,
+                  "rate_among_losses": 0.2687830687830688
+                },
+                "final_loser": {
+                  "count": 424,
+                  "rate_among_losses": 0.4486772486772487
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "hand_deck_control": {
+        "label": "Controle main/pioche",
+        "cards": "Prince, Chancelier, Roi, Comtesse",
+        "phases": {
+          "early": {
+            "games_with_group": 2056,
+            "game_rate": 0.514,
+            "decision_exposures": 2612,
+            "summary": {
+              "games": 2056,
+              "wins": 924,
+              "winrate": 0.4494163424124514,
+              "winrate_ci95": 0.021502086513500055,
+              "mean_reward": 0.6676069498062134,
+              "reward_std": 0.7723085284233093,
+              "reward_ci95": 0.03338376942905111,
+              "outcomes": {
+                "winner": {
+                  "count": 924,
+                  "rate": 0.4494163424124514
+                },
+                "first_out": {
+                  "count": 267,
+                  "rate": 0.129863813229572
+                },
+                "second_out": {
+                  "count": 348,
+                  "rate": 0.16926070038910507
+                },
+                "third_out": {
+                  "count": 228,
+                  "rate": 0.11089494163424124
+                },
+                "final_loser": {
+                  "count": 289,
+                  "rate": 0.14056420233463035
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 267,
+                  "rate_among_losses": 0.23586572438162545
+                },
+                "second_out": {
+                  "count": 348,
+                  "rate_among_losses": 0.30742049469964666
+                },
+                "third_out": {
+                  "count": 228,
+                  "rate_among_losses": 0.20141342756183744
+                },
+                "final_loser": {
+                  "count": 289,
+                  "rate_among_losses": 0.25530035335689044
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2109,
+            "game_rate": 0.52725,
+            "decision_exposures": 2999,
+            "summary": {
+              "games": 2109,
+              "wins": 1103,
+              "winrate": 0.5229966808914177,
+              "winrate_ci95": 0.02131709145038062,
+              "mean_reward": 0.7682313919067383,
+              "reward_std": 0.772424042224884,
+              "reward_ci95": 0.03296655619994364,
+              "outcomes": {
+                "winner": {
+                  "count": 1103,
+                  "rate": 0.5229966808914177
+                },
+                "first_out": {
+                  "count": 137,
+                  "rate": 0.0649596965386439
+                },
+                "second_out": {
+                  "count": 297,
+                  "rate": 0.14082503556187767
+                },
+                "third_out": {
+                  "count": 279,
+                  "rate": 0.13229018492176386
+                },
+                "final_loser": {
+                  "count": 293,
+                  "rate": 0.1389284020862968
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 137,
+                  "rate_among_losses": 0.13618290258449303
+                },
+                "second_out": {
+                  "count": 297,
+                  "rate_among_losses": 0.2952286282306163
+                },
+                "third_out": {
+                  "count": 279,
+                  "rate_among_losses": 0.2773359840954274
+                },
+                "final_loser": {
+                  "count": 293,
+                  "rate_among_losses": 0.2912524850894632
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 1717,
+            "game_rate": 0.42925,
+            "decision_exposures": 2941,
+            "summary": {
+              "games": 1717,
+              "wins": 985,
+              "winrate": 0.5736750145602796,
+              "winrate_ci95": 0.02339237321947606,
+              "mean_reward": 0.8448456525802612,
+              "reward_std": 0.7760040163993835,
+              "reward_ci95": 0.03670581894071639,
+              "outcomes": {
+                "winner": {
+                  "count": 985,
+                  "rate": 0.5736750145602796
+                },
+                "first_out": {
+                  "count": 42,
+                  "rate": 0.0244612696563774
+                },
+                "second_out": {
+                  "count": 151,
+                  "rate": 0.08794408852649971
+                },
+                "third_out": {
+                  "count": 198,
+                  "rate": 0.11531741409435062
+                },
+                "final_loser": {
+                  "count": 341,
+                  "rate": 0.1986022131624927
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 42,
+                  "rate_among_losses": 0.05737704918032787
+                },
+                "second_out": {
+                  "count": 151,
+                  "rate_among_losses": 0.2062841530054645
+                },
+                "third_out": {
+                  "count": 198,
+                  "rate_among_losses": 0.27049180327868855
+                },
+                "final_loser": {
+                  "count": 341,
+                  "rate_among_losses": 0.46584699453551914
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "safe_tempo": {
+        "label": "Tempo sur",
+        "cards": "Espionne, Servante, Comtesse",
+        "phases": {
+          "early": {
+            "games_with_group": 1788,
+            "game_rate": 0.447,
+            "decision_exposures": 2100,
+            "summary": {
+              "games": 1788,
+              "wins": 844,
+              "winrate": 0.4720357941834452,
+              "winrate_ci95": 0.02313992889620154,
+              "mean_reward": 0.7389261722564697,
+              "reward_std": 0.8292914032936096,
+              "reward_ci95": 0.038439654730536836,
+              "outcomes": {
+                "winner": {
+                  "count": 844,
+                  "rate": 0.4720357941834452
+                },
+                "first_out": {
+                  "count": 264,
+                  "rate": 0.1476510067114094
+                },
+                "second_out": {
+                  "count": 279,
+                  "rate": 0.15604026845637584
+                },
+                "third_out": {
+                  "count": 216,
+                  "rate": 0.12080536912751678
+                },
+                "final_loser": {
+                  "count": 185,
+                  "rate": 0.10346756152125279
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 264,
+                  "rate_among_losses": 0.2796610169491525
+                },
+                "second_out": {
+                  "count": 279,
+                  "rate_among_losses": 0.2955508474576271
+                },
+                "third_out": {
+                  "count": 216,
+                  "rate_among_losses": 0.2288135593220339
+                },
+                "final_loser": {
+                  "count": 185,
+                  "rate_among_losses": 0.19597457627118645
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 1678,
+            "game_rate": 0.4195,
+            "decision_exposures": 2188,
+            "summary": {
+              "games": 1678,
+              "wins": 923,
+              "winrate": 0.5500595947556615,
+              "winrate_ci95": 0.02380359009334507,
+              "mean_reward": 0.8500595092773438,
+              "reward_std": 0.8240265250205994,
+              "reward_ci95": 0.03942768681975211,
+              "outcomes": {
+                "winner": {
+                  "count": 923,
+                  "rate": 0.5500595947556615
+                },
+                "first_out": {
+                  "count": 98,
+                  "rate": 0.058402860548271755
+                },
+                "second_out": {
+                  "count": 218,
+                  "rate": 0.1299165673420739
+                },
+                "third_out": {
+                  "count": 222,
+                  "rate": 0.13230035756853398
+                },
+                "final_loser": {
+                  "count": 217,
+                  "rate": 0.1293206197854589
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 98,
+                  "rate_among_losses": 0.12980132450331125
+                },
+                "second_out": {
+                  "count": 218,
+                  "rate_among_losses": 0.28874172185430463
+                },
+                "third_out": {
+                  "count": 222,
+                  "rate_among_losses": 0.29403973509933773
+                },
+                "final_loser": {
+                  "count": 217,
+                  "rate_among_losses": 0.28741721854304636
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 1451,
+            "game_rate": 0.36275,
+            "decision_exposures": 2206,
+            "summary": {
+              "games": 1451,
+              "wins": 920,
+              "winrate": 0.6340454858718125,
+              "winrate_ci95": 0.02478541111389631,
+              "mean_reward": 0.9709166288375854,
+              "reward_std": 0.798038899898529,
+              "reward_ci95": 0.041062599599956104,
+              "outcomes": {
+                "winner": {
+                  "count": 920,
+                  "rate": 0.6340454858718125
+                },
+                "first_out": {
+                  "count": 23,
+                  "rate": 0.015851137146795313
+                },
+                "second_out": {
+                  "count": 83,
+                  "rate": 0.057201929703652656
+                },
+                "third_out": {
+                  "count": 146,
+                  "rate": 0.10062026188835287
+                },
+                "final_loser": {
+                  "count": 279,
+                  "rate": 0.19228118538938663
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 23,
+                  "rate_among_losses": 0.04331450094161959
+                },
+                "second_out": {
+                  "count": 83,
+                  "rate_among_losses": 0.15630885122410546
+                },
+                "third_out": {
+                  "count": 146,
+                  "rate_among_losses": 0.2749529190207156
+                },
+                "final_loser": {
+                  "count": 279,
+                  "rate_among_losses": 0.5254237288135594
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "passive_value_or_constraint": {
+        "label": "Valeur passive / contrainte",
+        "cards": "Espionne, Comtesse, Princesse",
+        "phases": {
+          "early": {
+            "games_with_group": 1489,
+            "game_rate": 0.37225,
+            "decision_exposures": 1849,
+            "summary": {
+              "games": 1489,
+              "wins": 709,
+              "winrate": 0.4761584956346541,
+              "winrate_ci95": 0.025367895714151902,
+              "mean_reward": 0.7799865007400513,
+              "reward_std": 0.8509007096290588,
+              "reward_ci95": 0.04322028289759509,
+              "outcomes": {
+                "winner": {
+                  "count": 709,
+                  "rate": 0.4761584956346541
+                },
+                "first_out": {
+                  "count": 227,
+                  "rate": 0.1524513096037609
+                },
+                "second_out": {
+                  "count": 233,
+                  "rate": 0.15648085963734049
+                },
+                "third_out": {
+                  "count": 179,
+                  "rate": 0.12021490933512424
+                },
+                "final_loser": {
+                  "count": 141,
+                  "rate": 0.09469442578912021
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 227,
+                  "rate_among_losses": 0.29102564102564105
+                },
+                "second_out": {
+                  "count": 233,
+                  "rate_among_losses": 0.2987179487179487
+                },
+                "third_out": {
+                  "count": 179,
+                  "rate_among_losses": 0.22948717948717948
+                },
+                "final_loser": {
+                  "count": 141,
+                  "rate_among_losses": 0.18076923076923077
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 1603,
+            "game_rate": 0.40075,
+            "decision_exposures": 2198,
+            "summary": {
+              "games": 1603,
+              "wins": 914,
+              "winrate": 0.5701809107922645,
+              "winrate_ci95": 0.02423474735742303,
+              "mean_reward": 0.9126637578010559,
+              "reward_std": 0.8337593674659729,
+              "reward_ci95": 0.0408159626164372,
+              "outcomes": {
+                "winner": {
+                  "count": 914,
+                  "rate": 0.5701809107922645
+                },
+                "first_out": {
+                  "count": 106,
+                  "rate": 0.066126013724267
+                },
+                "second_out": {
+                  "count": 205,
+                  "rate": 0.12788521522145976
+                },
+                "third_out": {
+                  "count": 207,
+                  "rate": 0.1291328758577667
+                },
+                "final_loser": {
+                  "count": 171,
+                  "rate": 0.10667498440424204
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 106,
+                  "rate_among_losses": 0.15384615384615385
+                },
+                "second_out": {
+                  "count": 205,
+                  "rate_among_losses": 0.29753265602322204
+                },
+                "third_out": {
+                  "count": 207,
+                  "rate_among_losses": 0.30043541364296084
+                },
+                "final_loser": {
+                  "count": 171,
+                  "rate_among_losses": 0.24818577648766327
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 1579,
+            "game_rate": 0.39475,
+            "decision_exposures": 2672,
+            "summary": {
+              "games": 1579,
+              "wins": 1055,
+              "winrate": 0.6681443951868271,
+              "winrate_ci95": 0.02322601753872889,
+              "mean_reward": 1.0214059352874756,
+              "reward_std": 0.7818866968154907,
+              "reward_ci95": 0.03856637785865248,
+              "outcomes": {
+                "winner": {
+                  "count": 1055,
+                  "rate": 0.6681443951868271
+                },
+                "first_out": {
+                  "count": 28,
+                  "rate": 0.01773274224192527
+                },
+                "second_out": {
+                  "count": 96,
+                  "rate": 0.060797973400886635
+                },
+                "third_out": {
+                  "count": 149,
+                  "rate": 0.09436352121595946
+                },
+                "final_loser": {
+                  "count": 251,
+                  "rate": 0.15896136795440152
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 28,
+                  "rate_among_losses": 0.05343511450381679
+                },
+                "second_out": {
+                  "count": 96,
+                  "rate_among_losses": 0.183206106870229
+                },
+                "third_out": {
+                  "count": 149,
+                  "rate_among_losses": 0.28435114503816794
+                },
+                "final_loser": {
+                  "count": 251,
+                  "rate_among_losses": 0.47900763358778625
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "high_risk_trap": {
+        "label": "Risque fort",
+        "cards": "Baron, Prince, Roi, Comtesse, Princesse",
+        "phases": {
+          "early": {
+            "games_with_group": 2452,
+            "game_rate": 0.613,
+            "decision_exposures": 3060,
+            "summary": {
+              "games": 2452,
+              "wins": 1129,
+              "winrate": 0.4604404567699837,
+              "winrate_ci95": 0.019728872477283433,
+              "mean_reward": 0.6986949443817139,
+              "reward_std": 0.7943406105041504,
+              "reward_ci95": 0.031441453934009045,
+              "outcomes": {
+                "winner": {
+                  "count": 1129,
+                  "rate": 0.4604404567699837
+                },
+                "first_out": {
+                  "count": 346,
+                  "rate": 0.14110929853181076
+                },
+                "second_out": {
+                  "count": 410,
+                  "rate": 0.16721044045676997
+                },
+                "third_out": {
+                  "count": 277,
+                  "rate": 0.11296900489396411
+                },
+                "final_loser": {
+                  "count": 290,
+                  "rate": 0.11827079934747145
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 346,
+                  "rate_among_losses": 0.2615268329554044
+                },
+                "second_out": {
+                  "count": 410,
+                  "rate_among_losses": 0.30990173847316704
+                },
+                "third_out": {
+                  "count": 277,
+                  "rate_among_losses": 0.20937263794406652
+                },
+                "final_loser": {
+                  "count": 290,
+                  "rate_among_losses": 0.21919879062736206
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2516,
+            "game_rate": 0.629,
+            "decision_exposures": 3564,
+            "summary": {
+              "games": 2516,
+              "wins": 1333,
+              "winrate": 0.5298092209856916,
+              "winrate_ci95": 0.019502826768924758,
+              "mean_reward": 0.8061208128929138,
+              "reward_std": 0.8032786846160889,
+              "reward_ci95": 0.031388243683266266,
+              "outcomes": {
+                "winner": {
+                  "count": 1333,
+                  "rate": 0.5298092209856916
+                },
+                "first_out": {
+                  "count": 184,
+                  "rate": 0.07313195548489666
+                },
+                "second_out": {
+                  "count": 359,
+                  "rate": 0.14268680445151033
+                },
+                "third_out": {
+                  "count": 316,
+                  "rate": 0.12559618441971382
+                },
+                "final_loser": {
+                  "count": 324,
+                  "rate": 0.1287758346581876
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 184,
+                  "rate_among_losses": 0.15553677092138632
+                },
+                "second_out": {
+                  "count": 359,
+                  "rate_among_losses": 0.30346576500422656
+                },
+                "third_out": {
+                  "count": 316,
+                  "rate_among_losses": 0.26711749788672867
+                },
+                "final_loser": {
+                  "count": 324,
+                  "rate_among_losses": 0.2738799661876585
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 2117,
+            "game_rate": 0.52925,
+            "decision_exposures": 3823,
+            "summary": {
+              "games": 2117,
+              "wins": 1276,
+              "winrate": 0.6027397260273972,
+              "winrate_ci95": 0.02084481856858496,
+              "mean_reward": 0.9101558327674866,
+              "reward_std": 0.7964706420898438,
+              "reward_ci95": 0.033928559504539886,
+              "outcomes": {
+                "winner": {
+                  "count": 1276,
+                  "rate": 0.6027397260273972
+                },
+                "first_out": {
+                  "count": 63,
+                  "rate": 0.02975909305621162
+                },
+                "second_out": {
+                  "count": 179,
+                  "rate": 0.08455361360415682
+                },
+                "third_out": {
+                  "count": 224,
+                  "rate": 0.10581010864430798
+                },
+                "final_loser": {
+                  "count": 375,
+                  "rate": 0.17713745866792632
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 63,
+                  "rate_among_losses": 0.07491082045184304
+                },
+                "second_out": {
+                  "count": 179,
+                  "rate_among_losses": 0.21284185493460167
+                },
+                "third_out": {
+                  "count": 224,
+                  "rate_among_losses": 0.26634958382877527
+                },
+                "final_loser": {
+                  "count": 375,
+                  "rate_among_losses": 0.44589774078478
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      },
+      "public_reveal": {
+        "label": "Revelation publique",
+        "cards": "Garde, Baron, Prince, Princesse",
+        "phases": {
+          "early": {
+            "games_with_group": 3185,
+            "game_rate": 0.79625,
+            "decision_exposures": 3959,
+            "summary": {
+              "games": 3185,
+              "wins": 1434,
+              "winrate": 0.4502354788069074,
+              "winrate_ci95": 0.017278640351844416,
+              "mean_reward": 0.6793093085289001,
+              "reward_std": 0.7848499417304993,
+              "reward_ci95": 0.027257623053433558,
+              "outcomes": {
+                "winner": {
+                  "count": 1434,
+                  "rate": 0.4502354788069074
+                },
+                "first_out": {
+                  "count": 488,
+                  "rate": 0.1532182103610675
+                },
+                "second_out": {
+                  "count": 525,
+                  "rate": 0.16483516483516483
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate": 0.11177394034536892
+                },
+                "final_loser": {
+                  "count": 382,
+                  "rate": 0.11993720565149137
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 488,
+                  "rate_among_losses": 0.278697886921759
+                },
+                "second_out": {
+                  "count": 525,
+                  "rate_among_losses": 0.2998286693318104
+                },
+                "third_out": {
+                  "count": 356,
+                  "rate_among_losses": 0.2033123929183324
+                },
+                "final_loser": {
+                  "count": 382,
+                  "rate_among_losses": 0.21816105082809822
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "mid": {
+            "games_with_group": 2845,
+            "game_rate": 0.71125,
+            "decision_exposures": 3932,
+            "summary": {
+              "games": 2845,
+              "wins": 1467,
+              "winrate": 0.5156414762741652,
+              "winrate_ci95": 0.018364213406625484,
+              "mean_reward": 0.7798944711685181,
+              "reward_std": 0.7907305955886841,
+              "reward_ci95": 0.029056512334018108,
+              "outcomes": {
+                "winner": {
+                  "count": 1467,
+                  "rate": 0.5156414762741652
+                },
+                "first_out": {
+                  "count": 223,
+                  "rate": 0.07838312829525483
+                },
+                "second_out": {
+                  "count": 409,
+                  "rate": 0.1437609841827768
+                },
+                "third_out": {
+                  "count": 365,
+                  "rate": 0.1282952548330404
+                },
+                "final_loser": {
+                  "count": 381,
+                  "rate": 0.13391915641476274
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 223,
+                  "rate_among_losses": 0.16182873730043543
+                },
+                "second_out": {
+                  "count": 409,
+                  "rate_among_losses": 0.29680696661828737
+                },
+                "third_out": {
+                  "count": 365,
+                  "rate_among_losses": 0.2648766328011611
+                },
+                "final_loser": {
+                  "count": 381,
+                  "rate_among_losses": 0.2764876632801161
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          },
+          "late": {
+            "games_with_group": 2310,
+            "game_rate": 0.5775,
+            "decision_exposures": 4030,
+            "summary": {
+              "games": 2310,
+              "wins": 1365,
+              "winrate": 0.5909090909090909,
+              "winrate_ci95": 0.02005027490251483,
+              "mean_reward": 0.8984414935112,
+              "reward_std": 0.7969569563865662,
+              "reward_ci95": 0.0325001196469458,
+              "outcomes": {
+                "winner": {
+                  "count": 1365,
+                  "rate": 0.5909090909090909
+                },
+                "first_out": {
+                  "count": 71,
+                  "rate": 0.030735930735930735
+                },
+                "second_out": {
+                  "count": 196,
+                  "rate": 0.08484848484848485
+                },
+                "third_out": {
+                  "count": 254,
+                  "rate": 0.10995670995670996
+                },
+                "final_loser": {
+                  "count": 424,
+                  "rate": 0.18354978354978355
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate": 0.0
+                }
+              },
+              "loss_positions": {
+                "first_out": {
+                  "count": 71,
+                  "rate_among_losses": 0.07513227513227513
+                },
+                "second_out": {
+                  "count": 196,
+                  "rate_among_losses": 0.2074074074074074
+                },
+                "third_out": {
+                  "count": 254,
+                  "rate_among_losses": 0.2687830687830688
+                },
+                "final_loser": {
+                  "count": 424,
+                  "rate_among_losses": 0.4486772486772487
+                },
+                "unknown_loss": {
+                  "count": 0,
+                  "rate_among_losses": 0.0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "card_phase": {
+      "Espionne": {
+        "early": {
+          "games_with_card": 791,
+          "game_rate": 0.19775,
+          "decision_exposures": 898,
+          "plays": 348,
+          "summary": {
+            "games": 791,
+            "wins": 350,
+            "winrate": 0.4424778761061947,
+            "winrate_ci95": 0.03461343202476024,
+            "mean_reward": 0.7908975481987,
+            "reward_std": 0.9378233551979065,
+            "reward_ci95": 0.06535651436898353,
+            "outcomes": {
+              "winner": {
+                "count": 350,
+                "rate": 0.4424778761061947
+              },
+              "first_out": {
+                "count": 167,
+                "rate": 0.2111251580278129
+              },
+              "second_out": {
+                "count": 138,
+                "rate": 0.17446270543615677
+              },
+              "third_out": {
+                "count": 88,
+                "rate": 0.11125158027812895
+              },
+              "final_loser": {
+                "count": 48,
+                "rate": 0.0606826801517067
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 167,
+                "rate_among_losses": 0.3786848072562358
+              },
+              "second_out": {
+                "count": 138,
+                "rate_among_losses": 0.3129251700680272
+              },
+              "third_out": {
+                "count": 88,
+                "rate_among_losses": 0.19954648526077098
+              },
+              "final_loser": {
+                "count": 48,
+                "rate_among_losses": 0.10884353741496598
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 749,
+          "game_rate": 0.18725,
+          "decision_exposures": 875,
+          "plays": 391,
+          "summary": {
+            "games": 749,
+            "wins": 392,
+            "winrate": 0.5233644859813084,
+            "winrate_ci95": 0.035769303724513146,
+            "mean_reward": 0.916688859462738,
+            "reward_std": 0.9321447014808655,
+            "reward_ci95": 0.06675725857619352,
+            "outcomes": {
+              "winner": {
+                "count": 392,
+                "rate": 0.5233644859813084
+              },
+              "first_out": {
+                "count": 66,
+                "rate": 0.08811748998664887
+              },
+              "second_out": {
+                "count": 115,
+                "rate": 0.15353805073431243
+              },
+              "third_out": {
+                "count": 103,
+                "rate": 0.1375166889185581
+              },
+              "final_loser": {
+                "count": 73,
+                "rate": 0.09746328437917223
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 66,
+                "rate_among_losses": 0.18487394957983194
+              },
+              "second_out": {
+                "count": 115,
+                "rate_among_losses": 0.32212885154061627
+              },
+              "third_out": {
+                "count": 103,
+                "rate_among_losses": 0.28851540616246496
+              },
+              "final_loser": {
+                "count": 73,
+                "rate_among_losses": 0.20448179271708683
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 766,
+          "game_rate": 0.1915,
+          "decision_exposures": 986,
+          "plays": 453,
+          "summary": {
+            "games": 766,
+            "wins": 480,
+            "winrate": 0.6266318537859008,
+            "winrate_ci95": 0.034254414776126736,
+            "mean_reward": 1.0083550214767456,
+            "reward_std": 0.8364622592926025,
+            "reward_ci95": 0.05923631613372884,
+            "outcomes": {
+              "winner": {
+                "count": 480,
+                "rate": 0.6266318537859008
+              },
+              "first_out": {
+                "count": 15,
+                "rate": 0.0195822454308094
+              },
+              "second_out": {
+                "count": 55,
+                "rate": 0.07180156657963446
+              },
+              "third_out": {
+                "count": 87,
+                "rate": 0.11357702349869452
+              },
+              "final_loser": {
+                "count": 129,
+                "rate": 0.16840731070496084
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 15,
+                "rate_among_losses": 0.05244755244755245
+              },
+              "second_out": {
+                "count": 55,
+                "rate_among_losses": 0.19230769230769232
+              },
+              "third_out": {
+                "count": 87,
+                "rate_among_losses": 0.3041958041958042
+              },
+              "final_loser": {
+                "count": 129,
+                "rate_among_losses": 0.45104895104895104
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Garde": {
+        "early": {
+          "games_with_card": 2081,
+          "game_rate": 0.52025,
+          "decision_exposures": 2446,
+          "plays": 1549,
+          "summary": {
+            "games": 2081,
+            "wins": 954,
+            "winrate": 0.45843344545891396,
+            "winrate_ci95": 0.021408394369655623,
+            "mean_reward": 0.6755406260490417,
+            "reward_std": 0.7618375420570374,
+            "reward_ci95": 0.03273274373492772,
+            "outcomes": {
+              "winner": {
+                "count": 954,
+                "rate": 0.45843344545891396
+              },
+              "first_out": {
+                "count": 290,
+                "rate": 0.13935607880826525
+              },
+              "second_out": {
+                "count": 338,
+                "rate": 0.1624219125420471
+              },
+              "third_out": {
+                "count": 240,
+                "rate": 0.11532916866890917
+              },
+              "final_loser": {
+                "count": 259,
+                "rate": 0.12445939452186448
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 290,
+                "rate_among_losses": 0.2573203194321207
+              },
+              "second_out": {
+                "count": 338,
+                "rate_among_losses": 0.29991126885536823
+              },
+              "third_out": {
+                "count": 240,
+                "rate_among_losses": 0.2129547471162378
+              },
+              "final_loser": {
+                "count": 259,
+                "rate_among_losses": 0.22981366459627328
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 1749,
+          "game_rate": 0.43725,
+          "decision_exposures": 2141,
+          "plays": 1476,
+          "summary": {
+            "games": 1749,
+            "wins": 916,
+            "winrate": 0.5237278444825615,
+            "winrate_ci95": 0.02340677576644685,
+            "mean_reward": 0.7951971888542175,
+            "reward_std": 0.7801275849342346,
+            "reward_ci95": 0.0365617364770485,
+            "outcomes": {
+              "winner": {
+                "count": 916,
+                "rate": 0.5237278444825615
+              },
+              "first_out": {
+                "count": 119,
+                "rate": 0.06803887935963408
+              },
+              "second_out": {
+                "count": 228,
+                "rate": 0.13036020583190394
+              },
+              "third_out": {
+                "count": 235,
+                "rate": 0.1343624928530589
+              },
+              "final_loser": {
+                "count": 251,
+                "rate": 0.14351057747284163
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 119,
+                "rate_among_losses": 0.14285714285714285
+              },
+              "second_out": {
+                "count": 228,
+                "rate_among_losses": 0.2737094837935174
+              },
+              "third_out": {
+                "count": 235,
+                "rate_among_losses": 0.28211284513805523
+              },
+              "final_loser": {
+                "count": 251,
+                "rate_among_losses": 0.3013205282112845
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 1484,
+          "game_rate": 0.371,
+          "decision_exposures": 2052,
+          "plays": 1366,
+          "summary": {
+            "games": 1484,
+            "wins": 914,
+            "winrate": 0.6159029649595688,
+            "winrate_ci95": 0.024746611802504117,
+            "mean_reward": 0.9443395733833313,
+            "reward_std": 0.7815952897071838,
+            "reward_ci95": 0.0397668370387314,
+            "outcomes": {
+              "winner": {
+                "count": 914,
+                "rate": 0.6159029649595688
+              },
+              "first_out": {
+                "count": 33,
+                "rate": 0.02223719676549865
+              },
+              "second_out": {
+                "count": 86,
+                "rate": 0.057951482479784364
+              },
+              "third_out": {
+                "count": 159,
+                "rate": 0.10714285714285714
+              },
+              "final_loser": {
+                "count": 292,
+                "rate": 0.1967654986522911
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 33,
+                "rate_among_losses": 0.05789473684210526
+              },
+              "second_out": {
+                "count": 86,
+                "rate_among_losses": 0.15087719298245614
+              },
+              "third_out": {
+                "count": 159,
+                "rate_among_losses": 0.2789473684210526
+              },
+              "final_loser": {
+                "count": 292,
+                "rate_among_losses": 0.512280701754386
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Pretre": {
+        "early": {
+          "games_with_card": 830,
+          "game_rate": 0.2075,
+          "decision_exposures": 868,
+          "plays": 683,
+          "summary": {
+            "games": 830,
+            "wins": 371,
+            "winrate": 0.4469879518072289,
+            "winrate_ci95": 0.033824565801941604,
+            "mean_reward": 0.6665060520172119,
+            "reward_std": 0.7613628506660461,
+            "reward_ci95": 0.05179748899977978,
+            "outcomes": {
+              "winner": {
+                "count": 371,
+                "rate": 0.4469879518072289
+              },
+              "first_out": {
+                "count": 116,
+                "rate": 0.13975903614457832
+              },
+              "second_out": {
+                "count": 128,
+                "rate": 0.15421686746987953
+              },
+              "third_out": {
+                "count": 101,
+                "rate": 0.1216867469879518
+              },
+              "final_loser": {
+                "count": 114,
+                "rate": 0.13734939759036144
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 116,
+                "rate_among_losses": 0.25272331154684097
+              },
+              "second_out": {
+                "count": 128,
+                "rate_among_losses": 0.2788671023965142
+              },
+              "third_out": {
+                "count": 101,
+                "rate_among_losses": 0.22004357298474944
+              },
+              "final_loser": {
+                "count": 114,
+                "rate_among_losses": 0.24836601307189543
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 668,
+          "game_rate": 0.167,
+          "decision_exposures": 753,
+          "plays": 511,
+          "summary": {
+            "games": 668,
+            "wins": 351,
+            "winrate": 0.5254491017964071,
+            "winrate_ci95": 0.03786819170059025,
+            "mean_reward": 0.792814314365387,
+            "reward_std": 0.7864548563957214,
+            "reward_ci95": 0.05964055196507325,
+            "outcomes": {
+              "winner": {
+                "count": 351,
+                "rate": 0.5254491017964071
+              },
+              "first_out": {
+                "count": 47,
+                "rate": 0.07035928143712575
+              },
+              "second_out": {
+                "count": 80,
+                "rate": 0.11976047904191617
+              },
+              "third_out": {
+                "count": 94,
+                "rate": 0.1407185628742515
+              },
+              "final_loser": {
+                "count": 96,
+                "rate": 0.1437125748502994
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 47,
+                "rate_among_losses": 0.14826498422712933
+              },
+              "second_out": {
+                "count": 80,
+                "rate_among_losses": 0.25236593059936907
+              },
+              "third_out": {
+                "count": 94,
+                "rate_among_losses": 0.29652996845425866
+              },
+              "final_loser": {
+                "count": 96,
+                "rate_among_losses": 0.3028391167192429
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 597,
+          "game_rate": 0.14925,
+          "decision_exposures": 765,
+          "plays": 405,
+          "summary": {
+            "games": 597,
+            "wins": 338,
+            "winrate": 0.5661641541038526,
+            "winrate_ci95": 0.03975601143466923,
+            "mean_reward": 0.8525963425636292,
+            "reward_std": 0.773762047290802,
+            "reward_ci95": 0.06206922823637576,
+            "outcomes": {
+              "winner": {
+                "count": 338,
+                "rate": 0.5661641541038526
+              },
+              "first_out": {
+                "count": 8,
+                "rate": 0.01340033500837521
+              },
+              "second_out": {
+                "count": 49,
+                "rate": 0.08207705192629816
+              },
+              "third_out": {
+                "count": 61,
+                "rate": 0.10217755443886097
+              },
+              "final_loser": {
+                "count": 141,
+                "rate": 0.23618090452261306
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 8,
+                "rate_among_losses": 0.03088803088803089
+              },
+              "second_out": {
+                "count": 49,
+                "rate_among_losses": 0.1891891891891892
+              },
+              "third_out": {
+                "count": 61,
+                "rate_among_losses": 0.23552123552123552
+              },
+              "final_loser": {
+                "count": 141,
+                "rate_among_losses": 0.5444015444015444
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Baron": {
+        "early": {
+          "games_with_card": 874,
+          "game_rate": 0.2185,
+          "decision_exposures": 997,
+          "plays": 382,
+          "summary": {
+            "games": 874,
+            "wins": 389,
+            "winrate": 0.4450800915331808,
+            "winrate_ci95": 0.03294841992296638,
+            "mean_reward": 0.6981693506240845,
+            "reward_std": 0.8183934092521667,
+            "reward_ci95": 0.0542578382650048,
+            "outcomes": {
+              "winner": {
+                "count": 389,
+                "rate": 0.4450800915331808
+              },
+              "first_out": {
+                "count": 154,
+                "rate": 0.17620137299771166
+              },
+              "second_out": {
+                "count": 161,
+                "rate": 0.18421052631578946
+              },
+              "third_out": {
+                "count": 96,
+                "rate": 0.10983981693363844
+              },
+              "final_loser": {
+                "count": 74,
+                "rate": 0.08466819221967964
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 154,
+                "rate_among_losses": 0.31752577319587627
+              },
+              "second_out": {
+                "count": 161,
+                "rate_among_losses": 0.3319587628865979
+              },
+              "third_out": {
+                "count": 96,
+                "rate_among_losses": 0.1979381443298969
+              },
+              "final_loser": {
+                "count": 74,
+                "rate_among_losses": 0.15257731958762888
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 928,
+          "game_rate": 0.232,
+          "decision_exposures": 1124,
+          "plays": 497,
+          "summary": {
+            "games": 928,
+            "wins": 466,
+            "winrate": 0.5021551724137931,
+            "winrate_ci95": 0.032169777204155786,
+            "mean_reward": 0.7859914302825928,
+            "reward_std": 0.8407315611839294,
+            "reward_ci95": 0.05409279926217286,
+            "outcomes": {
+              "winner": {
+                "count": 466,
+                "rate": 0.5021551724137931
+              },
+              "first_out": {
+                "count": 100,
+                "rate": 0.10775862068965517
+              },
+              "second_out": {
+                "count": 147,
+                "rate": 0.1584051724137931
+              },
+              "third_out": {
+                "count": 111,
+                "rate": 0.11961206896551724
+              },
+              "final_loser": {
+                "count": 104,
+                "rate": 0.11206896551724138
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 100,
+                "rate_among_losses": 0.21645021645021645
+              },
+              "second_out": {
+                "count": 147,
+                "rate_among_losses": 0.3181818181818182
+              },
+              "third_out": {
+                "count": 111,
+                "rate_among_losses": 0.24025974025974026
+              },
+              "final_loser": {
+                "count": 104,
+                "rate_among_losses": 0.22510822510822512
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 794,
+          "game_rate": 0.1985,
+          "decision_exposures": 1067,
+          "plays": 474,
+          "summary": {
+            "games": 794,
+            "wins": 426,
+            "winrate": 0.5365239294710328,
+            "winrate_ci95": 0.03468598457321818,
+            "mean_reward": 0.853400468826294,
+            "reward_std": 0.8567231893539429,
+            "reward_ci95": 0.0595917804143527,
+            "outcomes": {
+              "winner": {
+                "count": 426,
+                "rate": 0.5365239294710328
+              },
+              "first_out": {
+                "count": 39,
+                "rate": 0.0491183879093199
+              },
+              "second_out": {
+                "count": 88,
+                "rate": 0.11083123425692695
+              },
+              "third_out": {
+                "count": 94,
+                "rate": 0.11838790931989925
+              },
+              "final_loser": {
+                "count": 147,
+                "rate": 0.18513853904282115
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 39,
+                "rate_among_losses": 0.10597826086956522
+              },
+              "second_out": {
+                "count": 88,
+                "rate_among_losses": 0.2391304347826087
+              },
+              "third_out": {
+                "count": 94,
+                "rate_among_losses": 0.2554347826086957
+              },
+              "final_loser": {
+                "count": 147,
+                "rate_among_losses": 0.39945652173913043
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Servante": {
+        "early": {
+          "games_with_card": 817,
+          "game_rate": 0.20425,
+          "decision_exposures": 868,
+          "plays": 623,
+          "summary": {
+            "games": 817,
+            "wins": 386,
+            "winrate": 0.4724602203182375,
+            "winrate_ci95": 0.034233812995415745,
+            "mean_reward": 0.6643818616867065,
+            "reward_std": 0.7378004193305969,
+            "reward_ci95": 0.05059224268368594,
+            "outcomes": {
+              "winner": {
+                "count": 386,
+                "rate": 0.4724602203182375
+              },
+              "first_out": {
+                "count": 84,
+                "rate": 0.10281517747858017
+              },
+              "second_out": {
+                "count": 129,
+                "rate": 0.15789473684210525
+              },
+              "third_out": {
+                "count": 113,
+                "rate": 0.1383108935128519
+              },
+              "final_loser": {
+                "count": 105,
+                "rate": 0.12851897184822522
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 84,
+                "rate_among_losses": 0.19489559164733178
+              },
+              "second_out": {
+                "count": 129,
+                "rate_among_losses": 0.29930394431554525
+              },
+              "third_out": {
+                "count": 113,
+                "rate_among_losses": 0.26218097447795824
+              },
+              "final_loser": {
+                "count": 105,
+                "rate_among_losses": 0.24361948955916474
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 704,
+          "game_rate": 0.176,
+          "decision_exposures": 786,
+          "plays": 566,
+          "summary": {
+            "games": 704,
+            "wins": 387,
+            "winrate": 0.5497159090909091,
+            "winrate_ci95": 0.036752103107670714,
+            "mean_reward": 0.7872158288955688,
+            "reward_std": 0.7701137661933899,
+            "reward_ci95": 0.05688852044295029,
+            "outcomes": {
+              "winner": {
+                "count": 387,
+                "rate": 0.5497159090909091
+              },
+              "first_out": {
+                "count": 24,
+                "rate": 0.03409090909090909
+              },
+              "second_out": {
+                "count": 83,
+                "rate": 0.11789772727272728
+              },
+              "third_out": {
+                "count": 95,
+                "rate": 0.13494318181818182
+              },
+              "final_loser": {
+                "count": 115,
+                "rate": 0.16335227272727273
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 24,
+                "rate_among_losses": 0.07570977917981073
+              },
+              "second_out": {
+                "count": 83,
+                "rate_among_losses": 0.2618296529968454
+              },
+              "third_out": {
+                "count": 95,
+                "rate_among_losses": 0.2996845425867508
+              },
+              "final_loser": {
+                "count": 115,
+                "rate_among_losses": 0.3627760252365931
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 571,
+          "game_rate": 0.14275,
+          "decision_exposures": 677,
+          "plays": 469,
+          "summary": {
+            "games": 571,
+            "wins": 366,
+            "winrate": 0.6409807355516638,
+            "winrate_ci95": 0.03934770278049281,
+            "mean_reward": 0.9341506361961365,
+            "reward_std": 0.7611449360847473,
+            "reward_ci95": 0.06243173074949782,
+            "outcomes": {
+              "winner": {
+                "count": 366,
+                "rate": 0.6409807355516638
+              },
+              "first_out": {
+                "count": 4,
+                "rate": 0.0070052539404553416
+              },
+              "second_out": {
+                "count": 18,
+                "rate": 0.03152364273204904
+              },
+              "third_out": {
+                "count": 51,
+                "rate": 0.0893169877408056
+              },
+              "final_loser": {
+                "count": 132,
+                "rate": 0.23117338003502627
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 4,
+                "rate_among_losses": 0.01951219512195122
+              },
+              "second_out": {
+                "count": 18,
+                "rate_among_losses": 0.08780487804878048
+              },
+              "third_out": {
+                "count": 51,
+                "rate_among_losses": 0.24878048780487805
+              },
+              "final_loser": {
+                "count": 132,
+                "rate_among_losses": 0.6439024390243903
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Prince": {
+        "early": {
+          "games_with_card": 877,
+          "game_rate": 0.21925,
+          "decision_exposures": 996,
+          "plays": 499,
+          "summary": {
+            "games": 877,
+            "wins": 376,
+            "winrate": 0.42873432155074115,
+            "winrate_ci95": 0.032754386298892234,
+            "mean_reward": 0.6285062432289124,
+            "reward_std": 0.7769537568092346,
+            "reward_ci95": 0.05142229552474311,
+            "outcomes": {
+              "winner": {
+                "count": 376,
+                "rate": 0.42873432155074115
+              },
+              "first_out": {
+                "count": 125,
+                "rate": 0.14253135689851767
+              },
+              "second_out": {
+                "count": 157,
+                "rate": 0.1790193842645382
+              },
+              "third_out": {
+                "count": 85,
+                "rate": 0.09692132269099202
+              },
+              "final_loser": {
+                "count": 134,
+                "rate": 0.15279361459521096
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 125,
+                "rate_among_losses": 0.249500998003992
+              },
+              "second_out": {
+                "count": 157,
+                "rate_among_losses": 0.313373253493014
+              },
+              "third_out": {
+                "count": 85,
+                "rate_among_losses": 0.16966067864271456
+              },
+              "final_loser": {
+                "count": 134,
+                "rate_among_losses": 0.26746506986027946
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 794,
+          "game_rate": 0.1985,
+          "decision_exposures": 949,
+          "plays": 477,
+          "summary": {
+            "games": 794,
+            "wins": 395,
+            "winrate": 0.49748110831234255,
+            "winrate_ci95": 0.03477845727421754,
+            "mean_reward": 0.7113349437713623,
+            "reward_std": 0.7540971040725708,
+            "reward_ci95": 0.052453333446850166,
+            "outcomes": {
+              "winner": {
+                "count": 395,
+                "rate": 0.49748110831234255
+              },
+              "first_out": {
+                "count": 49,
+                "rate": 0.061712846347607056
+              },
+              "second_out": {
+                "count": 128,
+                "rate": 0.16120906801007556
+              },
+              "third_out": {
+                "count": 111,
+                "rate": 0.1397984886649874
+              },
+              "final_loser": {
+                "count": 111,
+                "rate": 0.1397984886649874
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 49,
+                "rate_among_losses": 0.12280701754385964
+              },
+              "second_out": {
+                "count": 128,
+                "rate_among_losses": 0.3208020050125313
+              },
+              "third_out": {
+                "count": 111,
+                "rate_among_losses": 0.2781954887218045
+              },
+              "final_loser": {
+                "count": 111,
+                "rate_among_losses": 0.2781954887218045
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 646,
+          "game_rate": 0.1615,
+          "decision_exposures": 830,
+          "plays": 426,
+          "summary": {
+            "games": 646,
+            "wins": 387,
+            "winrate": 0.5990712074303406,
+            "winrate_ci95": 0.0377931123823335,
+            "mean_reward": 0.8625386953353882,
+            "reward_std": 0.7716668844223022,
+            "reward_ci95": 0.05950722394795381,
+            "outcomes": {
+              "winner": {
+                "count": 387,
+                "rate": 0.5990712074303406
+              },
+              "first_out": {
+                "count": 19,
+                "rate": 0.029411764705882353
+              },
+              "second_out": {
+                "count": 50,
+                "rate": 0.07739938080495357
+              },
+              "third_out": {
+                "count": 75,
+                "rate": 0.11609907120743033
+              },
+              "final_loser": {
+                "count": 115,
+                "rate": 0.1780185758513932
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 19,
+                "rate_among_losses": 0.07335907335907337
+              },
+              "second_out": {
+                "count": 50,
+                "rate_among_losses": 0.19305019305019305
+              },
+              "third_out": {
+                "count": 75,
+                "rate_among_losses": 0.28957528957528955
+              },
+              "final_loser": {
+                "count": 115,
+                "rate_among_losses": 0.444015444015444
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Chancelier": {
+        "early": {
+          "games_with_card": 804,
+          "game_rate": 0.201,
+          "decision_exposures": 921,
+          "plays": 411,
+          "summary": {
+            "games": 804,
+            "wins": 351,
+            "winrate": 0.43656716417910446,
+            "winrate_ci95": 0.034282671517102986,
+            "mean_reward": 0.6320895552635193,
+            "reward_std": 0.7421999573707581,
+            "reward_ci95": 0.05130373354606271,
+            "outcomes": {
+              "winner": {
+                "count": 351,
+                "rate": 0.43656716417910446
+              },
+              "first_out": {
+                "count": 116,
+                "rate": 0.14427860696517414
+              },
+              "second_out": {
+                "count": 138,
+                "rate": 0.17164179104477612
+              },
+              "third_out": {
+                "count": 80,
+                "rate": 0.09950248756218906
+              },
+              "final_loser": {
+                "count": 119,
+                "rate": 0.1480099502487562
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 116,
+                "rate_among_losses": 0.2560706401766004
+              },
+              "second_out": {
+                "count": 138,
+                "rate_among_losses": 0.304635761589404
+              },
+              "third_out": {
+                "count": 80,
+                "rate_among_losses": 0.17660044150110377
+              },
+              "final_loser": {
+                "count": 119,
+                "rate_among_losses": 0.26269315673289184
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 844,
+          "game_rate": 0.211,
+          "decision_exposures": 1040,
+          "plays": 415,
+          "summary": {
+            "games": 844,
+            "wins": 423,
+            "winrate": 0.5011848341232228,
+            "winrate_ci95": 0.03373289643922315,
+            "mean_reward": 0.7246445417404175,
+            "reward_std": 0.7458633184432983,
+            "reward_ci95": 0.05032040226136462,
+            "outcomes": {
+              "winner": {
+                "count": 423,
+                "rate": 0.5011848341232228
+              },
+              "first_out": {
+                "count": 66,
+                "rate": 0.07819905213270142
+              },
+              "second_out": {
+                "count": 109,
+                "rate": 0.12914691943127962
+              },
+              "third_out": {
+                "count": 112,
+                "rate": 0.13270142180094788
+              },
+              "final_loser": {
+                "count": 134,
+                "rate": 0.15876777251184834
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 66,
+                "rate_among_losses": 0.15676959619952494
+              },
+              "second_out": {
+                "count": 109,
+                "rate_among_losses": 0.2589073634204275
+              },
+              "third_out": {
+                "count": 112,
+                "rate_among_losses": 0.2660332541567696
+              },
+              "final_loser": {
+                "count": 134,
+                "rate_among_losses": 0.3182897862232779
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 701,
+          "game_rate": 0.17525,
+          "decision_exposures": 971,
+          "plays": 424,
+          "summary": {
+            "games": 701,
+            "wins": 378,
+            "winrate": 0.5392296718972895,
+            "winrate_ci95": 0.036899986348748574,
+            "mean_reward": 0.7703281044960022,
+            "reward_std": 0.7398411631584167,
+            "reward_ci95": 0.05476909579923342,
+            "outcomes": {
+              "winner": {
+                "count": 378,
+                "rate": 0.5392296718972895
+              },
+              "first_out": {
+                "count": 14,
+                "rate": 0.019971469329529243
+              },
+              "second_out": {
+                "count": 53,
+                "rate": 0.07560627674750357
+              },
+              "third_out": {
+                "count": 84,
+                "rate": 0.11982881597717546
+              },
+              "final_loser": {
+                "count": 172,
+                "rate": 0.24536376604850213
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 14,
+                "rate_among_losses": 0.043343653250773995
+              },
+              "second_out": {
+                "count": 53,
+                "rate_among_losses": 0.16408668730650156
+              },
+              "third_out": {
+                "count": 84,
+                "rate_among_losses": 0.26006191950464397
+              },
+              "final_loser": {
+                "count": 172,
+                "rate_among_losses": 0.5325077399380805
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Roi": {
+        "early": {
+          "games_with_card": 434,
+          "game_rate": 0.1085,
+          "decision_exposures": 537,
+          "plays": 67,
+          "summary": {
+            "games": 434,
+            "wins": 193,
+            "winrate": 0.4447004608294931,
+            "winrate_ci95": 0.04675291058370663,
+            "mean_reward": 0.6539170145988464,
+            "reward_std": 0.7524741888046265,
+            "reward_ci95": 0.07079503967795736,
+            "outcomes": {
+              "winner": {
+                "count": 193,
+                "rate": 0.4447004608294931
+              },
+              "first_out": {
+                "count": 55,
+                "rate": 0.12672811059907835
+              },
+              "second_out": {
+                "count": 80,
+                "rate": 0.18433179723502305
+              },
+              "third_out": {
+                "count": 55,
+                "rate": 0.12672811059907835
+              },
+              "final_loser": {
+                "count": 51,
+                "rate": 0.1175115207373272
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 55,
+                "rate_among_losses": 0.22821576763485477
+              },
+              "second_out": {
+                "count": 80,
+                "rate_among_losses": 0.33195020746887965
+              },
+              "third_out": {
+                "count": 55,
+                "rate_among_losses": 0.22821576763485477
+              },
+              "final_loser": {
+                "count": 51,
+                "rate_among_losses": 0.21161825726141079
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 551,
+          "game_rate": 0.13775,
+          "decision_exposures": 744,
+          "plays": 126,
+          "summary": {
+            "games": 551,
+            "wins": 287,
+            "winrate": 0.5208711433756806,
+            "winrate_ci95": 0.04171301531401327,
+            "mean_reward": 0.7833030819892883,
+            "reward_std": 0.7829471230506897,
+            "reward_ci95": 0.06537515327186678,
+            "outcomes": {
+              "winner": {
+                "count": 287,
+                "rate": 0.5208711433756806
+              },
+              "first_out": {
+                "count": 30,
+                "rate": 0.0544464609800363
+              },
+              "second_out": {
+                "count": 87,
+                "rate": 0.15789473684210525
+              },
+              "third_out": {
+                "count": 76,
+                "rate": 0.13793103448275862
+              },
+              "final_loser": {
+                "count": 71,
+                "rate": 0.12885662431941924
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 30,
+                "rate_among_losses": 0.11363636363636363
+              },
+              "second_out": {
+                "count": 87,
+                "rate_among_losses": 0.32954545454545453
+              },
+              "third_out": {
+                "count": 76,
+                "rate_among_losses": 0.2878787878787879
+              },
+              "final_loser": {
+                "count": 71,
+                "rate_among_losses": 0.2689393939393939
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 518,
+          "game_rate": 0.1295,
+          "decision_exposures": 830,
+          "plays": 271,
+          "summary": {
+            "games": 518,
+            "wins": 279,
+            "winrate": 0.5386100386100386,
+            "winrate_ci95": 0.04293015770258459,
+            "mean_reward": 0.7818532586097717,
+            "reward_std": 0.73682701587677,
+            "reward_ci95": 0.063453668697875,
+            "outcomes": {
+              "winner": {
+                "count": 279,
+                "rate": 0.5386100386100386
+              },
+              "first_out": {
+                "count": 9,
+                "rate": 0.017374517374517374
+              },
+              "second_out": {
+                "count": 53,
+                "rate": 0.10231660231660232
+              },
+              "third_out": {
+                "count": 65,
+                "rate": 0.12548262548262548
+              },
+              "final_loser": {
+                "count": 112,
+                "rate": 0.21621621621621623
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 9,
+                "rate_among_losses": 0.03765690376569038
+              },
+              "second_out": {
+                "count": 53,
+                "rate_among_losses": 0.2217573221757322
+              },
+              "third_out": {
+                "count": 65,
+                "rate_among_losses": 0.2719665271966527
+              },
+              "final_loser": {
+                "count": 112,
+                "rate_among_losses": 0.4686192468619247
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Comtesse": {
+        "early": {
+          "games_with_card": 405,
+          "game_rate": 0.10125,
+          "decision_exposures": 527,
+          "plays": 100,
+          "summary": {
+            "games": 405,
+            "wins": 225,
+            "winrate": 0.5555555555555556,
+            "winrate_ci95": 0.048395061728395056,
+            "mean_reward": 0.8464197516441345,
+            "reward_std": 0.7840498089790344,
+            "reward_ci95": 0.07636110926752028,
+            "outcomes": {
+              "winner": {
+                "count": 225,
+                "rate": 0.5555555555555556
+              },
+              "first_out": {
+                "count": 32,
+                "rate": 0.07901234567901234
+              },
+              "second_out": {
+                "count": 41,
+                "rate": 0.10123456790123457
+              },
+              "third_out": {
+                "count": 51,
+                "rate": 0.1259259259259259
+              },
+              "final_loser": {
+                "count": 56,
+                "rate": 0.1382716049382716
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 32,
+                "rate_among_losses": 0.17777777777777778
+              },
+              "second_out": {
+                "count": 41,
+                "rate_among_losses": 0.22777777777777777
+              },
+              "third_out": {
+                "count": 51,
+                "rate_among_losses": 0.2833333333333333
+              },
+              "final_loser": {
+                "count": 56,
+                "rate_among_losses": 0.3111111111111111
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 538,
+          "game_rate": 0.1345,
+          "decision_exposures": 768,
+          "plays": 170,
+          "summary": {
+            "games": 538,
+            "wins": 343,
+            "winrate": 0.637546468401487,
+            "winrate_ci95": 0.04062066449560535,
+            "mean_reward": 0.9631970524787903,
+            "reward_std": 0.7683702707290649,
+            "reward_ci95": 0.06492851890603152,
+            "outcomes": {
+              "winner": {
+                "count": 343,
+                "rate": 0.637546468401487
+              },
+              "first_out": {
+                "count": 16,
+                "rate": 0.02973977695167286
+              },
+              "second_out": {
+                "count": 47,
+                "rate": 0.08736059479553904
+              },
+              "third_out": {
+                "count": 63,
+                "rate": 0.1171003717472119
+              },
+              "final_loser": {
+                "count": 69,
+                "rate": 0.12825278810408922
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 16,
+                "rate_among_losses": 0.08205128205128205
+              },
+              "second_out": {
+                "count": 47,
+                "rate_among_losses": 0.24102564102564103
+              },
+              "third_out": {
+                "count": 63,
+                "rate_among_losses": 0.3230769230769231
+              },
+              "final_loser": {
+                "count": 69,
+                "rate_among_losses": 0.35384615384615387
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 486,
+          "game_rate": 0.1215,
+          "decision_exposures": 787,
+          "plays": 183,
+          "summary": {
+            "games": 486,
+            "wins": 342,
+            "winrate": 0.7037037037037037,
+            "winrate_ci95": 0.04059718928156562,
+            "mean_reward": 1.0666667222976685,
+            "reward_std": 0.7756584882736206,
+            "reward_ci95": 0.06896178264852473,
+            "outcomes": {
+              "winner": {
+                "count": 342,
+                "rate": 0.7037037037037037
+              },
+              "first_out": {
+                "count": 5,
+                "rate": 0.0102880658436214
+              },
+              "second_out": {
+                "count": 23,
+                "rate": 0.047325102880658436
+              },
+              "third_out": {
+                "count": 38,
+                "rate": 0.07818930041152264
+              },
+              "final_loser": {
+                "count": 78,
+                "rate": 0.16049382716049382
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 5,
+                "rate_among_losses": 0.034722222222222224
+              },
+              "second_out": {
+                "count": 23,
+                "rate_among_losses": 0.1597222222222222
+              },
+              "third_out": {
+                "count": 38,
+                "rate_among_losses": 0.2638888888888889
+              },
+              "final_loser": {
+                "count": 78,
+                "rate_among_losses": 0.5416666666666666
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Princesse": {
+        "early": {
+          "games_with_card": 445,
+          "game_rate": 0.11125,
+          "decision_exposures": 557,
+          "plays": 0,
+          "summary": {
+            "games": 445,
+            "wins": 217,
+            "winrate": 0.48764044943820223,
+            "winrate_ci95": 0.04644225998295792,
+            "mean_reward": 0.7640449404716492,
+            "reward_std": 0.7733550071716309,
+            "reward_ci95": 0.07185466410094657,
+            "outcomes": {
+              "winner": {
+                "count": 217,
+                "rate": 0.48764044943820223
+              },
+              "first_out": {
+                "count": 48,
+                "rate": 0.10786516853932585
+              },
+              "second_out": {
+                "count": 72,
+                "rate": 0.16179775280898875
+              },
+              "third_out": {
+                "count": 62,
+                "rate": 0.1393258426966292
+              },
+              "final_loser": {
+                "count": 46,
+                "rate": 0.10337078651685393
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 48,
+                "rate_among_losses": 0.21052631578947367
+              },
+              "second_out": {
+                "count": 72,
+                "rate_among_losses": 0.3157894736842105
+              },
+              "third_out": {
+                "count": 62,
+                "rate_among_losses": 0.2719298245614035
+              },
+              "final_loser": {
+                "count": 46,
+                "rate_among_losses": 0.20175438596491227
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "mid": {
+          "games_with_card": 611,
+          "game_rate": 0.15275,
+          "decision_exposures": 806,
+          "plays": 0,
+          "summary": {
+            "games": 611,
+            "wins": 360,
+            "winrate": 0.5891980360065466,
+            "winrate_ci95": 0.03901057638635391,
+            "mean_reward": 0.9430441856384277,
+            "reward_std": 0.8017349243164062,
+            "reward_ci95": 0.06357206053733817,
+            "outcomes": {
+              "winner": {
+                "count": 360,
+                "rate": 0.5891980360065466
+              },
+              "first_out": {
+                "count": 39,
+                "rate": 0.06382978723404255
+              },
+              "second_out": {
+                "count": 72,
+                "rate": 0.11783960720130933
+              },
+              "third_out": {
+                "count": 85,
+                "rate": 0.13911620294599017
+              },
+              "final_loser": {
+                "count": 55,
+                "rate": 0.09001636661211129
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 39,
+                "rate_among_losses": 0.1553784860557769
+              },
+              "second_out": {
+                "count": 72,
+                "rate_among_losses": 0.2868525896414343
+              },
+              "third_out": {
+                "count": 85,
+                "rate_among_losses": 0.3386454183266932
+              },
+              "final_loser": {
+                "count": 55,
+                "rate_among_losses": 0.21912350597609562
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        },
+        "late": {
+          "games_with_card": 799,
+          "game_rate": 0.19975,
+          "decision_exposures": 1266,
+          "plays": 0,
+          "summary": {
+            "games": 799,
+            "wins": 584,
+            "winrate": 0.7309136420525657,
+            "winrate_ci95": 0.030751163749638294,
+            "mean_reward": 1.1143929958343506,
+            "reward_std": 0.7448316216468811,
+            "reward_ci95": 0.05164648730222245,
+            "outcomes": {
+              "winner": {
+                "count": 584,
+                "rate": 0.7309136420525657
+              },
+              "first_out": {
+                "count": 14,
+                "rate": 0.017521902377972465
+              },
+              "second_out": {
+                "count": 38,
+                "rate": 0.04755944931163955
+              },
+              "third_out": {
+                "count": 64,
+                "rate": 0.08010012515644556
+              },
+              "final_loser": {
+                "count": 99,
+                "rate": 0.12390488110137672
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "loss_positions": {
+              "first_out": {
+                "count": 14,
+                "rate_among_losses": 0.06511627906976744
+              },
+              "second_out": {
+                "count": 38,
+                "rate_among_losses": 0.17674418604651163
+              },
+              "third_out": {
+                "count": 64,
+                "rate_among_losses": 0.29767441860465116
+              },
+              "final_loser": {
+                "count": 99,
+                "rate_among_losses": 0.4604651162790698
+              },
+              "unknown_loss": {
+                "count": 0,
+                "rate_among_losses": 0.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
