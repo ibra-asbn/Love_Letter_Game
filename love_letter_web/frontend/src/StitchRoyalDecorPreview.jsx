@@ -4,6 +4,7 @@ import { api } from "./api";
 import { profileRequestPayload } from "./playerProfile";
 import { PalaceMenu } from "./PalaceMenu";
 import stitchAmiraSpriteUrl from "./assets/stitch-amira-fullbody-cutout.png";
+import stitchRoyalDecorUrl from "./assets/stitch-royal-decor.png";
 import stitchSultanSpriteUrl from "./assets/stitch-sultan-fullbody-cutout.png";
 import stitchSultanaSpriteUrl from "./assets/stitch-sultana-fullbody-cutout.png";
 import { cardArtById, cardBackArt } from "./assets/cards";
@@ -778,7 +779,12 @@ export function StitchRoyalDecorPreview({ onNavigate }) {
           onNewGame={startDecorGame}
           busy={busy || presentationBusy}
         />
-        <div className="stitch-decor-backdrop" aria-hidden="true" />
+        <img
+          className="stitch-decor-backdrop"
+          src={stitchRoyalDecorUrl}
+          alt=""
+          aria-hidden="true"
+        />
         <img
           className={`decor-stitch-character decor-sultana-stitch-art ${current === "player_1" ? "is-active" : ""} ${playerMap.player_1?.alive === false ? "is-dead" : ""}`}
           src={stitchSultanaSpriteUrl}
