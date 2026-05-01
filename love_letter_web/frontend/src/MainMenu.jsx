@@ -3,6 +3,7 @@ import { BookOpen, CheckCircle, FastForward, GraduationCap, Menu, Pencil, Play, 
 import { api } from "./api";
 import { primePalaceOst, startPalaceOst } from "./palaceAudio";
 import qadiLibraryScene from "./assets/qadi-library-scene.png";
+import stitchPalaceDoors from "./assets/stitch-palace-doors.png";
 import {
   cleanProfilePart,
   DEFAULT_ENTRY_REASON_OPTIONS,
@@ -196,6 +197,12 @@ export function MainMenu({ onNavigate }) {
     <main
       className={`main-menu-screen ${stage === "video" || stage === "black" ? "is-intro-running" : ""}`}
     >
+      <img
+        className="main-menu-palace-backdrop"
+        src={stitchPalaceDoors}
+        alt=""
+        aria-hidden="true"
+      />
       {stage === "video" ? (
         <section className="main-menu-intro-video" aria-label="Ouverture du palais">
           <video
