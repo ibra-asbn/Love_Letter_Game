@@ -2,7 +2,7 @@ import React from "react";
 import { BookOpen, CheckCircle, FastForward, GraduationCap, Menu, Pencil, Play, Sparkles, UserX } from "lucide-react";
 import { api } from "./api";
 import { primePalaceOst, startPalaceOst } from "./palaceAudio";
-import { cardArtById } from "./assets/cards";
+import qadiLibraryScene from "./assets/qadi-library-scene.png";
 import {
   cleanProfilePart,
   DEFAULT_ENTRY_REASON_OPTIONS,
@@ -16,8 +16,6 @@ import {
   PALACE_DOORS_INTRO_VIDEO,
 } from "./gameConfig";
 import { pushView } from "./navigation";
-
-const qadiCardArt = cardArtById[2];
 
 function formatPalmares(stats = {}) {
   const matches = Number(stats.matches_played || 0);
@@ -226,18 +224,10 @@ export function MainMenu({ onNavigate }) {
           className="main-menu-library-scene"
           aria-label="Grande archive du palais"
         >
-          <div className="library-archive-set" aria-hidden="true">
-            <span className="library-archive-arch left" />
-            <span className="library-archive-arch right" />
-            <span className="library-archive-lamp left" />
-            <span className="library-archive-lamp right" />
-            <span className="library-archive-shelf shelf-a" />
-            <span className="library-archive-shelf shelf-b" />
-          </div>
           <img
-            className="library-qadi-card"
-            src={qadiCardArt.image}
-            alt="Carte du Qadi"
+            className="library-qadi-backdrop"
+            src={qadiLibraryScene}
+            alt=""
             aria-hidden="true"
           />
           <div className="library-dialogue-panel">

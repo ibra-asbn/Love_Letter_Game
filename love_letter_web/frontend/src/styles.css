@@ -4413,123 +4413,33 @@ button:disabled {
   padding: 34px 28px 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 12%, rgba(244, 213, 118, 0.22), transparent 25%),
-    linear-gradient(180deg, rgba(11, 13, 31, 0.96) 0 43%, rgba(65, 33, 35, 0.98) 43% 100%),
-    repeating-linear-gradient(90deg, rgba(216, 190, 112, 0.08) 0 2px, transparent 2px 18px);
-  image-rendering: pixelated;
+    linear-gradient(180deg, rgba(11, 13, 31, 0.96), rgba(65, 33, 35, 0.98));
 }
 
-.library-archive-set {
+.main-menu-library-scene::after {
+  content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-.library-archive-set::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -18%;
-  width: min(880px, 86vw);
-  height: 42%;
-  border: 7px solid rgba(26, 16, 22, 0.78);
+  z-index: 1;
   background:
-    radial-gradient(ellipse at 50% 18%, rgba(244, 213, 118, 0.28), transparent 42%),
-    repeating-linear-gradient(90deg, #6f361d 0 40px, #8b4a25 40px 80px);
-  box-shadow: 0 -12px 0 rgba(26, 16, 22, 0.42);
-  clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%);
-  transform: translateX(-50%);
+    linear-gradient(180deg, rgba(5, 8, 20, 0.32) 0%, rgba(5, 8, 20, 0.06) 40%, rgba(5, 8, 20, 0.5) 100%),
+    radial-gradient(circle at 50% 12%, rgba(255, 220, 124, 0.22), transparent 42%);
 }
 
-.library-archive-arch {
+.library-qadi-backdrop {
   position: absolute;
-  top: 8%;
-  width: min(210px, 22vw);
-  height: 38%;
-  border: 7px solid rgba(216, 190, 112, 0.65);
-  border-bottom-width: 12px;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(244, 213, 118, 0.14), transparent 36%),
-    linear-gradient(180deg, #192b52, #111323);
-  box-shadow: inset 0 0 0 7px rgba(26, 16, 22, 0.54), 8px 8px 0 rgba(0, 0, 0, 0.32);
-  border-radius: 48% 48% 4px 4px;
-}
-
-.library-archive-arch.left {
-  left: 6%;
-}
-
-.library-archive-arch.right {
-  right: 6%;
-}
-
-.library-archive-lamp {
-  position: absolute;
-  top: 13%;
-  width: clamp(34px, 4vw, 54px);
-  height: clamp(72px, 8vw, 104px);
-  border: 4px solid #1a1016;
-  background:
-    radial-gradient(circle at 50% 52%, #fff0a8 0 22%, #d59a35 23% 52%, #7a3324 53%),
-    #d59a35;
-  box-shadow: 0 0 26px rgba(244, 213, 118, 0.28), 5px 5px 0 rgba(0, 0, 0, 0.32);
-}
-
-.library-archive-lamp.left {
-  left: 28%;
-}
-
-.library-archive-lamp.right {
-  right: 28%;
-}
-
-.library-archive-lamp::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -32px;
-  width: 4px;
-  height: 32px;
-  background: #1a1016;
-  transform: translateX(-50%);
-}
-
-.library-archive-shelf {
-  position: absolute;
-  bottom: 34%;
-  width: min(280px, 26vw);
-  height: 18%;
-  border: 5px solid rgba(26, 16, 22, 0.78);
-  background:
-    repeating-linear-gradient(90deg, #b46d35 0 13px, #f1d58c 13px 17px, #61402d 17px 29px),
-    #6f361d;
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.28);
-}
-
-.library-archive-shelf.shelf-a {
-  left: 5%;
-}
-
-.library-archive-shelf.shelf-b {
-  right: 5%;
-}
-
-.library-qadi-card {
-  position: absolute;
-  right: clamp(24px, 8vw, 120px);
-  bottom: clamp(24px, 6vh, 78px);
-  z-index: 2;
-  width: clamp(96px, 13vw, 170px);
-  border: 5px solid #1a1016;
-  background: #e8d08b;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.42);
-  transform: rotate(5deg);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   image-rendering: pixelated;
 }
 
 .library-dialogue-panel {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   width: min(760px, calc(100vw - 56px));
   border: 6px solid #1a1016;
   outline: 3px solid rgba(216, 190, 112, 0.78);
