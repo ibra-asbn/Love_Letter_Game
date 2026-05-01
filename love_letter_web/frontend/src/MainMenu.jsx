@@ -27,6 +27,7 @@ function formatPalmares(stats = {}) {
 }
 
 export function MainMenu({ onNavigate }) {
+  const palaceIntroVideoRef = React.useRef(null);
   const [stage, setStage] = React.useState("menu");
   const [dialogueIndex, setDialogueIndex] = React.useState(0);
   const [playerProfile, setPlayerProfile] = React.useState(readPlayerProfile);
@@ -38,6 +39,33 @@ export function MainMenu({ onNavigate }) {
   const activeDialogue = qadiDialogue[Math.min(dialogueIndex, qadiDialogue.length - 1)];
   const isFinalDialogue = dialogueIndex >= qadiDialogue.length - 1;
   const canRushGame = stage === "video" || stage === "black" || stage === "library";
+
+  React.useEffect(() => {
+    const video = palaceIntroVideoRef.current;
+    if (!video) return undefined;
+    video.playbackRate = PALACE_DOORS_INTRO_RATE;
+    if (stage === "video") {
+      try {
+        video.currentTime = 0;
+      } catch {
+        // Some browsers can reject seeking before enough media is buffered.
+      }
+      const playRequest = video.play();
+      if (playRequest) {
+        playRequest.catch(() => setStage("black"));
+      }
+      return undefined;
+    }
+    video.pause();
+    if (stage === "menu" || stage === "name" || stage === "reason" || stage === "confirm-identity") {
+      try {
+        video.currentTime = 0;
+      } catch {
+        // Keep the loaded first frame as-is if seeking is not available yet.
+      }
+    }
+    return undefined;
+  }, [stage]);
 
   React.useEffect(() => {
     if (stage !== "black") return undefined;
@@ -197,30 +225,25 @@ export function MainMenu({ onNavigate }) {
       className={`main-menu-screen ${stage === "video" || stage === "black" ? "is-intro-running" : ""}`}
     >
       <video
+        ref={palaceIntroVideoRef}
         className="main-menu-palace-backdrop"
         src={PALACE_DOORS_INTRO_VIDEO}
         muted
         playsInline
         preload="auto"
         aria-hidden="true"
+        onLoadedMetadata={(event) => {
+          event.currentTarget.playbackRate = PALACE_DOORS_INTRO_RATE;
+        }}
+        onEnded={() => {
+          window.setTimeout(() => setStage("black"), 260);
+        }}
+        onError={() => {
+          if (stage === "video") setStage("black");
+        }}
       />
       {stage === "video" ? (
-        <section className="main-menu-intro-video" aria-label="Ouverture du palais">
-          <video
-            src={PALACE_DOORS_INTRO_VIDEO}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            onLoadedMetadata={(event) => {
-              event.currentTarget.playbackRate = PALACE_DOORS_INTRO_RATE;
-            }}
-            onEnded={() => {
-              window.setTimeout(() => setStage("black"), 260);
-            }}
-            onError={() => setStage("black")}
-          />
-        </section>
+        <section className="main-menu-intro-video" aria-label="Ouverture du palais" />
       ) : null}
       {stage === "black" ? (
         <section className="main-menu-black-transition" aria-label="Entrée dans le palais">
