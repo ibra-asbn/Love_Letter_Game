@@ -3646,12 +3646,15 @@ button:disabled {
   position: absolute;
   inset: 0;
   z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   image-rendering: pixelated;
   filter: brightness(0.86) contrast(1.05) saturate(0.98);
+  transform: scale(1.28);
+  transform-origin: 49% 50%;
 }
 
 .main-menu-screen.is-intro-running {
@@ -3659,8 +3662,7 @@ button:disabled {
   background: #000;
 }
 
-.main-menu-screen.is-intro-running::after,
-.main-menu-screen.is-intro-running .main-menu-palace-backdrop {
+.main-menu-screen.is-intro-running::after {
   display: none;
 }
 
@@ -4409,9 +4411,9 @@ button:disabled {
   inset: 0;
   z-index: 70;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
-  padding: 34px 28px 0;
+  padding: 0 28px 34px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(11, 13, 31, 0.96), rgba(65, 33, 35, 0.98));
@@ -4456,12 +4458,13 @@ button:disabled {
 .library-dialogue-panel::before {
   content: "";
   position: absolute;
-  bottom: -18px;
+  top: -18px;
+  bottom: auto;
   left: 50%;
   width: 24px;
   height: 24px;
-  border-right: 6px solid #1a1016;
-  border-bottom: 6px solid #1a1016;
+  border-top: 6px solid #1a1016;
+  border-left: 6px solid #1a1016;
   background: #f0d481;
   transform: translateX(-50%) rotate(45deg);
 }
