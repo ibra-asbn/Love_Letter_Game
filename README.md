@@ -1,137 +1,111 @@
 # Love Letter RL
 
-Etat historique detaille au **26 avril 2026**. Etat documentaire consolide le
-**3 juin 2026**.
+Etat final documente le **3 juin 2026**.
 
-Pour lire le projet dans l'ordre, commencer par:
+Ce README est le recap complet et date du projet, du premier diagnostic au
+point d'arret final. Quand une date exacte existe dans un rapport, elle est
+reprise. Quand une date manque, elle est reconstruite a partir de l'ordre des
+fichiers, des rapports et des commits.
 
-- `docs/project_journal_fr.md` pour le recap canonique etape par etape;
-- `docs/github_handoff_fr.md` pour le nettoyage et la publication GitHub;
-- `docs/linkedin_post_fr.md` pour le brouillon de communication;
-- `love_letter_web/README.md` pour lancer l'app web.
+Objectif initial: construire un agent de reinforcement learning capable de
+jouer fort a **Love Letter**, puis fournir une interface jouable contre le
+meilleur modele.
 
-Le point d'arret actuel est volontaire: conserver le champion `champion_cbp`,
-mettre la documentation et le repo au propre, puis publier une synthese.
+Objectif final du depot: garder le projet propre, lisible, documente et pret a
+etre partage sur GitHub, sans relancer de nouvelle experimentation.
 
-Objectif: construire un agent de reinforcement learning fort pour jouer a **Love Letter**, puis fournir une interface jouable contre le meilleur modele.
+## Etat Final
 
-## Diagnostic Court
+Champion retenu:
 
-Le projet est maintenant nettoye autour d'une base plus saine.
+```text
+champion_cbp = Step3 rapide DAgger + Chancelier V1 + Baron V1 + Prince V1
+```
 
-Ce qu'on sait:
+Statut:
 
-- Love Letter est exploitable par une politique meilleure que le hasard.
-- Le meilleur checkpoint historique conserve reste `models/checkpoints/curriculum_phase1.pth`.
-- Les meilleurs joueurs de la nouvelle pipeline sont maintenant les deux Step3:
-  Step3 rapide DAgger autonome (`0.39750` composite seat-rotated post-fix
-  regles) et Step3 hybride verify16 avec recherche locale (`0.39690`). L'ecart
-  entre eux est trop faible pour declarer une hierarchie definitive.
-- L'ancienne arena `player_0 only` etait biaisee par le ciblage absolu de
-  `HeuristicBot`; elle est conservee comme hard mode. Une nouvelle fair arena
-  avec `HeuristicBot(shuffle_targets=True)` confirme que Step2 et Step3 restent
-  au-dessus de l'heuristique au composite.
-- Le 25 avril 2026, le moteur a ete audite contre les regles: corrections sur
-  Baron/Roi/Servante et validation par `scripts/debug/check_rules_conformance.py`.
-- Le modele Step2 bat `HeuristicBot` sur nos arenas de reference; Step3 ajoute une correction action-value stabilisee par rollouts apparies.
-- Step5 vient de produire une premiere tete d'execution validee: Chancelier V1
-  ameliore Step3 rapide de `+0.0155` puis `+0.0149` composite sur deux blocs de
-  `1000` parties par composition, sans rollout a l'inference.
-- Les essais `belief-conditioned` ont montre que le belief est utile, surtout quand il pilote les cibles, les devinettes et les determinizations.
-- L'ancien empilement de scripts PPO/Tianshou a ete supprime pour repartir sur un pipeline plus controlable.
+- le moteur de jeu est audite contre les regles locales;
+- la pipeline IA est documentee de bout en bout;
+- la web app FastAPI + React/Vite est la cible produit;
+- les checkpoints lourds restent hors Git classique;
+- le projet est arrete proprement au 3 juin 2026;
+- le brouillon LinkedIn est dans `docs/linkedin_post_fr.md`.
 
-## Arborescence
+Documents importants:
+
+| Fichier | Role |
+|---|---|
+| `README.md` | Recap complet date |
+| `docs/project_journal_fr.md` | Journal synthetique etape par etape |
+| `docs/github_handoff_fr.md` | Handoff GitHub et nettoyage |
+| `docs/linkedin_post_fr.md` | Brouillon de post LinkedIn |
+| `docs/love_letter_rules_fr.md` | Regles locales de reference |
+| `love_letter_web/README.md` | Lancer l'app web |
+
+## Chronologie Rapide
+
+| Date | Etape | Decision |
+|---|---|---|
+| 2026-04-24 | Baseline random vs heuristique | Le jeu est exploitable |
+| 2026-04-24 | Step1 - Heuristic Mastery | Le modele copie l'heuristique |
+| 2026-04-24 | Step2 - RL/retarget | Le modele bat `HeuristicBot` |
+| 2026-04-24 | Diagnostics belief/action-value | Le belief est utile mais mal exploite |
+| 2026-04-25 | Audit regles | Corrections Baron/Roi/Servante |
+| 2026-04-25 | Step3 - Action-value | Signal positif, deux branches conservees |
+| 2026-04-25 | Interlude arena | Correction du biais `player_0 only` |
+| 2026-04-25 | Step4 - Weakness analysis | Ne pas refaire un PPO global |
+| 2026-04-25 | Step5 Phase A | Regret exploitable trouve |
+| 2026-04-26 | Step5 Chancelier/Baron/Prince | `champion_cbp` devient la reference |
+| 2026-04-26 | Step6 population | Champion sain, mais curriculum reste fort |
+| 2026-04-26 | Step7 self-play league | Ligue OK, candidats rejetes |
+| 2026-04-28 au 2026-05-01, reconstruit | Web app produit | FastAPI + React/Vite remplace Streamlit |
+| 2026-06-03 | Handoff final | Documentation, GitHub, LinkedIn |
+
+## Architecture Du Depot
 
 ```text
 love_letter/
   engine.py                  # moteur PettingZoo/Gym du jeu
-  paths.py                   # chemins centraux du projet
-  belief_actor.py            # architecture actor + belief conditionne
-  belief_policy.py           # chargement/inference des checkpoints
+  belief_actor.py            # architecture actor + belief
+  belief_policy.py           # chargement/inference des policies
   bots/heuristic.py          # bot heuristique de reference
-  gameplay/play_vs_agent.py  # partie console humain vs modele
+  gameplay/play_vs_agent.py  # jeu console
 
 scripts/
-  training/
-    collect_heuristic_data.py     # genere le dataset d'imitation
-    distill_belief_retarget.py    # apprend a l'actor a internaliser le retarget belief
-    pretrain_belief_actor.py      # pretraining supervised actor + belief
-    train_belief_ppo.py           # fine-tuning PPO custom sans Tianshou
-  evaluation/
-    evaluate_baselines.py         # random vs heuristic sur beaucoup de parties
-    evaluate_belief_counterfactual.py # teste si l'actor exploite bien le belief
-    evaluate_models.py            # matrice d'evaluation des checkpoints
-    diagnose_model.py             # diagnostic tactique detaille d'un modele
-    measure_belief.py             # accuracy du belief head
-  debug/
-    check_engine_invariants.py    # sanity checks du moteur
-    check_rules_conformance.py    # tests executables des regles Love Letter
+  debug/                     # sanity checks et debug local
+  evaluation/                # evaluations, baselines, diagnostics
+  training/                  # anciens et nouveaux scripts d'entrainement
 
-docs/
-  love_letter_rules_fr.md         # reference locale des regles utilisees
-
-models/checkpoints/
-  curriculum_phase1.pth              # reference historique conservee
-  belief_conditioned_bc.pth          # warm start BC pour le futur pipeline
-  belief_conditioned_ppo_final.pth   # experience belief-conditioned non championne
-
-data/
-  heuristic_dataset.pkl              # dataset BC issu du bot heuristique
-
-diagnostics/
-  rapports tactiques et diagnostics modeles
-
-logs/evaluations/
-  resultats bruts d'evaluation
-
-interlude_heuristic_comparison/
-  evaluate_interlude_arena.py         # arena HeuristicBot vs Step2 vs Step3
-  evaluate_fair_arena.py              # meme arena, mais heuristiques sans focus player_0
-  evaluate_rotating_tactical_arena.py # rotation des sieges + diagnostics tactiques
-  seat_bias_probe.md                  # diagnostic du biais de ciblage historique
-  README.md                           # verdict: modeles actuels > heuristique
+step1_heuristic_mastery/     # imitation du bot heuristique
+step2_rl_finetune/           # depasser l'heuristique
+step3_action_value/          # action-value, verify16, DAgger
+step4_weakness_analysis/     # analyse des faiblesses par cartes
+step5_execution_heads/       # tetes locales d'execution
+step6_self_play/             # population et matchups asymetriques
+step7_self_play_league/      # ligue self-play + promotion gate
 
 love_letter_web/
-  streamlit_app.py                   # interface jouable
-  backend/main.py                    # prototype FastAPI
+  backend/main.py            # API FastAPI
+  frontend/                  # app React/Vite
 
-step1_heuristic_mastery/
-  collect_teacher_sequences.py        # collecte sequencee depuis HeuristicBot
-  train_heuristic_student.py          # imitation recurrente avec split train/val/test
-  compare_student_teacher.py          # diagnostic action par action
-  evaluate_heuristic_mastery.py       # arena student vs heuristic/random
-
-step2_rl_finetune/
-  evaluate_step2.py                   # evaluations step2 vs random/heuristic
-  train_step2_ppo.py                  # tentative PPO depuis le student heuristique
-  checkpoints/                        # checkpoints locaux ignores par Git
-
-step3_action_value/
-  common.py                           # utilitaires partages Step3 active
-  mini_rollout_probe.py               # primitives de probe/determinization
-  evaluate_rollout_guided.py          # oracle lent action-value/search
-  train_advantage_head_v2.py          # tete advantage avec labels CRN apparies
-  train_advantage_dagger_v2.py        # DAgger on-policy pour tete rapide autonome
-  evaluate_advantage_head_v2.py       # Step3 v2 verifie: tete + verification CRN
-  hybrid_verified/                    # fiche du Step3 hybride verify16
-  legacy/                             # anciennes tentatives archivees
-
-step4_weakness_analysis/
-  CARD_TAXONOMY.md                     # familles de cartes figees pour audit
-  cluster_step3_card_archetypes.py     # clustering Step3 par cartes/phases
-  reports/                             # resultats de l'audit des faiblesses
-
-step5_execution_heads/
-  collect_execution_teacher.py          # teacher/audit des executions fines
-  README.md                             # objectif, protocole, criteres de succes
-  reports/                              # audits Roi/Baron/Pretre/Chancelier
+docs/
+  project_journal_fr.md
+  github_handoff_fr.md
+  linkedin_post_fr.md
+  love_letter_rules_fr.md
 ```
 
-## Baseline Statistique
+## Baseline - 24 Avril 2026
 
-Test lance le 24 avril 2026 avec `20 000` parties par politique.
+Question: est-ce qu'une politique simple fait mieux que le hasard ?
 
-Commande:
+Ce qu'on voulait ajouter:
+
+- un test statistique propre;
+- un point de comparaison random vs heuristique;
+- une preuve que Love Letter est un terrain exploitable pour du RL.
+
+Commande de reference:
 
 ```bash
 python3 scripts/evaluation/evaluate_baselines.py \
@@ -141,39 +115,42 @@ python3 scripts/evaluation/evaluate_baselines.py \
 
 Resultats:
 
-| Politique player_0 | Adversaires | Winrate | IC 95% winrate | Reward moyen | IC 95% reward |
-|---|---|---:|---:|---:|---:|
-| Random | 3 randoms | 29.92% | +/- 0.63 pt | 0.397 | +/- 0.009 |
-| HeuristicBot | 3 randoms | 45.69% | +/- 0.69 pt | 0.677 | +/- 0.011 |
+| Politique player_0 | Adversaires | Winrate | Reward moyen |
+|---|---|---:|---:|
+| Random | 3 randoms | 29.92% | 0.397 |
+| HeuristicBot | 3 randoms | 45.69% | 0.677 |
 
-Lift de l'heuristique:
+Conclusion: le jeu est bien exploitable. Une politique lisible non neuronale
+obtient un edge massif. La suite peut chercher a copier puis depasser cette
+heuristique.
 
-- `+15.77` points de winrate vs random.
-- `x1.53` en winrate.
-- `+0.280` reward moyen.
-- `x1.71` en reward moyen.
+## Step1 - Heuristic Mastery - 24 Avril 2026
 
-Conclusion: le jeu est bien exploitable. Une politique simple, lisible, non-neuronale obtient un edge massif et statistiquement stable. C'est donc un bon terrain pour du RL, mais il faut une vraie chaine d'entrainement et d'evaluation.
+Dossier: `step1_heuristic_mastery/`
 
-## Etape 1 - Maitrise De L'Heuristique
+Objectif: obtenir un modele qui absorbe tout ce que `HeuristicBot` sait faire.
+Si le reseau ne sait pas copier l'heuristique, il est trop tot pour attendre du
+RL qu'il la depasse.
 
-Sous-dossier dedie:
+Ce qu'on voulait ajouter:
 
-```text
-step1_heuristic_mastery/
-```
+- une collecte de sequences depuis `HeuristicBot`;
+- un modele recurrent imitant l'heuristique;
+- un split train/validation/test;
+- une evaluation action par action;
+- une correction de l'observation du Chancelier.
 
-But: construire un modele qui absorbe proprement `HeuristicBot` avant de relancer du RL. Cette etape sert de base stable: si le reseau ne sait meme pas reproduire l'heuristique, il est trop tot pour attendre de PPO qu'il la batte.
+Correction importante: pendant l'effet du Chancelier, l'observation expose les
+cartes disponibles et leur ordre de choix. Avant cette correction, certaines
+actions `900/902/904` etaient partiellement impossibles a imiter.
 
-Checkpoint obtenu le 24 avril 2026:
+Checkpoint:
 
 ```text
 step1_heuristic_mastery/checkpoints/heuristic_student_attempt4_player0_chancellor_order.pth
 ```
 
-Correction moteur importante faite pendant cette etape: pendant l'effet du Chancelier, l'observation expose maintenant les cartes disponibles et leur ordre de choix. Avant cela, l'action exacte `900/902/904` etait partiellement impossible a imiter, car l'information utile n'etait pas dans l'observation.
-
-Entrainement imitation:
+Resultats imitation:
 
 | Split | Action accuracy | Action loss | Belief accuracy |
 |---|---:|---:|---:|
@@ -181,44 +158,33 @@ Entrainement imitation:
 | Validation | 98.93% | 0.0313 | 31.43% |
 | Test | 98.94% | 0.0292 | 30.62% |
 
-Gap train-validation: `0.99` point. Pas de signal d'overfitting bloquant.
-
-Comparaison action par action sur `129 858` decisions:
-
-| Mesure | Resultat |
-|---|---:|
-| Exact action accuracy | 99.72% |
-| Meme carte jouee | 99.95% |
-| Garde exact | 99.76% |
-| Baron exact | 99.80% |
-| Prince exact | 99.98% |
-| Chancelier exact | 99.97% |
-| Choix Chancelier exact | 99.78% |
-
-Evaluation arena player_0 sur `5 000` parties par configuration:
+Evaluation arena:
 
 | Politique player_0 | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
 |---|---:|---:|---:|---:|---:|
 | Student heuristique | 47.68% | 32.86% | 21.40% | 11.72% | 0.22448 |
 | HeuristicBot | 47.86% | 32.78% | 21.62% | 11.82% | 0.22556 |
 
-Conclusion etape 1: succes pour l'imitation. Le student n'est pas encore meilleur que l'heuristique, mais il est maintenant au meme niveau statistique et suffisamment proche pour servir de warm start RL. La prochaine vraie question n'est plus "sait-il copier l'heuristique ?", mais "comment le faire depasser l'heuristique sans detruire ce socle ?".
+Decision: succes. Le student n'est pas encore meilleur que l'heuristique, mais
+il est statistiquement au meme niveau et devient un warm start valide.
 
-Rapport detaille:
+## Step2 - Battre L'Heuristique - 24 Avril 2026
 
-```text
-diagnostics/2026-04-24_step1_heuristic_mastery.md
-```
+Dossier: `step2_rl_finetune/`
 
-## Etape 2 - Battre L'Heuristique
+Objectif: partir du student Step1 et obtenir un modele qui bat vraiment
+`HeuristicBot`.
 
-Sous-dossier dedie:
+Ce qu'on voulait ajouter:
 
-```text
-step2_rl_finetune/
-```
+- du RL ou une correction au-dessus du student;
+- une exploitation plus forte du belief;
+- une evaluation longue, pas seulement un run court;
+- un modele plus fort que `HeuristicBot` dans toutes les compositions.
 
-Objectif: partir du student heuristique de l'etape 1 et obtenir un modele DL qui bat vraiment `HeuristicBot`.
+Ce qui a marche: le mode contre-factuel `retarget` utilisait mieux le belief
+pour choisir les cibles et les devinettes. On a donc distille ce comportement
+dans l'actor.
 
 Checkpoint retenu:
 
@@ -226,113 +192,103 @@ Checkpoint retenu:
 step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth
 ```
 
-Ce qu'on a teste:
+Confirmation longue, `5000` parties par configuration:
 
-- PPO depuis le student heuristique: succes court, mais pas confirme sur evaluation longue;
-- contre-factuel actor/belief: gros signal positif si les cibles/devinettes suivent le belief;
-- distillation du retarget belief dans l'actor: succes confirme.
-
-Confirmation longue sur `5000` parties par configuration:
-
-| Politique player_0 | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
+| Modele player_0 | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
 |---|---:|---:|---:|---:|---:|
 | Step2 retarget distille | 50.54% | 36.80% | 26.36% | 16.04% | 0.26738 |
 | HeuristicBot | 46.02% | 33.48% | 21.36% | 11.30% | 0.22226 |
 
-Gain composite: `+4.51` points contre `HeuristicBot`.
+Gain confirme:
 
-Diagnostic post-distillation:
+- `+4.51` points de composite vs `HeuristicBot`;
+- `+4.52` points vs 3 randoms;
+- `+4.74` points vs 3 heuristiques.
 
-| Mode | Composite 1000 parties/config |
-|---|---:|
-| Actor brut distille | 0.2634 |
-| Retarget encore force | 0.2695 |
-| Tactical force | 0.2777 |
+Decision: succes. Step2 devient le socle de la nouvelle pipeline.
 
-Conclusion: l'etape 2 est reussie. Le modele bat l'heuristique et l'actor utilise beaucoup mieux le belief, surtout pour les Gardes, Barons, Princes et Rois. Il reste encore un potentiel tactique a exploiter.
+## Diagnostics Belief Et Action-Value - 24 Avril 2026
 
-Rapport detaille:
+Dossiers et rapports:
 
-```text
-diagnostics/2026-04-24_step2_rl_finetune.md
-```
+- `diagnostics/2026-04-24_belief_conditioned_ppo_model_diagnostic.md`
+- `diagnostics/2026-04-24_step3_mini_action_value_probe.md`
+- `diagnostics/2026-04-24_attempt2_tactical_best_model_diagnostic.md`
 
-Benchmark de clarification contre le champion historique:
+Objectif: comprendre pourquoi les modeles belief-conditioned avaient du signal
+mais ne devenaient pas automatiquement champions.
 
-```text
-diagnostics/2026-04-24_step2_vs_curriculum_benchmark.md
-```
+Ce qu'on voulait ajouter:
 
-Lecture courte: `step2_retarget_distilled_attempt1.pth` bat `HeuristicBot`, mais ne bat pas encore `curriculum_phase1.pth`. Il est meilleur sur plusieurs gestes tactiques locaux, notamment Garde, Chancelier et Roi, mais curriculum garde une politique globale plus forte.
+- des diagnostics action par action;
+- des contre-factuels actor/belief;
+- des mini probes de rollouts;
+- une lecture tactique des erreurs de Garde, Baron, Prince, Roi et Chancelier.
 
-Mini-test action-value pour l'etape 3:
+Constat:
 
-```text
-diagnostics/2026-04-24_step3_mini_action_value_probe.md
-```
+- le belief contient de l'information utile;
+- l'actor ne l'utilise pas assez naturellement;
+- le Baron est un probleme de timing et de cible;
+- certaines erreurs viennent d'une execution locale, pas du choix global de
+  jouer une carte.
 
-Lecture courte: des rollouts sur quelques etats critiques donnent deja des labels utiles. Le signal est particulierement interessant sur Baron/Prince/Garde: l'enjeu n'est pas d'ecrire une regle, mais d'apprendre une valeur par action dans le contexte.
+Decision: garder le belief, mais ne pas esperer qu'un PPO global decouvre seul
+la bonne exploitation. Il faut des corrections plus ciblees.
 
-## Etape 3 - Action-Value / Search
+## Audit Des Regles - 25 Avril 2026
 
-Sous-dossier dedie:
+Rapports:
 
-```text
-step3_action_value/
-```
+- `docs/love_letter_rules_fr.md`
+- `diagnostics/2026-04-25_rules_conformance_audit.md`
 
-Objectif: verifier si une estimation de valeur par action peut ameliorer le
-Step2 sans ajouter de nouvelles regles manuelles.
+Objectif: verifier que le moteur respecte les regles locales de Love Letter
+avant d'entrainer davantage.
 
-Clarification de nomenclature: il n'y a pas de Step4 active. La variante
-anciennement appelee `Step4 v0 verify16` est maintenant classee comme
-**Step3 hybride verify16**.
+Ce qu'on voulait ajouter:
 
-Resultat important: les deux premieres tentatives de distillation offline ont
-echoue, mais la policy `rollout-guided` a reussi. Elle garde Step2 comme action
-par defaut, puis evalue quelques actions tactiques par rollouts sur
-`baron`, `guard`, `prince` et override seulement si la marge est claire.
+- un texte de reference local;
+- des tests executables de conformite;
+- une correction des ecarts de regles;
+- une base fiable pour les evaluations longues.
 
-Confirmation `1000` parties par configuration, seed `783000`:
+Corrections importantes:
 
-| Policy | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
-|---|---:|---:|---:|---:|---:|
-| Step2 brut | 51.00% | 35.10% | 22.80% | 15.50% | 0.25160 |
-| Step3 rollout-guided | 50.90% | 36.80% | 26.00% | 18.00% | 0.27450 |
+- Baron;
+- Roi;
+- Servante;
+- cas particuliers autour des actions forcees.
 
-Gain composite: `+2.29` points. Le gain vient surtout des compositions avec
-heuristiques, donc la piste action-value/search est valide.
-
-Limite nuancee: cette policy est trop lente pour generer des millions de
-parties d'entrainement, mais elle est acceptable pour jouer contre un humain.
-Elle reste donc un oracle/teacher de search, pas encore un checkpoint autonome.
-
-Redo du 25 avril 2026: on a tente de distiller ce teacher dans une tete
-`pairwise action-value ranker`. Le meilleur gain confirme est positif mais trop
-faible pour declarer un nouveau champion autonome.
-
-| Candidat distille | Composite 1000/config | Delta vs Step2 |
-|---|---:|---:|
-| Step2 baseline | 0.26950 | - |
-| Pairwise early-stop attempt2 | 0.27920 | +0.00970 |
-| Pairwise stage-weighted attempt4 | 0.27760 | +0.00810 |
-| Pairwise guard+baron attempt4 | 0.27370 | +0.00420 |
-
-Step3 hybride verify16 du 25 avril 2026: on a repris cette piste avec une tete
-`advantage(s, a)` relative a l'action Step2, des labels par rollouts apparies
-CRN, et surtout une verification locale avant chaque override. La tete seule
-reste instable, mais le mode verifie est maintenant un succes.
-
-Reglage retenu:
+Commande:
 
 ```bash
-python3 -m step3_action_value.evaluate_advantage_head_v2 \
-  --checkpoint step3_advantage_v2_attempt2_strict.pth \
-  --override-margin 0.10 \
-  --verify-rollouts 16 \
-  --verify-min-win-delta 0.125 \
-  --verify-min-score-delta 0.05 \
-  --verify-t-threshold 0.75
+python3 scripts/debug/check_rules_conformance.py
+```
+
+Decision: les evaluations post-25 avril deviennent la reference principale.
+
+## Step3 - Action-Value / Search - 25 Avril 2026
+
+Dossier: `step3_action_value/`
+
+Objectif: apprendre quand une action alternative est meilleure que l'action par
+defaut de Step2.
+
+Ce qu'on voulait ajouter:
+
+- une estimation action-value;
+- des rollouts CRN apparies;
+- une branche hybride verifiee;
+- une branche rapide autonome sans rollouts a l'inference;
+- une meilleure decision sans casser les acquis de Step2.
+
+### Branche Hybride Verify16
+
+Checkpoint:
+
+```text
+step3_action_value/checkpoints/hybrid_verify16/step3_hybrid_verify16.pth
 ```
 
 Validation sur trois seeds independants, `1000` parties par composition:
@@ -344,36 +300,20 @@ Validation sur trois seeds independants, `1000` parties par composition:
 | 136000 | 0.27890 | 0.26330 | +0.01560 |
 | Moyenne | 0.28003 | 0.26543 | +0.01460 |
 
-Moyenne par composition:
+Decision: succes technique. La branche hybride est meilleure que Step2, mais
+elle est trop lente pour devenir l'agent produit principal.
 
-| Composition | Step3 hybride verify16 | Step2 | Delta |
-|---|---:|---:|---:|
-| vs 3 randoms | 53.30% | 51.57% | +1.73 pts |
-| vs 1H+2R | 38.87% | 37.50% | +1.37 pts |
-| vs 2H+1R | 26.47% | 24.73% | +1.73 pts |
-| vs 3H | 17.40% | 16.17% | +1.23 pts |
+### Branche Rapide DAgger
 
-Le verificateur a accepte `1409` overrides sur `5603` propositions verifiees
-sur ces validations, soit `25.15%`. Les propositions rejetees sont aussi
-importantes que les acceptations: c'est ce filtre qui transforme une tete
-instable en joueur plus fort.
-
-Conclusion de cette sous-etape: Step3 est reussie sous forme hybride. A ce
-moment-la, ce n'etait pas encore une tete autonome ultra-rapide; la distillation
-devait encore apprendre la decision finale `proposition + verification`, pas
-seulement copier les rollouts bruts.
-
-DAgger rapide du 25 avril 2026: on a ensuite collecte les etats crees par la
-tete rapide elle-meme, puis relabelise ces etats hors-ligne avec le meme oracle
-CRN strict. Le premier candidat autonome utile est:
+Checkpoint:
 
 ```text
-step3_action_value/checkpoints/dagger_archive/step3_v2_dagger_attempt1_iter1_candidate_fast.pth
+step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth
 ```
 
-Evaluation officielle sans verify, `5000` parties par composition:
+Evaluation officielle, `5000` parties par composition:
 
-| Composition | DAgger iter1 rapide | Step2 | Delta |
+| Composition | DAgger iter1 | Step2 | Delta |
 |---|---:|---:|---:|
 | vs 3 randoms | 53.96% | 52.08% | +1.88 pts |
 | vs 1H+2R | 39.72% | 38.38% | +1.34 pts |
@@ -381,148 +321,62 @@ Evaluation officielle sans verify, `5000` parties par composition:
 | vs 3H | 14.90% | 15.12% | -0.22 pt |
 | Composite | 0.27226 | 0.26438 | +0.00788 |
 
-Lecture: le signal rapide DAgger est reel, mais ce n'est pas encore le champion
-rapide final car il regresse legerement contre `3H`. L'iteration 2 a augmente
-trop le taux d'overrides: symptome probable d'oubli catastrophique. Une
-penalite KL/trust-region vers Step2 est maintenant codee pour la prochaine
-boucle.
+Decision: signal positif, mais il faut proteger le modele contre les
+regressions. Step3 rapide devient la base pratique pour la suite.
 
-Rapport detaille:
+## Interlude - Verification Du Biais D'Arene - 25 Avril 2026
 
-```text
-diagnostics/2026-04-24_step3_action_value_search.md
-diagnostics/2026-04-25_step3_pairwise_ranker_redo.md
-diagnostics/2026-04-25_step3_v2_advantage_verified.md
-diagnostics/2026-04-25_step3_v2_dagger_5000_and_trrd.md
-diagnostics/2026-04-25_step3_reorganisation_no_step4.md
-```
+Dossier: `interlude_heuristic_comparison/`
 
-## Interlude - Sommes-Nous Vraiment Sous L'Heuristique ?
+Objectif: verifier si les modeles etaient vraiment sous l'heuristique ou si
+l'arene historique favorisait certains comportements.
 
-Sous-dossier:
+Ce qu'on voulait ajouter:
 
-```text
-interlude_heuristic_comparison/
-```
+- une arena fair seat-rotated;
+- un `HeuristicBot` sans focus artificiel sur `player_0`;
+- une lecture plus propre des comparaisons Step2/Step3/heuristique.
 
-Question: faire passer `HeuristicBot`, Step2, Step3 rapide et Step3 hybride
-dans la meme arena progressive (`3R`, `1H+2R`, `2H+1R`, `3H`).
+Constat:
 
-Premier resultat en hard mode `player_0`, sur `3` seeds de `1000` parties par
-composition:
+- l'ancienne arena `player_0 only` etait biaisee;
+- elle reste utile comme hard mode;
+- la nouvelle arena fair confirme que Step2 et Step3 sont au-dessus de
+  l'heuristique au composite.
 
-| Politique | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite | Delta vs Heuristic |
-|---|---:|---:|---:|---:|---:|---:|
-| HeuristicBot | 46.40% | 32.57% | 21.50% | 11.83% | 0.22337 | +0.00000 |
-| Step2 retarget | 51.57% | 37.50% | 24.73% | 16.17% | 0.26543 | +0.04207 |
-| Step3 rapide DAgger | 53.87% | 38.27% | 26.97% | 16.63% | 0.27783 | +0.05447 |
-| Step3 hybride verify16 | 53.30% | 38.87% | 26.47% | 17.40% | 0.28003 | +0.05667 |
+Decision: utiliser l'arene fair seat-rotated pour les decisions principales.
 
-Diagnostic important: cette arena etait biaisee par le ciblage absolu de
-`HeuristicBot`. Le moteur choisit bien le premier joueur aleatoirement, mais
-les adversaires heuristiques resolvaient leurs egalites de cible dans l'ordre
-`player_0, player_1, player_2, player_3`. En full heuristique, `player_0` etait
-donc cible `16678` fois sur `5000` parties, contre seulement `4147` fois pour
-`player_3`.
+## Step4 - Weakness Analysis - 25 Avril 2026
 
-Correction: `HeuristicBot` accepte maintenant `shuffle_targets=True`. Ce mode
-garde les memes regles, mais randomise les egalites de cible. Sonde full
-heuristique fair sur `5000` parties:
+Dossier: `step4_weakness_analysis/`
 
-| Siege | Winrate | Reward moyen | Ciblages recus |
-|---|---:|---:|---:|
-| player_0 | 29.24% | 0.4352 | 9903 |
-| player_1 | 29.64% | 0.4436 | 10074 |
-| player_2 | 30.02% | 0.4533 | 10070 |
-| player_3 | 28.52% | 0.4301 | 9957 |
+Objectif: ne pas relancer un entrainement global. Comprendre ou Step3 rapide
+gagne, ou il perd, et quelles competences doivent etre protegees.
 
-Fair arena du 25 avril 2026, `1000` parties par composition:
+Ce qu'on voulait ajouter:
 
-| Politique | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite | Delta vs Fair Heuristic |
-|---|---:|---:|---:|---:|---:|---:|
-| Fair HeuristicBot | 52.80% | 40.40% | 36.60% | 28.20% | 0.35620 | +0.00000 |
-| Step2 retarget | 49.10% | 43.60% | 38.30% | 31.50% | 0.37720 | +0.02100 |
-| Step3 rapide DAgger | 53.40% | 45.70% | 41.30% | 28.60% | 0.38310 | +0.02690 |
-| Step3 hybride verify16 | 53.00% | 46.80% | 39.90% | 30.70% | 0.38910 | +0.03290 |
+- une taxonomie des cartes et phases de partie;
+- un clustering des archetypes de mains;
+- des ablations conditionnelles;
+- une lecture des faiblesses par carte;
+- une decision claire avant Step5.
 
-Benchmark seat-rotated post-correction des regles du 25 avril 2026, `1000`
-parties par composition. Le joueur evalue tourne entre les quatre positions:
-
-| Politique | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
-|---|---:|---:|---:|---:|---:|
-| Fair HeuristicBot | 51.80% | 39.20% | 31.50% | 29.20% | 0.34150 |
-| Step2 retarget | 51.70% | 43.00% | 35.70% | 33.30% | 0.37800 |
-| Step3 rapide DAgger | 51.90% | 46.20% | 38.40% | 34.50% | 0.39750 |
-| Step3 hybride verify16 | 51.20% | 45.30% | 39.30% | 34.30% | 0.39690 |
-
-Conclusion revisee: les modeles actuels ne sont pas moins bons que
-`HeuristicBot`. L'ancien benchmark les mettait dans un hard mode tres cible; le
-fair mode retire ce focus artificiel, et la rotation des sieges confirme que
-Step2 et Step3 restent au-dessus de l'heuristique au composite.
-
-Rapport:
+Modele analyse:
 
 ```text
-interlude_heuristic_comparison/README.md
-interlude_heuristic_comparison/reports/interlude_arena_heuristic_step2_step3_3x1000.md
-interlude_heuristic_comparison/reports/fair_arena_heuristic_step2_step3_1000.md
-interlude_heuristic_comparison/reports/rotating_tactical_arena_1000.md
-interlude_heuristic_comparison/reports/rotating_tactical_arena_post_rules_fix_1000.md
+step3_action_value/checkpoints/step3_advantage_v2_dagger_attempt1_iter1.pth
 ```
 
-## Etape 4 - Identification Des Faiblesses
-
-Sous-dossier:
-
-```text
-step4_weakness_analysis/
-```
-
-Objectif: ne pas encore entrainer un nouveau modele, mais comprendre ou le
-dernier Step3 rapide gagne/perd selon les cartes qu'il rencontre et le moment
-de la manche.
-
-Taxonomie figee:
-
-```text
-step4_weakness_analysis/CARD_TAXONOMY.md
-```
-
-Clustering aligne sur le benchmark fair seat-rotated post-fix, `1000` parties
-par composition, seed `260000`:
+Resultats principaux:
 
 | Mesure | Resultat |
 |---|---:|
-| Parties analysees | 4000 |
-| Composite Step3 rapide | 0.39750 |
+| Parties | 4000 |
+| Composite | 0.39750 |
 | Winrate moyen | 42.75% |
 | Reward moyen | 0.6447 |
 
-Quand Step3 rapide perd, sa position de sortie est:
-
-| 1er sorti | 2e sorti | 3e sorti | Finaliste perdant |
-|---:|---:|---:|---:|
-| 33.01% | 27.90% | 18.82% | 20.26% |
-
-Premiers archetypes a surveiller:
-
-| Archetype | Games | Winrate |
-|---|---:|---:|
-| Partie avec Roi | 464 | 44.61% |
-| Baron avec petite carte | 1010 | 47.13% |
-| Princesse tot | 445 | 48.76% |
-| Grosse carte tot | 1194 | 49.75% |
-| Partie avec Chancelier | 1142 | 51.14% |
-
-Lecture courte: le modele est clairement meilleur que notre inquietude
-initiale. Ses bons signaux sont `Pretre -> Garde`, les parties riches en
-Gardes, et les fins de manche avec cartes de controle. Les axes faibles a
-verifier sont le Roi, les Barons mal equipes, les grosses cartes tres tot, et
-certains usages du Chancelier.
-
-Une deuxieme passe Step4 a ajoute des ablations conditionnelles: le modele
-choisit naturellement la carte, puis on randomise seulement l'execution fine
-de cette carte.
+Ablations conditionnelles:
 
 | Ablation | Composite | Delta vs normal | Lecture |
 |---|---:|---:|---|
@@ -531,440 +385,273 @@ de cette carte.
 | Garde guess random | 0.33320 | -0.06430 | Guess Garde tres maitrise |
 | Prince cible random | 0.37470 | -0.02280 | Ciblage Prince net |
 | Baron cible random | 0.39100 | -0.00650 | Ciblage Baron un peu utile |
-| Roi cible random | 0.39750 | +0.00000 | Faiblesse Roi pas expliquee par cible seule |
-| Chancelier choix random | 0.39550 | -0.00200 | Choix Chancelier peu converti en winrate |
-| Pretre cible random | 0.39900 | +0.00150 | Pas d'effet clair |
-
-Conclusion courte: Garde et Prince sont des competences a proteger. Roi,
-Baron faible, Pretre et Chancelier demandent maintenant un audit decisionnel avec
-`forcedness` et regret rollout avant tout entrainement cible.
-
-Rapports:
-
-```text
-step4_weakness_analysis/reports/step3_fast_card_clusters_post_rules_fix_1000.md
-step4_weakness_analysis/reports/step3_fast_card_clusters_1000.md
-step4_weakness_analysis/reports/step3_fast_card_ablation_1000.md
-step4_weakness_analysis/reports/2026-04-25_step4_card_ablation_analysis.md
-step4_weakness_analysis/reports/2026-04-25_step4_to_step5_decision.md
-```
-
-## Etape 5 - Tetes D'Execution
-
-Sous-dossier:
-
-```text
-step5_execution_heads/
-```
-
-Objectif: ameliorer le Step3 rapide sans changer sa decision principale de
-carte. L'hypothese issue de Step4 est que le modele sait souvent **quand** jouer
-une carte, mais pas toujours **comment** executer Roi, Baron, Pretre et
-Chancelier.
-
-La premiere partie Step5 est maintenant terminee: un teacher/audit collecte des
-etats naturels du Step3 rapide et compare les executions legales par rollouts
-apparies CRN.
-
-Run initial, `500` games de collecte, `40` etats/type, `12` rollouts/action:
-
-| Type | Etats | Best != modele | Regret clair | Mean score regret | Mean win regret |
-|---|---:|---:|---:|---:|---:|
-| Chancelier - choix carte/ordre | 40 | 67.50% | 37.50% | 0.1199 | 0.1104 |
-| Baron avec carte faible - cible | 40 | 65.00% | 20.00% | 0.0715 | 0.0667 |
-| Roi - cible | 40 | 30.00% | 17.50% | 0.0615 | 0.0583 |
-| Baron - cible | 40 | 32.50% | 15.00% | 0.0562 | 0.0521 |
-| Pretre - cible | 40 | 40.00% | 12.50% | 0.0382 | 0.0354 |
-
-Conclusion phase A: succes. Il existe bien du regret oracle exploitable, surtout
-sur Chancelier.
-
-Le 26 avril 2026, une premiere tete rapide Chancelier a ete entrainee et
-validee:
-
-```text
-step5_execution_heads/checkpoints/chancellor_head_attempt3_small_regularized.pth
-```
-
-Cette tete ne choisit pas de jouer Chancelier. Elle intervient uniquement quand
-Step3 rapide a deja joue Chancelier, puis corrige le choix des cartes a garder
-et remettre sous la pioche. Elle ne fait aucun rollout a l'inference.
-
-| Validation | Step3 rapide | Step3 + tete Chancelier | Delta | Chancelier random |
-|---|---:|---:|---:|---:|
-| 1000/config seed 860000 | 0.39160 | 0.40710 | +0.01550 | 0.39200 |
-| 1000/config seed 870000 | 0.39340 | 0.40830 | +0.01490 | 0.39820 |
-
-Conclusion Chancelier V1: succes. Le gain est superieur au controle random, ne
-degrade pas `vs 3H`, et augmente fortement le taux de conservation de la
-meilleure carte avec Chancelier. Limite actuelle: la tete apprend surtout le tri
-local; la planification fine de la pioche reste a travailler plus tard.
-
-Rapports:
-
-```text
-step5_execution_heads/README.md
-step5_execution_heads/reports/execution_teacher_initial_40x12_report.md
-step5_execution_heads/reports/2026-04-25_step5_phase_a_execution_teacher_conclusion.md
-step5_execution_heads/reports/2026-04-26_step5_chancellor_execution_head_v1.md
-```
-
-## Etat Des Modeles
-
-Meilleur checkpoint historique conserve:
-
-```text
-models/checkpoints/curriculum_phase1.pth
-```
-
-Joueur Step3 hybride avec recherche locale:
-
-```bash
-python3 -m step3_action_value.evaluate_advantage_head_v2 \
-  --checkpoint step3_advantage_v2_attempt2_strict.pth \
-  --override-margin 0.10 \
-  --verify-rollouts 16 \
-  --verify-min-win-delta 0.125 \
-  --verify-min-score-delta 0.05 \
-  --verify-t-threshold 0.75
-```
-
-Joueur Step5 rapide actuel:
-
-```text
-Step3 rapide DAgger + tete Chancelier V1
-```
-
-Checkpoint de la tete locale:
-
-```text
-step5_execution_heads/checkpoints/chancellor_head_attempt3_small_regularized.pth
-```
-
-Evaluation:
-
-```bash
-python3 -m step5_execution_heads.evaluate_chancellor_head \
-  --head chancellor_head_attempt3_small_regularized.pth \
-  --games 1000 \
-  --chancellor-margin 0.12
-```
-
-Fondation imitation heuristique pour la prochaine phase RL:
-
-```text
-step1_heuristic_mastery/checkpoints/heuristic_student_attempt4_player0_chancellor_order.pth
-```
-
-Socle Step2 de la nouvelle pipeline contre `HeuristicBot`:
-
-```text
-step2_rl_finetune/checkpoints/step2_retarget_distilled_attempt1.pth
-```
-
-Evaluation 100 parties par configuration:
-
-| Modele | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H |
-|---|---:|---:|---:|---:|
-| `curriculum_phase1.pth` | 55% | 43% | 33% | 20% |
-| `belief_conditioned_ppo_final.pth` | 49% | 35% | 27% | 18% |
-
-Interpretation:
-
-- `curriculum_phase1.pth` reste le meilleur checkpoint historique de reference.
-- Les deux meilleurs joueurs issus de la pipeline nettoyee sont Step3 rapide
-  DAgger et Step3 hybride verify16. Le premier est autonome et legerement devant
-  sur le benchmark seat-rotated post-fix du 25 avril 2026; le second combine
-  Step2, une tete advantage et une verification CRN locale.
-- Le meilleur joueur rapide en cours devient Step5 Chancelier V1: ce n'est pas
-  encore un checkpoint actor unique, mais un wrapper `Step3 rapide + tete locale
-  Chancelier`. Il sert de base active pour ajouter ensuite Baron/Roi/Pretre.
-- L'ancien prototype actor + belief + search a ete archive dans
-  `step3_action_value/legacy/step3_hybrid_search_prototype/`: il ne fait plus
-  partie de la pipeline active.
-- `heuristic_student_attempt4_player0_chancellor_order.pth` n'est pas le champion final de jeu; c'est le meilleur warm start supervise pour apprendre ensuite a depasser l'heuristique.
-- `step2_retarget_distilled_attempt1.pth` bat maintenant `HeuristicBot` et sert de base au joueur Step3.
-- `belief_conditioned_ppo_final.pth` prouve que l'architecture actor + belief peut tourner, mais elle n'a pas encore appris a exploiter le belief de facon fiable.
-- Le diagnostic tactique a montre des erreurs du type Baron joue contre une cible que le belief estimait tres probablement haute.
-
-## Test Contre-Factuel Belief
-
-Question posee le 24 avril 2026: est-ce que le dernier actor belief-conditioned aurait mieux joue si ses decisions tactiques avaient vraiment suivi ses propres probabilites de belief ?
-
-Checkpoint teste:
-
-```text
-models/checkpoints/champion_belief_ppo_attempt2_tactical_best.pth
-```
-
-Commande:
-
-```bash
-python3 scripts/evaluation/evaluate_belief_counterfactual.py \
-  --checkpoint champion_belief_ppo_attempt2_tactical_best.pth \
-  --games 1000 \
-  --seed-start 200000 \
-  --modes raw retarget tactical \
-  --output logs/evaluations/2026-04-24_attempt2_belief_counterfactual_1000.json \
-  --run-log logs/runs/2026-04-24_belief_counterfactual_attempt2.md
-```
-
-Modes:
-
-- `raw`: le modele tel quel.
-- `retarget`: meme actor, meme carte choisie, mais cible/devinette corrigee selon le belief pour Garde/Baron/Prince/Roi, plus choix visible du Chancelier.
-- `tactical`: autorise aussi quelques remplacements de carte si le belief donne une opportunite tactique nette.
-
-Resultats sur `1000` parties par configuration:
-
-| Mode | Score composite | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H |
-|---|---:|---:|---:|---:|---:|
-| Actor brut | 0.2345 | 49.1% | 33.2% | 22.2% | 13.1% |
-| Retarget belief | 0.2948 | 53.3% | 41.8% | 28.5% | 18.1% |
-| Tactical belief | 0.2694 | 49.5% | 36.1% | 26.3% | 17.2% |
-| Champion `curriculum_phase1.pth` | 0.2968 | 56.6% | 45.0% | 25.8% | 18.2% |
+| Chancelier choix random | 0.39550 | -0.00200 | Effet global faible |
 
 Lecture:
 
-- Oui, les probas du belief contiennent bien un signal utile.
-- Le probleme principal n'est pas seulement "belief mauvais"; c'est surtout "actor ne s'en sert pas proprement".
-- Le simple retargeting corrige `4385` decisions sur `13116` et monte de `+6.03` points de score composite.
-- Sur les Gardes, le taux de choix du top belief passe de `57.7%` a `100%`; le taux de hit passe de `23.1%` a `31.7%`.
-- Le mode `tactical`, plus ambitieux, aide moins que `retarget`: changer la carte jouee avec des regles externes perturbe davantage la politique.
+- Garde et Prince sont des competences fortes a proteger;
+- Baron faible, Roi, Pretre et Chancelier demandent un audit local;
+- le probleme n'est pas seulement "quelle carte jouer", mais souvent
+  "comment executer la carte".
 
-Accuracy du belief sur ce checkpoint:
+Decision: passer a Step5 avec des tetes d'execution locales.
 
-| Adversaires | Accuracy globale | Debut de manche `14-17` cartes | Fin de manche `0-2` cartes |
-|---|---:|---:|---:|
-| Heuristiques | 31.1% | 24.6% | 57.5% |
-| Randoms | 25.6% | 23.8% | 43.6% |
+## Step5 Phase A - Teacher/Audit D'Execution - 25 Avril 2026
 
-Conclusion: il faut garder le belief, mais entrainer explicitement l'actor a l'utiliser pour les choix de cible/devinette, plutot que lui ajouter le belief comme simple feature en esperant que PPO comprenne seul.
+Dossier: `step5_execution_heads/`
 
-## Distillation Retarget Belief
+Objectif: observer les etats naturels ou Step3 rapide joue deja Roi, Baron,
+Pretre ou Chancelier, puis mesurer si une meilleure execution existe.
 
-Tentative lancee le 24 avril 2026:
+Ce qu'on voulait ajouter:
+
+- un teacher par rollouts CRN;
+- une mesure du regret par execution;
+- une separation entre decision de carte et execution fine;
+- un dataset filtre pour entrainer de petites tetes specialisees.
+
+Run principal:
 
 ```bash
-python3 scripts/training/distill_belief_retarget.py \
-  --start champion_belief_ppo_attempt2_tactical_best.pth \
-  --output champion_belief_retarget_distilled_attempt1.pth \
-  --games 5000 \
-  --epochs 10
+python3 -m step5_execution_heads.collect_execution_teacher \
+  --games 300 \
+  --max-states-per-kind 40 \
+  --rollouts-per-action 12
 ```
 
-Principe:
+Synthese:
 
-- on gele `encoder` et `belief_head`;
-- on collecte des decisions de l'actor brut;
-- on calcule la cible `retarget belief`;
-- on entraine seulement l'actor a produire cette action corrigee.
-
-Dataset collecte:
-
-- `5000` parties mixtes `0H/1H/2H/3H`;
-- `15892` decisions player_0;
-- `5579` decisions corrigees par retarget, soit `35.1%`;
-- corrections principales: `3108` Garde, `980` Prince, `682` Chancelier, `659` Baron, `150` Roi.
-
-Resultats arena sur `1000` parties par configuration:
-
-| Modele / mode | Score composite | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H |
+| Type | Etats | Best != modele | Regret clair | Mean score regret | Mean win regret |
 |---|---:|---:|---:|---:|---:|
-| Avant: actor brut attempt2 | 0.2345 | 49.1% | 33.2% | 22.2% | 13.1% |
-| Avant: retarget oracle attempt2 | 0.2948 | 53.3% | 41.8% | 28.5% | 18.1% |
-| Apres: actor brut distille | 0.2856 | 52.4% | 39.6% | 27.2% | 18.1% |
-| Apres: retarget du distille | 0.2954 | 53.0% | 41.7% | 28.2% | 18.6% |
-| Champion `curriculum_phase1.pth` | 0.2968 | 56.6% | 45.0% | 25.8% | 18.2% |
+| Chancelier | 40 | 67.50% | 37.50% | 0.1199 | 0.1104 |
+| Baron avec carte faible | 40 | 65.00% | 20.00% | 0.0715 | 0.0667 |
+| Roi | 40 | 30.00% | 17.50% | 0.0615 | 0.0583 |
+| Baron | 40 | 32.50% | 15.00% | 0.0562 | 0.0521 |
+| Pretre | 40 | 40.00% | 12.50% | 0.0382 | 0.0354 |
 
-Conclusion:
+Decision: Step5 est justifie. Le regret exploitable existe, surtout sur
+Chancelier et Baron faible.
 
-- succes partiel important: l'actor a bien internalise l'essentiel du retarget;
-- score composite brut: `+5.11` points;
-- winrate vs 3 heuristiques: `+5.0` points;
-- ecart actor brut vs retarget: `0.0603` avant, `0.0098` apres;
-- le nouveau checkpoint ne depasse pas encore `curriculum_phase1.pth`, mais il valide clairement la direction actor-belief.
+## Step5 Chancelier V1 - 26 Avril 2026
 
-Logs:
+Objectif: corriger uniquement l'execution du Chancelier quand Step3 rapide a
+deja decide de jouer Chancelier.
 
-- `logs/runs/2026-04-24_belief_retarget_distillation_attempt1.md`
-- `logs/evaluations/2026-04-24_belief_retarget_distillation_attempt1_train.json`
-- `logs/evaluations/2026-04-24_belief_retarget_distilled_attempt1_eval_1000.json`
-- `logs/evaluations/2026-04-24_belief_retarget_distilled_attempt1_counterfactual_1000.json`
+Ce qu'on voulait ajouter:
 
-## Ce Qu'on Garde
+- un dataset Chancelier equilibre;
+- une tete rapide sans rollouts a l'inference;
+- un seuil de confiance;
+- une validation sur seeds independants.
 
-- Le moteur `LoveLetterRLEnv`.
-- Le bot `HeuristicBot`, comme professeur et benchmark.
-- Le dataset `data/heuristic_dataset.pkl`.
-- La reference historique `curriculum_phase1.pth`.
-- Le warm start `belief_conditioned_bc.pth`.
-- Les outils d'evaluation et de diagnostic.
-- L'interface Streamlit et le mode console.
-
-## Ce Qui A Ete Abandonne
-
-- Les anciens scripts PPO/Tianshou.
-- Les checkpoints historiques non champions.
-- Le pool self-play obsolete.
-- Les scripts personnels ou redondants non necessaires a un repo public.
-- L'idee de choisir un champion sur un run court ou sur le dernier checkpoint sauvegarde.
-
-## Nouvelle Direction
-
-Deux branches Step3 sont maintenant separees clairement:
-
-1. Step3 hybride `verify16` est conserve comme joueur fort avec recherche a
-   l'inference.
-2. Step3 rapide continue avec DAgger + trust region/KL, sans rollout a
-   l'inference.
-
-Objectif intermediaire Step3:
-
-- stabiliser le gain rapide DAgger `+0.788` point composite mesure sur
-  `5000` parties par composition;
-- supprimer la regression vs `3H`;
-- lancer la prochaine boucle DAgger avec `--trust-region-kl-weight` pour
-  empecher les sur-corrections;
-- ne plus tuner les seuils sur des evaluations `1000` parties.
-
-## Installation
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-## Note GitHub
-
-Les gros artefacts sont volontairement ignores par `.gitignore`:
-
-- `data/*.pkl`
-- `models/checkpoints/*.pth`
-- `logs/`
-
-Pour publier le projet, garder le code dans Git et distribuer les datasets/checkpoints via Git LFS, release GitHub, ou stockage externe.
-
-## Jouer
-
-Interface Streamlit:
-
-```bash
-streamlit run love_letter_web/streamlit_app.py
-```
-
-Mode console:
-
-```bash
-python3 -m love_letter.gameplay.play_vs_agent
-```
-
-Les interfaces chargent par defaut:
+Checkpoint retenu:
 
 ```text
-models/checkpoints/curriculum_phase1.pth
+step5_execution_heads/checkpoints/chancellor_head_attempt3_small_regularized.pth
 ```
 
-Note: le joueur Step3 v2 verifie n'est pas encore branche dans ces interfaces.
-Pour l'instant il se lance via:
+Resultats:
 
-```bash
-python3 -m step3_action_value.evaluate_advantage_head_v2 \
-  --checkpoint step3_advantage_v2_attempt2_strict.pth \
-  --games 1000 \
-  --mode composite \
-  --compare-baseline \
-  --override-margin 0.10 \
-  --verify-rollouts 16 \
-  --verify-min-win-delta 0.125 \
-  --verify-min-score-delta 0.05 \
-  --verify-t-threshold 0.75
+| Validation | Step3 rapide | Step3 + Chancelier | Delta |
+|---|---:|---:|---:|
+| 500/config seed 850000 | 0.39920 | 0.40700 | +0.00780 |
+| 1000/config seed 860000 | 0.39160 | 0.40710 | +0.01550 |
+| 1000/config seed 870000 | 0.39340 | 0.40830 | +0.01490 |
+
+Decision: succes. La tete Chancelier V1 devient un module de reference.
+
+## Step5 Baron V1 - 26 Avril 2026
+
+Objectif: corriger la faiblesse Baron, surtout les mauvaises decisions avec
+`Baron + Prince` et `Baron + Chancelier`.
+
+Ce qu'on voulait ajouter:
+
+- une comparaison locale `jouer Baron` vs `jouer l'autre carte`;
+- une cible plus sure;
+- un module rapide, sans rollouts a l'inference;
+- une evaluation longue.
+
+Evaluation `5000` parties par composition:
+
+| Politique | Composite | Baron en main | Baron joue | Duel gagne | Duel perdu |
+|---|---:|---:|---:|---:|---:|
+| Step3 rapide | 0.38564 | 46.51% | 48.89% | 71.65% | 24.44% |
+| Baron target random | 0.38230 | 45.66% | 47.71% | 69.92% | 26.22% |
+| Step5 Baron specialist | 0.39504 | 49.02% | 54.88% | 79.83% | 17.01% |
+
+Decision: succes. Baron V1 devient un module de reference.
+
+## Step5 Combine Chancelier + Baron - 26 Avril 2026
+
+Objectif: verifier que les deux modules s'additionnent sans se neutraliser.
+
+Evaluation `5000` parties par composition:
+
+| Politique | vs 3 randoms | vs 1H+2R | vs 2H+1R | vs 3H | Composite |
+|---|---:|---:|---:|---:|---:|
+| Step3 rapide | 51.68% | 44.16% | 38.76% | 34.00% | 0.39228 |
+| Step3 + Chancelier V1 | 52.62% | 45.46% | 39.80% | 35.72% | 0.40582 |
+| Step3 + Baron V1 | 52.48% | 45.74% | 39.00% | 35.16% | 0.40160 |
+| Step3 + Chancelier + Baron | 53.36% | 46.86% | 39.96% | 37.00% | 0.41496 |
+
+Decision: les modules s'additionnent bien. Le joueur Step5 de reference devient
+`Step3 rapide + Chancelier V1 + Baron V1`.
+
+## Step5 Prince V1 - 26 Avril 2026
+
+Objectif: verifier si un module Prince peut ameliorer le ciblage sans forcer
+trop souvent la carte.
+
+Resultats:
+
+| Politique | Composite global | Prince en main | Prince joue | Hit Princesse | Suicide soi |
+|---|---:|---:|---:|---:|---:|
+| Step3 rapide | 0.39162 | 48.31% | 52.02% | 7.64% | 0.51% |
+| Step3 + Prince V1 | 0.39428 | 48.97% | 51.03% | 9.38% | 0.35% |
+
+Decision: signal positif mais plus leger. Prince V1 reste candidat utile et
+est inclus dans la composition `champion_cbp`, mais avec moins de certitude que
+Chancelier et Baron.
+
+## Step6 - Self-Play Et Population - 26 Avril 2026
+
+Dossier: `step6_self_play/`
+
+Objectif: verifier le champion contre son lignage direct avant de lancer une
+ligue de self-play.
+
+Ce qu'on voulait ajouter:
+
+- une evaluation de population;
+- des matchups asymetriques;
+- un test contre l'ancien champion historique `curriculum_phase1`;
+- une lecture plus riche que les arenas vs random/heuristique.
+
+Champion teste:
+
+```text
+champion_cbp = Step3 + Chancelier + Baron + Prince
 ```
 
-## Entrainement
+Evaluation de lignage, `5000` manches:
 
-Collecte du dataset heuristique:
+| Politique | Score >=1 | Victoire manche | Reward moyen |
+|---|---:|---:|---:|
+| Champion CBP | 32.28% | 28.36% | 0.5010 |
+| Step3 seul | 28.96% | 25.08% | 0.4567 |
+| Step2 | 28.50% | 26.02% | 0.4416 |
+| Heuristique fair | 25.28% | 21.58% | 0.3811 |
 
-```bash
-python3 -m scripts.training.collect_heuristic_data
-```
+Matchups asymetriques:
 
-Pretraining actor + belief:
+| Matchup | Singleton | Victoire manche | Opposants/copie | Victoire manche |
+|---|---|---:|---|---:|
+| champion_vs_3_step3 | Champion CBP | 27.64% | Step3 seul | 24.43% |
+| champion_vs_3_step2 | Champion CBP | 26.42% | Step2 | 24.93% |
+| champion_vs_3_heuristic | Champion CBP | 33.14% | Heuristique fair | 22.61% |
+| step3_vs_3_champions | Step3 seul | 23.42% | Champion CBP | 25.97% |
+| step2_vs_3_champions | Step2 | 22.38% | Champion CBP | 26.25% |
 
-```bash
-python3 scripts/training/pretrain_belief_actor.py
-```
+Point de vigilance:
 
-PPO curriculum actor + belief:
+| Matchup | Singleton | Victoire manche | Opposants/copie | Victoire manche |
+|---|---|---:|---|---:|
+| champion_vs_3_curriculum | Champion CBP | 25.10% | Curriculum phase1 | 25.31% |
 
-```bash
-python3 scripts/training/train_belief_ppo.py
-```
+Decision: le champion est sain et domine son lignage direct, mais
+`curriculum_phase1.pth` reste un excellent sparring partner.
 
-Distillation du retarget belief:
+## Step7 - Ligue Self-Play - 26 Avril 2026
 
-```bash
-python3 scripts/training/distill_belief_retarget.py
-```
+Dossier: `step7_self_play_league/`
 
-## Evaluation
+Objectif: maintenir une ligue de self-play autour de `champion_cbp` et ne
+promouvoir un candidat que s'il passe l'Elo et les garde-fous tactiques.
 
-Baselines random/heuristique:
+Ce qu'on voulait ajouter:
 
-```bash
-python3 scripts/evaluation/evaluate_baselines.py --games 20000
-```
+- un roster actif de 5 politiques;
+- une evaluation Elo multi-joueurs;
+- un gate de promotion/rejet;
+- des checkpoints candidats sauvegardes a chaque iteration;
+- une facon de continuer le projet sans oublier les anciens adversaires.
 
-Evaluation d'un checkpoint ou des checkpoints conserves:
+Roster initial:
 
-```bash
-python3 -m scripts.evaluation.evaluate_models
-```
+- `champion_cbp`;
+- `curriculum_phase1`;
+- `step3_fast`;
+- `step2_retarget`;
+- `heuristic_fair`.
 
-Diagnostic tactique:
+Bootstrap Elo initial, `10 000` manches:
 
-```bash
-python3 scripts/evaluation/diagnose_model.py \
-  --checkpoint models/checkpoints/curriculum_phase1.pth \
-  --games 30 \
-  --output-json logs/evaluations/diagnostic.json \
-  --output-md diagnostics/diagnostic.md
-```
+| Policy | Elo bootstrap |
+|---|---:|
+| `champion_cbp` | 1546.7 |
+| `step2_retarget` | 1520.5 |
+| `curriculum_phase1` | 1506.8 |
+| `heuristic_fair` | 1479.5 |
+| `step3_fast` | 1446.5 |
 
-Mesure du belief:
+Premier cycle self-play:
 
-```bash
-python3 scripts/evaluation/measure_belief.py \
-  --checkpoint models/checkpoints/curriculum_phase1.pth \
-  --games 500
-```
+- `sp_iter_0001`: candidat conservateur, rejete;
+- `sp_iter_0002`: candidat plus libre, rejete.
 
-Test contre-factuel actor/belief:
+Decision `sp_iter_0002`:
 
-```bash
-python3 scripts/evaluation/evaluate_belief_counterfactual.py \
-  --checkpoint champion_belief_ppo_attempt2_tactical_best.pth \
-  --games 1000 \
-  --output logs/evaluations/counterfactual.json
-```
+| Check | Resultat |
+|---|---|
+| Elo | False |
+| Main win guardrail | True |
+| Baron loss guardrail | True |
+| Chancellor guardrail | True |
+| Guard hit guardrail | True |
 
-Sanity-check du moteur:
+Metrics:
 
-```bash
-python3 scripts/debug/check_engine_invariants.py
-```
+| Mesure | Valeur |
+|---|---:|
+| Candidate Elo | 1508.659563 |
+| Best Elo | 1519.655293 |
+| Candidate main round win rate | 0.283724 |
+| Best main round win rate | 0.271448 |
 
-Conformite aux regles:
+Decision: la ligue fonctionne, mais aucun candidat ne remplace le champion. Le
+projet s'arrete avec `champion_cbp` comme champion courant.
 
-```bash
-python3 scripts/debug/check_rules_conformance.py
-```
+## Web App Produit - 28 Avril Au 1 Mai 2026, Date Reconstruite
 
-## Backend Et Web App
+Dossier: `love_letter_web/`
 
-Le backend FastAPI et le frontend React/Vite sont maintenant la cible produit.
-Streamlit reste utile comme prototype/debug.
+Objectif: sortir du prototype Streamlit et construire une experience jouable.
+
+Ce qu'on voulait ajouter:
+
+- backend FastAPI;
+- frontend React/Vite;
+- integration du champion `champion_cbp`;
+- menu narratif du Qadi;
+- rappel des regles;
+- choix des adversaires IA;
+- profils joueurs;
+- stats locales;
+- replay omniscient de fin de partie;
+- assets visuels et audio.
+
+Etat actuel:
+
+- `love_letter_web/backend/main.py` expose les endpoints jeu, regles, profils,
+  policies, replay, actions humaines, pas IA et manches suivantes;
+- `love_letter_web/frontend/` contient l'app React/Vite;
+- l'app propose menu, intro video, tutoriel, cartes, regles, parametres, table
+  jouable et journal de partie;
+- `tests/test_love_letter_web_backend.py` couvre les profils, stats, replay,
+  actions speciales et logs structures.
+
+Commandes:
 
 ```bash
 uvicorn love_letter_web.backend.main:app --host 127.0.0.1 --port 8000
@@ -972,23 +659,147 @@ cd love_letter_web/frontend
 npm run dev
 ```
 
-Voir `love_letter_web/README.md`.
+Decision: l'app web devient la cible produit. Streamlit reste un outil de debug
+ou un prototype historique.
 
-## Etat De Pause Technique
+## Handoff GitHub Et Documentation Finale - 3 Juin 2026
 
-Le projet est arrete proprement sur `champion_cbp` et la web app jouable. Les
-prochaines etapes ci-dessous restent des pistes de reprise, pas du travail en
-cours.
+Objectif: tout mettre au propre et s'arreter.
 
-Piste IA possible: relancer Step3 v2 DAgger avec trust region/KL:
+Ce qu'on voulait ajouter:
 
-- repartir de `step3_advantage_v2_dagger_attempt1_iter1.pth`;
-- garder `verify_rollouts = 0` a l'inference;
-- utiliser `--trust-region-kl-weight` pour empecher l'oubli catastrophique;
-- evaluer le candidat retenu sur `5000` parties par composition;
-- viser un gain composite positif sans regression vs `3H`;
-- brancher ensuite le meilleur joueur rapide dans `play_vs_agent` et
-  `love_letter_web`.
+- un README complet;
+- un journal de projet;
+- une checklist GitHub;
+- un brouillon LinkedIn;
+- un `.gitignore` qui garde les artefacts lourds hors Git;
+- un commit final sur la branche de travail.
 
-Piste produit possible: terminer le polish UI, publier les checkpoints via
-GitHub Release/Git LFS/Hugging Face, puis tester l'app de bout en bout.
+Fichiers ajoutes ou mis a jour:
+
+- `README.md`;
+- `docs/project_journal_fr.md`;
+- `docs/github_handoff_fr.md`;
+- `docs/linkedin_post_fr.md`;
+- `love_letter_web/README.md`;
+- `.gitignore`.
+
+Commit de handoff:
+
+```text
+bfc0523 Document final Love Letter project handoff
+```
+
+Derniere mise a jour du README:
+
+```text
+3 juin 2026
+```
+
+Decision: le projet est proprement documente. La prochaine reprise doit etre
+explicite: polish produit, publication des checkpoints, ou nouveau cycle
+self-play.
+
+## Comment Lancer
+
+Installer les dependances Python:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Lancer le backend:
+
+```bash
+uvicorn love_letter_web.backend.main:app --host 127.0.0.1 --port 8000
+```
+
+Lancer le frontend:
+
+```bash
+cd love_letter_web/frontend
+npm install
+npm run dev
+```
+
+Ouvrir:
+
+```text
+http://127.0.0.1:5173/
+```
+
+## Verification
+
+Tests backend:
+
+```bash
+python3 -m pytest tests/test_love_letter_web_backend.py
+```
+
+Build frontend:
+
+```bash
+cd love_letter_web/frontend
+npm run build
+```
+
+Sanity checks moteur:
+
+```bash
+python3 scripts/debug/check_engine_invariants.py
+python3 scripts/debug/check_rules_conformance.py
+```
+
+Note du 3 juin 2026: dans l'environnement local courant, `pytest` n'etait pas
+installe et `npm run build` est reste bloque apres `transforming...`. La
+verification Python legere `compileall` sur les fichiers critiques est passee.
+
+## Artefacts Lourds
+
+Les checkpoints et datasets lourds ne doivent pas etre ajoutes au Git classique.
+Ils doivent etre publies via GitHub Release, Git LFS, Hugging Face Hub ou un
+stockage externe.
+
+Artefacts minimum a distribuer pour rejouer le champion:
+
+- `step2_retarget_distilled_attempt1.pth`;
+- `step3_advantage_v2_dagger_attempt1_iter1.pth`;
+- tetes Step5 Chancelier, Baron et Prince;
+- `curriculum_phase1.pth` comme sparring partner historique.
+
+## Ce Qui Est Termine
+
+- Baseline random vs heuristique.
+- Imitation de l'heuristique.
+- Modele Step2 battant `HeuristicBot`.
+- Step3 action-value hybride et rapide.
+- Correction du biais d'arene.
+- Audit des regles.
+- Analyse des faiblesses par cartes.
+- Tetes d'execution Chancelier et Baron validees.
+- Prince V1 avec signal positif.
+- Population evaluation.
+- Ligue self-play operationnelle.
+- Web app FastAPI + React/Vite.
+- Documentation finale et brouillon LinkedIn.
+
+## Ce Qui Est Arrete Volontairement
+
+- Pas de nouveau PPO global.
+- Pas de nouveau cycle self-play sans objectif precis.
+- Pas de fusion forcee de toutes les tetes dans un actor unique.
+- Pas de checkpoints `.pth` dans Git classique.
+- Pas de nettoyage destructif des rapports experimentaux: ils sont la memoire
+  du projet.
+
+## Prochaine Reprise Possible
+
+1. Publier les checkpoints dans une release externe.
+2. Relancer les tests backend dans un environnement avec `pytest`.
+3. Diagnostiquer le build Vite si le blocage persiste.
+4. Tester l'app de bout en bout dans le navigateur.
+5. Relancer Step7 avec plus de diversite de population.
+6. Transformer `docs/linkedin_post_fr.md` en post public.
+
