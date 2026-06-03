@@ -14,6 +14,18 @@ meilleur modele.
 Objectif final du depot: garder le projet propre, lisible, documente et pret a
 etre partage sur GitHub, sans relancer de nouvelle experimentation.
 
+## Jouer En Ligne
+
+| Service | Lien |
+|---|---|
+| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Backend Hugging Face Spaces | https://ibra-asbn-love-letter-api.hf.space |
+| Health check backend | https://ibra-asbn-love-letter-api.hf.space/api/health |
+| Space Hugging Face | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
+
+Le deploiement Vercel est actif et protege par Vercel Authentication. L'acces
+au jeu complet se fait donc via un compte Vercel autorise.
+
 ## Etat Final
 
 Champion retenu:
@@ -703,26 +715,28 @@ Decision: l'app web devient la cible produit unique.
 
 ## Hebergement Web Et Recuperation Des Donnees - 3 Juin 2026
 
-Statut public au 3 juin 2026: le depot ne contient pas encore de lien public
-verifie vers le jeu complet. Le lien doit etre ajoute ici seulement apres
-verification d'un frontend Vercel connecte au backend FastAPI deploye.
+Liens de production verifies:
 
-Lien public de jeu complet:
+| Service | Lien |
+|---|---|
+| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Backend API | https://ibra-asbn-love-letter-api.hf.space |
+| Health check API | https://ibra-asbn-love-letter-api.hf.space/api/health |
+| Page Hugging Face Space | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
 
-```text
-A renseigner apres deploiement verifie.
-```
-
-Architecture cible:
+Architecture de production:
 
 - backend: FastAPI dans `love_letter_web/backend/main.py`, prevu pour etre
-  heberge sur Hugging Face Spaces;
+  heberge sur Hugging Face Spaces a l'adresse
+  `https://ibra-asbn-love-letter-api.hf.space`;
 - frontend: React/Vite dans `love_letter_web/frontend/`, prevu pour etre
-  heberge sur Vercel;
+  heberge sur Vercel a l'adresse
+  `https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/`;
+- acces frontend: Vercel Authentication active;
 - en local, Vite redirige les appels `/api` vers
   `http://127.0.0.1:8000`;
-- en production, le frontend doit recevoir `VITE_API_BASE` avec l'URL publique
-  du Space Hugging Face, par exemple `https://<space>.hf.space`;
+- en production, Vercel configure
+  `VITE_API_BASE=https://ibra-asbn-love-letter-api.hf.space`;
 - le backend garde les parties actives en memoire; un redemarrage du service
   coupe donc les sessions en cours.
 

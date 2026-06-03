@@ -35,20 +35,21 @@ L'objectif jeu est maintenant `FastAPI + React/Vite`.
 
 ## Hebergement Et Donnees
 
-Statut public au 3 juin 2026: aucun lien verifie vers le jeu complet n'est
-inscrit dans le depot.
+| Service | Lien |
+|---|---|
+| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Backend Hugging Face Spaces | https://ibra-asbn-love-letter-api.hf.space |
+| Health check backend | https://ibra-asbn-love-letter-api.hf.space/api/health |
+| Space Hugging Face | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
 
-Lien public:
+Le deploiement Vercel est actif et protege par Vercel Authentication.
 
-```text
-A renseigner apres deploiement verifie.
-```
-
-Architecture cible:
+Architecture de production:
 
 - backend FastAPI heberge sur Hugging Face Spaces;
 - frontend React/Vite heberge sur Vercel;
-- variable frontend de production: `VITE_API_BASE=https://<space>.hf.space`;
+- variable frontend de production:
+  `VITE_API_BASE=https://ibra-asbn-love-letter-api.hf.space`;
 - en local, `vite.config.js` proxy `/api` vers `http://127.0.0.1:8000`.
 
 Flux de donnees:
