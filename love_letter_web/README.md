@@ -33,6 +33,37 @@ http://127.0.0.1:5173/
 
 L'objectif jeu est maintenant `FastAPI + React/Vite`.
 
+## Hebergement Et Donnees
+
+Statut public au 3 juin 2026: aucun lien verifie vers le jeu complet n'est
+inscrit dans le depot.
+
+Lien public:
+
+```text
+A renseigner apres deploiement verifie.
+```
+
+Architecture cible:
+
+- backend FastAPI heberge sur Hugging Face Spaces;
+- frontend React/Vite heberge sur Vercel;
+- variable frontend de production: `VITE_API_BASE=https://<space>.hf.space`;
+- en local, `vite.config.js` proxy `/api` vers `http://127.0.0.1:8000`.
+
+Flux de donnees:
+
+- `frontend/src/api.js` construit tous les appels API;
+- `POST /api/games` cree une partie;
+- `GET /api/games/{game_id}` recupere l'etat courant;
+- `POST /api/games/{game_id}/play` envoie l'action humaine;
+- `POST /api/games/{game_id}/ai-step` avance les IA;
+- `GET /api/games/{game_id}/replay` recupere le replay final;
+- les profils, les choix d'IA et les reglages audio sont stockes en
+  `localStorage`;
+- les stats et evenements backend sont stockes dans `love_letter_web/logs/`,
+  ignore par Git.
+
 ## Fonctionnalites Actuelles
 
 - Nouvelle partie contre trois adversaires IA configurables.

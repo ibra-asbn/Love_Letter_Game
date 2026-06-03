@@ -701,6 +701,57 @@ npm run dev
 
 Decision: l'app web devient la cible produit unique.
 
+## Hebergement Web Et Recuperation Des Donnees - 3 Juin 2026
+
+Statut public au 3 juin 2026: le depot ne contient pas encore de lien public
+verifie vers le jeu complet. Le lien doit etre ajoute ici seulement apres
+verification d'un frontend Vercel connecte au backend FastAPI deploye.
+
+Lien public de jeu complet:
+
+```text
+A renseigner apres deploiement verifie.
+```
+
+Architecture cible:
+
+- backend: FastAPI dans `love_letter_web/backend/main.py`, prevu pour etre
+  heberge sur Hugging Face Spaces;
+- frontend: React/Vite dans `love_letter_web/frontend/`, prevu pour etre
+  heberge sur Vercel;
+- en local, Vite redirige les appels `/api` vers
+  `http://127.0.0.1:8000`;
+- en production, le frontend doit recevoir `VITE_API_BASE` avec l'URL publique
+  du Space Hugging Face, par exemple `https://<space>.hf.space`;
+- le backend garde les parties actives en memoire; un redemarrage du service
+  coupe donc les sessions en cours.
+
+Endpoints backend principaux:
+
+| Methode | Endpoint | Role |
+|---|---|---|
+| `GET` | `/api/health` | verifier que le backend repond |
+| `GET` | `/api/policies` | lister les IA jouables |
+| `GET` | `/api/rules` | recuperer les regles affichees dans l'app |
+| `POST` | `/api/player-profile/dialogue` | creer le dialogue du Qadi selon le profil |
+| `POST` | `/api/games` | creer une nouvelle partie |
+| `GET` | `/api/games/{game_id}` | recuperer l'etat courant d'une partie |
+| `GET` | `/api/games/{game_id}/replay` | recuperer le replay omniscient final |
+| `POST` | `/api/games/{game_id}/play` | jouer l'action humaine |
+| `POST` | `/api/games/{game_id}/ai-step` | avancer un tour IA |
+| `POST` | `/api/games/{game_id}/next-round` | lancer la manche suivante |
+
+Recuperation et stockage des donnees:
+
+- `love_letter_web/frontend/src/api.js` centralise les appels `fetch`;
+- les donnees de profil, de configuration IA et d'audio cote navigateur sont
+  stockees en `localStorage`;
+- les stats joueur et evenements de partie cote backend sont ecrits dans
+  `love_letter_web/logs/player_stats.json` et
+  `love_letter_web/logs/game_events.jsonl`;
+- `love_letter_web/logs/` est ignore par Git pour ne pas publier les donnees
+  locales de test ou de jeu.
+
 ## Handoff GitHub Et Documentation Finale - 3 Juin 2026
 
 Objectif: tout mettre au propre et s'arreter.
