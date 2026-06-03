@@ -18,13 +18,10 @@ etre partage sur GitHub, sans relancer de nouvelle experimentation.
 
 | Service | Lien |
 |---|---|
-| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Jeu complet Vercel | https://love-letter-game-pi.vercel.app/ |
 | Backend Hugging Face Spaces | https://ibra-asbn-love-letter-api.hf.space |
 | Health check backend | https://ibra-asbn-love-letter-api.hf.space/api/health |
 | Space Hugging Face | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
-
-Le deploiement Vercel est actif et protege par Vercel Authentication. L'acces
-au jeu complet se fait donc via un compte Vercel autorise.
 
 ## Etat Final
 
@@ -719,7 +716,7 @@ Liens de production verifies:
 
 | Service | Lien |
 |---|---|
-| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Jeu complet Vercel | https://love-letter-game-pi.vercel.app/ |
 | Backend API | https://ibra-asbn-love-letter-api.hf.space |
 | Health check API | https://ibra-asbn-love-letter-api.hf.space/api/health |
 | Page Hugging Face Space | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
@@ -730,9 +727,7 @@ Architecture de production:
   heberge sur Hugging Face Spaces a l'adresse
   `https://ibra-asbn-love-letter-api.hf.space`;
 - frontend: React/Vite dans `love_letter_web/frontend/`, prevu pour etre
-  heberge sur Vercel a l'adresse
-  `https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/`;
-- acces frontend: Vercel Authentication active;
+  heberge sur Vercel a l'adresse `https://love-letter-game-pi.vercel.app/`;
 - en local, Vite redirige les appels `/api` vers
   `http://127.0.0.1:8000`;
 - en production, Vercel configure

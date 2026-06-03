@@ -37,12 +37,10 @@ L'objectif jeu est maintenant `FastAPI + React/Vite`.
 
 | Service | Lien |
 |---|---|
-| Jeu complet Vercel | https://love-letter-game-844h49y74-ibrahimassebbane-6677s-projects.vercel.app/ |
+| Jeu complet Vercel | https://love-letter-game-pi.vercel.app/ |
 | Backend Hugging Face Spaces | https://ibra-asbn-love-letter-api.hf.space |
 | Health check backend | https://ibra-asbn-love-letter-api.hf.space/api/health |
 | Space Hugging Face | https://huggingface.co/spaces/ibra-asbn/love-letter-api |
-
-Le deploiement Vercel est actif et protege par Vercel Authentication.
 
 Architecture de production:
 
