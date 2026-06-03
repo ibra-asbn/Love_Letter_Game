@@ -3,5 +3,4 @@ gymnasium
 numpy
 pettingzoo
 torch
-streamlit
 uvicorn

@@ -31,9 +31,7 @@ http://127.0.0.1:5173/
 
 ## Etat
 
-Cette app remplace progressivement Streamlit pour l'experience de jeu finale.
-Streamlit reste utile comme prototype/debug, mais l'objectif jeu est maintenant
-`FastAPI + React/Vite`.
+L'objectif jeu est maintenant `FastAPI + React/Vite`.
 
 ## Fonctionnalites Actuelles
 

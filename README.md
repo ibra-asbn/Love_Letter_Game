@@ -58,7 +58,7 @@ Documents importants:
 | 2026-04-26 | Step5 Chancelier/Baron/Prince | `champion_cbp` devient la reference |
 | 2026-04-26 | Step6 population | Champion sain, mais curriculum reste fort |
 | 2026-04-26 | Step7 self-play league | Ligue OK, candidats rejetes |
-| 2026-04-28 au 2026-05-01, reconstruit | Web app produit | FastAPI + React/Vite remplace Streamlit |
+| 2026-04-28 au 2026-05-01, reconstruit | Web app produit | FastAPI + React/Vite devient la cible produit |
 | 2026-06-03 | Handoff final | Documentation, GitHub, LinkedIn |
 
 ## Architecture Du Depot
@@ -626,7 +626,7 @@ projet s'arrete avec `champion_cbp` comme champion courant.
 
 Dossier: `love_letter_web/`
 
-Objectif: sortir du prototype Streamlit et construire une experience jouable.
+Objectif: sortir de l'ancien prototype local et construire une experience jouable.
 
 Ce qu'on voulait ajouter:
 
@@ -659,8 +659,7 @@ cd love_letter_web/frontend
 npm run dev
 ```
 
-Decision: l'app web devient la cible produit. Streamlit reste un outil de debug
-ou un prototype historique.
+Decision: l'app web devient la cible produit unique.
 
 ## Handoff GitHub Et Documentation Finale - 3 Juin 2026
 
@@ -802,4 +801,3 @@ Artefacts minimum a distribuer pour rejouer le champion:
 4. Tester l'app de bout en bout dans le navigateur.
 5. Relancer Step7 avec plus de diversite de population.
 6. Transformer `docs/linkedin_post_fr.md` en post public.
-

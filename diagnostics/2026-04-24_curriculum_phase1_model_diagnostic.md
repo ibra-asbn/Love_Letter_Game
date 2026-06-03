@@ -52,7 +52,7 @@ Points structurels bizarres observes dans les evaluations:
 
 - `curriculum_phase3_final.pth` est plus recent mais moins bon que `curriculum_phase1.pth` sur plusieurs configs, ce qui suggere un sur-apprentissage, une degradation PPO, ou une evaluation d'entrainement pas alignee avec le vrai objectif.
 - `model_score_0.94_epoch_0.pth` a un nom tres flatteur, mais son score ne correspond pas a un winrate direct vs 3 heuristiques; il est probablement lie a une autre metrique/config.
-- Le modele de l'app Streamlit et `play_vs_agent` etait `curriculum_phase2.pth`, pas le meilleur checkpoint observe.
+- Le modele de l'ancienne app locale et `play_vs_agent` etait `curriculum_phase2.pth`, pas le meilleur checkpoint observe.
 - La difference entre 20% vs 3 heuristiques et 30% pour une politique tactique ad hoc contre 3 copies du modele indique que le champion reste exploitable.
 
 ## Fulgurances observees

@@ -292,7 +292,7 @@ Reference: `step7_self_play_league/README.md`.
 
 ## Web App
 
-Objectif: remplacer Streamlit par une experience jouable.
+Objectif: remplacer l'ancien prototype local par une experience jouable.
 
 Etat actuel:
 
@@ -304,8 +304,7 @@ Etat actuel:
 - logs structures, stats locales, replay omniscient en fin de partie;
 - champion par defaut: `champion_cbp`.
 
-Decision: l'app web devient la cible produit. Streamlit reste un prototype ou
-outil de debug.
+Decision: l'app web devient la cible produit unique.
 
 Reference: `love_letter_web/README.md`.
 
@@ -333,4 +332,3 @@ Prochaine reprise possible:
 - convertir les meilleurs checkpoints en assets de release ou Git LFS;
 - finir le polish UI/UX et tester l'app de bout en bout;
 - relancer Step7 avec plus de diversite de population.
-
