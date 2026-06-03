@@ -5,6 +5,21 @@ Source: texte de reference fourni dans la conversation du 25 avril 2026.
 Ce fichier sert de reference locale pour verifier le moteur `LoveLetterRLEnv`.
 Il decrit les regles utiles a la version du projet avec les cartes `0` a `9`.
 
+Dans l'app web, les cartes utilisent des noms thematiques:
+
+| Valeur | Nom app | Nom classique |
+|---:|---|---|
+| 0 | Espionne | Espionne |
+| 1 | Garde | Garde |
+| 2 | Qadi | Pretre |
+| 3 | Emir | Baron |
+| 4 | Hajib | Servante |
+| 5 | Wali | Prince |
+| 6 | Vizir | Chancelier |
+| 7 | Sultan | Roi |
+| 8 | Sultane | Comtesse |
+| 9 | Amira | Princesse |
+
 ## Mise En Place
 
 1. Melanger le paquet.

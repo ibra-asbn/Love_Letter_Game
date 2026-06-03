@@ -106,6 +106,35 @@ Convention de rangement:
   self-play.
 - `love_letter_web/` contient l'application produit FastAPI + React/Vite.
 
+## Regles Du Jeu En Bref
+
+Love Letter est un jeu de deduction a information cachee. Chaque joueur garde
+une seule carte en main. A son tour, il pioche une carte, choisit une des deux
+cartes a jouer, applique son effet, puis garde l'autre carte.
+
+Une manche se termine quand il ne reste plus qu'un joueur en vie ou quand la
+pioche est vide. Si la pioche est vide, les joueurs encore en vie comparent la
+carte gardee en main: la valeur la plus haute gagne la manche. Dans l'app web
+du projet, le premier joueur a `2` points gagne la partie.
+
+Le paquet utilise les cartes suivantes:
+
+| Valeur | Carte | Effet |
+|---:|---|---|
+| 0 | Espionne | Pas d'effet immediat. Bonus de 1 point si un seul joueur vivant en a joue le plus. |
+| 1 | Garde | Devine la carte d'un adversaire, sauf Garde. Si la devinette est juste, la cible sort. |
+| 2 | Qadi | Regarde secretement la carte d'un adversaire. |
+| 3 | Emir | Compare sa carte gardee avec celle d'un adversaire; la plus faible sort. |
+| 4 | Hajib | Protege le joueur des effets ciblants jusqu'a son prochain tour. |
+| 5 | Wali | Force un joueur, soi inclus, a defausser sa carte et repiocher. Defausser l'Amira elimine. |
+| 6 | Vizir | Pioche jusqu'a deux cartes, en garde une, puis remet les autres au fond de la pioche. |
+| 7 | Sultan | Echange sa carte avec celle d'un adversaire. |
+| 8 | Sultane | Doit etre jouee si elle est en main avec le Wali ou le Sultan. |
+| 9 | Amira | Si elle est jouee ou defaussee, son proprietaire est elimine. |
+
+La reference complete des regles et des cas particuliers est dans
+`docs/love_letter_rules_fr.md`.
+
 ## Baseline - 24 Avril 2026
 
 Question: est-ce qu'une politique simple fait mieux que le hasard ?
