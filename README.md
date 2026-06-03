@@ -838,7 +838,3 @@ Sanity checks moteur:
 python3 scripts/debug/check_engine_invariants.py
 python3 scripts/debug/check_rules_conformance.py
 ```
-
-Note du 3 juin 2026: dans l'environnement local courant, `pytest` n'etait pas
-installe et `npm run build` est reste bloque apres `transforming...`. La
-verification Python legere `compileall` sur les fichiers critiques est passee.
