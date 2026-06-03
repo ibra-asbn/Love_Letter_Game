@@ -33,5 +33,5 @@
     "step3_action_value/reports/step3_advantage_v2_attempt2_strict_eval_1000_m010_verify16_seed135000.json",
     "step3_action_value/reports/step3_advantage_v2_attempt2_strict_eval_1000_m010_verify16_seed136000.json"
   ],
-  "diagnostic": "diagnostics/2026-04-25_step3_v2_advantage_verified.md"
+  "diagnostic": "docs/diagnostics/2026-04-25_step3_v2_advantage_verified.md"
 }

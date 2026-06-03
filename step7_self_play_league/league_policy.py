@@ -22,9 +22,10 @@ from step5_execution_heads.evaluate_combined_three_heads import Step5ThreeSeat
 
 
 STEP_DIR = PROJECT_ROOT / "step7_self_play_league"
-DEFAULT_ROSTER_PATH = STEP_DIR / "league_roster.json"
-DEFAULT_RESULTS_PATH = STEP_DIR / "league_results.jsonl"
-DEFAULT_PROMOTION_PATH = STEP_DIR / "promotion_history.jsonl"
+STATE_DIR = STEP_DIR / "state"
+DEFAULT_ROSTER_PATH = STATE_DIR / "league_roster.json"
+DEFAULT_RESULTS_PATH = STATE_DIR / "league_results.jsonl"
+DEFAULT_PROMOTION_PATH = STATE_DIR / "promotion_history.jsonl"
 
 
 @dataclass

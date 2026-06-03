@@ -8,7 +8,7 @@ venv/
 .playwright-cli/
 
 logs/
-diagnostics/*.json
+docs/diagnostics/*.json
 
 data/*.pkl
 models/checkpoints/*.pth

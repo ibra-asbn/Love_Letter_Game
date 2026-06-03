@@ -5,7 +5,7 @@ Etat consolide le 2026-06-03.
 Ce document est le point d'entree narratif du projet. Il resume, etape par
 etape, ou nous en etions, ce que nous voulions ajouter, ce qui a ete mesure,
 et la decision prise. Les rapports complets restent dans les dossiers
-`diagnostics/`, `step*_*/reports/` et les `README.md` de chaque etape.
+`docs/diagnostics/`, `step*_*/reports/` et les `README.md` de chaque etape.
 
 ## Objectif Final
 
@@ -17,8 +17,7 @@ Le projet est maintenant en mode arret/documentation:
 - conserver le champion courant `champion_cbp`;
 - publier un repo comprehensible;
 - garder les artefacts lourds hors Git;
-- ne pas relancer de nouvelle phase d'entrainement avant une reprise explicite;
-- preparer une communication LinkedIn claire.
+- ne pas relancer de nouvelle phase d'entrainement avant une reprise explicite.
 
 ## Carte De Lecture
 
@@ -28,7 +27,6 @@ Le projet est maintenant en mode arret/documentation:
 | Regles locales du jeu | `docs/love_letter_rules_fr.md` |
 | Journal canonique | `docs/project_journal_fr.md` |
 | Handoff GitHub | `docs/github_handoff_fr.md` |
-| Brouillon LinkedIn | `docs/linkedin_post_fr.md` |
 | Web app | `love_letter_web/README.md` |
 | Etapes IA | `step1_.../README.md` a `step7_.../README.md` |
 
@@ -159,7 +157,7 @@ seat-rotated comme reference principale.
 References:
 
 - `interlude_heuristic_comparison/README.md`
-- `interlude_heuristic_comparison/seat_bias_probe.md`
+- `interlude_heuristic_comparison/reports/seat_bias_probe.md`
 
 ## Etape 4 - Identifier Les Faiblesses
 

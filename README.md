@@ -27,9 +27,8 @@ Statut:
 - le moteur de jeu est audite contre les regles locales;
 - la pipeline IA est documentee de bout en bout;
 - la web app FastAPI + React/Vite est la cible produit;
-- les checkpoints lourds restent hors Git classique;
-- le projet est arrete proprement au 3 juin 2026;
-- le brouillon LinkedIn est dans `docs/linkedin_post_fr.md`.
+- le depot GitHub est organise autour du code, des rapports et de l'app web;
+- le projet est arrete proprement au 3 juin 2026.
 
 Documents importants:
 
@@ -38,8 +37,8 @@ Documents importants:
 | `README.md` | Recap complet date |
 | `docs/project_journal_fr.md` | Journal synthetique etape par etape |
 | `docs/github_handoff_fr.md` | Handoff GitHub et nettoyage |
-| `docs/linkedin_post_fr.md` | Brouillon de post LinkedIn |
 | `docs/love_letter_rules_fr.md` | Regles locales de reference |
+| `docs/diagnostics/` | Diagnostics dates et audits transverses |
 | `love_letter_web/README.md` | Lancer l'app web |
 
 ## Chronologie Rapide
@@ -59,7 +58,7 @@ Documents importants:
 | 2026-04-26 | Step6 population | Champion sain, mais curriculum reste fort |
 | 2026-04-26 | Step7 self-play league | Ligue OK, candidats rejetes |
 | 2026-04-28 au 2026-05-01, reconstruit | Web app produit | FastAPI + React/Vite devient la cible produit |
-| 2026-06-03 | Handoff final | Documentation, GitHub, LinkedIn |
+| 2026-06-03 | Handoff final | Documentation et GitHub |
 
 ## Architecture Du Depot
 
@@ -76,6 +75,12 @@ scripts/
   evaluation/                # evaluations, baselines, diagnostics
   training/                  # anciens et nouveaux scripts d'entrainement
 
+docs/
+  project_journal_fr.md      # journal narratif canonique
+  github_handoff_fr.md       # checklist handoff GitHub
+  love_letter_rules_fr.md    # regles locales
+  diagnostics/               # diagnostics dates et audits transverses
+
 step1_heuristic_mastery/     # imitation du bot heuristique
 step2_rl_finetune/           # depasser l'heuristique
 step3_action_value/          # action-value, verify16, DAgger
@@ -83,17 +88,23 @@ step4_weakness_analysis/     # analyse des faiblesses par cartes
 step5_execution_heads/       # tetes locales d'execution
 step6_self_play/             # population et matchups asymetriques
 step7_self_play_league/      # ligue self-play + promotion gate
+  state/                     # roster, resultats jsonl, historique promotion
 
 love_letter_web/
   backend/main.py            # API FastAPI
   frontend/                  # app React/Vite
-
-docs/
-  project_journal_fr.md
-  github_handoff_fr.md
-  linkedin_post_fr.md
-  love_letter_rules_fr.md
 ```
+
+Convention de rangement:
+
+- `docs/` contient la documentation globale et les diagnostics qui ne sont pas
+  propres a une seule etape.
+- `step*_*/reports/` contient les resultats experimentaux de chaque etape.
+- `step*_*/checkpoints/` et `step*_*/datasets/` contiennent les artefacts
+  techniques associes a l'etape.
+- `step7_self_play_league/state/` contient l'etat mutable de la ligue
+  self-play.
+- `love_letter_web/` contient l'application produit FastAPI + React/Vite.
 
 ## Baseline - 24 Avril 2026
 
@@ -211,9 +222,9 @@ Decision: succes. Step2 devient le socle de la nouvelle pipeline.
 
 Dossiers et rapports:
 
-- `diagnostics/2026-04-24_belief_conditioned_ppo_model_diagnostic.md`
-- `diagnostics/2026-04-24_step3_mini_action_value_probe.md`
-- `diagnostics/2026-04-24_attempt2_tactical_best_model_diagnostic.md`
+- `docs/diagnostics/2026-04-24_belief_conditioned_ppo_model_diagnostic.md`
+- `docs/diagnostics/2026-04-24_step3_mini_action_value_probe.md`
+- `docs/diagnostics/2026-04-24_attempt2_tactical_best_model_diagnostic.md`
 
 Objectif: comprendre pourquoi les modeles belief-conditioned avaient du signal
 mais ne devenaient pas automatiquement champions.
@@ -241,7 +252,7 @@ la bonne exploitation. Il faut des corrections plus ciblees.
 Rapports:
 
 - `docs/love_letter_rules_fr.md`
-- `diagnostics/2026-04-25_rules_conformance_audit.md`
+- `docs/diagnostics/2026-04-25_rules_conformance_audit.md`
 
 Objectif: verifier que le moteur respecte les regles locales de Love Letter
 avant d'entrainer davantage.
@@ -670,16 +681,14 @@ Ce qu'on voulait ajouter:
 - un README complet;
 - un journal de projet;
 - une checklist GitHub;
-- un brouillon LinkedIn;
-- un `.gitignore` qui garde les artefacts lourds hors Git;
-- un commit final sur la branche de travail.
+- un `.gitignore` adapte au depot;
+- un commit final sur `main`.
 
 Fichiers ajoutes ou mis a jour:
 
 - `README.md`;
 - `docs/project_journal_fr.md`;
 - `docs/github_handoff_fr.md`;
-- `docs/linkedin_post_fr.md`;
 - `love_letter_web/README.md`;
 - `.gitignore`.
 
@@ -695,9 +704,8 @@ Derniere mise a jour du README:
 3 juin 2026
 ```
 
-Decision: le projet est proprement documente. La prochaine reprise doit etre
-explicite: polish produit, publication des checkpoints, ou nouveau cycle
-self-play.
+Decision: le projet est proprement documente et la version GitHub s'arrete a ce
+point.
 
 ## Comment Lancer
 
@@ -754,50 +762,3 @@ python3 scripts/debug/check_rules_conformance.py
 Note du 3 juin 2026: dans l'environnement local courant, `pytest` n'etait pas
 installe et `npm run build` est reste bloque apres `transforming...`. La
 verification Python legere `compileall` sur les fichiers critiques est passee.
-
-## Artefacts Lourds
-
-Les checkpoints et datasets lourds ne doivent pas etre ajoutes au Git classique.
-Ils doivent etre publies via GitHub Release, Git LFS, Hugging Face Hub ou un
-stockage externe.
-
-Artefacts minimum a distribuer pour rejouer le champion:
-
-- `step2_retarget_distilled_attempt1.pth`;
-- `step3_advantage_v2_dagger_attempt1_iter1.pth`;
-- tetes Step5 Chancelier, Baron et Prince;
-- `curriculum_phase1.pth` comme sparring partner historique.
-
-## Ce Qui Est Termine
-
-- Baseline random vs heuristique.
-- Imitation de l'heuristique.
-- Modele Step2 battant `HeuristicBot`.
-- Step3 action-value hybride et rapide.
-- Correction du biais d'arene.
-- Audit des regles.
-- Analyse des faiblesses par cartes.
-- Tetes d'execution Chancelier et Baron validees.
-- Prince V1 avec signal positif.
-- Population evaluation.
-- Ligue self-play operationnelle.
-- Web app FastAPI + React/Vite.
-- Documentation finale et brouillon LinkedIn.
-
-## Ce Qui Est Arrete Volontairement
-
-- Pas de nouveau PPO global.
-- Pas de nouveau cycle self-play sans objectif precis.
-- Pas de fusion forcee de toutes les tetes dans un actor unique.
-- Pas de checkpoints `.pth` dans Git classique.
-- Pas de nettoyage destructif des rapports experimentaux: ils sont la memoire
-  du projet.
-
-## Prochaine Reprise Possible
-
-1. Publier les checkpoints dans une release externe.
-2. Relancer les tests backend dans un environnement avec `pytest`.
-3. Diagnostiquer le build Vite si le blocage persiste.
-4. Tester l'app de bout en bout dans le navigateur.
-5. Relancer Step7 avec plus de diversite de population.
-6. Transformer `docs/linkedin_post_fr.md` en post public.

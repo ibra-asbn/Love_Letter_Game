@@ -12,13 +12,20 @@ checkpoints.
 
 ## Fichiers Principaux
 
-- `league_roster.json`: roster actif, Elo, checkpoints et metadata.
-- `league_results.jsonl`: lignes de manches evaluees.
-- `promotion_history.jsonl`: decisions de promotion/rejet.
 - `league_policy.py`: factory commune de politiques.
 - `league_evaluate.py`: evaluation Elo multi-joueurs.
 - `train_self_play_candidate.py`: PPO self-play du candidat compose.
 - `league_promote.py`: gate de promotion/rejet depuis un rapport Elo.
+- `state/league_roster.json`: roster actif, Elo, checkpoints et metadata.
+- `state/league_results.jsonl`: lignes de manches evaluees.
+- `state/promotion_history.jsonl`: decisions de promotion/rejet.
+
+Organisation:
+
+- `reports/`: rapports JSON/Markdown d'evaluation et de promotion.
+- `logs/`: journaux de runs.
+- `checkpoints/`: candidats self-play et checkpoints iteratifs.
+- `state/`: etat courant de ligue, separe des scripts et des rapports.
 
 Les checkpoints de self-play sont sauvegardes a chaque iteration, plus un
 checkpoint final. Un manifeste `reports/<candidate>_checkpoint_manifest.json`

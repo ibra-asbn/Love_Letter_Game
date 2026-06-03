@@ -20,7 +20,6 @@ Le repo doit raconter proprement le projet et permettre de:
 | `README.md` | Vue globale du projet |
 | `docs/project_journal_fr.md` | Recap canonique etape par etape |
 | `docs/github_handoff_fr.md` | Consignes de publication |
-| `docs/linkedin_post_fr.md` | Brouillon de communication |
 | `love_letter_web/README.md` | Lancer l'app FastAPI + React/Vite |
 | `tests/test_love_letter_web_backend.py` | Couverture backend produit |
 
@@ -87,6 +86,4 @@ Le point d'arret propre est:
 - champion final documente: `champion_cbp`;
 - web app documentee;
 - projet lisible dans GitHub;
-- post LinkedIn prepare;
 - pas de nouvelle experimentation lancee.
-
