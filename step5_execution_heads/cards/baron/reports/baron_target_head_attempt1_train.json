@@ -1,0 +1,778 @@
+{
+  "created_at": "2026-04-26 13:39:53 CEST",
+  "kind": "baron_target",
+  "dataset": "step5_execution_heads/cards/baron/datasets/baron_target_teacher_240x12.json",
+  "checkpoint": "step5_execution_heads/cards/baron/checkpoints/baron_target_head_attempt1.pth",
+  "dataset_summary": {
+    "kind": "baron_target",
+    "label": "Baron",
+    "card": 3,
+    "states": 173,
+    "rows": 437,
+    "clear_regret_states": 55,
+    "positive_override_states": 79,
+    "mean_best_advantage": 0.10236512310802937,
+    "sample_groups": [
+      {
+        "group": 0,
+        "model_action": 330,
+        "best_action": 320,
+        "model_target": 3,
+        "best_target": 2,
+        "best_advantage": 0.012499988079071045,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          8,
+          3
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 1,
+        "model_action": 330,
+        "best_action": 330,
+        "model_target": 3,
+        "best_target": 3,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          7,
+          3
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 2,
+        "model_action": 310,
+        "best_action": 320,
+        "model_target": 1,
+        "best_target": 2,
+        "best_advantage": 0.08749999105930328,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          5,
+          3
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 3,
+        "model_action": 320,
+        "best_action": 330,
+        "model_target": 2,
+        "best_target": 3,
+        "best_advantage": 0.25583335757255554,
+        "clear_regret": true,
+        "phase": "mid",
+        "hand": [
+          3,
+          6
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 4,
+        "model_action": 300,
+        "best_action": 320,
+        "model_target": 0,
+        "best_target": 2,
+        "best_advantage": 0.19249999523162842,
+        "clear_regret": true,
+        "phase": "mid",
+        "hand": [
+          3,
+          9
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 5,
+        "model_action": 310,
+        "best_action": 310,
+        "model_target": 1,
+        "best_target": 1,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          3,
+          9
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 6,
+        "model_action": 330,
+        "best_action": 320,
+        "model_target": 3,
+        "best_target": 2,
+        "best_advantage": 0.16999998688697815,
+        "clear_regret": true,
+        "phase": "mid",
+        "hand": [
+          3,
+          5
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 8,
+        "model_action": 300,
+        "best_action": 330,
+        "model_target": 0,
+        "best_target": 3,
+        "best_advantage": 0.005833327770233154,
+        "clear_regret": false,
+        "phase": "early",
+        "hand": [
+          6,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 10,
+        "model_action": 320,
+        "best_action": 320,
+        "model_target": 2,
+        "best_target": 2,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "hand": [
+          9,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 11,
+        "model_action": 330,
+        "best_action": 310,
+        "model_target": 3,
+        "best_target": 1,
+        "best_advantage": 0.08416670560836792,
+        "clear_regret": false,
+        "phase": "mid",
+        "hand": [
+          8,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 12,
+        "model_action": 320,
+        "best_action": 310,
+        "model_target": 2,
+        "best_target": 1,
+        "best_advantage": 0.2591666877269745,
+        "clear_regret": true,
+        "phase": "late",
+        "hand": [
+          8,
+          3
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 13,
+        "model_action": 300,
+        "best_action": 300,
+        "model_target": 0,
+        "best_target": 0,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "hand": [
+          8,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 14,
+        "model_action": 300,
+        "best_action": 330,
+        "model_target": 0,
+        "best_target": 3,
+        "best_advantage": 0.3533332943916321,
+        "clear_regret": true,
+        "phase": "mid",
+        "hand": [
+          7,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 15,
+        "model_action": 300,
+        "best_action": 300,
+        "model_target": 0,
+        "best_target": 0,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "hand": [
+          3,
+          7
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 16,
+        "model_action": 330,
+        "best_action": 300,
+        "model_target": 3,
+        "best_target": 0,
+        "best_advantage": 0.0008332729339599609,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          8,
+          3
+        ],
+        "candidate_count": 2
+      },
+      {
+        "group": 19,
+        "model_action": 300,
+        "best_action": 300,
+        "model_target": 0,
+        "best_target": 0,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "mid",
+        "hand": [
+          5,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 20,
+        "model_action": 310,
+        "best_action": 330,
+        "model_target": 1,
+        "best_target": 3,
+        "best_advantage": 0.26249995827674866,
+        "clear_regret": true,
+        "phase": "late",
+        "hand": [
+          3,
+          9
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 24,
+        "model_action": 330,
+        "best_action": 330,
+        "model_target": 3,
+        "best_target": 3,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "early",
+        "hand": [
+          3,
+          6
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 27,
+        "model_action": 330,
+        "best_action": 310,
+        "model_target": 3,
+        "best_target": 1,
+        "best_advantage": 0.2633333206176758,
+        "clear_regret": true,
+        "phase": "early",
+        "hand": [
+          9,
+          3
+        ],
+        "candidate_count": 3
+      },
+      {
+        "group": 28,
+        "model_action": 310,
+        "best_action": 310,
+        "model_target": 1,
+        "best_target": 1,
+        "best_advantage": 0.0,
+        "clear_regret": false,
+        "phase": "late",
+        "hand": [
+          9,
+          3
+        ],
+        "candidate_count": 2
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.02465191421409448,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.12265137583017349,
+        "top1_acc": 0.4676258992805755,
+        "override_agreement": 0.5251798561151079,
+        "pred_override_rate": 0.014388489208633094,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15799443423748016,
+        "top1_acc": 0.4117647058823529,
+        "override_agreement": 0.6176470588235294,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 0.022380763043959934,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10957162827253342,
+        "top1_acc": 0.460431654676259,
+        "override_agreement": 0.5323741007194245,
+        "pred_override_rate": 0.007194244604316547,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1506807506084442,
+        "top1_acc": 0.4411764705882353,
+        "override_agreement": 0.5882352941176471,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 0.020066459352771442,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10984709113836288,
+        "top1_acc": 0.49640287769784175,
+        "override_agreement": 0.5467625899280576,
+        "pred_override_rate": 0.02158273381294964,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1552078127861023,
+        "top1_acc": 0.4411764705882353,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.01883266493678093,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10342978686094284,
+        "top1_acc": 0.5323741007194245,
+        "override_agreement": 0.5539568345323741,
+        "pred_override_rate": 0.02877697841726619,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1521226018667221,
+        "top1_acc": 0.4411764705882353,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 0.01735154694567124,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10412941873073578,
+        "top1_acc": 0.539568345323741,
+        "override_agreement": 0.5611510791366906,
+        "pred_override_rate": 0.03597122302158273,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1542227864265442,
+        "top1_acc": 0.4411764705882353,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.015518999348084131,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10281378775835037,
+        "top1_acc": 0.5755395683453237,
+        "override_agreement": 0.5683453237410072,
+        "pred_override_rate": 0.04316546762589928,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1551446169614792,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 0.015161623557408651,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.10007941722869873,
+        "top1_acc": 0.5971223021582733,
+        "override_agreement": 0.5755395683453237,
+        "pred_override_rate": 0.050359712230215826,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15581157803535461,
+        "top1_acc": 0.5,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.029411764705882353,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.014893573708832264,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09886787086725235,
+        "top1_acc": 0.5971223021582733,
+        "override_agreement": 0.5827338129496403,
+        "pred_override_rate": 0.05755395683453238,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15891636908054352,
+        "top1_acc": 0.5,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 0.014016321549812952,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09806589782238007,
+        "top1_acc": 0.5971223021582733,
+        "override_agreement": 0.5899280575539568,
+        "pred_override_rate": 0.06474820143884892,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15734393894672394,
+        "top1_acc": 0.5294117647058824,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 0.012621113720039526,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09849860519170761,
+        "top1_acc": 0.5899280575539568,
+        "override_agreement": 0.60431654676259,
+        "pred_override_rate": 0.07913669064748201,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1581801474094391,
+        "top1_acc": 0.5294117647058824,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 0.012164415481189886,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09484019130468369,
+        "top1_acc": 0.6187050359712231,
+        "override_agreement": 0.6187050359712231,
+        "pred_override_rate": 0.09352517985611511,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15859048068523407,
+        "top1_acc": 0.5,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 0.011025382361064354,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09350506961345673,
+        "top1_acc": 0.6330935251798561,
+        "override_agreement": 0.6187050359712231,
+        "pred_override_rate": 0.1079136690647482,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.16032928228378296,
+        "top1_acc": 0.5,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.058823529411764705,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 13,
+      "loss": 0.010669939840833345,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.09243763238191605,
+        "top1_acc": 0.6330935251798561,
+        "override_agreement": 0.6474820143884892,
+        "pred_override_rate": 0.1366906474820144,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.15957048535346985,
+        "top1_acc": 0.5,
+        "override_agreement": 0.6176470588235294,
+        "pred_override_rate": 0.11764705882352941,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 14,
+      "loss": 0.010283540313442549,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.0919865146279335,
+        "top1_acc": 0.6187050359712231,
+        "override_agreement": 0.6546762589928058,
+        "pred_override_rate": 0.14388489208633093,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.16086888313293457,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.14705882352941177,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 15,
+      "loss": 0.009778170070300499,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08931595087051392,
+        "top1_acc": 0.6330935251798561,
+        "override_agreement": 0.6618705035971223,
+        "pred_override_rate": 0.16546762589928057,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.16383913159370422,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6470588235294118,
+        "pred_override_rate": 0.14705882352941177,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 16,
+      "loss": 0.009086227044463158,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08804533630609512,
+        "top1_acc": 0.6330935251798561,
+        "override_agreement": 0.6690647482014388,
+        "pred_override_rate": 0.17266187050359713,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1666814088821411,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.17647058823529413,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 17,
+      "loss": 0.008533646973470846,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08652052283287048,
+        "top1_acc": 0.6546762589928058,
+        "override_agreement": 0.6762589928057554,
+        "pred_override_rate": 0.17985611510791366,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1660744696855545,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.17647058823529413,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 18,
+      "loss": 0.00796961085870862,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08656959980726242,
+        "top1_acc": 0.6474820143884892,
+        "override_agreement": 0.6906474820143885,
+        "pred_override_rate": 0.19424460431654678,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.16680744290351868,
+        "top1_acc": 0.47058823529411764,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.17647058823529413,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 19,
+      "loss": 0.007279272191226482,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08316782116889954,
+        "top1_acc": 0.6762589928057554,
+        "override_agreement": 0.7194244604316546,
+        "pred_override_rate": 0.22302158273381295,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.1695229411125183,
+        "top1_acc": 0.5294117647058824,
+        "override_agreement": 0.6764705882352942,
+        "pred_override_rate": 0.17647058823529413,
+        "target_override_rate": 0.38235294117647056
+      }
+    },
+    {
+      "epoch": 20,
+      "loss": 0.007193164279063542,
+      "train": {
+        "rows": 347,
+        "groups": 139,
+        "mae": 0.08107687532901764,
+        "top1_acc": 0.6834532374100719,
+        "override_agreement": 0.7122302158273381,
+        "pred_override_rate": 0.2158273381294964,
+        "target_override_rate": 0.4748201438848921
+      },
+      "val": {
+        "rows": 90,
+        "groups": 34,
+        "mae": 0.17006878554821014,
+        "top1_acc": 0.5,
+        "override_agreement": 0.7058823529411765,
+        "pred_override_rate": 0.14705882352941177,
+        "target_override_rate": 0.38235294117647056
+      }
+    }
+  ],
+  "final_train": {
+    "rows": 347,
+    "groups": 139,
+    "mae": 0.08107687532901764,
+    "top1_acc": 0.6834532374100719,
+    "override_agreement": 0.7122302158273381,
+    "pred_override_rate": 0.2158273381294964,
+    "target_override_rate": 0.4748201438848921
+  },
+  "final_val": {
+    "rows": 90,
+    "groups": 34,
+    "mae": 0.17006878554821014,
+    "top1_acc": 0.5,
+    "override_agreement": 0.7058823529411765,
+    "pred_override_rate": 0.14705882352941177,
+    "target_override_rate": 0.38235294117647056
+  }
+}

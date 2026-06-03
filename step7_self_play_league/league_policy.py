@@ -101,10 +101,10 @@ class LeaguePolicyFactory:
             return self._make_composite(spec, agent, roles or {})
         raise ValueError(f"Unknown policy kind: {kind}")
 
-    def _advantage_bundle(self, checkpoint_name: str):
-        key = str(checkpoint_name)
+    def _advantage_bundle(self, checkpoint_name: str, base_override: str | None = None):
+        key = (str(checkpoint_name), str(base_override or ""))
         if key not in self._advantage_cache:
-            self._advantage_cache[key] = load_advantage_bundle(checkpoint_name, None)
+            self._advantage_cache[key] = load_advantage_bundle(checkpoint_name, base_override)
         return self._advantage_cache[key]
 
     def _chancellor_head(self, path: str | None):
@@ -119,7 +119,10 @@ class LeaguePolicyFactory:
         return self._chancellor_cache[key]
 
     def _make_composite(self, spec: dict, agent: str, roles: dict[str, str]):
-        checkpoint, default_base, head, ckpt = self._advantage_bundle(spec["advantage_checkpoint"])
+        checkpoint, default_base, head, ckpt = self._advantage_bundle(
+            spec["advantage_checkpoint"],
+            spec.get("base_checkpoint"),
+        )
         base_checkpoint = resolve_checkpoint(spec.get("base_checkpoint") or default_base)
         args = deepcopy(self.args)
         args.max_actions = args.max_actions or int(ckpt.get("max_actions", 14))
@@ -190,4 +193,3 @@ def apply_promotion(roster: dict, candidate_id: str, max_active: int | None = No
         weakest["active"] = False
         dropped_id = weakest["policy_id"]
     return roster, dropped_id
-

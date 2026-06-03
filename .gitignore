@@ -26,9 +26,17 @@ step3_action_value/checkpoints/*.pth
 love_letter_web/frontend/node_modules/
 love_letter_web/frontend/dist/
 love_letter_web/frontend/build/
+love_letter_web/frontend/storybook-static/
+love_letter_web/frontend/src/stories/DiwanPreview.stories.jsx
 love_letter_web/frontend/debug-storybook.log
 love_letter_web/frontend/public/palace_ost.mp3
 love_letter_web/logs/
+
+output/playwright/
+models/pool/*.pth
+love_letter_web/backend/models/*.pth
+step5_execution_heads/**/checkpoints/*.pth
+step7_self_play_league/checkpoints/*.pth
 
 .pytest_cache/
 .mypy_cache/

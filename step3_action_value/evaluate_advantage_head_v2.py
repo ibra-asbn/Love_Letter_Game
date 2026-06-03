@@ -62,7 +62,11 @@ def load_advantage_bundle(path: str | Path, base_override: str | None = None):
     )
     head.load_state_dict(ckpt["head"])
     head.eval()
-    base_checkpoint = resolve_checkpoint(base_override or ckpt["base_checkpoint"])
+    base_name = base_override or ckpt["base_checkpoint"]
+    try:
+        base_checkpoint = resolve_checkpoint(base_name)
+    except FileNotFoundError:
+        base_checkpoint = resolve_checkpoint(Path(str(base_name)).name)
     return checkpoint, base_checkpoint, head, ckpt
 
 

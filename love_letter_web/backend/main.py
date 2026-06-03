@@ -2,11 +2,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime
+import hashlib
+import json
 from pathlib import Path
 import random
 import sys
 import threading
 import time
+import unicodedata
 from uuid import uuid4
 from zoneinfo import ZoneInfo
 
@@ -30,6 +33,8 @@ from step7_self_play_league.league_policy import (  # noqa: E402
 
 HUMAN = "player_0"
 TARGET_POINTS = 2
+CHANCELLOR_ACTION_MIN = 900
+CHANCELLOR_ACTION_MAX = 906
 PARIS_TZ = ZoneInfo("Europe/Paris")
 CARD_NAMES = {
     0: "Espionne",
@@ -58,6 +63,61 @@ POLICY_LABELS = {
     "random": "Random",
 }
 DEFAULT_AI_POLICY_IDS = {agent: "champion_cbp" for agent in AI_AGENT_IDS}
+ENTRY_REASON_OPTIONS = [
+    {
+        "id": "challenge_family",
+        "label": "Défier le Sultan et sa famille",
+        "signal": "challenger",
+    },
+    {
+        "id": "observe_champions",
+        "label": "Observer les champions de la cour",
+        "signal": "recruiter_hint",
+    },
+    {
+        "id": "evaluate_contender",
+        "label": "Évaluer la force d’un prétendant",
+        "signal": "recruiter_hint",
+    },
+    {
+        "id": "support_close_one",
+        "label": "Accompagner un proche",
+        "signal": "close_one",
+    },
+    {
+        "id": "learn_rules",
+        "label": "Découvrir les règles du palais",
+        "signal": "learner",
+    },
+]
+ENTRY_REASON_BY_ID = {reason["id"]: reason for reason in ENTRY_REASON_OPTIONS}
+DEFAULT_ENTRY_REASON_ID = "challenge_family"
+SECRET_PROFILE_DIALOGUES = {
+    "ibra|asbn": {
+        "intro": [
+            "Ibra. Le registre dit que tu connais déjà les couloirs. Fais semblant de découvrir, si cela t'amuse.",
+            "Le palais a préparé une table sérieuse pour toi. Les regards seront plus attentifs que d'habitude.",
+        ],
+        "match_win": [
+            "Victoire confirmée. Le Qadi note que le palais supporte plutôt bien tes expériences.",
+        ],
+        "match_loss": [
+            "Défaite notée. Le palais garde le sourire, mais le registre n'oublie jamais tout à fait.",
+        ],
+    },
+    "hafsa|secret": {
+        "intro": [
+            "Hafsa. Certaines portes ne grincent pas quand elles te reconnaissent.",
+            "Le Sultan a demandé qu'on observe cette partie de très près. Rien d'inquiétant, naturellement.",
+        ],
+        "match_win": [
+            "Le palais s'incline. Cette victoire ressemble moins à un hasard qu'à une signature.",
+        ],
+        "match_loss": [
+            "Le palais gagne cette fois. Le Qadi évitera de trop sourire devant toi.",
+        ],
+    },
+}
 RULES_TEXT = [
     "But de la partie - Le premier joueur qui atteint 2 points gagne la partie. Une manche remportee vaut 1 point, et l'Espionne peut offrir un point bonus.",
     "Debut de manche - Chaque joueur recoit une carte secrete. Une carte est mise de cote face cachee, puis le reste forme la pioche.",
@@ -76,17 +136,349 @@ RULES_TEXT = [
 ]
 
 
-class NewGameRequest(BaseModel):
-    human_name: str = "Hafsa"
+class PlayerProfileRequest(BaseModel):
+    first_name: str | None = None
+    last_name: str | None = None
+    entry_reason: str | None = None
+    human_name: str | None = None
+    identity_confirmed: bool | None = False
+
+
+class NewGameRequest(PlayerProfileRequest):
     ai_policies: dict[str, str] | None = None
+    is_tutorial: bool | None = False
 
 
 class PlayActionRequest(BaseModel):
     action: int
 
 
+LOGS_DIR = PROJECT_ROOT / "love_letter_web" / "logs"
+GAME_EVENTS_PATH = LOGS_DIR / "game_events.jsonl"
+PLAYER_STATS_PATH = LOGS_DIR / "player_stats.json"
+LOG_LOCK = threading.Lock()
+
+
 def now_stamp() -> str:
     return datetime.now(PARIS_TZ).strftime("%Y-%m-%d %H:%M:%S %Z")
+
+
+def normalize_profile_part(value: str | None) -> str:
+    raw = (value or "").strip().lower()
+    normalized = unicodedata.normalize("NFKD", raw)
+    ascii_text = "".join(char for char in normalized if not unicodedata.combining(char))
+    return " ".join(ascii_text.split())
+
+
+def profile_key(first_name: str | None, last_name: str | None) -> str:
+    return f"{normalize_profile_part(first_name)}|{normalize_profile_part(last_name)}"
+
+
+def player_identity_id_from_key(key: str) -> str:
+    digest = hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
+    return f"player_{digest}"
+
+
+def clean_display_part(value: str | None, fallback: str = "") -> str:
+    text = " ".join((value or "").strip().split())
+    return text or fallback
+
+
+def normalize_entry_reason_id(value: str | None) -> str:
+    if not value:
+        return DEFAULT_ENTRY_REASON_ID
+    normalized = normalize_profile_part(value)
+    for reason in ENTRY_REASON_OPTIONS:
+        if normalized in {normalize_profile_part(reason["id"]), normalize_profile_part(reason["label"])}:
+            return reason["id"]
+    return DEFAULT_ENTRY_REASON_ID
+
+
+def empty_player_stats() -> dict:
+    return {
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0,
+        "winrate": 0.0,
+        "rounds_played": 0,
+        "rounds_won": 0,
+    }
+
+
+def stats_summary(record: dict | None = None) -> dict:
+    stats = empty_player_stats()
+    if record:
+        stats.update({
+            "matches_played": int(record.get("matches_played", 0)),
+            "wins": int(record.get("wins", 0)),
+            "losses": int(record.get("losses", 0)),
+            "rounds_played": int(record.get("rounds_played", 0)),
+            "rounds_won": int(record.get("rounds_won", 0)),
+        })
+    matches = stats["matches_played"]
+    stats["winrate"] = round((stats["wins"] / matches) * 100, 1) if matches else 0.0
+    return stats
+
+
+def load_player_stats_store() -> dict:
+    try:
+        if PLAYER_STATS_PATH.exists():
+            with PLAYER_STATS_PATH.open("r", encoding="utf-8") as handle:
+                data = json.load(handle)
+                if isinstance(data, dict):
+                    data.setdefault("version", 1)
+                    data.setdefault("players", {})
+                    data.setdefault("profile_key_index", {})
+                    return data
+    except (OSError, json.JSONDecodeError):
+        pass
+    return {"version": 1, "players": {}, "profile_key_index": {}}
+
+
+def save_player_stats_store(store: dict) -> None:
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    with PLAYER_STATS_PATH.open("w", encoding="utf-8") as handle:
+        json.dump(store, handle, ensure_ascii=False, indent=2, sort_keys=True)
+
+
+def find_player_record(key: str) -> tuple[str, dict | None]:
+    identity_id = player_identity_id_from_key(key)
+    with LOG_LOCK:
+        store = load_player_stats_store()
+        indexed_id = store.get("profile_key_index", {}).get(key) or identity_id
+        record = store.get("players", {}).get(indexed_id)
+    return indexed_id, record
+
+
+def ensure_player_record(profile: dict) -> dict:
+    key = profile["profile_key"]
+    identity_id = profile["player_identity_id"]
+    with LOG_LOCK:
+        store = load_player_stats_store()
+        players = store.setdefault("players", {})
+        index = store.setdefault("profile_key_index", {})
+        identity_id = index.get(key) or identity_id
+        now = now_stamp()
+        record = players.get(identity_id) or {
+            "player_identity_id": identity_id,
+            "profile_key": key,
+            "first_name": profile.get("first_name") or DEFAULT_NAMES[HUMAN],
+            "last_name": profile.get("last_name") or "",
+            "full_name": profile.get("full_name") or profile.get("display_name") or DEFAULT_NAMES[HUMAN],
+            "created_at": now,
+            **empty_player_stats(),
+        }
+        record.update({
+            "profile_key": key,
+            "first_name": profile.get("first_name") or record.get("first_name") or DEFAULT_NAMES[HUMAN],
+            "last_name": profile.get("last_name") or record.get("last_name") or "",
+            "full_name": profile.get("full_name") or record.get("full_name") or DEFAULT_NAMES[HUMAN],
+            "last_entry_reason": profile.get("entry_reason") or record.get("last_entry_reason") or DEFAULT_ENTRY_REASON_ID,
+            "last_entry_reason_label": profile.get("entry_reason_label") or record.get("last_entry_reason_label") or ENTRY_REASON_BY_ID[DEFAULT_ENTRY_REASON_ID]["label"],
+            "last_seen": now,
+        })
+        players[identity_id] = record
+        index[key] = identity_id
+        save_player_stats_store(store)
+    profile["player_identity_id"] = identity_id
+    profile["stats"] = stats_summary(record)
+    profile["identity_found"] = True
+    return profile["stats"]
+
+
+def update_player_stats_for_match(game: "GameSession", leaders: list[str]) -> dict:
+    profile = game.player_profile or {}
+    before = stats_summary(profile.get("stats"))
+    human_won = HUMAN in leaders
+    with LOG_LOCK:
+        store = load_player_stats_store()
+        players = store.setdefault("players", {})
+        index = store.setdefault("profile_key_index", {})
+        key = profile.get("profile_key") or profile_key(profile.get("first_name"), profile.get("last_name"))
+        identity_id = index.get(key) or profile.get("player_identity_id") or player_identity_id_from_key(key)
+        record = players.get(identity_id) or {
+            "player_identity_id": identity_id,
+            "profile_key": key,
+            "first_name": profile.get("first_name") or DEFAULT_NAMES[HUMAN],
+            "last_name": profile.get("last_name") or "",
+            "full_name": profile.get("full_name") or profile.get("display_name") or DEFAULT_NAMES[HUMAN],
+            "created_at": now_stamp(),
+            **empty_player_stats(),
+        }
+        before = stats_summary(record)
+        record["matches_played"] = before["matches_played"] + 1
+        record["wins"] = before["wins"] + (1 if human_won else 0)
+        record["losses"] = before["losses"] + (0 if human_won else 1)
+        record["rounds_played"] = before["rounds_played"] + int(game.round_index)
+        record["rounds_won"] = before["rounds_won"] + int(game.match_points.get(HUMAN, 0))
+        record["last_entry_reason"] = profile.get("entry_reason") or record.get("last_entry_reason") or DEFAULT_ENTRY_REASON_ID
+        record["last_entry_reason_label"] = profile.get("entry_reason_label") or record.get("last_entry_reason_label") or ENTRY_REASON_BY_ID[DEFAULT_ENTRY_REASON_ID]["label"]
+        record["last_result"] = "win" if human_won else "loss"
+        record["last_seen"] = now_stamp()
+        record["last_game_id"] = game.game_id
+        players[identity_id] = record
+        index[key] = identity_id
+        save_player_stats_store(store)
+    after = stats_summary(record)
+    profile["player_identity_id"] = identity_id
+    profile["stats"] = after
+    profile["identity_found"] = True
+    return {"before": before, "after": after}
+
+
+def build_player_profile(request: PlayerProfileRequest) -> dict:
+    legacy_name = clean_display_part(request.human_name)
+    first_name = clean_display_part(request.first_name, legacy_name or DEFAULT_NAMES[HUMAN])
+    last_name = clean_display_part(request.last_name)
+    key = profile_key(first_name, last_name)
+    identity_id, record = find_player_record(key)
+    reason_id = normalize_entry_reason_id(request.entry_reason)
+    reason = ENTRY_REASON_BY_ID[reason_id]
+    return {
+        "first_name": first_name,
+        "last_name": last_name,
+        "display_name": first_name,
+        "full_name": " ".join(part for part in [first_name, last_name] if part),
+        "profile_key": key,
+        "player_identity_id": identity_id,
+        "identity_confirmed": bool(request.identity_confirmed),
+        "identity_found": bool(record or SECRET_PROFILE_DIALOGUES.get(key)),
+        "stats": stats_summary(record),
+        "secret_profile": SECRET_PROFILE_DIALOGUES.get(key),
+        "entry_reason": reason_id,
+        "entry_reason_label": reason["label"],
+        "entry_reason_signal": reason["signal"],
+    }
+
+
+def public_player_profile(profile: dict | None) -> dict:
+    profile = profile or build_player_profile(PlayerProfileRequest(first_name=DEFAULT_NAMES[HUMAN]))
+    return {
+        "first_name": profile.get("first_name") or DEFAULT_NAMES[HUMAN],
+        "last_name": profile.get("last_name") or "",
+        "display_name": profile.get("display_name") or DEFAULT_NAMES[HUMAN],
+        "full_name": profile.get("full_name") or profile.get("display_name") or DEFAULT_NAMES[HUMAN],
+        "player_identity_id": profile.get("player_identity_id") or player_identity_id_from_key(profile.get("profile_key") or profile_key(profile.get("first_name"), profile.get("last_name"))),
+        "identity_confirmed": bool(profile.get("identity_confirmed")),
+        "identity_found": bool(profile.get("identity_found")),
+        "stats": stats_summary(profile.get("stats")),
+        "entry_reason": profile.get("entry_reason") or DEFAULT_ENTRY_REASON_ID,
+        "entry_reason_label": profile.get("entry_reason_label") or ENTRY_REASON_BY_ID[DEFAULT_ENTRY_REASON_ID]["label"],
+        "entry_reason_signal": profile.get("entry_reason_signal") or ENTRY_REASON_BY_ID[DEFAULT_ENTRY_REASON_ID]["signal"],
+        "is_known_profile": bool(profile.get("secret_profile")),
+    }
+
+
+def format_palmares(stats: dict | None) -> str:
+    summary = stats_summary(stats)
+    if summary["matches_played"] == 0:
+        return "Palmarès actuel: aucune partie terminée dans le registre."
+    return (
+        "Palmarès actuel: "
+        f"{summary['matches_played']} parties, "
+        f"{summary['wins']} victoires, "
+        f"{summary['losses']} défaites, "
+        f"{summary['winrate']}% de victoire."
+    )
+
+
+def build_identity_confirmation_dialogue(profile: dict) -> list[dict]:
+    full_name = profile.get("full_name") or profile.get("display_name") or DEFAULT_NAMES[HUMAN]
+    return [
+        {
+            "title": "Le Qadi",
+            "text": f"Le registre me dit que vous êtes {full_name}. Est-ce bien vous ?",
+        },
+        {
+            "title": "Le Qadi",
+            "text": format_palmares(profile.get("stats")),
+        },
+    ]
+
+
+def build_intro_qadi_dialogue(profile: dict, needs_entry_reason: bool = False) -> list[dict]:
+    display_name = profile["display_name"]
+    if needs_entry_reason:
+        return [
+            {
+                "title": "Le Qadi",
+                "text": f"{display_name}, avant que le registre ne s'ouvre: pour quelle raison entres-tu au palais ?",
+            }
+        ]
+    secret_profile = profile.get("secret_profile")
+    if secret_profile:
+        secret_lines = secret_profile.get("intro", [])
+        return [{"title": "Le Qadi", "text": line} for line in secret_lines] + [
+            {
+                "title": "Le Qadi",
+                "text": "La table est prête. Que cette partie dise ce que les mots évitent.",
+            }
+        ]
+    reason_label = profile.get("entry_reason_label") or ENTRY_REASON_BY_ID[DEFAULT_ENTRY_REASON_ID]["label"]
+    return [
+        {
+            "title": "Le Qadi",
+            "text": f"Bienvenue, {display_name}. Le palais inscrit ton nom avec soin.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": "Tu entres ici sous les lanternes, là où le Sultan garde sa cour et ses secrets.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": f"Motif déclaré: {reason_label}. Le Qadi note la nuance sans l'annoncer trop fort.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": "Sa fille, l'Amira, refuse chaque prétendant. Aucun poème, aucune fortune, aucune promesse ne l'a fait changer d'avis.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": "Alors le Sultan a donné une épreuve: battre sa famille à leur jeu préféré, Love Letter.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": "Souviens-toi: ici, une carte jouée trop tôt peut te condamner, et une carte gardée trop longtemps peut te trahir.",
+        },
+        {
+            "title": "Le Qadi",
+            "text": "Avance maintenant. La table est prête. Que ton nom soit plus qu'une ligne de plus dans mon registre.",
+        },
+    ]
+
+
+def build_match_end_qadi_dialogue(game: "GameSession", leaders: list[str]) -> list[dict]:
+    profile = game.player_profile or {}
+    secret_profile = profile.get("secret_profile")
+    human_won = HUMAN in leaders
+    stats_delta = game.match_stats_delta or {}
+    after_stats = stats_delta.get("after") or profile.get("stats") or empty_player_stats()
+    palmares_text = format_palmares(after_stats)
+    if secret_profile:
+        key = "match_win" if human_won else "match_loss"
+        lines = secret_profile.get(key, [])
+        if lines:
+            return [{"title": "Le Qadi", "text": line} for line in lines] + [
+                {"title": "Le Qadi", "text": palmares_text},
+            ]
+    if human_won:
+        return [
+            {
+                "title": "Le Qadi",
+                "text": f"{profile.get('display_name', DEFAULT_NAMES[HUMAN])}, la partie est gagnée. Le Sultan devra relire son propre règlement.",
+            },
+            {"title": "Le Qadi", "text": palmares_text},
+            {"title": "Le Qadi", "text": "Si tu le souhaites, le registre peut maintenant rejouer chaque coup, sans voile ni secret."},
+        ]
+    winners = ", ".join(game.names[agent] for agent in leaders)
+    return [
+        {
+            "title": "Le Qadi",
+            "text": f"Partie terminée. {winners} garde l'avantage, mais le registre laisse toujours une revanche.",
+        },
+        {"title": "Le Qadi", "text": palmares_text},
+        {"title": "Le Qadi", "text": "Le replay omniscient est disponible si tu veux comprendre où la partie a basculé."},
+    ]
 
 
 def card_name(card: int | None, with_value: bool = False) -> str:
@@ -109,6 +501,13 @@ def action_guess(action: int) -> int:
     return int(action) % 10
 
 
+def is_chancellor_choice(action: int | None) -> bool:
+    if action is None:
+        return False
+    value = int(action)
+    return CHANCELLOR_ACTION_MIN <= value < CHANCELLOR_ACTION_MAX
+
+
 def compared_card_after_play(hand: list[int], played_card: int) -> int | None:
     remaining = list(hand)
     if played_card in remaining:
@@ -124,12 +523,77 @@ def snapshot(env: LoveLetterRLEnv) -> dict:
         },
         "hands": {agent: list(env._hands.get(agent, [])) for agent in env.possible_agents},
         "played": {agent: list(env._played_cards.get(agent, [])) for agent in env.possible_agents},
+        "protected": {agent: bool(env._protected.get(agent, False)) for agent in env.possible_agents},
+        "terminations": {agent: bool(env.terminations.get(agent, True)) for agent in env.possible_agents},
+        "agent_selection": env.agent_selection,
+        "deck": list(env._deck),
         "deck_size": len(env._deck),
+        "chancellor_pending": bool(env._chancellor_pending),
+        "chancellor_pool": list(env._chancellor_pool),
+    }
+
+
+def replay_state_from_snapshot(game: "GameSession", snap: dict | None = None) -> dict:
+    env = game.env
+    snap = snap or snapshot(env)
+    players = []
+    all_terminated = all(snap.get("terminations", {}).values()) if snap.get("terminations") else False
+    discard = []
+    for agent in env.possible_agents:
+        hand = [int(card) for card in snap.get("hands", {}).get(agent, [])]
+        played = [int(card) for card in snap.get("played", {}).get(agent, [])]
+        players.append({
+            "id": agent,
+            "name": game.names.get(agent, agent),
+            "is_human": agent == HUMAN,
+            "policy_id": "human" if agent == HUMAN else game.ai_policy_ids.get(agent),
+            "policy_label": "Humain" if agent == HUMAN else POLICY_LABELS.get(game.ai_policy_ids.get(agent), "?"),
+            "alive": bool(hand) if all_terminated else bool(snap.get("alive", {}).get(agent, False)),
+            "protected": bool(snap.get("protected", {}).get(agent, False)),
+            "score": int(game.match_points.get(agent, 0)),
+            "hand": hand,
+            "played": played,
+        })
+        discard.extend({
+            "owner": agent,
+            "owner_name": game.names.get(agent, agent),
+            "card": card,
+            "played_index": index,
+        } for index, card in enumerate(played))
+    return {
+        "round_index": int(game.round_index),
+        "turn_index": int(game.turn_index),
+        "current_agent": snap.get("agent_selection"),
+        "current_name": game.names.get(snap.get("agent_selection"), snap.get("agent_selection")),
+        "deck": [int(card) for card in snap.get("deck", [])],
+        "deck_size": int(snap.get("deck_size", len(snap.get("deck", [])))),
+        "discard": discard,
+        "chancellor_pending": bool(snap.get("chancellor_pending", False)),
+        "chancellor_pool": [int(card) for card in snap.get("chancellor_pool", [])],
+        "match_points": {agent: int(points) for agent, points in game.match_points.items()},
+        "players": players,
+    }
+
+
+def public_state_from_snapshot(game: "GameSession", snap: dict | None = None) -> dict:
+    state = replay_state_from_snapshot(game, snap)
+    public_players = []
+    for player in state["players"]:
+        hand = player["hand"] if player["is_human"] else []
+        public_players.append({
+            **player,
+            "hand": hand,
+            "hand_count": len(player["hand"]),
+        })
+    return {
+        **state,
+        "deck": [],
+        "players": public_players,
     }
 
 
 def decode_action_label(action: int, names: dict[str, str], actor: str | None = None) -> str:
-    if action >= 900:
+    if is_chancellor_choice(action):
         text = "choisit avec le Vizir"
         return f"{names.get(actor, actor)} {text}" if actor else text
     card = action_card(action)
@@ -166,7 +630,7 @@ def chancellor_action_label(env: LoveLetterRLEnv, action: int) -> str:
 
 
 def action_payload(env: LoveLetterRLEnv, action: int, names: dict[str, str], actor: str) -> dict:
-    if action >= 900:
+    if is_chancellor_choice(action):
         return {
             "action": int(action),
             "card": 6,
@@ -206,7 +670,7 @@ def say(lines: list[str], **values) -> str:
 def build_speech(names: dict[str, str], actor: str, action: int | None, prev: dict) -> tuple[str, str]:
     if action is None:
         return "", "normal"
-    if action >= 900:
+    if is_chancellor_choice(action):
         return say([
             "Je range le paquet. Tu verras plus tard",
             "Le Vizir remet de l'ordre dans le destin",
@@ -327,7 +791,7 @@ def consequence_logs(env: LoveLetterRLEnv, names: dict[str, str], actor: str, ac
     if action is None:
         return []
     logs = []
-    if action >= 900:
+    if is_chancellor_choice(action):
         if actor == HUMAN and env._hands.get(actor):
             logs.append({"text": f"{names[actor]} garde {card_name(env._hands[actor][0], True)}.", "tone": "info"})
         return logs
@@ -378,6 +842,8 @@ def consequence_logs(env: LoveLetterRLEnv, names: dict[str, str], actor: str, ac
 class GameSession:
     game_id: str
     names: dict[str, str]
+    player_profile: dict = field(default_factory=dict)
+    is_tutorial: bool = False
     ai_policy_ids: dict[str, str] = field(default_factory=lambda: dict(DEFAULT_AI_POLICY_IDS))
     env: LoveLetterRLEnv = field(default_factory=lambda: LoveLetterRLEnv(num_players=4))
     match_points: dict[str, int] = field(default_factory=lambda: {f"player_{idx}": 0 for idx in range(4)})
@@ -388,9 +854,15 @@ class GameSession:
     logs: list[dict] = field(default_factory=list)
     discard_events: list[dict] = field(default_factory=list)
     speeches: dict[str, dict] = field(default_factory=dict)
+    qadi_dialogue: list[dict] = field(default_factory=list)
     last_speaker: str | None = None
     private_notes: list[dict] = field(default_factory=list)
+    analytics_events: list[dict] = field(default_factory=list)
+    structured_events: list[dict] = field(default_factory=list)
     ai_policies: dict[str, object] = field(default_factory=dict)
+    turn_index: int = 0
+    match_stats_recorded: bool = False
+    match_stats_delta: dict | None = None
     seed: int | None = None
     lock: threading.Lock = field(default_factory=threading.Lock)
 
@@ -459,6 +931,44 @@ def make_ai_policies(policy_ids: dict[str, str]) -> dict[str, object]:
     return policies
 
 
+def compact_event_payload(payload: dict) -> dict:
+    compact = {}
+    for key, value in payload.items():
+        if key in {"state_before", "state_after", "public_state_before", "public_state_after"}:
+            continue
+        compact[key] = value
+    return compact
+
+
+def record_game_event(game: GameSession, event_type: str, payload: dict | None = None) -> None:
+    payload = payload or {}
+    event = {
+        "event_id": f"{game.game_id}-{len(game.structured_events) + 1:04d}",
+        "ts": now_stamp(),
+        "type": event_type,
+        "game_id": game.game_id,
+        "is_tutorial": bool(game.is_tutorial),
+        "round_index": int(game.round_index),
+        "turn_index": int(game.turn_index),
+        "player_profile": public_player_profile(game.player_profile),
+        "ai_policy_ids": dict(game.ai_policy_ids),
+        "match_points": {agent: int(points) for agent, points in game.match_points.items()},
+        "payload": payload,
+    }
+    game.structured_events.append(event)
+    game.analytics_events.append({
+        **event,
+        "payload": compact_event_payload(payload),
+    })
+    try:
+        with LOG_LOCK:
+            LOGS_DIR.mkdir(parents=True, exist_ok=True)
+            with GAME_EVENTS_PATH.open("a", encoding="utf-8") as handle:
+                handle.write(json.dumps(event, ensure_ascii=False) + "\n")
+    except OSError:
+        game.add_log("Journal local indisponible: l'evenement n'a pas ete ecrit sur disque.", "muted")
+
+
 def start_round(game: GameSession, reset_match: bool = False) -> None:
     if reset_match:
         game.match_points = {f"player_{idx}": 0 for idx in range(4)}
@@ -469,10 +979,16 @@ def start_round(game: GameSession, reset_match: bool = False) -> None:
         game.speeches.clear()
         game.last_speaker = None
         game.private_notes.clear()
+        game.analytics_events.clear()
+        game.structured_events.clear()
+        game.turn_index = 0
+        game.match_stats_recorded = False
+        game.match_stats_delta = None
         game.match_over = False
     game.round_over = False
     game.round_index += 1
     game.discard_events.clear()
+    game.private_notes.clear()
     game.last_speaker = None
     game.env = LoveLetterRLEnv(num_players=4)
     game.seed = int(time.time() * 1000) % 2_000_000_000
@@ -482,16 +998,27 @@ def start_round(game: GameSession, reset_match: bool = False) -> None:
     game.env.reset(seed=game.seed, options=options)
     game.ai_policies = make_ai_policies(game.ai_policy_ids)
     game.add_log(f"Manche {game.round_index}.", "info")
+    if reset_match and game.player_profile:
+        profile = public_player_profile(game.player_profile)
+        game.add_log(f"Joueur: {profile['full_name']}.", "info")
+        game.add_log(f"Motif d'entree: {profile['entry_reason_label']}.", "info")
     composition = ", ".join(
         f"{game.names[agent]}: {POLICY_LABELS.get(game.ai_policy_ids.get(agent), game.ai_policy_ids.get(agent))}"
         for agent in AI_AGENT_IDS
     )
     game.add_log(f"Adversaires: {composition}.", "info")
     game.add_log(f"Premier joueur: {game.names[game.env.agent_selection]}.", "info")
+    record_game_event(game, "round_started", {
+        "seed": game.seed,
+        "starting_agent": game.env.agent_selection,
+        "starting_name": game.names.get(game.env.agent_selection, game.env.agent_selection),
+        "state_after": replay_state_from_snapshot(game),
+        "public_state_after": public_state_from_snapshot(game),
+    })
 
 
 def record_discard_events(game: GameSession, actor: str, action: int | None, prev: dict) -> None:
-    if action is None or int(action) >= 900:
+    if action is None or is_chancellor_choice(action):
         return
 
     env = game.env
@@ -564,9 +1091,36 @@ def finalize_round_if_needed(game: GameSession) -> None:
     game.match_over = any(points >= TARGET_POINTS for points in game.match_points.values())
     score = ", ".join(f"{game.names[agent]} {game.match_points[agent]}/{TARGET_POINTS}" for agent in env.possible_agents)
     game.add_log(f"Score de partie: {score}.", "info")
+    record_game_event(game, "round_finished", {
+        "winners": winners,
+        "spy_bonus": spy,
+        "reason": reason,
+        "points_awarded": points_awarded,
+        "match_over": bool(game.match_over),
+        "state_after": replay_state_from_snapshot(game),
+        "public_state_after": public_state_from_snapshot(game),
+    })
     if game.match_over:
         leaders = [agent for agent, points in game.match_points.items() if points >= TARGET_POINTS]
+        if game.is_tutorial and not game.match_stats_recorded:
+            game.match_stats_delta = {"skipped": True, "reason": "tutorial"}
+            game.match_stats_recorded = True
+        elif not game.match_stats_recorded:
+            game.match_stats_delta = update_player_stats_for_match(game, leaders)
+            game.match_stats_recorded = True
         game.add_log(f"Partie terminee: {', '.join(game.names[agent] for agent in leaders)} gagne.", "good")
+        match_dialogue = build_match_end_qadi_dialogue(game, leaders)
+        game.qadi_dialogue.extend(match_dialogue)
+        for line in match_dialogue:
+            game.add_log(f"{line['title']}: {line['text']}", "qadi")
+        record_game_event(game, "match_finished", {
+            "winners": leaders,
+            "winner_names": [game.names[agent] for agent in leaders],
+            "human_won": HUMAN in leaders,
+            "player_stats": game.match_stats_delta,
+            "state_after": replay_state_from_snapshot(game),
+            "public_state_after": public_state_from_snapshot(game),
+        })
 
 
 def apply_action(game: GameSession, action: int | None) -> None:
@@ -574,18 +1128,45 @@ def apply_action(game: GameSession, action: int | None) -> None:
     actor = env.agent_selection
     prev = snapshot(env)
     env.step(action)
+    after = snapshot(env)
     record_discard_events(game, actor, action, prev)
     speech_text, speech_tone = build_speech(game.names, actor, action, prev)
     game.set_speech(actor, speech_text, speech_tone)
     if action is not None:
+        game.turn_index += 1
+        card = 6 if is_chancellor_choice(action) else action_card(action)
+        target_idx = action_target(action) if not is_chancellor_choice(action) else None
+        target = f"player_{target_idx}" if target_idx is not None and target_idx < env.num_players else None
+        guess = action_guess(action) if card == 1 else None
         game.add_log(decode_action_label(action, game.names, actor), "player" if actor == HUMAN else "normal")
-        if actor == HUMAN and action < 900 and action_card(action) == 2:
+        record_game_event(game, "action_played", {
+            "actor": actor,
+            "actor_name": game.names.get(actor, actor),
+            "actor_policy_id": "human" if actor == HUMAN else game.ai_policy_ids.get(actor),
+            "actor_policy_label": "Humain" if actor == HUMAN else POLICY_LABELS.get(game.ai_policy_ids.get(actor), "?"),
+            "action": int(action),
+            "card": int(card),
+            "card_name": CARD_NAMES.get(card, "?"),
+            "target": target,
+            "target_name": game.names.get(target, target) if target else None,
+            "guess": int(guess) if guess is not None else None,
+            "guess_name": card_name(guess, True) if guess is not None else None,
+            "label": decode_action_label(action, game.names, actor),
+            "is_chancellor_choice": is_chancellor_choice(action),
+            "state_before": replay_state_from_snapshot(game, prev),
+            "state_after": replay_state_from_snapshot(game, after),
+            "public_state_before": public_state_from_snapshot(game, prev),
+            "public_state_after": public_state_from_snapshot(game, after),
+        })
+        if actor == HUMAN and not is_chancellor_choice(action) and action_card(action) == 2:
             target_idx = action_target(action)
             target = f"player_{target_idx}" if target_idx < env.num_players else None
             seen_card = prev["hands"].get(target, [None])[0] if target else None
             if target and seen_card is not None:
                 note = {
                     "ts": now_stamp(),
+                    "round_index": int(game.round_index),
+                    "turn_index": int(game.turn_index),
                     "text": f"Secret: {game.names[target]} a {card_name(seen_card, True)}.",
                     "target": target,
                     "card": int(seen_card),
@@ -654,6 +1235,7 @@ def serialize_state(game: GameSession) -> dict:
     discard_top = game.discard_events[-1]["card"] if game.discard_events else None
     return {
         "game_id": game.game_id,
+        "is_tutorial": bool(game.is_tutorial),
         "target_points": TARGET_POINTS,
         "round_index": game.round_index,
         "deck_size": len(env._deck),
@@ -663,8 +1245,12 @@ def serialize_state(game: GameSession) -> dict:
         "can_human_act": current_agent == HUMAN and not game.round_over and not game.match_over,
         "round_over": game.round_over,
         "match_over": game.match_over,
+        "replay_available": bool(game.match_over),
         "last_speaker": game.last_speaker,
         "players": players,
+        "player_profile": public_player_profile(game.player_profile),
+        "entry_reason_options": ENTRY_REASON_OPTIONS,
+        "qadi_dialogue": game.qadi_dialogue[-16:],
         "ai_policy_ids": dict(game.ai_policy_ids),
         "available_policies": [
             {"id": policy_id, "label": label}
@@ -674,8 +1260,41 @@ def serialize_state(game: GameSession) -> dict:
         "valid_actions": valid_actions,
         "chancellor_pool": [int(card) for card in env._chancellor_pool],
         "logs": game.logs[-120:],
-        "private_notes": game.private_notes[-8:],
+        "analytics_events": game.analytics_events[-80:],
+        "match_stats_delta": game.match_stats_delta,
         "rules": RULES_TEXT,
+    }
+
+
+def build_replay_payload(game: GameSession) -> dict:
+    leaders = [agent for agent, points in game.match_points.items() if points >= TARGET_POINTS]
+    return {
+        "game_id": game.game_id,
+        "is_tutorial": bool(game.is_tutorial),
+        "target_points": TARGET_POINTS,
+        "round_count": int(game.round_index),
+        "player_profile": public_player_profile(game.player_profile),
+        "player_stats_delta": game.match_stats_delta,
+        "ai_policy_ids": dict(game.ai_policy_ids),
+        "players": [
+            {
+                "id": agent,
+                "name": game.names.get(agent, agent),
+                "is_human": agent == HUMAN,
+                "policy_id": "human" if agent == HUMAN else game.ai_policy_ids.get(agent),
+                "policy_label": "Humain" if agent == HUMAN else POLICY_LABELS.get(game.ai_policy_ids.get(agent), "?"),
+                "final_score": int(game.match_points.get(agent, 0)),
+                "winner": agent in leaders,
+            }
+            for agent in game.env.possible_agents
+        ],
+        "winners": [
+            {"id": agent, "name": game.names.get(agent, agent)}
+            for agent in leaders
+        ],
+        "human_won": HUMAN in leaders,
+        "qadi_dialogue": game.qadi_dialogue[-16:],
+        "events": game.structured_events,
     }
 
 
@@ -700,16 +1319,55 @@ def rules() -> dict:
     return {"rules": RULES_TEXT}
 
 
+@app.post("/api/player-profile/dialogue")
+def player_profile_dialogue(request: PlayerProfileRequest) -> dict:
+    profile = build_player_profile(request)
+    requires_identity_confirmation = bool(profile.get("identity_found") and not request.identity_confirmed)
+    needs_entry_reason = (
+        not requires_identity_confirmation
+        and not profile.get("secret_profile")
+        and not profile.get("identity_found")
+        and not request.entry_reason
+    )
+    dialogue = (
+        build_identity_confirmation_dialogue(profile)
+        if requires_identity_confirmation
+        else build_intro_qadi_dialogue(profile, needs_entry_reason=needs_entry_reason)
+    )
+    return {
+        "player_profile": public_player_profile(profile),
+        "entry_reason_options": ENTRY_REASON_OPTIONS,
+        "requires_identity_confirmation": requires_identity_confirmation,
+        "requires_entry_reason": needs_entry_reason,
+        "qadi_dialogue": dialogue,
+    }
+
+
 @app.post("/api/games")
 def new_game(request: NewGameRequest) -> dict:
+    profile = build_player_profile(request)
+    ensure_player_record(profile)
     names = dict(DEFAULT_NAMES)
-    names[HUMAN] = request.human_name.strip() or DEFAULT_NAMES[HUMAN]
+    names[HUMAN] = profile["display_name"] or DEFAULT_NAMES[HUMAN]
     game = GameSession(
         game_id=uuid4().hex,
         names=names,
+        player_profile=profile,
+        is_tutorial=bool(request.is_tutorial),
+        qadi_dialogue=build_intro_qadi_dialogue(profile, needs_entry_reason=False),
         ai_policy_ids=normalize_ai_policy_ids(request.ai_policies),
     )
     start_round(game, reset_match=True)
+    record_game_event(game, "game_created", {
+        "entry_reason": profile["entry_reason"],
+        "entry_reason_label": profile["entry_reason_label"],
+        "entry_reason_signal": profile["entry_reason_signal"],
+        "identity_confirmed": bool(profile.get("identity_confirmed")),
+        "player_identity_id": profile.get("player_identity_id"),
+        "is_tutorial": bool(game.is_tutorial),
+        "state_after": replay_state_from_snapshot(game),
+        "public_state_after": public_state_from_snapshot(game),
+    })
     GAMES[game.game_id] = game
     return serialize_state(game)
 
@@ -717,6 +1375,15 @@ def new_game(request: NewGameRequest) -> dict:
 @app.get("/api/games/{game_id}")
 def state(game_id: str) -> dict:
     return serialize_state(get_game(game_id))
+
+
+@app.get("/api/games/{game_id}/replay")
+def replay(game_id: str) -> dict:
+    game = get_game(game_id)
+    with game.lock:
+        if not game.match_over:
+            raise HTTPException(status_code=409, detail="Replay disponible uniquement en fin de partie")
+        return build_replay_payload(game)
 
 
 @app.post("/api/games/{game_id}/play")
@@ -728,9 +1395,9 @@ def play(game_id: str, request: PlayActionRequest) -> dict:
         if game.env.agent_selection != HUMAN:
             raise HTTPException(status_code=409, detail="Ce n'est pas le tour humain")
         action = int(request.action)
-        if action >= 900 and not game.env._chancellor_pending:
+        if is_chancellor_choice(action) and not game.env._chancellor_pending:
             raise HTTPException(status_code=400, detail="Choix Vizir hors sequence")
-        if action < 900 and game.env._chancellor_pending:
+        if not is_chancellor_choice(action) and game.env._chancellor_pending:
             raise HTTPException(status_code=400, detail="Le Vizir attend un choix")
         valid = {item["action"] for item in valid_action_payloads(game.env, HUMAN, game.names)}
         if action not in valid:

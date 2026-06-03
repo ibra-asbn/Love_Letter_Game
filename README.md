@@ -1,6 +1,17 @@
 # Love Letter RL
 
-Etat du projet au **26 avril 2026**.
+Etat historique detaille au **26 avril 2026**. Etat documentaire consolide le
+**3 juin 2026**.
+
+Pour lire le projet dans l'ordre, commencer par:
+
+- `docs/project_journal_fr.md` pour le recap canonique etape par etape;
+- `docs/github_handoff_fr.md` pour le nettoyage et la publication GitHub;
+- `docs/linkedin_post_fr.md` pour le brouillon de communication;
+- `love_letter_web/README.md` pour lancer l'app web.
+
+Le point d'arret actuel est volontaire: conserver le champion `champion_cbp`,
+mettre la documentation et le repo au propre, puis publier une synthese.
 
 Objectif: construire un agent de reinforcement learning fort pour jouer a **Love Letter**, puis fournir une interface jouable contre le meilleur modele.
 
@@ -950,17 +961,26 @@ Conformite aux regles:
 python3 scripts/debug/check_rules_conformance.py
 ```
 
-## Backend
+## Backend Et Web App
 
-Le backend FastAPI est conserve comme prototype.
+Le backend FastAPI et le frontend React/Vite sont maintenant la cible produit.
+Streamlit reste utile comme prototype/debug.
 
 ```bash
-uvicorn love_letter_web.backend.main:app --reload
+uvicorn love_letter_web.backend.main:app --host 127.0.0.1 --port 8000
+cd love_letter_web/frontend
+npm run dev
 ```
 
-## Prochaine Etape Technique
+Voir `love_letter_web/README.md`.
 
-Lancer Step3 v2 DAgger avec trust region/KL:
+## Etat De Pause Technique
+
+Le projet est arrete proprement sur `champion_cbp` et la web app jouable. Les
+prochaines etapes ci-dessous restent des pistes de reprise, pas du travail en
+cours.
+
+Piste IA possible: relancer Step3 v2 DAgger avec trust region/KL:
 
 - repartir de `step3_advantage_v2_dagger_attempt1_iter1.pth`;
 - garder `verify_rollouts = 0` a l'inference;
@@ -969,3 +989,6 @@ Lancer Step3 v2 DAgger avec trust region/KL:
 - viser un gain composite positif sans regression vs `3H`;
 - brancher ensuite le meilleur joueur rapide dans `play_vs_agent` et
   `love_letter_web`.
+
+Piste produit possible: terminer le polish UI, publier les checkpoints via
+GitHub Release/Git LFS/Hugging Face, puis tester l'app de bout en bout.

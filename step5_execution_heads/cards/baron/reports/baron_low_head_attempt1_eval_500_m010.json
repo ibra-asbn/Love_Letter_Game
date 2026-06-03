@@ -1,0 +1,1829 @@
+{
+  "created_at": "2026-04-26 13:38:27 CEST",
+  "args": {
+    "kind": "baron_low_target",
+    "head": "step5_execution_heads/cards/baron/checkpoints/baron_low_head_attempt1.pth",
+    "games": 500,
+    "seed_start": 940000,
+    "seed_stride": 10000,
+    "target_margin": 0.1,
+    "baron_low_max": 4,
+    "example_limit": 16,
+    "step3_fast_checkpoint": "step3_advantage_v2_dagger_attempt1_iter1.pth",
+    "step2_checkpoint": "step2_retarget_distilled_attempt1.pth",
+    "step3_hybrid_checkpoint": "step3_advantage_v2_attempt2_strict.pth",
+    "override_margin": 0.1,
+    "max_actions": null,
+    "verify_rollouts": 0,
+    "verify_min_win_delta": 0.125,
+    "verify_min_score_delta": 0.05,
+    "verify_t_threshold": 0.75,
+    "device": "cpu",
+    "output": "step5_execution_heads/cards/baron/reports/baron_low_head_attempt1_eval_500_m010.json",
+    "markdown": "step5_execution_heads/cards/baron/reports/baron_low_head_attempt1_eval_500_m010.md",
+    "run_log": "step5_execution_heads/cards/baron/logs/2026-04-26_baron_low_head_attempt1_eval_500_m010.md"
+  },
+  "kind": "baron_low_target",
+  "head_checkpoint": "step5_execution_heads/cards/baron/checkpoints/baron_low_head_attempt1.pth",
+  "policies": {
+    "baseline": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 500,
+          "wins": 270,
+          "winrate": 0.54,
+          "winrate_ci95": 0.043686461060607786,
+          "mean_reward": 0.789199948310852,
+          "reward_std": 0.791330099105835,
+          "reward_ci95": 0.06936314316028235,
+          "outcomes": {
+            "winner": {
+              "count": 270,
+              "rate": 0.54
+            },
+            "first_out": {
+              "count": 76,
+              "rate": 0.152
+            },
+            "second_out": {
+              "count": 61,
+              "rate": 0.122
+            },
+            "third_out": {
+              "count": 43,
+              "rate": 0.086
+            },
+            "final_loser": {
+              "count": 50,
+              "rate": 0.1
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 66,
+              "winrate": 0.528,
+              "winrate_ci95": 0.08751631553487611,
+              "mean_reward": 0.8208000063896179,
+              "reward_std": 0.8458175659179688,
+              "reward_ci95": 0.14827835998362224
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 65,
+              "winrate": 0.52,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.7375999689102173,
+              "reward_std": 0.7695883512496948,
+              "reward_ci95": 0.13491478645796615
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 72,
+              "winrate": 0.576,
+              "winrate_ci95": 0.08663537007019707,
+              "mean_reward": 0.8015998601913452,
+              "reward_std": 0.7425345182418823,
+              "reward_ci95": 0.13017204297980298
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 67,
+              "winrate": 0.536,
+              "winrate_ci95": 0.08742637068528007,
+              "mean_reward": 0.7968000173568726,
+              "reward_std": 0.8011927008628845,
+              "reward_ci95": 0.1404552802661414
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 196,
+              "baron_losing_comparisons": 43,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 148,
+              "chancellor_bottomed_king_plus": 45,
+              "chancellor_choices": 159,
+              "chancellor_kept_highest": 118,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 19,
+              "chancellor_plays": 159,
+              "chancellor_used_win_games": 90,
+              "forced_countess_discards": 44,
+              "guard_attempts": 545,
+              "guard_hits": 158,
+              "guard_misses": 387,
+              "known_guard_attempts": 67,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 60,
+              "main_round_wins": 253,
+              "priest_on_unknown": 178,
+              "priest_plays": 183,
+              "priest_to_guard_attempts": 31,
+              "priest_to_guard_hits": 31,
+              "spy_bonus_win_games": 89,
+              "spy_bonus_wins": 89,
+              "spy_played_win_games": 98,
+              "spy_plays": 154,
+              "voluntary_countess_discards": 13,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.28990825688073396,
+            "known_guard_hit_rate": 0.8955223880597015,
+            "known_guard_correct_guess_rate": 0.8955223880597015,
+            "priest_to_guard_hit_rate": 1.0,
+            "priest_on_unknown_rate": 0.9726775956284153,
+            "baron_win_rate": 0.7551020408163265,
+            "baron_loss_rate": 0.2193877551020408,
+            "baron_tie_rate": 0.025510204081632654,
+            "chancellor_keep_highest_rate": 0.7421383647798742,
+            "chancellor_known_draw_win_rate": 0.7368421052631579,
+            "spy_bonus_per_spy_play": 0.577922077922078,
+            "voluntary_countess_win_rate": 0.8461538461538461
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_1H_2R": {
+          "games": 500,
+          "wins": 214,
+          "winrate": 0.428,
+          "winrate_ci95": 0.04337015438293943,
+          "mean_reward": 0.6304000020027161,
+          "reward_std": 0.7590757012367249,
+          "reward_ci95": 0.06653592170576741,
+          "outcomes": {
+            "winner": {
+              "count": 214,
+              "rate": 0.428
+            },
+            "first_out": {
+              "count": 88,
+              "rate": 0.176
+            },
+            "second_out": {
+              "count": 78,
+              "rate": 0.156
+            },
+            "third_out": {
+              "count": 47,
+              "rate": 0.094
+            },
+            "final_loser": {
+              "count": 73,
+              "rate": 0.146
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 57,
+              "winrate": 0.456,
+              "winrate_ci95": 0.08731380932704746,
+              "mean_reward": 0.6863999366760254,
+              "reward_std": 0.7411714196205139,
+              "reward_ci95": 0.12993307720378042
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 52,
+              "winrate": 0.416,
+              "winrate_ci95": 0.0864080399222202,
+              "mean_reward": 0.6031999588012695,
+              "reward_std": 0.7669093012809753,
+              "reward_ci95": 0.13444512893064856
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.5615999102592468,
+              "reward_std": 0.7260615825653076,
+              "reward_ci95": 0.12728420576423646
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 56,
+              "winrate": 0.448,
+              "winrate_ci95": 0.08717854385569881,
+              "mean_reward": 0.6703999638557434,
+              "reward_std": 0.7936774492263794,
+              "reward_ci95": 0.13913779110192354
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 175,
+              "baron_losing_comparisons": 39,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 135,
+              "chancellor_bottomed_king_plus": 40,
+              "chancellor_choices": 128,
+              "chancellor_kept_highest": 89,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 30,
+              "chancellor_plays": 128,
+              "chancellor_used_win_games": 62,
+              "forced_countess_discards": 36,
+              "guard_attempts": 539,
+              "guard_hits": 155,
+              "guard_misses": 384,
+              "known_guard_attempts": 61,
+              "known_guard_correct_guess": 57,
+              "known_guard_hits": 51,
+              "main_round_wins": 189,
+              "priest_on_unknown": 195,
+              "priest_plays": 200,
+              "priest_to_guard_attempts": 25,
+              "priest_to_guard_hits": 23,
+              "spy_bonus_win_games": 76,
+              "spy_bonus_wins": 76,
+              "spy_played_win_games": 83,
+              "spy_plays": 156,
+              "voluntary_countess_discards": 27,
+              "voluntary_countess_win_games": 22
+            },
+            "guard_hit_rate": 0.287569573283859,
+            "known_guard_hit_rate": 0.8360655737704918,
+            "known_guard_correct_guess_rate": 0.9344262295081968,
+            "priest_to_guard_hit_rate": 0.92,
+            "priest_on_unknown_rate": 0.975,
+            "baron_win_rate": 0.7714285714285715,
+            "baron_loss_rate": 0.22285714285714286,
+            "baron_tie_rate": 0.005714285714285714,
+            "chancellor_keep_highest_rate": 0.6953125,
+            "chancellor_known_draw_win_rate": 0.4666666666666667,
+            "spy_bonus_per_spy_play": 0.48717948717948717,
+            "voluntary_countess_win_rate": 0.8148148148148148
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 500,
+          "wins": 185,
+          "winrate": 0.37,
+          "winrate_ci95": 0.042319663514730356,
+          "mean_reward": 0.5587999820709229,
+          "reward_std": 0.7513072490692139,
+          "reward_ci95": 0.06585498333181522,
+          "outcomes": {
+            "winner": {
+              "count": 185,
+              "rate": 0.37
+            },
+            "first_out": {
+              "count": 100,
+              "rate": 0.2
+            },
+            "second_out": {
+              "count": 103,
+              "rate": 0.206
+            },
+            "third_out": {
+              "count": 60,
+              "rate": 0.12
+            },
+            "final_loser": {
+              "count": 52,
+              "rate": 0.104
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 48,
+              "winrate": 0.384,
+              "winrate_ci95": 0.08526229790006835,
+              "mean_reward": 0.5775999426841736,
+              "reward_std": 0.7479960918426514,
+              "reward_ci95": 0.1311294947819401
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 46,
+              "winrate": 0.368,
+              "winrate_ci95": 0.08454414049950476,
+              "mean_reward": 0.569599986076355,
+              "reward_std": 0.7470715641975403,
+              "reward_ci95": 0.13096742625634925
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 41,
+              "winrate": 0.328,
+              "winrate_ci95": 0.08230431850638215,
+              "mean_reward": 0.5072000026702881,
+              "reward_std": 0.779556393623352,
+              "reward_ci95": 0.1366622690103438
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 50,
+              "winrate": 0.4,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.5807999968528748,
+              "reward_std": 0.7272628545761108,
+              "reward_ci95": 0.1274947988858776
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 150,
+              "baron_losing_comparisons": 42,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 104,
+              "chancellor_bottomed_king_plus": 32,
+              "chancellor_choices": 156,
+              "chancellor_kept_highest": 126,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 12,
+              "chancellor_known_draws": 20,
+              "chancellor_plays": 156,
+              "chancellor_used_win_games": 70,
+              "forced_countess_discards": 38,
+              "guard_attempts": 538,
+              "guard_hits": 170,
+              "guard_misses": 368,
+              "known_guard_attempts": 69,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 57,
+              "main_round_wins": 164,
+              "priest_on_unknown": 180,
+              "priest_plays": 187,
+              "priest_to_guard_attempts": 27,
+              "priest_to_guard_hits": 24,
+              "spy_bonus_win_games": 69,
+              "spy_bonus_wins": 69,
+              "spy_played_win_games": 65,
+              "spy_plays": 153,
+              "voluntary_countess_discards": 17,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.3159851301115242,
+            "known_guard_hit_rate": 0.8260869565217391,
+            "known_guard_correct_guess_rate": 0.8695652173913043,
+            "priest_to_guard_hit_rate": 0.8888888888888888,
+            "priest_on_unknown_rate": 0.9625668449197861,
+            "baron_win_rate": 0.6933333333333334,
+            "baron_loss_rate": 0.28,
+            "baron_tie_rate": 0.02666666666666667,
+            "chancellor_keep_highest_rate": 0.8076923076923077,
+            "chancellor_known_draw_win_rate": 0.6,
+            "spy_bonus_per_spy_play": 0.45098039215686275,
+            "voluntary_countess_win_rate": 0.6470588235294118
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        },
+        "vs_3H": {
+          "games": 500,
+          "wins": 179,
+          "winrate": 0.358,
+          "winrate_ci95": 0.042022326865608,
+          "mean_reward": 0.5708000063896179,
+          "reward_std": 0.7673508524894714,
+          "reward_ci95": 0.06726126898821211,
+          "outcomes": {
+            "winner": {
+              "count": 179,
+              "rate": 0.358
+            },
+            "first_out": {
+              "count": 102,
+              "rate": 0.204
+            },
+            "second_out": {
+              "count": 91,
+              "rate": 0.182
+            },
+            "third_out": {
+              "count": 61,
+              "rate": 0.122
+            },
+            "final_loser": {
+              "count": 67,
+              "rate": 0.134
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5967999696731567,
+              "reward_std": 0.7813769578933716,
+              "reward_ci95": 0.13698142671932487
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 50,
+              "winrate": 0.4,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.6447999477386475,
+              "reward_std": 0.8189218044281006,
+              "reward_ci95": 0.14356332809085454
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 43,
+              "winrate": 0.344,
+              "winrate_ci95": 0.0832783680147492,
+              "mean_reward": 0.5567999482154846,
+              "reward_std": 0.7404146194458008,
+              "reward_ci95": 0.1298004049232589
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 39,
+              "winrate": 0.312,
+              "winrate_ci95": 0.08122179459233833,
+              "mean_reward": 0.4848000109195709,
+              "reward_std": 0.7156598567962646,
+              "reward_ci95": 0.12546071094087607
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 157,
+              "baron_losing_comparisons": 33,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 123,
+              "chancellor_bottomed_king_plus": 46,
+              "chancellor_choices": 131,
+              "chancellor_kept_highest": 88,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 9,
+              "chancellor_known_draws": 16,
+              "chancellor_plays": 131,
+              "chancellor_used_win_games": 45,
+              "forced_countess_discards": 39,
+              "guard_attempts": 576,
+              "guard_hits": 187,
+              "guard_misses": 389,
+              "known_guard_attempts": 77,
+              "known_guard_correct_guess": 70,
+              "known_guard_hits": 68,
+              "main_round_wins": 160,
+              "priest_on_unknown": 171,
+              "priest_plays": 172,
+              "priest_to_guard_attempts": 30,
+              "priest_to_guard_hits": 29,
+              "spy_bonus_win_games": 70,
+              "spy_bonus_wins": 70,
+              "spy_played_win_games": 70,
+              "spy_plays": 146,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 17
+            },
+            "guard_hit_rate": 0.3246527777777778,
+            "known_guard_hit_rate": 0.8831168831168831,
+            "known_guard_correct_guess_rate": 0.9090909090909091,
+            "priest_to_guard_hit_rate": 0.9666666666666667,
+            "priest_on_unknown_rate": 0.9941860465116279,
+            "baron_win_rate": 0.7834394904458599,
+            "baron_loss_rate": 0.21019108280254778,
+            "baron_tie_rate": 0.006369426751592357,
+            "chancellor_keep_highest_rate": 0.6717557251908397,
+            "chancellor_known_draw_win_rate": 0.5625,
+            "spy_bonus_per_spy_play": 0.4794520547945205,
+            "voluntary_countess_win_rate": 0.8095238095238095
+          },
+          "step5": {
+            "raw_counts": {},
+            "override_rate": 0.0,
+            "mean_best_margin": 0.0,
+            "examples": []
+          }
+        }
+      },
+      "composite": 0.39380000000000004
+    },
+    "random_target": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 500,
+          "wins": 272,
+          "winrate": 0.544,
+          "winrate_ci95": 0.043656904663523725,
+          "mean_reward": 0.7947999835014343,
+          "reward_std": 0.7892610430717468,
+          "reward_ci95": 0.06918178101646405,
+          "outcomes": {
+            "winner": {
+              "count": 272,
+              "rate": 0.544
+            },
+            "first_out": {
+              "count": 75,
+              "rate": 0.15
+            },
+            "second_out": {
+              "count": 60,
+              "rate": 0.12
+            },
+            "third_out": {
+              "count": 43,
+              "rate": 0.086
+            },
+            "final_loser": {
+              "count": 50,
+              "rate": 0.1
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 67,
+              "winrate": 0.536,
+              "winrate_ci95": 0.08742637068528007,
+              "mean_reward": 0.8320000171661377,
+              "reward_std": 0.8414844274520874,
+              "reward_ci95": 0.147518727744333
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 65,
+              "winrate": 0.52,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.7375999689102173,
+              "reward_std": 0.7695883512496948,
+              "reward_ci95": 0.13491478645796615
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 72,
+              "winrate": 0.576,
+              "winrate_ci95": 0.08663537007019707,
+              "mean_reward": 0.8015998601913452,
+              "reward_std": 0.7425345182418823,
+              "reward_ci95": 0.13017204297980298
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 68,
+              "winrate": 0.544,
+              "winrate_ci95": 0.08731380932704745,
+              "mean_reward": 0.8079999685287476,
+              "reward_std": 0.7969542145729065,
+              "reward_ci95": 0.1397122387259192
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 196,
+              "baron_losing_comparisons": 41,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 150,
+              "chancellor_bottomed_king_plus": 47,
+              "chancellor_choices": 161,
+              "chancellor_kept_highest": 118,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 19,
+              "chancellor_plays": 161,
+              "chancellor_used_win_games": 91,
+              "forced_countess_discards": 44,
+              "guard_attempts": 546,
+              "guard_hits": 158,
+              "guard_misses": 388,
+              "known_guard_attempts": 67,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 60,
+              "main_round_wins": 255,
+              "priest_on_unknown": 180,
+              "priest_plays": 185,
+              "priest_to_guard_attempts": 31,
+              "priest_to_guard_hits": 31,
+              "spy_bonus_win_games": 89,
+              "spy_bonus_wins": 89,
+              "spy_played_win_games": 98,
+              "spy_plays": 154,
+              "voluntary_countess_discards": 13,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.2893772893772894,
+            "known_guard_hit_rate": 0.8955223880597015,
+            "known_guard_correct_guess_rate": 0.8955223880597015,
+            "priest_to_guard_hit_rate": 1.0,
+            "priest_on_unknown_rate": 0.972972972972973,
+            "baron_win_rate": 0.7653061224489796,
+            "baron_loss_rate": 0.20918367346938777,
+            "baron_tie_rate": 0.025510204081632654,
+            "chancellor_keep_highest_rate": 0.7329192546583851,
+            "chancellor_known_draw_win_rate": 0.7368421052631579,
+            "spy_bonus_per_spy_play": 0.577922077922078,
+            "voluntary_countess_win_rate": 0.8461538461538461
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 4,
+              "forced": 6,
+              "override_310_to_330": 1,
+              "override_320_to_300": 1,
+              "override_330_to_320": 1,
+              "overrides": 3
+            },
+            "override_rate": 0.75,
+            "mean_best_margin": 0.0,
+            "examples": [
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 9,
+                "model_action": 310,
+                "new_action": 330,
+                "model_target": 1,
+                "new_target": 3
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 6,
+                "model_action": 320,
+                "new_action": 300,
+                "model_target": 2,
+                "new_target": 0
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 12,
+                "model_action": 330,
+                "new_action": 320,
+                "model_target": 3,
+                "new_target": 2
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 500,
+          "wins": 213,
+          "winrate": 0.426,
+          "winrate_ci95": 0.043344282169624174,
+          "mean_reward": 0.6264000535011292,
+          "reward_std": 0.7588037252426147,
+          "reward_ci95": 0.06651208057266075,
+          "outcomes": {
+            "winner": {
+              "count": 213,
+              "rate": 0.426
+            },
+            "first_out": {
+              "count": 88,
+              "rate": 0.176
+            },
+            "second_out": {
+              "count": 80,
+              "rate": 0.16
+            },
+            "third_out": {
+              "count": 47,
+              "rate": 0.094
+            },
+            "final_loser": {
+              "count": 72,
+              "rate": 0.144
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 57,
+              "winrate": 0.456,
+              "winrate_ci95": 0.08731380932704746,
+              "mean_reward": 0.6831998825073242,
+              "reward_std": 0.7432615160942078,
+              "reward_ci95": 0.13029949068285482
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 52,
+              "winrate": 0.416,
+              "winrate_ci95": 0.0864080399222202,
+              "mean_reward": 0.6031999588012695,
+              "reward_std": 0.7669093012809753,
+              "reward_ci95": 0.13444512893064856
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 48,
+              "winrate": 0.384,
+              "winrate_ci95": 0.08526229790006835,
+              "mean_reward": 0.548799991607666,
+              "reward_std": 0.7217330932617188,
+              "reward_ci95": 0.12652539452997816
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 56,
+              "winrate": 0.448,
+              "winrate_ci95": 0.08717854385569881,
+              "mean_reward": 0.6703999638557434,
+              "reward_std": 0.7936774492263794,
+              "reward_ci95": 0.13913779110192354
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 175,
+              "baron_losing_comparisons": 41,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 133,
+              "chancellor_bottomed_king_plus": 40,
+              "chancellor_choices": 128,
+              "chancellor_kept_highest": 89,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 30,
+              "chancellor_plays": 128,
+              "chancellor_used_win_games": 62,
+              "forced_countess_discards": 36,
+              "guard_attempts": 538,
+              "guard_hits": 154,
+              "guard_misses": 384,
+              "known_guard_attempts": 60,
+              "known_guard_correct_guess": 56,
+              "known_guard_hits": 50,
+              "main_round_wins": 188,
+              "priest_on_unknown": 195,
+              "priest_plays": 200,
+              "priest_to_guard_attempts": 25,
+              "priest_to_guard_hits": 23,
+              "spy_bonus_win_games": 76,
+              "spy_bonus_wins": 76,
+              "spy_played_win_games": 83,
+              "spy_plays": 156,
+              "voluntary_countess_discards": 27,
+              "voluntary_countess_win_games": 22
+            },
+            "guard_hit_rate": 0.2862453531598513,
+            "known_guard_hit_rate": 0.8333333333333334,
+            "known_guard_correct_guess_rate": 0.9333333333333333,
+            "priest_to_guard_hit_rate": 0.92,
+            "priest_on_unknown_rate": 0.975,
+            "baron_win_rate": 0.76,
+            "baron_loss_rate": 0.2342857142857143,
+            "baron_tie_rate": 0.005714285714285714,
+            "chancellor_keep_highest_rate": 0.6953125,
+            "chancellor_known_draw_win_rate": 0.4666666666666667,
+            "spy_bonus_per_spy_play": 0.48717948717948717,
+            "voluntary_countess_win_rate": 0.8148148148148148
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 6,
+              "forced": 2,
+              "override_300_to_320": 1,
+              "override_310_to_320": 1,
+              "override_310_to_330": 1,
+              "overrides": 3
+            },
+            "override_rate": 0.5,
+            "mean_best_margin": 0.0,
+            "examples": [
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 9,
+                "model_action": 310,
+                "new_action": 330,
+                "model_target": 1,
+                "new_target": 3
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  4,
+                  3
+                ],
+                "deck_remaining": 0,
+                "model_action": 310,
+                "new_action": 320,
+                "model_target": 1,
+                "new_target": 2
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 8,
+                "model_action": 300,
+                "new_action": 320,
+                "model_target": 0,
+                "new_target": 2
+              }
+            ]
+          }
+        },
+        "vs_2H_1R": {
+          "games": 500,
+          "wins": 186,
+          "winrate": 0.372,
+          "winrate_ci95": 0.04236647791827874,
+          "mean_reward": 0.5636000037193298,
+          "reward_std": 0.7541055083274841,
+          "reward_ci95": 0.06610026125041342,
+          "outcomes": {
+            "winner": {
+              "count": 186,
+              "rate": 0.372
+            },
+            "first_out": {
+              "count": 99,
+              "rate": 0.198
+            },
+            "second_out": {
+              "count": 103,
+              "rate": 0.206
+            },
+            "third_out": {
+              "count": 60,
+              "rate": 0.12
+            },
+            "final_loser": {
+              "count": 52,
+              "rate": 0.104
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 48,
+              "winrate": 0.384,
+              "winrate_ci95": 0.08526229790006835,
+              "mean_reward": 0.5775999426841736,
+              "reward_std": 0.7479960918426514,
+              "reward_ci95": 0.1311294947819401
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 46,
+              "winrate": 0.368,
+              "winrate_ci95": 0.08454414049950476,
+              "mean_reward": 0.569599986076355,
+              "reward_std": 0.7470715641975403,
+              "reward_ci95": 0.13096742625634925
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 42,
+              "winrate": 0.336,
+              "winrate_ci95": 0.08280465331851827,
+              "mean_reward": 0.5264000296592712,
+              "reward_std": 0.7913678288459778,
+              "reward_ci95": 0.13873289701042432
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 50,
+              "winrate": 0.4,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.5807999968528748,
+              "reward_std": 0.7272628545761108,
+              "reward_ci95": 0.1274947988858776
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 150,
+              "baron_losing_comparisons": 41,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 105,
+              "chancellor_bottomed_king_plus": 32,
+              "chancellor_choices": 156,
+              "chancellor_kept_highest": 126,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 12,
+              "chancellor_known_draws": 20,
+              "chancellor_plays": 156,
+              "chancellor_used_win_games": 70,
+              "forced_countess_discards": 38,
+              "guard_attempts": 540,
+              "guard_hits": 170,
+              "guard_misses": 370,
+              "known_guard_attempts": 69,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 57,
+              "main_round_wins": 165,
+              "priest_on_unknown": 180,
+              "priest_plays": 187,
+              "priest_to_guard_attempts": 27,
+              "priest_to_guard_hits": 24,
+              "spy_bonus_win_games": 70,
+              "spy_bonus_wins": 70,
+              "spy_played_win_games": 66,
+              "spy_plays": 154,
+              "voluntary_countess_discards": 18,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.3148148148148148,
+            "known_guard_hit_rate": 0.8260869565217391,
+            "known_guard_correct_guess_rate": 0.8695652173913043,
+            "priest_to_guard_hit_rate": 0.8888888888888888,
+            "priest_on_unknown_rate": 0.9625668449197861,
+            "baron_win_rate": 0.7,
+            "baron_loss_rate": 0.2733333333333333,
+            "baron_tie_rate": 0.02666666666666667,
+            "chancellor_keep_highest_rate": 0.8076923076923077,
+            "chancellor_known_draw_win_rate": 0.6,
+            "spy_bonus_per_spy_play": 0.45454545454545453,
+            "voluntary_countess_win_rate": 0.6111111111111112
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 7,
+              "forced": 2,
+              "override_300_to_310": 1,
+              "override_300_to_320": 1,
+              "override_330_to_310": 1,
+              "overrides": 3
+            },
+            "override_rate": 0.42857142857142855,
+            "mean_best_margin": 0.0,
+            "examples": [
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 5,
+                "model_action": 300,
+                "new_action": 320,
+                "model_target": 0,
+                "new_target": 2
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 3,
+                "model_action": 330,
+                "new_action": 310,
+                "model_target": 3,
+                "new_target": 1
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 9,
+                "model_action": 300,
+                "new_action": 310,
+                "model_target": 0,
+                "new_target": 1
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 500,
+          "wins": 178,
+          "winrate": 0.356,
+          "winrate_ci95": 0.041970003154634145,
+          "mean_reward": 0.5648000240325928,
+          "reward_std": 0.7643303871154785,
+          "reward_ci95": 0.0669965161905355,
+          "outcomes": {
+            "winner": {
+              "count": 178,
+              "rate": 0.356
+            },
+            "first_out": {
+              "count": 103,
+              "rate": 0.206
+            },
+            "second_out": {
+              "count": 90,
+              "rate": 0.18
+            },
+            "third_out": {
+              "count": 61,
+              "rate": 0.122
+            },
+            "final_loser": {
+              "count": 68,
+              "rate": 0.136
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5967999696731567,
+              "reward_std": 0.7813769578933716,
+              "reward_ci95": 0.13698142671932487
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.6240000128746033,
+              "reward_std": 0.807009220123291,
+              "reward_ci95": 0.14147495785218303
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 43,
+              "winrate": 0.344,
+              "winrate_ci95": 0.0832783680147492,
+              "mean_reward": 0.5535999536514282,
+              "reward_std": 0.7428102493286133,
+              "reward_ci95": 0.13022037565259925
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 39,
+              "winrate": 0.312,
+              "winrate_ci95": 0.08122179459233833,
+              "mean_reward": 0.4848000109195709,
+              "reward_std": 0.7156598567962646,
+              "reward_ci95": 0.12546071094087607
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 156,
+              "baron_losing_comparisons": 35,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 120,
+              "chancellor_bottomed_king_plus": 46,
+              "chancellor_choices": 131,
+              "chancellor_kept_highest": 88,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 9,
+              "chancellor_known_draws": 16,
+              "chancellor_plays": 131,
+              "chancellor_used_win_games": 45,
+              "forced_countess_discards": 39,
+              "guard_attempts": 577,
+              "guard_hits": 187,
+              "guard_misses": 390,
+              "known_guard_attempts": 77,
+              "known_guard_correct_guess": 70,
+              "known_guard_hits": 68,
+              "main_round_wins": 159,
+              "priest_on_unknown": 171,
+              "priest_plays": 172,
+              "priest_to_guard_attempts": 30,
+              "priest_to_guard_hits": 29,
+              "spy_bonus_win_games": 69,
+              "spy_bonus_wins": 69,
+              "spy_played_win_games": 69,
+              "spy_plays": 146,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 17
+            },
+            "guard_hit_rate": 0.3240901213171577,
+            "known_guard_hit_rate": 0.8831168831168831,
+            "known_guard_correct_guess_rate": 0.9090909090909091,
+            "priest_to_guard_hit_rate": 0.9666666666666667,
+            "priest_on_unknown_rate": 0.9941860465116279,
+            "baron_win_rate": 0.7692307692307693,
+            "baron_loss_rate": 0.22435897435897437,
+            "baron_tie_rate": 0.00641025641025641,
+            "chancellor_keep_highest_rate": 0.6717557251908397,
+            "chancellor_known_draw_win_rate": 0.5625,
+            "spy_bonus_per_spy_play": 0.4726027397260274,
+            "voluntary_countess_win_rate": 0.8095238095238095
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 8,
+              "forced": 2,
+              "override_310_to_320": 1,
+              "override_310_to_330": 2,
+              "override_320_to_330": 1,
+              "overrides": 4
+            },
+            "override_rate": 0.5,
+            "mean_best_margin": 0.0,
+            "examples": [
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 11,
+                "model_action": 310,
+                "new_action": 320,
+                "model_target": 1,
+                "new_target": 2
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 2,
+                "model_action": 310,
+                "new_action": 330,
+                "model_target": 1,
+                "new_target": 3
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 10,
+                "model_action": 310,
+                "new_action": 330,
+                "model_target": 1,
+                "new_target": 3
+              },
+              {
+                "mode": "random",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 4,
+                "model_action": 320,
+                "new_action": 330,
+                "model_target": 2,
+                "new_target": 3
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.3936
+    },
+    "step5_target": {
+      "configs": {
+        "vs_0H_3R": {
+          "games": 500,
+          "wins": 271,
+          "winrate": 0.542,
+          "winrate_ci95": 0.043672037222918736,
+          "mean_reward": 0.7923999428749084,
+          "reward_std": 0.7905581593513489,
+          "reward_ci95": 0.06929547955084815,
+          "outcomes": {
+            "winner": {
+              "count": 271,
+              "rate": 0.542
+            },
+            "first_out": {
+              "count": 76,
+              "rate": 0.152
+            },
+            "second_out": {
+              "count": 60,
+              "rate": 0.12
+            },
+            "third_out": {
+              "count": 43,
+              "rate": 0.086
+            },
+            "final_loser": {
+              "count": 50,
+              "rate": 0.1
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 66,
+              "winrate": 0.528,
+              "winrate_ci95": 0.08751631553487611,
+              "mean_reward": 0.8208000063896179,
+              "reward_std": 0.8458175659179688,
+              "reward_ci95": 0.14827835998362224
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 65,
+              "winrate": 0.52,
+              "winrate_ci95": 0.0875837135545188,
+              "mean_reward": 0.7375999689102173,
+              "reward_std": 0.7695883512496948,
+              "reward_ci95": 0.13491478645796615
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 72,
+              "winrate": 0.576,
+              "winrate_ci95": 0.08663537007019707,
+              "mean_reward": 0.8015998601913452,
+              "reward_std": 0.7425345182418823,
+              "reward_ci95": 0.13017204297980298
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 68,
+              "winrate": 0.544,
+              "winrate_ci95": 0.08731380932704745,
+              "mean_reward": 0.8095999956130981,
+              "reward_std": 0.7979397773742676,
+              "reward_ci95": 0.13988501230412148
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 197,
+              "baron_losing_comparisons": 42,
+              "baron_tie_comparisons": 5,
+              "baron_winning_comparisons": 150,
+              "chancellor_bottomed_king_plus": 45,
+              "chancellor_choices": 159,
+              "chancellor_kept_highest": 118,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 19,
+              "chancellor_plays": 159,
+              "chancellor_used_win_games": 90,
+              "forced_countess_discards": 44,
+              "guard_attempts": 545,
+              "guard_hits": 158,
+              "guard_misses": 387,
+              "known_guard_attempts": 67,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 60,
+              "main_round_wins": 254,
+              "priest_on_unknown": 178,
+              "priest_plays": 183,
+              "priest_to_guard_attempts": 31,
+              "priest_to_guard_hits": 31,
+              "spy_bonus_win_games": 89,
+              "spy_bonus_wins": 89,
+              "spy_played_win_games": 98,
+              "spy_plays": 154,
+              "voluntary_countess_discards": 13,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.28990825688073396,
+            "known_guard_hit_rate": 0.8955223880597015,
+            "known_guard_correct_guess_rate": 0.8955223880597015,
+            "priest_to_guard_hit_rate": 1.0,
+            "priest_on_unknown_rate": 0.9726775956284153,
+            "baron_win_rate": 0.7614213197969543,
+            "baron_loss_rate": 0.2131979695431472,
+            "baron_tie_rate": 0.025380710659898477,
+            "chancellor_keep_highest_rate": 0.7421383647798742,
+            "chancellor_known_draw_win_rate": 0.7368421052631579,
+            "spy_bonus_per_spy_play": 0.577922077922078,
+            "voluntary_countess_win_rate": 0.8461538461538461
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 4,
+              "forced": 6,
+              "override_320_to_300": 1,
+              "override_330_to_300": 1,
+              "overrides": 2,
+              "sum_best_margin": 0
+            },
+            "override_rate": 0.5,
+            "mean_best_margin": 0.07911009341478348,
+            "examples": [
+              {
+                "mode": "head",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 9,
+                "model_action": 330,
+                "best_action": 300,
+                "model_target": 3,
+                "best_target": 0,
+                "margin": 0.15638090670108795,
+                "scores": {
+                  "300": 0.15638090670108795,
+                  "330": 0.0
+                }
+              },
+              {
+                "mode": "head",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 6,
+                "model_action": 320,
+                "best_action": 300,
+                "model_target": 2,
+                "best_target": 0,
+                "margin": 0.12882107496261597,
+                "scores": {
+                  "300": 0.12882107496261597,
+                  "320": 0.0
+                }
+              }
+            ]
+          }
+        },
+        "vs_1H_2R": {
+          "games": 500,
+          "wins": 214,
+          "winrate": 0.428,
+          "winrate_ci95": 0.04337015438293943,
+          "mean_reward": 0.6304000020027161,
+          "reward_std": 0.7590757012367249,
+          "reward_ci95": 0.06653592170576741,
+          "outcomes": {
+            "winner": {
+              "count": 214,
+              "rate": 0.428
+            },
+            "first_out": {
+              "count": 88,
+              "rate": 0.176
+            },
+            "second_out": {
+              "count": 78,
+              "rate": 0.156
+            },
+            "third_out": {
+              "count": 47,
+              "rate": 0.094
+            },
+            "final_loser": {
+              "count": 73,
+              "rate": 0.146
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 57,
+              "winrate": 0.456,
+              "winrate_ci95": 0.08731380932704746,
+              "mean_reward": 0.6863999366760254,
+              "reward_std": 0.7411714196205139,
+              "reward_ci95": 0.12993307720378042
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 52,
+              "winrate": 0.416,
+              "winrate_ci95": 0.0864080399222202,
+              "mean_reward": 0.6031999588012695,
+              "reward_std": 0.7669093012809753,
+              "reward_ci95": 0.13444512893064856
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 49,
+              "winrate": 0.392,
+              "winrate_ci95": 0.08558465178289855,
+              "mean_reward": 0.5615999102592468,
+              "reward_std": 0.7260615825653076,
+              "reward_ci95": 0.12728420576423646
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 56,
+              "winrate": 0.448,
+              "winrate_ci95": 0.08717854385569881,
+              "mean_reward": 0.6703999638557434,
+              "reward_std": 0.7936774492263794,
+              "reward_ci95": 0.13913779110192354
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 175,
+              "baron_losing_comparisons": 39,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 135,
+              "chancellor_bottomed_king_plus": 40,
+              "chancellor_choices": 128,
+              "chancellor_kept_highest": 89,
+              "chancellor_kept_princess": 3,
+              "chancellor_known_draw_win_games": 14,
+              "chancellor_known_draws": 30,
+              "chancellor_plays": 128,
+              "chancellor_used_win_games": 62,
+              "forced_countess_discards": 36,
+              "guard_attempts": 539,
+              "guard_hits": 155,
+              "guard_misses": 384,
+              "known_guard_attempts": 61,
+              "known_guard_correct_guess": 57,
+              "known_guard_hits": 51,
+              "main_round_wins": 189,
+              "priest_on_unknown": 195,
+              "priest_plays": 200,
+              "priest_to_guard_attempts": 25,
+              "priest_to_guard_hits": 23,
+              "spy_bonus_win_games": 76,
+              "spy_bonus_wins": 76,
+              "spy_played_win_games": 83,
+              "spy_plays": 156,
+              "voluntary_countess_discards": 27,
+              "voluntary_countess_win_games": 22
+            },
+            "guard_hit_rate": 0.287569573283859,
+            "known_guard_hit_rate": 0.8360655737704918,
+            "known_guard_correct_guess_rate": 0.9344262295081968,
+            "priest_to_guard_hit_rate": 0.92,
+            "priest_on_unknown_rate": 0.975,
+            "baron_win_rate": 0.7714285714285715,
+            "baron_loss_rate": 0.22285714285714286,
+            "baron_tie_rate": 0.005714285714285714,
+            "chancellor_keep_highest_rate": 0.6953125,
+            "chancellor_known_draw_win_rate": 0.4666666666666667,
+            "spy_bonus_per_spy_play": 0.48717948717948717,
+            "voluntary_countess_win_rate": 0.8148148148148148
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 6,
+              "forced": 2,
+              "sum_best_margin": 0
+            },
+            "override_rate": 0.0,
+            "mean_best_margin": 0.017501691666742165,
+            "examples": []
+          }
+        },
+        "vs_2H_1R": {
+          "games": 500,
+          "wins": 184,
+          "winrate": 0.368,
+          "winrate_ci95": 0.04227207024975238,
+          "mean_reward": 0.5555999875068665,
+          "reward_std": 0.7511249780654907,
+          "reward_ci95": 0.06583901105212213,
+          "outcomes": {
+            "winner": {
+              "count": 184,
+              "rate": 0.368
+            },
+            "first_out": {
+              "count": 101,
+              "rate": 0.202
+            },
+            "second_out": {
+              "count": 103,
+              "rate": 0.206
+            },
+            "third_out": {
+              "count": 60,
+              "rate": 0.12
+            },
+            "final_loser": {
+              "count": 52,
+              "rate": 0.104
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.564799964427948,
+              "reward_std": 0.7475032210350037,
+              "reward_ci95": 0.13104309733043598
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 46,
+              "winrate": 0.368,
+              "winrate_ci95": 0.08454414049950476,
+              "mean_reward": 0.569599986076355,
+              "reward_std": 0.7470715641975403,
+              "reward_ci95": 0.13096742625634925
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 41,
+              "winrate": 0.328,
+              "winrate_ci95": 0.08230431850638215,
+              "mean_reward": 0.5072000026702881,
+              "reward_std": 0.779556393623352,
+              "reward_ci95": 0.1366622690103438
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 50,
+              "winrate": 0.4,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.5807999968528748,
+              "reward_std": 0.7272628545761108,
+              "reward_ci95": 0.1274947988858776
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 149,
+              "baron_losing_comparisons": 43,
+              "baron_tie_comparisons": 4,
+              "baron_winning_comparisons": 102,
+              "chancellor_bottomed_king_plus": 32,
+              "chancellor_choices": 156,
+              "chancellor_kept_highest": 126,
+              "chancellor_kept_princess": 2,
+              "chancellor_known_draw_win_games": 11,
+              "chancellor_known_draws": 19,
+              "chancellor_plays": 156,
+              "chancellor_used_win_games": 69,
+              "forced_countess_discards": 38,
+              "guard_attempts": 538,
+              "guard_hits": 170,
+              "guard_misses": 368,
+              "known_guard_attempts": 69,
+              "known_guard_correct_guess": 60,
+              "known_guard_hits": 57,
+              "main_round_wins": 163,
+              "priest_on_unknown": 180,
+              "priest_plays": 187,
+              "priest_to_guard_attempts": 27,
+              "priest_to_guard_hits": 24,
+              "spy_bonus_win_games": 69,
+              "spy_bonus_wins": 69,
+              "spy_played_win_games": 65,
+              "spy_plays": 153,
+              "voluntary_countess_discards": 17,
+              "voluntary_countess_win_games": 11
+            },
+            "guard_hit_rate": 0.3159851301115242,
+            "known_guard_hit_rate": 0.8260869565217391,
+            "known_guard_correct_guess_rate": 0.8695652173913043,
+            "priest_to_guard_hit_rate": 0.8888888888888888,
+            "priest_on_unknown_rate": 0.9625668449197861,
+            "baron_win_rate": 0.6845637583892618,
+            "baron_loss_rate": 0.28859060402684567,
+            "baron_tie_rate": 0.026845637583892617,
+            "chancellor_keep_highest_rate": 0.8076923076923077,
+            "chancellor_known_draw_win_rate": 0.5789473684210527,
+            "spy_bonus_per_spy_play": 0.45098039215686275,
+            "voluntary_countess_win_rate": 0.6470588235294118
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 7,
+              "forced": 2,
+              "override_320_to_330": 1,
+              "overrides": 1,
+              "sum_best_margin": 0
+            },
+            "override_rate": 0.14285714285714285,
+            "mean_best_margin": 0.0173641565654959,
+            "examples": [
+              {
+                "mode": "head",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 5,
+                "model_action": 320,
+                "best_action": 330,
+                "model_target": 2,
+                "best_target": 3,
+                "margin": 0.11550384759902954,
+                "scores": {
+                  "310": 0.07255427539348602,
+                  "320": 0.0,
+                  "330": 0.11550384759902954
+                }
+              }
+            ]
+          }
+        },
+        "vs_3H": {
+          "games": 500,
+          "wins": 179,
+          "winrate": 0.358,
+          "winrate_ci95": 0.042022326865608,
+          "mean_reward": 0.5708000063896179,
+          "reward_std": 0.7673508524894714,
+          "reward_ci95": 0.06726126898821211,
+          "outcomes": {
+            "winner": {
+              "count": 179,
+              "rate": 0.358
+            },
+            "first_out": {
+              "count": 102,
+              "rate": 0.204
+            },
+            "second_out": {
+              "count": 91,
+              "rate": 0.182
+            },
+            "third_out": {
+              "count": 61,
+              "rate": 0.122
+            },
+            "final_loser": {
+              "count": 67,
+              "rate": 0.134
+            },
+            "unknown_loss": {
+              "count": 0,
+              "rate": 0.0
+            }
+          },
+          "by_seat": {
+            "player_0": {
+              "games": 125,
+              "wins": 47,
+              "winrate": 0.376,
+              "winrate_ci95": 0.08491556080719245,
+              "mean_reward": 0.5967999696731567,
+              "reward_std": 0.7813769578933716,
+              "reward_ci95": 0.13698142671932487
+            },
+            "player_1": {
+              "games": 125,
+              "wins": 50,
+              "winrate": 0.4,
+              "winrate_ci95": 0.08588289701681005,
+              "mean_reward": 0.6447999477386475,
+              "reward_std": 0.8189218044281006,
+              "reward_ci95": 0.14356332809085454
+            },
+            "player_2": {
+              "games": 125,
+              "wins": 43,
+              "winrate": 0.344,
+              "winrate_ci95": 0.0832783680147492,
+              "mean_reward": 0.5567999482154846,
+              "reward_std": 0.7404146194458008,
+              "reward_ci95": 0.1298004049232589
+            },
+            "player_3": {
+              "games": 125,
+              "wins": 39,
+              "winrate": 0.312,
+              "winrate_ci95": 0.08122179459233833,
+              "mean_reward": 0.4848000109195709,
+              "reward_std": 0.7156598567962646,
+              "reward_ci95": 0.12546071094087607
+            }
+          },
+          "tactical": {
+            "raw_counts": {
+              "baron_attempts": 157,
+              "baron_losing_comparisons": 33,
+              "baron_tie_comparisons": 1,
+              "baron_winning_comparisons": 123,
+              "chancellor_bottomed_king_plus": 46,
+              "chancellor_choices": 131,
+              "chancellor_kept_highest": 88,
+              "chancellor_kept_princess": 1,
+              "chancellor_known_draw_win_games": 9,
+              "chancellor_known_draws": 16,
+              "chancellor_plays": 131,
+              "chancellor_used_win_games": 45,
+              "forced_countess_discards": 39,
+              "guard_attempts": 576,
+              "guard_hits": 187,
+              "guard_misses": 389,
+              "known_guard_attempts": 77,
+              "known_guard_correct_guess": 70,
+              "known_guard_hits": 68,
+              "main_round_wins": 160,
+              "priest_on_unknown": 171,
+              "priest_plays": 172,
+              "priest_to_guard_attempts": 30,
+              "priest_to_guard_hits": 29,
+              "spy_bonus_win_games": 70,
+              "spy_bonus_wins": 70,
+              "spy_played_win_games": 70,
+              "spy_plays": 146,
+              "voluntary_countess_discards": 21,
+              "voluntary_countess_win_games": 17
+            },
+            "guard_hit_rate": 0.3246527777777778,
+            "known_guard_hit_rate": 0.8831168831168831,
+            "known_guard_correct_guess_rate": 0.9090909090909091,
+            "priest_to_guard_hit_rate": 0.9666666666666667,
+            "priest_on_unknown_rate": 0.9941860465116279,
+            "baron_win_rate": 0.7834394904458599,
+            "baron_loss_rate": 0.21019108280254778,
+            "baron_tie_rate": 0.006369426751592357,
+            "chancellor_keep_highest_rate": 0.6717557251908397,
+            "chancellor_known_draw_win_rate": 0.5625,
+            "spy_bonus_per_spy_play": 0.4794520547945205,
+            "voluntary_countess_win_rate": 0.8095238095238095
+          },
+          "step5": {
+            "raw_counts": {
+              "checks": 8,
+              "forced": 2,
+              "override_310_to_300": 1,
+              "overrides": 1,
+              "sum_best_margin": 0
+            },
+            "override_rate": 0.125,
+            "mean_best_margin": 0.04281694255769253,
+            "examples": [
+              {
+                "mode": "head",
+                "hand": [
+                  3,
+                  3
+                ],
+                "deck_remaining": 11,
+                "model_action": 310,
+                "best_action": 300,
+                "model_target": 1,
+                "best_target": 0,
+                "margin": 0.11978000402450562,
+                "scores": {
+                  "300": 0.11978000402450562,
+                  "310": 0.0,
+                  "320": 0.013865701854228973
+                }
+              }
+            ]
+          }
+        }
+      },
+      "composite": 0.3934
+    }
+  }
+}
